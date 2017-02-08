@@ -394,20 +394,29 @@ get_edge_df(graph_f)
 Alternatively, we can use the `get_node_attrs()` and  `get_edge_attrs()` functions to look at individual attribute values for graph nodes and edges. By supplying the graph object and the name of the attribute (e.g., `type` for nodes, `rel` for edges), we get a named vector of node or edge attribute values.
 
 ```{r get_node_edge_attr_values_as_vectors}
-
+# Get a vector of values for the `type` node
+# attribute; this returns a named vector (where
+# the names are the node ID values)
 type_node_attr_values <-
   get_node_attrs(x = graph_f, node_attr = "type")
 
+# Get a vector of values for the `rel` edge
+# attribute; this also returns a named vector
+# (where the names are the edge definitions)
 rel_edge_attr_values <-
   get_edge_attrs(x = graph_f, edge_attr = "rel")
 
+# Place these node and edge attribute vectors in
+# a list and display it
 list(type_node_attr_values = type_node_attr_values,
      rel_edge_attr_values = rel_edge_attr_values)
 ```
 
-View the graph again to see that all edges are labeled with the `to_number` `rel` edge attribute.
+View the graph again to see that all edges are labeled with the `to_number` `rel` edge attribute. We will render the graph using `output = visNetwork` since that rendering method automatically includes node `label` and edge `rel` values (but not the edge `type`).
 
-```{r view_graph_all_rel_set}
+```{r view_graph_all_rel_set, out.width='80%', fig.asp=.75, fig.align='center'}
 render_graph(graph = graph_f, output = "visNetwork")
 ```
+
+Go ahead, play with the graph by dragging nodes this way and that way. It's fun! Graphs should always be this fun... 
 
