@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>DiagrammeR Documentation</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="This book provides a wealth of information about the DiagrammeR package for R.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="DiagrammeR Documentation" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book provides a wealth of information about the DiagrammeR package for R." />
+  <meta name="github-repo" content="rich-iannone/DiagrammeR-docs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="DiagrammeR Documentation" />
+  
+  <meta name="twitter:description" content="This book provides a wealth of information about the DiagrammeR package for R." />
+  
+
+<meta name="author" content="Richard Iannone">
+
+
+<meta name="date" content="2017-02-08">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="intro.html">
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<script src="libs/viz-0.3/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-0.9.1/grViz.js"></script>
+<link href="libs/vis-4.17.0/vis.css" rel="stylesheet" />
+<script src="libs/vis-4.17.0/vis.min.js"></script>
+<script src="libs/visNetwork-binding-1.0.3/visNetwork.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The DiagrammeR Docs</a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="creation.html"><a href="creation.html"><i class="fa fa-check"></i><b>2</b> Graph Creation</a><ul>
+<li class="chapter" data-level="2.1" data-path="creation.html"><a href="creation.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting Started</a></li>
+<li class="chapter" data-level="2.2" data-path="creation.html"><a href="creation.html#creating-a-graph-object-and-adding-nodes-and-edges"><i class="fa fa-check"></i><b>2.2</b> Creating a Graph Object and Adding Nodes and Edges</a></li>
+<li class="chapter" data-level="2.3" data-path="creation.html"><a href="creation.html#creating-a-simple-graph-using-data-frames"><i class="fa fa-check"></i><b>2.3</b> Creating a Simple Graph Using Data Frames</a></li>
+<li class="chapter" data-level="2.4" data-path="creation.html"><a href="creation.html#moving-toward-nodes-and-edges-with-more-descriptive-attributes"><i class="fa fa-check"></i><b>2.4</b> Moving Toward Nodes and Edges with More Descriptive Attributes</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DiagrammeR Documentation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="creation" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Graph Creation</h1>
+<p>Creating a graph object is undoubtedly important. I dare say it is one of the fundamental aspects of the <strong>DiagrammeR</strong> world. With the graph object produced, so many other things are possible. For instance, you can inspect certain aspects of the graph, modify the graph in many ways that suit your workflow, view the graph (or part of the graph!) in the <strong>RStudio</strong> Viewer, or perform graph traversals and thus create complex graph queries using <strong>magrittr</strong> (<code>%&gt;%</code>) or <strong>pipeR</strong> (<code>%&gt;&gt;%</code>) pipelines. The possibilities are really very exciting and it all begins with creating those graph objects.</p>
+<div id="getting-started" class="section level2">
+<h2><span class="header-section-number">2.1</span> Getting Started</h2>
+<p>Before we dive into making a graph with DiagrammeR we’d want to be sure some things are in order. First, we need to make sure we have the package installed in <strong>R</strong>. While the package is available on <strong>CRAN</strong>, it’s recommended that the development version of <strong>DiagrammeR</strong> is used. It’s available on GitHub and to install packages from there, we need to use the <strong>devtools</strong> package. (If not installed use <code>install.packages(&quot;devtools&quot;)</code>.) After that, get the development build of <strong>DiagrammeR</strong> using <code>devtools::install_github(&quot;rich-iannone/DiagrammeR&quot;)</code>. Finally, load the package with:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(DiagrammeR)</code></pre></div>
+<p>A few notes are useful here, the package automatically enables the <strong>magrittr</strong> pipe operator (<code>%&gt;%</code>) which allows for chaining between statements in a left-to-right, easy-to-read manner. The <strong>pipeR</strong> package’s <code>%&gt;&gt;%</code> (which works very similarly) is not loaded by <strong>DiagrammeR</strong> but it can be used. In the examples throughout, we’ll stick with <strong>magrittr</strong>’s pipe.</p>
+</div>
+<div id="creating-a-graph-object-and-adding-nodes-and-edges" class="section level2">
+<h2><span class="header-section-number">2.2</span> Creating a Graph Object and Adding Nodes and Edges</h2>
+<p>Let’s get to making a graph. The <code>create_graph()</code> function creates a graph object and, optionally, allows for intialization of nodes, edges, and a few global attributes for the graph. We can create an empty graph by simply using <code>create_graph()</code> as is.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">graph_e &lt;-<span class="st"> </span><span class="kw">create_graph</span>()</code></pre></div>
+<p>This really is an empty graph (no nodes) and we can quickly verify this by using the <code>node_count()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">node_count</span>(graph_e)</code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<p>You can add individual nodes to a graph by using the <code>add_node()</code> function. Let’s add two nodes in the most minimal fashion:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">graph_1n &lt;-<span class="st"> </span><span class="kw">add_node</span>(<span class="dt">graph =</span> graph_e)
+graph_2n &lt;-<span class="st"> </span><span class="kw">add_node</span>(<span class="dt">graph =</span> graph_1n)</code></pre></div>
+<p>This creates 2 nodes with ID values <code>1</code> and <code>2</code> (ID values are set for you as auto-incrementing integers). There are a few functions that can be used to check that these additions did occur. We can get a count of nodes as before with the <code>node_count()</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Count the number of nodes in each graph produced</span>
+<span class="kw">c</span>(<span class="kw">node_count</span>(<span class="dt">graph =</span> graph_e),
+  <span class="kw">node_count</span>(<span class="dt">graph =</span> graph_1n),
+  <span class="kw">node_count</span>(<span class="dt">graph =</span> graph_2n))</code></pre></div>
+<pre><code>## [1] 0 1 2</code></pre>
+<p>Alternatively, we can use the <code>get_node_ids()</code> function to return a vector of node ID values:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get the node ID values for `graph_2n`; note that</span>
+<span class="co"># the data argument is `x` and not `graph`</span>
+<span class="kw">get_node_ids</span>(<span class="dt">x =</span> graph_2n)</code></pre></div>
+<pre><code>## [1] 1 2</code></pre>
+<p>Adding nodes does not add edges. We can check that there are no edges in the graph by using the <code>edge_count()</code> function. A graph with no edges will return <code>0</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">edge_count</span>(<span class="dt">graph =</span> graph_2n)</code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<p>The vast majority of the functions in <strong>DiagrammeR</strong> have the <code>graph</code> argument (or <code>x</code> as we’ve seen) as their first argument. This is useful in the context of using the <strong>magrittr</strong> pipe operator, <code>%&gt;%</code> as we can start with a graph object, perform a transformation on that graph, expect a modified graph, and use that as input for the next transformation function, all while joining such operations with the pipe. With this piping approach, we can create the same graph as before (2 nodes, no edges) by chaining with <code>%&gt;%</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create the equivalent `graph_2n` object</span>
+<span class="co"># but use `%&gt;%` to avoid intermediate objects</span>
+graph_2n_piped &lt;-
+<span class="st">  </span><span class="kw">create_graph</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_node</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_node</span>()
+
+<span class="co"># Verify that the graph contains 2 nodes</span>
+<span class="kw">node_count</span>(graph_2n_piped)</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>The benefits are pretty obvious over the <em>nested</em> approach that avoids creating intermediate graph objects.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create the equivalent `graph_2n` object</span>
+<span class="co"># using nested function calls</span>
+graph_2n_nested_fcns &lt;-
+<span class="st">  </span><span class="kw">add_node</span>(
+    <span class="kw">add_node</span>(
+      <span class="kw">create_graph</span>()))
+
+<span class="co"># Verify that the graph contains 2 nodes</span>
+<span class="kw">node_count</span>(graph_2n_nested_fcns)</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>With the <code>%&gt;%</code>, the sequence of operations is more easily readable (left to right), plus, only one name to create! The less names the better. Moreover, and not shown above, the situtation for the nested approach gets more confusing as we add arguments and their values (of which, there can be many).</p>
+<p>So, we have a made a graph with 2 nodes. The next reasonable thing to do would be adding an edge between the nodes. By default, new graphs produced with <code>create_graph()</code> are <em>directed graphs</em>. To review, a directed graph is one where any edge between a pair of nodes has a defined direction (e.g., by the definition <code>1-&gt;2</code>, we mean to say that edge is directed from node <code>1</code> to node <code>2</code>). Most of what is covered in this book deals with directed graph but we may occasionally delve into <em>undirected graphs</em> (where edges have no specified direction between nodes). At any rate, using <code>create_graph(directed = FALSE)</code> will create an empty graph designated as undirected (i.e., any edges added will be directionless).</p>
+<p>Let’s use a pipeline with <code>%&gt;%</code> to create a graph with 2 nodes and the edge with definition <code>1-&gt;2</code>. This requires three different functions (<code>create_graph()</code>, <code>add_node()</code>, and <code>add_edge()</code>):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a graph with 2 nodes and 1 edge</span>
+graph_2n_1e &lt;-
+<span class="st">  </span><span class="kw">create_graph</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_node</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_node</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_edge</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">2</span>)
+
+<span class="co"># Describe the graph</span>
+<span class="kw">paste</span>(<span class="st">&quot;This graph has:&quot;</span>,
+      <span class="kw">node_count</span>(graph_2n_1e), <span class="st">&quot;nodes,&quot;</span>,
+      <span class="kw">edge_count</span>(graph_2n_1e), <span class="st">&quot;edges&quot;</span>)</code></pre></div>
+<pre><code>## [1] &quot;This graph has: 2 nodes, 1 edges&quot;</code></pre>
+<p>We can be sure we created the correct edge definition (<code>1-&gt;2</code>) by using the <code>get_edges()</code> function:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The graph has 1 edge, what is its</span>
+<span class="co"># edge definition?</span>
+<span class="kw">get_edges</span>(graph_2n_1e)</code></pre></div>
+<pre><code>## [1] &quot;1-&gt;2&quot;</code></pre>
+<p>We now have this simple and small graph. We can view it in the RStudio Viewer by using the <code>render_graph()</code> function. You probably do not want to assign the graph to an object when calling <code>render_graph()</code> (as risk mistakenly overwriting a graph you’ve previously made). We are purely using this function for its side effect, which is viewing. We can view the graph using the <strong>Graphviz</strong> renderer:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show the graph using the Graphviz engine</span>
+<span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_2n_1e)</code></pre></div>
+<div id="htmlwidget-ddd34831fa974b81967a" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ddd34831fa974b81967a">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n\"1\"->\"2\" [id = \"1\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+<p>And also, if you like interactivity and fluid physical motions, the <strong>visNetwork</strong> renderer.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show the graph using the visNetwork engine</span>
+<span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_2n_1e, <span class="dt">output =</span> <span class="st">&quot;visNetwork&quot;</span>)</code></pre></div>
+<div id="htmlwidget-dc68b085015c3a6d14ef" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dc68b085015c3a6d14ef">{"x":{"nodes":{"id":[1,2],"group":[null,null],"label":[null,null]},"edges":{"id":[1],"from":[1],"to":[2],"label":[null]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"edges":{"arrows":{"to":{"enabled":true,"scaleFactor":1}}},"physics":{"stabilization":{"enabled":true,"onlyDynamicEdges":false,"fit":true}},"layout":{"improvedLayout":true}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null},"evals":[],"jsHooks":[]}</script>
+<p>Just as we’ve built up a graph, and can do the opposite and remove edges and nodes. The key functions here are <code>delete_edge()</code> and <code>delete_node()</code>. Let’s remove the edge we just recently added and then remove each of the nodes, leaving us again with an empty graph. Note again that we don’t need to repeat the graph’s object name throughout this pipeline (which is nice, saves typing). Second useful note: typing <code>delete_edge(</code> and then hitting the tab in <strong>RStudio</strong> brings up useful information on the function’s argument names along with useful descriptions. I find this very helpful and use this feature quite often.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Remove the edge from the graph, then,</span>
+<span class="co"># remove each of the 2 nodes</span>
+graph_2n_1e_empty &lt;-
+<span class="st">  </span>graph_2n_1e %&gt;%
+<span class="st">  </span><span class="kw">delete_edge</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">2</span>) %&gt;%
+<span class="st">  </span><span class="kw">delete_node</span>(<span class="dt">node =</span> <span class="dv">2</span>) %&gt;%
+<span class="st">  </span><span class="kw">delete_node</span>(<span class="dt">node =</span> <span class="dv">1</span>)
+
+<span class="co"># Verify that there are no nodes left</span>
+<span class="co"># in this graph object</span>
+<span class="kw">node_count</span>(graph_2n_1e_empty)</code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<p>There are some shortcuts/variations for doing the same thing (there are often numerous ways to transform graphs). You could simply call <code>delete_node()</code> twice, for instance, to get an empty graph. This is because removing a node with edges attached will automatically remove those edges.</p>
+</div>
+<div id="creating-a-simple-graph-using-data-frames" class="section level2">
+<h2><span class="header-section-number">2.3</span> Creating a Simple Graph Using Data Frames</h2>
+<p>For many graph diagrams you may need many nodes and edges. Let’s use the <code>create_node_df()</code> function to specify a collection of nodes and contain them in a data frame (a <em>node data frame</em>, or <em>ndf</em>). Immediately after that, inspect the node data frame.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ndf &lt;-<span class="st"> </span>
+<span class="st">  </span><span class="kw">create_node_df</span>(
+    <span class="dt">n =</span> <span class="dv">3</span>,
+    <span class="dt">label =</span> <span class="ot">TRUE</span>)
+
+ndf</code></pre></div>
+<pre><code>##   id type label
+## 1  1 &lt;NA&gt;     1
+## 2  2 &lt;NA&gt;     2
+## 3  3 &lt;NA&gt;     3</code></pre>
+<p>The <code>n</code> argument is required here and it must indicate the number of nodes you intend this object to contain. The use of <code>label = TRUE</code> allows for copying of the node IDs as the node <code>label</code> (which is a node attribute). This is not always desirable, however. A better option is to specify a vector of text labels (you can use all manner of characters), but ensure that this vector is the same length as specified by <code>n</code>. If you ensure that the <code>label</code> node attribute always contains unique values, later on you can select individual nodes by <code>label</code> and perform actions on them.</p>
+<p>You may have noticed the node attribute <code>type</code> in the output. Values may optionally be provided for this such that the values are useful for categorizing collections of nodes. Let’s refine the <code>ndf</code> object and include two different <code>type</code> values.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ndf &lt;-<span class="st"> </span>
+<span class="st">  </span><span class="kw">create_node_df</span>(
+    <span class="dt">n =</span> <span class="dv">3</span>,
+    <span class="dt">type =</span> <span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>),
+    <span class="dt">label =</span> <span class="ot">TRUE</span>)
+
+ndf</code></pre></div>
+<pre><code>##   id type label
+## 1  1    A     1
+## 2  2    A     2
+## 3  3    B     3</code></pre>
+<p>Now onto the edges, those connections between the nodes. The edges are also collected in a data frame (this time, as an <em>edge data frame</em> or <em>edf</em>). The <code>create_edge_df()</code> function is used to generate this type of object.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">edf &lt;-<span class="st"> </span>
+<span class="st">  </span><span class="kw">create_edge_df</span>(
+    <span class="dt">from =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>),
+    <span class="dt">to   =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))
+
+edf</code></pre></div>
+<pre><code>##   id from to  rel
+## 1  1    1  2 &lt;NA&gt;
+## 2  2    1  3 &lt;NA&gt;</code></pre>
+<p>The <code>from</code> and <code>to</code> arguments specify which nodes for the edge are outgoing and incoming, respectively. Here, the edges are: <code>1-&gt;2</code> and <code>1-&gt;3</code>. As stated before, for directed graphs, the order is essential. The <code>rel</code> argument allows for the inclusion of text labels in the same manner as the node <code>type</code>. This is useful for targeting specific groups of edges during a selection or traversal. Let’s refine the <code>edf</code> object and include two different <code>rel</code> values (<code>X</code> and <code>Y</code>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">edf &lt;-<span class="st"> </span>
+<span class="st">  </span><span class="kw">create_edge_df</span>(
+    <span class="dt">from =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>),
+    <span class="dt">to   =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>),
+    <span class="dt">rel =</span> <span class="kw">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>))
+
+edf</code></pre></div>
+<pre><code>##   id from to rel
+## 1  1    1  2   X
+## 2  2    1  3   Y</code></pre>
+<p>Now that we have an <em>ndf</em> and an <em>edf</em>, we can now combine those into a graph object.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a graph object using node and</span>
+<span class="co"># edge data frames</span>
+graph_ndf_edf &lt;-<span class="st"> </span>
+<span class="st">  </span><span class="kw">create_graph</span>(
+    <span class="dt">nodes_df =</span> ndf,
+    <span class="dt">edges_df =</span> edf)</code></pre></div>
+<p>What exactly happened? These data frames (<code>ndf</code> and <code>edf</code>) were placed within the graph object when it was created. They essentially became internal <code>ndf</code> and <code>edf</code> objects. We can inspect the graph’s internal <em>ndf</em> and <em>edf</em> at any time using the <code>get_node_df()</code> and <code>get_edge_df()</code> functions:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">get_node_df</span>(graph_ndf_edf)</code></pre></div>
+<pre><code>##   id type label
+## 1  1    A     1
+## 2  2    A     2
+## 3  3    B     3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">get_edge_df</span>(graph_ndf_edf)</code></pre></div>
+<pre><code>##   id from to rel
+## 1  1    1  2   X
+## 2  2    1  3   Y</code></pre>
+<p>Let’s view the graph using the <code>render_graph()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show the graph using the Graphviz engine</span>
+<span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_ndf_edf)</code></pre></div>
+<div id="htmlwidget-fd31bdb78a4fb4d92a3b" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fd31bdb78a4fb4d92a3b">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="moving-toward-nodes-and-edges-with-more-descriptive-attributes" class="section level2">
+<h2><span class="header-section-number">2.4</span> Moving Toward Nodes and Edges with More Descriptive Attributes</h2>
+<p>Note that whenever we use the default values for <code>type</code> or <code>label</code> in each <code>add_node()</code> call, we don’t get values for the <code>type</code> attribute and the <code>label</code> attribute is assigned the node ID value. In the ideal case, values for <code>type</code> and <code>label</code> are supplied. Something to keep in mind is that including <code>label</code> values that are unique or distinct across all nodes in the graph will make it possible to specify node selections and perform useful actions on specific nodes. Let’s create the <code>graph</code> object once more with <code>type</code> and <code>label</code> node attributes included.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">graph_node_type_label &lt;-<span class="st"> </span>
+<span class="st">  </span><span class="kw">create_graph</span>() %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">add_node</span>(<span class="dt">type =</span> <span class="st">&quot;number&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;one&quot;</span>) %&gt;%
+<span class="st">  </span><span class="kw">add_node</span>(<span class="dt">type =</span> <span class="st">&quot;number&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;two&quot;</span>)</code></pre></div>
+<p>View the graph’s internal node data frame with the <code>get_node_df()</code> function so we can see that these attributes have been included alongside the graph’s nodes.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">get_node_df</span>(graph_node_type_label)</code></pre></div>
+<pre><code>##   id   type label
+## 1  1 number   one
+## 2  2 number   two</code></pre>
+<p>Now let’s add a single, directed edge between nodes <code>1</code> and <code>2</code> using <code>add_edge()</code>. This edge will also be given a value for its <code>rel</code> attribute (<code>to_number</code>). After adding the edge to the graph, use the <code>get_edges()</code> function to show that the edge has been produced.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Add an edge between nodes `1` and `2` and</span>
+<span class="co"># set the `rel` attribute as `to_number`</span>
+graph_edge_w_ids &lt;-<span class="st"> </span>
+<span class="st">  </span>graph_node_type_label %&gt;%
+<span class="st">  </span><span class="kw">add_edge</span>(
+    <span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">2</span>,
+    <span class="dt">rel =</span> <span class="st">&quot;to_number&quot;</span>)
+
+<span class="co"># Display the graph&#39;s edges (in the default</span>
+<span class="co"># string vector format with node IDs separated</span>
+<span class="co"># by arrows in this directed graph case)</span>
+graph_edge_w_ids %&gt;%<span class="st"> </span><span class="kw">get_edges</span>()</code></pre></div>
+<pre><code>## [1] &quot;1-&gt;2&quot;</code></pre>
+<p>Perhaps you don’t want to work directly with the node ID values and instead with unique node labels. This is a common practice as node ID values can be considered as less meaningful (they are not assigned by the user) but node labels and other attributes can give each node an identity and make nodes more distinguishable. In such a workflow, it’s easier to create edges based on the node <code>label</code> values. Supply the node labels as values for the <code>from</code> and <code>to</code> arguments and set <code>use_labels</code> to <code>TRUE</code>.</p>
+<p>To view the graph’s edges after the transformation, use <code>get_edges()</code> as before but, this time, use <code>return_values = &quot;label&quot;</code> to display the graph’s edges in terms of node <code>label</code> values.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Add an edge between the nodes with labels</span>
+<span class="co"># `one` (node `1`) and `two` (node `2`) and</span>
+<span class="co"># set the `rel` attribute as `to_number`</span>
+graph_edge_w_ids &lt;-<span class="st"> </span>
+<span class="st">  </span>graph_node_type_label %&gt;%
+<span class="st">  </span><span class="kw">add_edge</span>(
+    <span class="dt">from =</span> <span class="st">&quot;one&quot;</span>, <span class="dt">to =</span> <span class="st">&quot;two&quot;</span>,
+    <span class="dt">rel =</span> <span class="st">&quot;to_number&quot;</span>,
+    <span class="dt">use_labels =</span> <span class="ot">TRUE</span>)
+
+<span class="co"># Display the graph&#39;s edges (as a string-based</span>
+<span class="co"># vector with pairs of node `label` values)</span>
+graph_edge_w_ids %&gt;%<span class="st"> </span><span class="kw">get_edges</span>(<span class="dt">return_values =</span> <span class="st">&quot;label&quot;</span>)</code></pre></div>
+<pre><code>## [1] &quot;one-&gt;two&quot;</code></pre>
+<p>The <code>get_edges()</code> function can output the pairs of nodes in edges either as a character vector (as above, which is the default), as a data frame (with 2 columns: <code>from</code> and <code>to</code>), or as a list (first component is the <code>from</code> vector and the second represents the <code>to</code> nodes). Here are examples of the latter two output types:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get the graph&#39;s edges as a data frame</span>
+<span class="kw">get_edges</span>(graph_edge_w_ids, <span class="dt">return_type =</span> <span class="st">&quot;df&quot;</span>)</code></pre></div>
+<pre><code>##   from to
+## 1    1  2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get the graph&#39;s edges as a list</span>
+<span class="kw">get_edges</span>(graph_edge_w_ids, <span class="dt">return_type =</span> <span class="st">&quot;list&quot;</span>)</code></pre></div>
+<pre><code>## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 2</code></pre>
+<p>The addition of a node and the creation of edges can also be performed in a single <code>add_node()</code> step. You can use either (or both) of the optional <code>from</code> and <code>to</code> arguments in the <code>add_node()</code> function. Let’s make various graph objects and see how both nodes and edges can be created with a single call to <code>add_node()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Add initial node (ID `1`) and then</span>
+<span class="co"># add node `2` and edge `1-&gt;2`</span>
+graph_a &lt;-<span class="st"> </span>
+<span class="st">  </span><span class="kw">create_graph</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_node</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_node</span>(<span class="dt">from =</span> <span class="dv">1</span>)
+
+<span class="co"># Add initial node (ID `1`) and then</span>
+<span class="co"># add node `2` and edge `2-&gt;1`</span>
+graph_b &lt;-
+<span class="st">  </span><span class="kw">create_graph</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_node</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_node</span>(<span class="dt">to =</span> <span class="dv">1</span>)
+
+<span class="co"># Add 2 initial nodes (IDs `1` and</span>
+<span class="co"># `2`) and then add node `3` and edges</span>
+<span class="co"># `2-&gt;3` and `3-&gt;1` </span>
+graph_c &lt;-
+<span class="st">  </span><span class="kw">create_graph</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_node</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_node</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_node</span>(<span class="dt">from =</span> <span class="dv">2</span>, <span class="dt">to =</span> <span class="dv">1</span>)
+
+<span class="co"># Get all of the edges available in</span>
+<span class="co"># each of the graphs created</span>
+<span class="kw">list</span>(<span class="dt">graph_a =</span> <span class="kw">get_edges</span>(graph_a),
+     <span class="dt">graph_b =</span> <span class="kw">get_edges</span>(graph_b),
+     <span class="dt">graph_c =</span> <span class="kw">get_edges</span>(graph_c))</code></pre></div>
+<pre><code>## $graph_a
+## [1] &quot;1-&gt;2&quot;
+## 
+## $graph_b
+## [1] &quot;2-&gt;1&quot;
+## 
+## $graph_c
+## [1] &quot;2-&gt;3&quot; &quot;3-&gt;1&quot;</code></pre>
+<p>There are many other ways to generate a node and connect that new node to existing nodes. The <code>from</code> and <code>to</code> arguments of <code>add_node()</code> also accept vectors of length greater than 1. So, a new node can be connected to or from multiple nodes already in the graph. To make an example of this more succinct, we can use the node creation function <code>add_n_nodes()</code>. Supplying a number for the <code>n</code> argument creates <em>n</em> nodes in the graph. The <code>add_n_nodes()</code> function has no means to create edges like <code>add_node()</code> but it’s a great way to simply add a lot of nodes to the graph with one function call. Below, an example of adding one node to many nodes:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a graph, add 5 nodes, and then</span>
+<span class="co"># add a node with edges to nodes `1` to `5`</span>
+graph_d &lt;-
+<span class="st">  </span><span class="kw">create_graph</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_n_nodes</span>(<span class="dt">n =</span> <span class="dv">5</span>) %&gt;%
+<span class="st">  </span><span class="kw">add_node</span>(<span class="dt">to =</span> <span class="dv">1</span>:<span class="dv">5</span>)
+
+<span class="co"># View the graph in the RStudio Viewer</span>
+<span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_d)</code></pre></div>
+<div id="htmlwidget-911dc1dabb2cf91e91d5" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-911dc1dabb2cf91e91d5">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n  \"3\"\n  \"4\"\n  \"5\"\n  \"6\"\n\"6\"->\"1\" [id = \"1\"] \n\"6\"->\"2\" [id = \"2\"] \n\"6\"->\"3\" [id = \"3\"] \n\"6\"->\"4\" [id = \"4\"] \n\"6\"->\"5\" [id = \"5\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+<p>While this works and produces the result that was intended, it’s slightly inconvenient. We have to mentally keep track of which node ID values were created and use those directly in the <code>from</code> or <code>to</code> arguments to create the edges. A better way is to capture a selection of nodes and perform graph transformations with an active selection:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a graph, add 5 nodes, set those nodes</span>
+<span class="co"># as a node selection, and then add a new node</span>
+<span class="co"># with edges to all nodes in the selection</span>
+graph_e &lt;-
+<span class="st">  </span><span class="kw">create_graph</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_n_nodes</span>(<span class="dt">n =</span> <span class="dv">5</span>) %&gt;%
+<span class="st">  </span><span class="kw">select_last_nodes_created</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_node</span>(<span class="dt">to =</span> <span class="kw">get_selection</span>(.))
+
+<span class="co"># View the graph in the RStudio Viewer</span>
+<span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_e)</code></pre></div>
+<div id="htmlwidget-89b1e600928ff2b3e2ef" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-89b1e600928ff2b3e2ef">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n  \"3\"\n  \"4\"\n  \"5\"\n  \"6\"\n\"6\"->\"1\" [id = \"1\"] \n\"6\"->\"2\" [id = \"2\"] \n\"6\"->\"3\" [id = \"3\"] \n\"6\"->\"4\" [id = \"4\"] \n\"6\"->\"5\" [id = \"5\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+<p>This produces the same graph as before but, this time, we didn’t have to manually supply node ID values. The <code>select_last_nodes_created()</code> function simply made a selection of node ID values and we retrieved those IDs using the <code>get_selection()</code> function. The dot (<code>.</code>) as the sole argument referred to the graph itself, which is needed for the <code>graph</code> argument to <code>get_selection</code>.</p>
+<p>While the graph was constructed to our specification, the nodes and the edges within that graph do not have their basic attributes filled with values. We can check this using <code>get_node_df()</code> and <code>get_edges_df</code> and we see that values for the <code>type</code>, <code>label</code>, and <code>rel</code> attributes are all <code>NA</code> values.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">get_node_df</span>(<span class="dt">graph =</span> graph_e)</code></pre></div>
+<pre><code>##   id type label
+## 1  1 &lt;NA&gt;  &lt;NA&gt;
+## 2  2 &lt;NA&gt;  &lt;NA&gt;
+## 3  3 &lt;NA&gt;  &lt;NA&gt;
+## 4  4 &lt;NA&gt;  &lt;NA&gt;
+## 5  5 &lt;NA&gt;  &lt;NA&gt;
+## 6  6 &lt;NA&gt;  &lt;NA&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">get_edge_df</span>(<span class="dt">graph =</span> graph_e)</code></pre></div>
+<pre><code>##   id from to  rel
+## 1  1    6  1 &lt;NA&gt;
+## 2  2    6  2 &lt;NA&gt;
+## 3  3    6  3 &lt;NA&gt;
+## 4  4    6  4 &lt;NA&gt;
+## 5  5    6  5 &lt;NA&gt;</code></pre>
+<p>These values can be added later. All <code>type</code> and <code>label</code> values for nodes can be specified using <code>set_node_attrs()</code>. Likewise, all <code>rel</code> values for edges can be set with the <code>set_edge_attrs()</code> function. To do this unconditionally to all nodes and edges in the graph:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">graph_f &lt;-
+<span class="st">  </span>graph_e %&gt;%
+<span class="st">  </span><span class="kw">set_node_attrs</span>(
+    <span class="dt">node_attr =</span> <span class="st">&quot;label&quot;</span>,
+    <span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>,
+               <span class="st">&quot;four&quot;</span>, <span class="st">&quot;five&quot;</span>, <span class="st">&quot;six&quot;</span>)) %&gt;%
+<span class="st">  </span><span class="kw">set_node_attrs</span>(
+    <span class="dt">node_attr =</span> <span class="st">&quot;type&quot;</span>,
+    <span class="dt">value =</span> <span class="st">&quot;a&quot;</span>) %&gt;%
+<span class="st">  </span><span class="kw">set_edge_attrs</span>(
+    <span class="dt">edge_attr =</span> <span class="st">&quot;rel&quot;</span>,
+    <span class="dt">values =</span> <span class="st">&quot;to_number&quot;</span>)</code></pre></div>
+<p>To verify that the changes were applied, use the <code>get_node_df()</code> and <code>get_edge_df()</code> function to output the graph’s internal node and edge data frames.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">get_node_df</span>(graph_f)</code></pre></div>
+<pre><code>##   id type label
+## 1  1    a   one
+## 2  2    a   two
+## 3  3    a three
+## 4  4    a  four
+## 5  5    a  five
+## 6  6    a   six</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">get_edge_df</span>(graph_f)</code></pre></div>
+<pre><code>##   id from to       rel
+## 1  1    6  1 to_number
+## 2  2    6  2 to_number
+## 3  3    6  3 to_number
+## 4  4    6  4 to_number
+## 5  5    6  5 to_number</code></pre>
+<p>Alternatively, we can use the <code>get_node_attrs()</code> and <code>get_edge_attrs()</code> functions to look at individual attribute values for graph nodes and edges. By supplying the graph object and the name of the attribute (e.g., <code>type</code> for nodes, <code>rel</code> for edges), we get a named vector of node or edge attribute values.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">type_node_attr_values &lt;-
+<span class="st">  </span><span class="kw">get_node_attrs</span>(<span class="dt">x =</span> graph_f, <span class="dt">node_attr =</span> <span class="st">&quot;type&quot;</span>)
+
+rel_edge_attr_values &lt;-
+<span class="st">  </span><span class="kw">get_edge_attrs</span>(<span class="dt">x =</span> graph_f, <span class="dt">edge_attr =</span> <span class="st">&quot;rel&quot;</span>)
+
+<span class="kw">list</span>(<span class="dt">type_node_attr_values =</span> type_node_attr_values,
+     <span class="dt">rel_edge_attr_values =</span> rel_edge_attr_values)</code></pre></div>
+<pre><code>## $type_node_attr_values
+##   1   2   3   4   5   6 
+## &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot; 
+## 
+## $rel_edge_attr_values
+##        6-&gt;1        6-&gt;2        6-&gt;3        6-&gt;4        6-&gt;5 
+## &quot;to_number&quot; &quot;to_number&quot; &quot;to_number&quot; &quot;to_number&quot; &quot;to_number&quot;</code></pre>
+<p>View the graph again to see that all edges are labeled with the <code>to_number</code> <code>rel</code> edge attribute.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_f, <span class="dt">output =</span> <span class="st">&quot;visNetwork&quot;</span>)</code></pre></div>
+<div id="htmlwidget-6ec94285a8e35fc77cf4" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6ec94285a8e35fc77cf4">{"x":{"nodes":{"id":[1,2,3,4,5,6],"group":["a","a","a","a","a","a"],"label":["one","two","three","four","five","six"]},"edges":{"id":[1,2,3,4,5],"from":[6,6,6,6,6],"to":[1,2,3,4,5],"label":["to_number","to_number","to_number","to_number","to_number"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"edges":{"arrows":{"to":{"enabled":true,"scaleFactor":1}}},"physics":{"stabilization":{"enabled":true,"onlyDynamicEdges":false,"fit":true}},"layout":{"improvedLayout":true}},"groups":"a","width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null},"evals":[],"jsHooks":[]}</script>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
