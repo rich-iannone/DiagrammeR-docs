@@ -1,0 +1,21 @@
+--- 
+title: "DiagrammeR Documentation"
+author: "Richard Iannone"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rich-iannone/DiagrammeR-docs
+description: "This book provides a wealth of information about the DiagrammeR package for R."
+---
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), "DiagrammeR", "rmarkdown", "bookdown"
+), 'packages.bib')
+```
