@@ -1,0 +1,5 @@
+Package: DiagrammeRdocs
+Title: DiagrammeR Extended Documentation
+Version: 0.0.1
+Imports: bookdown
+Remotes: rstudio/bookdown
