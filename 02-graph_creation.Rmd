@@ -50,7 +50,13 @@ Alternatively, we can use the `get_node_ids()` function to return a vector of no
 get_node_ids(x = graph_2n)
 ```
 
-Adding nodes does not add edges. We can check that there are no edges in the graph by using the `edge_count()` function. A graph with no edges will return `0`.
+Finally, we can visualize the graph by using the `render_graph()` function. They nodes typically appear very large when there are few of them but scale down in size if there are many. The values shown inside the nodes are the automatically-assigned node ID values. If we were to assign `label` values to each of the nodes (which could be done when using `add_node(label = "label_name")`, for example), those values would be shown instead. 
+
+```{r render_graph_2n}
+render_graph(graph = graph_2n)
+```
+
+Adding nodes does not automatically add edges. We can check that there are no edges in the graph by using the `edge_count()` function. A graph with no edges will return `0`.
 
 ```{r edge_count_empty_graph}
 edge_count(graph = graph_2n)
@@ -72,7 +78,7 @@ node_count(graph_2n_piped)
 
 The benefits are pretty obvious over the *nested* approach that avoids creating intermediate graph objects.
 
-```{r}
+```{r create_graph_2n_nested_funs}
 # Create the equivalent `graph_2n` object
 # using nested function calls
 graph_2n_nested_fcns <-
@@ -112,7 +118,7 @@ We can be sure we created the correct edge definition (`1->2`) by using the `get
 get_edges(graph_2n_1e)
 ```
 
-We now have this simple and small graph. We can view it in the RStudio Viewer by using the `render_graph()` function. You probably do not want to assign the graph to an object when calling `render_graph()` (as risk mistakenly overwriting a graph you've previously made). We are purely using this function for its side effect, which is viewing. We can view the graph using the **Graphviz** renderer:
+We now have this simple and small graph. We can view it again by calling the `render_graph()` function. You probably do not want to assign the graph to an object when calling `render_graph()` (as you would likely mistakenly overwrite a graph you've previously made). We are purely using this function for its side effect, which is viewing. We can view the graph using the **Graphviz** renderer:
 
 ```{r render_graph_graphviz}
 # Show the graph using the Graphviz engine
@@ -142,7 +148,7 @@ graph_2n_1e_empty <-
 node_count(graph_2n_1e_empty)
 ```
 
-There are some shortcuts/variations for doing the same thing (there are often numerous ways to transform graphs). You could simply call `delete_node()` twice, for instance, to get an empty graph. This is because removing a node with edges attached will automatically remove those edges. 
+There are some shortcuts/variations for doing the same thing (there are often numerous ways to transform graphs). You could simply call `delete_node()` twice, for instance, to get an empty graph. This is because removing a node with edges attached will automatically remove those edges. If we were now to display the graph with `render_graph()` you would get a field of nothingness. Since that's not very interesting, I'm not going to show it here.
 
 ## Creating a Simple Graph Using Data Frames
 
@@ -157,9 +163,9 @@ ndf <-
 ndf
 ```
 
-The `n` argument is required here and it must indicate the number of nodes you intend this object to contain. The use of `label = TRUE` allows for copying of the node IDs as the node `label` (which is a node attribute). This is not always desirable, however. A better option is to specify a vector of text labels (you can use all manner of characters), but ensure that this vector is the same length as specified by `n`. If you ensure that the `label` node attribute always contains unique values, later on you can select individual nodes by `label` and perform actions on them.
+The `n` argument is required here and it must indicate the number of nodes you intend this object to contain. The use of `label = TRUE` allows for copying of the node IDs as the node `label` (which is a node attribute). This is not always desirable, however. A better option is to specify a vector of label values (you can use all manner of characters, it will be coerced to a `character` vector). Make certain that this vector is the same length as specified by `n`. Also, if we ensure that the `label` node attribute always contains unique values, we can later select individual nodes by their `label` values and perform actions on these selections.
 
-You may have noticed the node attribute `type` in the output. Values may optionally be provided for this such that the values are useful for categorizing collections of nodes. Let's refine the `ndf` object and include two different `type` values.
+You may have noticed the node attribute `type` in the output. Values may optionally be provided for this attribute and, again, having this extra metadata is useful for categorizing collections of nodes. Let's refine the `ndf` object and include two different `type` values (`A` and `B`).
 
 ```{r create_ndf_type}
 ndf <- 
@@ -194,7 +200,7 @@ edf <-
 edf
 ```
 
-Now that we have an *ndf* and an *edf*, we can now combine those into a graph object.
+Now that we have an *ndf* and an *edf*, we can now combine those into a new graph object by using those specialized data frames within the `create_graph()` function call.
 
 ```{r create_graph_ndf_edf}
 # Create a graph object using node and
@@ -207,20 +213,35 @@ graph_ndf_edf <-
 
 What exactly happened? These data frames (`ndf` and `edf`) were placed within the graph object when it was created. They essentially became internal `ndf` and `edf` objects. We can inspect the graph's internal *ndf* and *edf* at any time using the `get_node_df()` and `get_edge_df()` functions:
 
-```{r}
+```{r inspect_internal_ndf}
+# Show the graph's internal node data frame
 get_node_df(graph_ndf_edf)
 ```
 
-```{r}
+```{r inspect_internal_edf}
+# Show the graph's internal edge data frame
 get_edge_df(graph_ndf_edf)
 ```
 
-Let's view the graph using the `render_graph()` function.
+Let's view the graph using `render_graph()`. The output will clearly show us how the 3 nodes are connected to each other.
 
 ```{r render_graph_ndf_edf}
-# Show the graph using the Graphviz engine
+# Show the graph using `render_graph()`
 render_graph(graph = graph_ndf_edf)
 ```
+
+There is a bit more that you can do with node and edge data frames. Extra columns (or attributes) filled with values can be used for several purposes:
+
+- to associate data values that relate to each node or edge
+- to provide styling attributes such as color names or relative node sizes
+
+We can add these extra columns/attrs when making the node or edge data frames. Here is an example where `color` attribute values for nodes and edges is provided along with some `fillcolor` values for nodes.
+
+```{r generate_render_graph_w_colors}
+# Create a node data frame
+
+```
+
 
 ## Moving Toward Nodes and Edges with More Descriptive Attributes
 
@@ -419,4 +440,65 @@ render_graph(graph = graph_f, output = "visNetwork")
 ```
 
 Go ahead, play with the graph by dragging nodes this way and that way. It's fun! Graphs should always be this fun... 
+
+## Adding Data and Styling Attributes
+
+A graph can often convey more useful information when aesthetic properties are applied to its rendered form. One way to do this, using the functions we already explored, is to include the styling attributes and their values when generating node and edge data frames. For a node data frame, we can provide our own argument names and values when calling the `create_node_df()` function. In the example below, we provide values for `n` (the number of nodes, `4` in this case), `label`, and `type` but, in addition, we add the columns: `color`, `shape`, and `data`. Note that we either provide a single-length vector (i.e., a single value) or an *n*-length vector. Anything in between results in `NA` values applied to fill in the length of the data frame. The `color` and `shape` node attributes are instantly recognized by the **Graphviz** rendering engine. (Having the correct types of values are important here, more on that later.) The `data` column is ignored by the rendering engine, however, it is useful to have for other reasons (more on this later, as well). 
+
+```{r create_ndf_w_color_shape_data}
+# Create a node data frame and display it
+ndf <-
+  create_node_df(
+    n = 4,
+    label = TRUE,
+    type = "lower",
+    color = "lightgreen",
+    shape = c("circle", "circle",
+              "rectangle", "rectangle"),
+    data = c(3.5, 2.6, 9.4, 2.7))
+
+ndf
+```
+
+We can include this node data frame in a new graph and then render it using the Graphviz engine (using `render_graph()` with no arguments except `graph`). Let's have a look.
+
+```{r}
+# Incorporate the node data frame into a
+# new graph and display that graph; note that
+# there are styling attributes being used
+graph_4n <-
+  create_graph(
+    nodes_df = ndf)
+
+render_graph(graph_4n)
+```
+
+We can take a very similar approach to adding styling attributes and a data column to an edge data frame.
+
+```{r create_edf_w_penwidth_color_data}
+# Create e node data frame and display it
+edf <-
+  create_edge_df(
+    from = c(1, 4, 3),
+    to = c(2, 1, 1),
+    rel = "related_to",
+    penwidth = c(2.5, 0.5, 1.0),
+    color = c("pink", "red", "lightblue"))
+
+edf
+```
+
+Now that we have the edge data frame (`edf`), let's *add* that to the graph with the `add_edge_df()` function. Then, render the graph to see the styled nodes and edges. 
+
+```{r add_edge_df_render_graph}
+# Add the edge data frame to the graph
+# object, then, render the graph
+graph_4n_3e <-
+  graph_4n %>%
+  add_edge_df(
+    edge_df = edf)
+
+render_graph(graph_4n_3e)
+```
+
 
