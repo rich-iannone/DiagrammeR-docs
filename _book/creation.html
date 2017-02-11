@@ -26,7 +26,7 @@
 <meta name="author" content="Richard Iannone">
 
 
-<meta name="date" content="2017-02-10">
+<meta name="date" content="2017-02-11">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
   
   
 <link rel="prev" href="intro.html">
-
+<link rel="next" href="attrs.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -116,7 +116,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.2" data-path="creation.html"><a href="creation.html#creating-a-graph-object-and-adding-nodes-and-edges"><i class="fa fa-check"></i><b>2.2</b> Creating a Graph Object and Adding Nodes and Edges</a></li>
 <li class="chapter" data-level="2.3" data-path="creation.html"><a href="creation.html#creating-a-simple-graph-using-data-frames"><i class="fa fa-check"></i><b>2.3</b> Creating a Simple Graph Using Data Frames</a></li>
 <li class="chapter" data-level="2.4" data-path="creation.html"><a href="creation.html#moving-toward-nodes-and-edges-with-more-descriptive-attributes"><i class="fa fa-check"></i><b>2.4</b> Moving Toward Nodes and Edges with More Descriptive Attributes</a></li>
-<li class="chapter" data-level="2.5" data-path="creation.html"><a href="creation.html#adding-data-and-styling-attributes"><i class="fa fa-check"></i><b>2.5</b> Adding Data and Styling Attributes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="attrs.html"><a href="attrs.html"><i class="fa fa-check"></i><b>3</b> Graph Attributes</a><ul>
+<li class="chapter" data-level="3.1" data-path="attrs.html"><a href="attrs.html#adding-attributes-in-ndfs-and-edfs-outside-of-a-graph"><i class="fa fa-check"></i><b>3.1</b> Adding Attributes in NDFs and EDFs Outside of a Graph</a></li>
+<li class="chapter" data-level="3.2" data-path="attrs.html"><a href="attrs.html#adding-attributes-to-nodes-or-edges-already-in-the-graph"><i class="fa fa-check"></i><b>3.2</b> Adding Attributes to Nodes or Edges Already in the Graph</a></li>
+<li class="chapter" data-level="3.3" data-path="attrs.html"><a href="attrs.html#setting-attributes-globally-or-selectively"><i class="fa fa-check"></i><b>3.3</b> Setting Attributes Globally or Selectively</a></li>
+<li class="chapter" data-level="3.4" data-path="attrs.html"><a href="attrs.html#adding-attributes-to-selections-of-nodes-or-edges"><i class="fa fa-check"></i><b>3.4</b> Adding Attributes to Selections of Nodes or Edges</a></li>
 </ul></li>
 </ul>
 
@@ -167,8 +172,8 @@ graph_2n &lt;-<span class="st"> </span><span class="kw">add_node</span>(<span cl
 <pre><code>## [1] 1 2</code></pre>
 <p>Finally, we can visualize the graph by using the <code>render_graph()</code> function. They nodes typically appear very large when there are few of them but scale down in size if there are many. The values shown inside the nodes are the automatically-assigned node ID values. If we were to assign <code>label</code> values to each of the nodes (which could be done when using <code>add_node(label = &quot;label_name&quot;)</code>, for example), those values would be shown instead.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_2n)</code></pre></div>
-<div id="htmlwidget-c4a367d45adf3831f9a3" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c4a367d45adf3831f9a3">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e853941e01f5653f189f" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e853941e01f5653f189f">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Adding nodes does not automatically add edges. We can check that there are no edges in the graph by using the <code>edge_count()</code> function. A graph with no edges will return <code>0</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">edge_count</span>(<span class="dt">graph =</span> graph_2n)</code></pre></div>
 <pre><code>## [1] 0</code></pre>
@@ -217,13 +222,13 @@ graph_2n_1e &lt;-
 <p>We now have this simple and small graph. We can view it again by calling the <code>render_graph()</code> function. You probably do not want to assign the graph to an object when calling <code>render_graph()</code> (as you would likely mistakenly overwrite a graph you’ve previously made). We are purely using this function for its side effect, which is viewing. We can view the graph using the <strong>Graphviz</strong> renderer:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show the graph using the Graphviz engine</span>
 <span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_2n_1e)</code></pre></div>
-<div id="htmlwidget-9c41b19cabcc0066ffb4" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9c41b19cabcc0066ffb4">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n\"1\"->\"2\" [id = \"1\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8045bfdbdd41b7fa0d53" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8045bfdbdd41b7fa0d53">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n\"1\"->\"2\" [id = \"1\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
 <p>And also, if you like interactivity and fluid physical motions, the <strong>visNetwork</strong> renderer.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show the graph using the visNetwork engine</span>
 <span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_2n_1e, <span class="dt">output =</span> <span class="st">&quot;visNetwork&quot;</span>)</code></pre></div>
-<div id="htmlwidget-5a35d851c03bd4c17d06" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5a35d851c03bd4c17d06">{"x":{"nodes":{"id":[1,2],"group":[null,null],"label":[null,null]},"edges":{"id":[1],"from":[1],"to":[2],"label":[null]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"edges":{"arrows":{"to":{"enabled":true,"scaleFactor":1}}},"physics":{"stabilization":{"enabled":true,"onlyDynamicEdges":false,"fit":true}},"layout":{"improvedLayout":true}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-1a0b916b3dfa1349e0e3" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1a0b916b3dfa1349e0e3">{"x":{"nodes":{"id":[1,2],"group":[null,null],"label":[null,null]},"edges":{"id":[1],"from":[1],"to":[2],"label":[null]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"edges":{"arrows":{"to":{"enabled":true,"scaleFactor":1}}},"physics":{"stabilization":{"enabled":true,"onlyDynamicEdges":false,"fit":true}},"layout":{"improvedLayout":true}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null},"evals":[],"jsHooks":[]}</script>
 <p>Just as we’ve built up a graph, and can do the opposite and remove edges and nodes. The key functions here are <code>delete_edge()</code> and <code>delete_node()</code>. Let’s remove the edge we just recently added and then remove each of the nodes, leaving us again with an empty graph. Note again that we don’t need to repeat the graph’s object name throughout this pipeline (which is nice, saves typing). Second useful note: typing <code>delete_edge(</code> and then hitting the tab in <strong>RStudio</strong> brings up useful information on the function’s argument names along with useful descriptions. I find this very helpful and use this feature quite often.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Remove the edge from the graph, then,</span>
 <span class="co"># remove each of the 2 nodes</span>
@@ -308,8 +313,8 @@ graph_ndf_edf &lt;-<span class="st"> </span>
 <p>Let’s view the graph using <code>render_graph()</code>. The output will clearly show us how the 3 nodes are connected to each other.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show the graph using `render_graph()`</span>
 <span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_ndf_edf)</code></pre></div>
-<div id="htmlwidget-22e160c4e830589a303e" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-22e160c4e830589a303e">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9a50441840a9a66db5c9" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9a50441840a9a66db5c9">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
 <p>There is a bit more that you can do with node and edge data frames. Extra columns (or attributes) filled with values can be used for several purposes:</p>
 <ul>
 <li>to associate data values that relate to each node or edge</li>
@@ -419,8 +424,8 @@ graph_d &lt;-
 
 <span class="co"># View the graph in the RStudio Viewer</span>
 <span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_d)</code></pre></div>
-<div id="htmlwidget-92d1ecf7e6ca48a66749" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-92d1ecf7e6ca48a66749">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n  \"3\"\n  \"4\"\n  \"5\"\n  \"6\"\n\"6\"->\"1\" [id = \"1\"] \n\"6\"->\"2\" [id = \"2\"] \n\"6\"->\"3\" [id = \"3\"] \n\"6\"->\"4\" [id = \"4\"] \n\"6\"->\"5\" [id = \"5\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-73da182d5843861b4b84" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-73da182d5843861b4b84">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n  \"3\"\n  \"4\"\n  \"5\"\n  \"6\"\n\"6\"->\"1\" [id = \"1\"] \n\"6\"->\"2\" [id = \"2\"] \n\"6\"->\"3\" [id = \"3\"] \n\"6\"->\"4\" [id = \"4\"] \n\"6\"->\"5\" [id = \"5\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
 <p>While this works and produces the result that was intended, it’s slightly inconvenient. We have to mentally keep track of which node ID values were created and use those directly in the <code>from</code> or <code>to</code> arguments to create the edges. A better way is to capture a selection of nodes and perform graph transformations with an active selection:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a graph, add 5 nodes, set those nodes</span>
 <span class="co"># as a node selection, and then add a new node</span>
@@ -433,8 +438,8 @@ graph_e &lt;-
 
 <span class="co"># View the graph in the RStudio Viewer</span>
 <span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_e)</code></pre></div>
-<div id="htmlwidget-bfd3534daf69a9d43c7c" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bfd3534daf69a9d43c7c">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n  \"3\"\n  \"4\"\n  \"5\"\n  \"6\"\n\"6\"->\"1\" [id = \"1\"] \n\"6\"->\"2\" [id = \"2\"] \n\"6\"->\"3\" [id = \"3\"] \n\"6\"->\"4\" [id = \"4\"] \n\"6\"->\"5\" [id = \"5\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a5e5c9c47103584e1263" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a5e5c9c47103584e1263">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n  \"3\"\n  \"4\"\n  \"5\"\n  \"6\"\n\"6\"->\"1\" [id = \"1\"] \n\"6\"->\"2\" [id = \"2\"] \n\"6\"->\"3\" [id = \"3\"] \n\"6\"->\"4\" [id = \"4\"] \n\"6\"->\"5\" [id = \"5\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
 <p>This produces the same graph as before but, this time, we didn’t have to manually supply node ID values. The <code>select_last_nodes_created()</code> function simply made a selection of node ID values and we retrieved those IDs using the <code>get_selection()</code> function. The dot (<code>.</code>) as the sole argument referred to the graph itself, which is needed for the <code>graph</code> argument to <code>get_selection</code>.</p>
 <p>While the graph was constructed to our specification, the nodes and the edges within that graph do not have their basic attributes filled with values. We can check this using <code>get_node_df()</code> and <code>get_edges_df</code> and we see that values for the <code>type</code>, <code>label</code>, and <code>rel</code> attributes are all <code>NA</code> values.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">get_node_df</span>(<span class="dt">graph =</span> graph_e)</code></pre></div>
@@ -507,85 +512,9 @@ rel_edge_attr_values &lt;-
 ## &quot;to_number&quot; &quot;to_number&quot; &quot;to_number&quot; &quot;to_number&quot; &quot;to_number&quot;</code></pre>
 <p>View the graph again to see that all edges are labeled with the <code>to_number</code> <code>rel</code> edge attribute. We will render the graph using <code>output = visNetwork</code> since that rendering method automatically includes node <code>label</code> and edge <code>rel</code> values (but not the edge <code>type</code>).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_f, <span class="dt">output =</span> <span class="st">&quot;visNetwork&quot;</span>)</code></pre></div>
-<div id="htmlwidget-8e8c3e745609a02582e8" style="width:80%;height:504px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8e8c3e745609a02582e8">{"x":{"nodes":{"id":[1,2,3,4,5,6],"group":["a","a","a","a","a","a"],"label":["one","two","three","four","five","six"]},"edges":{"id":[1,2,3,4,5],"from":[6,6,6,6,6],"to":[1,2,3,4,5],"label":["to_number","to_number","to_number","to_number","to_number"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"edges":{"arrows":{"to":{"enabled":true,"scaleFactor":1}}},"physics":{"stabilization":{"enabled":true,"onlyDynamicEdges":false,"fit":true}},"layout":{"improvedLayout":true}},"groups":"a","width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d5cc6d4f8171f61ad409" style="width:80%;height:504px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d5cc6d4f8171f61ad409">{"x":{"nodes":{"id":[1,2,3,4,5,6],"group":["a","a","a","a","a","a"],"label":["one","two","three","four","five","six"]},"edges":{"id":[1,2,3,4,5],"from":[6,6,6,6,6],"to":[1,2,3,4,5],"label":["to_number","to_number","to_number","to_number","to_number"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"edges":{"arrows":{"to":{"enabled":true,"scaleFactor":1}}},"physics":{"stabilization":{"enabled":true,"onlyDynamicEdges":false,"fit":true}},"layout":{"improvedLayout":true}},"groups":"a","width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null},"evals":[],"jsHooks":[]}</script>
 <p>Go ahead, play with the graph by dragging nodes this way and that way. It’s fun! Graphs should always be this fun…</p>
-</div>
-<div id="adding-data-and-styling-attributes" class="section level2">
-<h2><span class="header-section-number">2.5</span> Adding Data and Styling Attributes</h2>
-<p>A graph can often convey more useful information when aesthetic properties are applied to its rendered form. One way to do this, using the functions we already explored, is to include the styling attributes and their values when generating node and edge data frames. For a node data frame, we can provide our own argument names and values when calling the <code>create_node_df()</code> function. In the example below, we provide values for <code>n</code> (the number of nodes, <code>4</code> in this case), <code>label</code>, and <code>type</code> but, in addition, we add the columns: <code>color</code>, <code>shape</code>, and <code>data</code>. Note that we either provide a single-length vector (i.e., a single value) or an <em>n</em>-length vector. Anything in between results in <code>NA</code> values applied to fill in the length of the data frame. The <code>color</code> and <code>shape</code> node attributes are instantly recognized by the <strong>Graphviz</strong> rendering engine. (Having the correct types of values are important here, more on that later.) The <code>data</code> column is ignored by the rendering engine, however, it is useful to have for other reasons (more on this later, as well).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a node data frame and display it</span>
-ndf &lt;-
-<span class="st">  </span><span class="kw">create_node_df</span>(
-    <span class="dt">n =</span> <span class="dv">4</span>,
-    <span class="dt">label =</span> <span class="ot">TRUE</span>,
-    <span class="dt">type =</span> <span class="st">&quot;lower&quot;</span>,
-    <span class="dt">color =</span> <span class="st">&quot;lightgreen&quot;</span>,
-    <span class="dt">shape =</span> <span class="kw">c</span>(<span class="st">&quot;circle&quot;</span>, <span class="st">&quot;circle&quot;</span>,
-              <span class="st">&quot;rectangle&quot;</span>, <span class="st">&quot;rectangle&quot;</span>),
-    <span class="dt">data =</span> <span class="kw">c</span>(<span class="fl">3.5</span>, <span class="fl">2.6</span>, <span class="fl">9.4</span>, <span class="fl">2.7</span>))
-
-ndf</code></pre></div>
-<pre><code>##   id  type label      color     shape data
-## 1  1 lower     1 lightgreen    circle  3.5
-## 2  2 lower     2 lightgreen    circle  2.6
-## 3  3 lower     3 lightgreen rectangle  9.4
-## 4  4 lower     4 lightgreen rectangle  2.7</code></pre>
-<p>We can include this node data frame in a new graph and then render it using the Graphviz engine (using <code>render_graph()</code> with no arguments except <code>graph</code>). Let’s have a look.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Incorporate the node data frame into a</span>
-<span class="co"># new graph and display that graph; note that</span>
-<span class="co"># there are styling attributes being used</span>
-graph_4n &lt;-
-<span class="st">  </span><span class="kw">create_graph</span>(
-    <span class="dt">nodes_df =</span> ndf)
-
-<span class="kw">render_graph</span>(graph_4n)</code></pre></div>
-<div id="htmlwidget-6208d72a0c44b8dca6a7" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6208d72a0c44b8dca6a7">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\", color = \"lightgreen\", shape = \"circle\"] \n  \"2\" [label = \"2\", color = \"lightgreen\", shape = \"circle\"] \n  \"3\" [label = \"3\", color = \"lightgreen\", shape = \"rectangle\"] \n  \"4\" [label = \"4\", color = \"lightgreen\", shape = \"rectangle\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
-<p>We can take a very similar approach to adding styling attributes and a data column to an edge data frame.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create e node data frame and display it</span>
-edf &lt;-
-<span class="st">  </span><span class="kw">create_edge_df</span>(
-    <span class="dt">from =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">3</span>),
-    <span class="dt">to =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>),
-    <span class="dt">rel =</span> <span class="st">&quot;related_to&quot;</span>,
-    <span class="dt">penwidth =</span> <span class="kw">c</span>(<span class="fl">2.5</span>, <span class="fl">0.5</span>, <span class="fl">1.0</span>),
-    <span class="dt">color =</span> <span class="kw">c</span>(<span class="st">&quot;pink&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;lightblue&quot;</span>),
-    <span class="dt">data =</span> <span class="kw">c</span>(<span class="fl">1.1</span>, <span class="fl">5.2</span>, <span class="fl">3.4</span>))
-
-edf</code></pre></div>
-<pre><code>##   id from to        rel penwidth     color data
-## 1  1    1  2 related_to      2.5      pink  1.1
-## 2  2    4  1 related_to      0.5       red  5.2
-## 3  3    3  1 related_to      1.0 lightblue  3.4</code></pre>
-<p>Now that we have the edge data frame (<code>edf</code>), let’s <em>add</em> that to the graph with the <code>add_edge_df()</code> function. Then, render the graph to see the styled nodes and edges.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Add the edge data frame to the graph</span>
-<span class="co"># object, then, render the graph</span>
-graph_4n_3e &lt;-
-<span class="st">  </span>graph_4n %&gt;%
-<span class="st">  </span><span class="kw">add_edge_df</span>(
-    <span class="dt">edge_df =</span> edf)
-
-<span class="kw">render_graph</span>(graph_4n_3e)</code></pre></div>
-<div id="htmlwidget-c9a08f5c837137a0bad9" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c9a08f5c837137a0bad9">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\", color = \"lightgreen\", shape = \"circle\"] \n  \"2\" [label = \"2\", color = \"lightgreen\", shape = \"circle\"] \n  \"3\" [label = \"3\", color = \"lightgreen\", shape = \"rectangle\"] \n  \"4\" [label = \"4\", color = \"lightgreen\", shape = \"rectangle\"] \n\"1\"->\"2\" [id = \"1\", penwidth = \"2.5\", color = \"pink\"] \n\"4\"->\"1\" [id = \"2\", penwidth = \"0.5\", color = \"red\"] \n\"3\"->\"1\" [id = \"3\", penwidth = \"1\", color = \"lightblue\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
-<p>We can use the <code>data</code> fields for both the nodes and the edges to create styling attributes. Doing this generally requires scaling of the values (if they are numerical data, and they are in this case) and generating a new column in the internal ndf or edf that’s named for the styling attribute. Thankfully, we have some useful functions to help with this: <code>rescale_node_attrs()</code> and <code>rescale_edge_attrs()</code>. Let’s look at an example of how this works for scaling up the sizes of the node shape:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create the `width` node attribute column</span>
-<span class="co"># by scaling the values in the `data` column</span>
-<span class="co"># to between 1 and 3 units</span>
-graph_scaled_nodes &lt;-
-<span class="st">  </span>graph_4n_3e %&gt;%
-<span class="st">    </span><span class="kw">rescale_node_attrs</span>(
-      <span class="dt">node_attr_from =</span> <span class="st">&quot;data&quot;</span>,
-      <span class="dt">to_lower_bound =</span> <span class="dv">1</span>,
-      <span class="dt">to_upper_bound =</span> <span class="dv">3</span>,
-      <span class="dt">node_attr_to =</span> <span class="st">&quot;width&quot;</span>)
-
-<span class="co"># Display the graph with the new styling</span>
-<span class="co"># attribute applied</span>
-<span class="kw">render_graph</span>(graph_scaled_nodes)</code></pre></div>
-<div id="htmlwidget-14120f377e4dfd7385d0" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-14120f377e4dfd7385d0">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\", color = \"lightgreen\", shape = \"circle\", width = \"1.265\"] \n  \"2\" [label = \"2\", color = \"lightgreen\", shape = \"circle\", width = \"1\"] \n  \"3\" [label = \"3\", color = \"lightgreen\", shape = \"rectangle\", width = \"3\"] \n  \"4\" [label = \"4\", color = \"lightgreen\", shape = \"rectangle\", width = \"1.029\"] \n\"1\"->\"2\" [id = \"1\", penwidth = \"2.5\", color = \"pink\"] \n\"4\"->\"1\" [id = \"2\", penwidth = \"0.5\", color = \"red\"] \n\"3\"->\"1\" [id = \"3\", penwidth = \"1\", color = \"lightblue\"] \n}","config":{"engine":null,"options":null}},"evals":[],"jsHooks":[]}</script>
 
 </div>
 </div>
@@ -594,8 +523,8 @@ graph_scaled_nodes &lt;-
           </div>
         </div>
       </div>
-<a href="intro.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="attrs.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
