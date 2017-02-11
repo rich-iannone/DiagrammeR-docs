@@ -1,0 +1,234 @@
+```{r load_dgr_02, include=FALSE, results=FALSE}
+library(DiagrammeR)
+```
+
+# Graph Attributes {#attrs}
+
+A graph can often convey more useful information when aesthetic properties are applied to its rendered form. 
+
+## Adding Attributes in NDFs and EDFs Outside of a Graph
+
+One way to add node or edge attributes, using the functions we've already explored, is to include the these attributes and their values when generating node and edge data frames. For a node data frame, we can provide our own argument names and values when calling the `create_node_df()` function. In the example below, we provide values for `n` (the number of nodes, `4` in this case), `label`, and `type` but, in addition, we add the columns: `color`, `shape`, and `data`. Note that we either provide a single-length vector (i.e., a single value) or an *n*-length vector. Anything in between results in `NA` values applied to fill in the length of the data frame. The `color` and `shape` node attributes are instantly recognized by the **Graphviz** rendering engine. (Having the correct types of values are important here, more on that later.) The `data` column is ignored by the rendering engine, however, it is useful to have for other reasons (more on this later, as well). 
+
+```{r create_ndf_w_color_shape_data}
+# Create a node data frame and display it
+ndf <-
+  create_node_df(
+    n = 4,
+    label = TRUE,
+    type = "lower",
+    color = "lightgreen",
+    shape = c("circle", "circle",
+              "rectangle", "rectangle"),
+    data = c(2.5, 5.6, 7.4, 1.7))
+
+ndf
+```
+
+We can include this node data frame in a new graph and then render it using the Graphviz engine (using `render_graph()` with no arguments except `graph`). Let's have a look.
+
+```{r}
+# Incorporate the node data frame into a
+# new graph and display that graph; note that
+# there are styling attributes being used
+graph_4n <-
+  create_graph(
+    nodes_df = ndf)
+
+render_graph(graph_4n)
+```
+
+We can take a very similar approach to adding styling attributes and a data column to an edge data frame with the `create_edge_df()` function. Here, let's add the `penwidth` (line thicknesses for edges) and the `color` sytling attributes, and, a `data` attribute column.
+
+```{r create_edf_w_penwidth_color_data}
+# Create e node data frame and display it
+edf <-
+  create_edge_df(
+    from = c(1, 4, 3),
+    to = c(2, 1, 1),
+    rel = "related_to",
+    penwidth = c(2.5, 0.5, 1.0),
+    color = c("pink", "red", "lightblue"),
+    data = c(1.1, 5.2, 3.4))
+
+edf
+```
+
+Now that we have the edge data frame (`edf`), let's *add* that to the graph with the `add_edge_df()` function. Then, render the graph to see the styled nodes and edges. 
+
+```{r add_edge_df_render_graph}
+# Add the edge data frame to the graph
+# object, then, render the graph
+graph_4n_3e <-
+  graph_4n %>%
+  add_edge_df(
+    edge_df = edf)
+
+render_graph(graph_4n_3e)
+```
+
+## Adding Attributes to Nodes or Edges Already in the Graph
+
+We can use the `data` fields for both the nodes and the edges to create styling attributes. Doing this generally requires scaling of the values (if they are numerical data, and they are in this case) and generating a new column in the internal ndf or edf that's named for the styling attribute. Thankfully, we have some useful functions to help with this: `rescale_node_attrs()` and `rescale_edge_attrs()`. Let's look at an example of how this works for scaling up the sizes of the node shape:
+
+```{r rescale_node_attrs}
+# Create the `width` node attribute column
+# by scaling the values in the `data` column
+# to between 0.5 and 1.5 units
+graph_scaled_nodes <-
+  graph_4n_3e %>%
+    rescale_node_attrs(
+      node_attr_from = "data",
+      to_lower_bound = 0.5,
+      to_upper_bound = 1.5,
+      node_attr_to = "width")
+
+# Display the graph with the new styling
+# attribute applied
+render_graph(graph_scaled_nodes)
+```
+
+This looks pretty good and, conceptually, it isn't too difficult to reason about generating new columns with specific attribute names based on data in existing columns. Notice that the circular nodes were scaled up or down evenly whereas the rectangular one was only scaled horizontally (and this makes sense, we made a `width` attribute/column). If we wanted scaling both in `width` and in `height`, we also need a height column with the same scaled values. There is a set of functions to make this process easier: `copy_node_attrs()` and `copy_edge_attrs()`. It simply copies values from one attribute to a new attribute.
+
+```{r copy_node_attrs}
+# Copy the `width` attribute values to
+# a new `height` attribute; because we
+# want square rectangles
+graph_square_rects <-
+  graph_scaled_nodes %>%
+    copy_node_attrs(
+      node_attr_from = "width",
+      node_attr_to = "height")
+
+# Display the graph and observe squares
+render_graph(graph_square_rects)
+```
+
+Let's move onto some modifications of the edges. We have already applied some color values manually when constructing the edge data frame before its incorporation into the graph. Let's use the `data` values available in the internal edge data frame to create scaled colors. We'll essentially replace the `color` attribute values already present and scale between the `grey85` and `grey25` colors with the `rescale_edge_attrs()` function.
+
+```{r graph_scale_edge_colors}
+# Create the `color` edge attribute column
+# by scaling the values in the `data` column
+# to between the `grey85` to `grey25` colors
+graph_grey_edges <-
+  graph_square_rects %>%
+    rescale_edge_attrs(
+      edge_attr_from = "data",
+      to_lower_bound = "grey85",
+      to_upper_bound = "grey25",
+      edge_attr_to = "color")
+
+# Display the graph with newly grayed edges
+render_graph(graph = graph_grey_edges)
+```
+
+## Setting Attributes Globally or Selectively
+
+We can set node or edge attribute values for all nodes or edges in a graph, or, for specific nodes or edges in a graph. These additions can be done with the `set_node_attrs()` and `set_edge_attrs()` functions. Let's create a random graph with 10 nodes and 15 edges and color some nodes and edges.
+
+```{r}
+# Create a random graph and set the
+# `fillcolor` as `lightgreen` for all
+# nodes in the graph, and, set `color`
+# as `blue` for all graph edges
+graph_1 <-
+  create_random_graph(
+    n = 10,
+    m = 15,
+    directed = TRUE,
+    set_seed = 23) %>%
+  set_node_attrs(
+    node_attr = "fillcolor",
+    values = "lightgreen") %>%
+  set_edge_attrs(
+    edge_attr = "color",
+    values = "blue")
+
+# Display the blue and green graph
+render_graph(graph = graph_1)
+```
+
+We can be more selective with the node and edge coloring (or with any other attributes or data we would like to apply).
+
+```{r}
+# Set attribute `fillcolor` as `orange`
+# for nodes `1` and `3` in the graph;
+# for edges, set `color` to `red` for
+# all those edges leading to nodes
+# `7` and `10`
+graph_2 <-
+  graph_1 %>%
+  set_node_attrs(
+    node_attr = "fillcolor",
+    values = "orange",
+    nodes = c(1, 3)) %>%
+  set_edge_attrs(
+    edge_attr = "color",
+    values = "red", 
+    to = c(7, 10))
+
+# Display that multicolored graph
+render_graph(graph = graph_2)
+```
+
+Finally, individual edges can be targeted if supplying vectors for both the `from` and `to` arguments.
+
+```{r}
+# Set attribute `color = "green"` for edges
+# `1`->`4` and `3`->`1` using the edge
+# data frame
+graph_3 <-
+  graph_2 %>%
+    set_edge_attrs(
+      edge_attr = "color",
+      values = "black",
+      from = c(7, 1),
+      to = c(9, 6))
+
+# Display the graph
+render_graph(graph = graph_3)
+```
+
+## Adding Attributes to Selections of Nodes or Edges
+
+There is a large number of functions that store either a selection of nodes or edges within the graph object. Such functions begin with `select_...` and `trav_...`. Complementing this class of functions are functions that take a graph with an active selection and perform some transformation based on the selection of nodes or edges. These functions are identifiable by ending with `...ws` (with selection). We'll devote two entire chapters on the `select...()` and `trav...()` functions but, for now, we'll provide simple use cases with `select_nodes()` and `select_edges()`.
+
+So, we can make a selection of nodes or edges (but not both at the same time), how do we style these groups? We can do it with the `set_node_attrs_ws()` and `set_edge_attrs_ws()` functions. In this example, let's make a simple graph, select 2 of the 4 nodes, add `fillcolor` attribute values of `lightgreen` for those nodes, and then clear the selection with `clear_selection()` (it clears any selection of nodes or edges).
+
+```{r}
+# Create a simple graph, select nodes
+# `1` and `2`, color them light green;
+# clear the selection
+graph_4 <-
+  create_graph() %>%
+  add_path(4) %>%
+  select_nodes(
+    nodes = c(1, 2)) %>%
+  set_node_attrs_ws(
+    node_attr = "fillcolor",
+    value = "lightgreen") %>%
+  clear_selection()
+  
+render_graph(graph = graph_4)
+```
+
+
+```{r}
+# Take `graph_4`, select edges
+# `1->2` and `2->3`, color those red and
+# then clear the selection
+graph_5 <-
+  graph_4 %>%
+  select_edges(
+    from = c(1, 2),
+    to = c(2, 3)) %>%
+  set_edge_attrs_ws(
+    edge_attr = "color",
+    value = "red") %>%
+  clear_selection()
+  
+render_graph(graph = graph_5)
+```
+
+
+
