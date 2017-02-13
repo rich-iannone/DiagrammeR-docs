@@ -1,0 +1,106 @@
+```{r load_dgr_04, include=FALSE, results=FALSE}
+library(DiagrammeR)
+```
+
+# Selections {#selections}
+
+Occasionally, you'll want to operate on a select group of nodes or edges. Some functions affect a single node or edge while others (or, sometimes, the same functions) operate on all nodes or edges in a graph. Selections allow you to target specified nodes or edges and then apply specialized functions to operate on just those selected entities. Most of the selection functions support rudimentary set operations across several calls of the selection functions (i.e., for the union, intersection, or difference between selection sets of nodes or edges).
+
+## The Selection Functions
+
+The following table provides a summary of all the available `select_...()` functions available in **DiagrammeR**.
+
+```{r, echo=FALSE, results='asis'}
+library(knitr)
+
+kable(
+  data.frame(
+    Function = 
+      c(
+        "`select_nodes()`",
+        "`select_nodes_by_id()`",
+        "`select_last_nodes_created()`",
+        "`select_nodes_by_degree()`",
+        "`select_nodes_in_neighbourhood()`",
+        "`select_edges()`",
+        "`select_edges_by_edge_id()`",
+        "`select_edges_by_node_id()`",
+        "`select_last_edges_created()`",
+        "`select_rev_edges_ws()`"
+      ),
+    Description = 
+      c(
+        "Select nodes graph using filtering conditions.",
+        "Select nodes by their ID values.",
+        "Select the last group of nodes created in the graph.",
+        "Select nodes on the basis of node degree.",
+        "Select nodes based on a walk distance from a specified node.",
+        "Select nodes graph using filtering conditions.",
+        "Select edges by their ID values.",
+        "Select edges associated with specified node ID values.",
+        "Select the last group of edges created in the graph.",
+        "Select any reverse edges from a selection of edges."
+        )))
+```
+
+When any selection is performed using using a `select_...()` function, the selection is stored in the graph object. We can always use `get_selection()` to verify this:
+
+## Creating a Node Selection
+
+Let's begin with an in-depth look on how to select graph nodes using the `select_nodes()` function. 
+Selecting nodes in a graph with `select_nodes()` can be done in multiple ways:
+
+- providing only a set of node ID values
+- by providing one or more filtering statements to `conditions`
+- doing both of the above, where each set of values/statements work toward filtering the nodes that will comprise the node selection
+
+Here is an example of the first case, where you know which node ID values should make up the node selection:
+
+```{r select_nodes_2_ids}
+# Create a 5-node graph and select
+# nodes `1` and `3`; show
+# the final node selection
+create_graph() %>%
+  add_n_nodes(5) %>%
+  select_nodes(nodes = c(1, 3)) %>%
+  get_selection()
+```
+
+The `select_nodes_by_id()` function serves as a plug-in replacement for `select_nodes()` when used exactly in this way. Its `nodes` argument simply takes a vector of node ID values.
+
+```{r select_nodes_by_id_2_ids}
+# Create a 5-node graph and select
+# nodes `1` and `3` using the
+# `select_nodes_by_id()` function
+create_graph() %>%
+  add_n_nodes(5) %>%
+  select_nodes_by_id(nodes = c(1, 3)) %>%
+  get_selection()
+```
+
+## Consecutive Selections
+
+The situation may arise when a more specialized match needs to be made (i.e., matching this but not that, or, matching two different types of things). This is where the `set_op` argument (short for *set operation*) becomes useful. Multiple function calls with the `select_nodes_by_id()` function, for instance, can modify the set of selected nodes depending on the option provided in the `set_op` argument. These set operations are:
+
+* `union` — creates a union of selected nodes in consecutive operations that create a selection of nodes (this is the default option)
+* `intersect` — modifies the list of selected nodes such that only those nodes common to both consecutive node selection operations will retained
+* `difference` — modifies the list of selected nodes such that the only nodes retained are those that are different in the second node selection operation compared to the first
+
+These set operations behave in exactly the same way as the base **R** functions `union()`, `intersect()`, and `setdiff()`. Furthermore, most of the `select_...()` functions contain the `set_op` argument, so, they behave the same way with regard to modifying the node or edge selection in a series of consecutive selection operations.
+
+For a graph with 5 nodes (with IDs `1` through `5`), creating an initial selection of nodes with `select_nodes()` will result in the selection of all 10 nodes in the graph. A subsequent call of `select_nodes_by_id()` specifying `nodes = c(1, 3, 5)` and `set_op = "difference"` will result in a selection of nodes `2` and `4`. We can verify the selection any time with the `get_selection()` function. Here is a the complete pipeline, starting with `create_graph()` and finishing with `get_selection()`:
+
+```{r select_nodes_2x_w_difference}
+# Create a 5-node graph and use 2
+# `select_...()` functions; show
+# the final node selection
+create_graph() %>%
+  add_n_nodes(5) %>%
+  select_nodes() %>%
+  select_nodes_by_id(
+    nodes = c(1, 3, 5),
+    set_op = "difference") %>%
+  get_selection()
+```
+
+
