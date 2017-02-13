@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
+<link rel="prev" href="attrs.html">
 
-<link rel="next" href="creation.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -145,22 +145,122 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">DiagrammeR Documentation</h1>
-<h4 class="author"><em>Richard Iannone</em></h4>
-<h4 class="date"><em>2017-02-12</em></h4>
+<div id="selections" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Selections</h1>
+<p>Occasionally, you’ll want to operate on a select group of nodes or edges. Some functions affect a single node or edge while others (or, sometimes, the same functions) operate on all nodes or edges in a graph. Selections allow you to target specified nodes or edges and then apply specialized functions to operate on just those selected entities. Most of the selection functions support rudimentary set operations across several calls of the selection functions (i.e., for the union, intersection, or difference between selection sets of nodes or edges).</p>
+<div id="the-selection-functions" class="section level2">
+<h2><span class="header-section-number">4.1</span> The Selection Functions</h2>
+<p>The following table provides a summary of all the available <code>select_...()</code> functions available in <strong>DiagrammeR</strong>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Function</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>select_nodes()</code></td>
+<td align="left">Select nodes graph using filtering conditions.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>select_nodes_by_id()</code></td>
+<td align="left">Select nodes by their ID values.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>select_last_nodes_created()</code></td>
+<td align="left">Select the last group of nodes created in the graph.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>select_nodes_by_degree()</code></td>
+<td align="left">Select nodes on the basis of node degree.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>select_nodes_in_neighbourhood()</code></td>
+<td align="left">Select nodes based on a walk distance from a specified node.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>select_edges()</code></td>
+<td align="left">Select nodes graph using filtering conditions.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>select_edges_by_edge_id()</code></td>
+<td align="left">Select edges by their ID values.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>select_edges_by_node_id()</code></td>
+<td align="left">Select edges associated with specified node ID values.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>select_last_edges_created()</code></td>
+<td align="left">Select the last group of edges created in the graph.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>select_rev_edges_ws()</code></td>
+<td align="left">Select any reverse edges from a selection of edges.</td>
+</tr>
+</tbody>
+</table>
+<p>When any selection is performed using using a <code>select_...()</code> function, the selection is stored in the graph object. We can always use <code>get_selection()</code> to verify this:</p>
 </div>
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<div id="creating-a-node-selection" class="section level2">
+<h2><span class="header-section-number">4.2</span> Creating a Node Selection</h2>
+<p>Let’s begin with an in-depth look on how to select graph nodes using the <code>select_nodes()</code> function. Selecting nodes in a graph with <code>select_nodes()</code> can be done in multiple ways:</p>
+<ul>
+<li>providing only a set of node ID values</li>
+<li>by providing one or more filtering statements to <code>conditions</code></li>
+<li>doing both of the above, where each set of values/statements work toward filtering the nodes that will comprise the node selection</li>
+</ul>
+<p>Here is an example of the first case, where you know which node ID values should make up the node selection:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a 5-node graph and select</span>
+<span class="co"># nodes `1` and `3`; show</span>
+<span class="co"># the final node selection</span>
+<span class="kw">create_graph</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_n_nodes</span>(<span class="dv">5</span>) %&gt;%
+<span class="st">  </span><span class="kw">select_nodes</span>(<span class="dt">nodes =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)) %&gt;%
+<span class="st">  </span><span class="kw">get_selection</span>()</code></pre></div>
+<pre><code>## [1] 1 3</code></pre>
+<p>The <code>select_nodes_by_id()</code> function serves as a plug-in replacement for <code>select_nodes()</code> when used exactly in this way. Its <code>nodes</code> argument simply takes a vector of node ID values.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a 5-node graph and select</span>
+<span class="co"># nodes `1` and `3` using the</span>
+<span class="co"># `select_nodes_by_id()` function</span>
+<span class="kw">create_graph</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_n_nodes</span>(<span class="dv">5</span>) %&gt;%
+<span class="st">  </span><span class="kw">select_nodes_by_id</span>(<span class="dt">nodes =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)) %&gt;%
+<span class="st">  </span><span class="kw">get_selection</span>()</code></pre></div>
+<pre><code>## [1] 1 3</code></pre>
+</div>
+<div id="consecutive-selections" class="section level2">
+<h2><span class="header-section-number">4.3</span> Consecutive Selections</h2>
+<p>The situation may arise when a more specialized match needs to be made (i.e., matching this but not that, or, matching two different types of things). This is where the <code>set_op</code> argument (short for <em>set operation</em>) becomes useful. Multiple function calls with the <code>select_nodes_by_id()</code> function, for instance, can modify the set of selected nodes depending on the option provided in the <code>set_op</code> argument. These set operations are:</p>
+<ul>
+<li><code>union</code> — creates a union of selected nodes in consecutive operations that create a selection of nodes (this is the default option)</li>
+<li><code>intersect</code> — modifies the list of selected nodes such that only those nodes common to both consecutive node selection operations will retained</li>
+<li><code>difference</code> — modifies the list of selected nodes such that the only nodes retained are those that are different in the second node selection operation compared to the first</li>
+</ul>
+<p>These set operations behave in exactly the same way as the base <strong>R</strong> functions <code>union()</code>, <code>intersect()</code>, and <code>setdiff()</code>. Furthermore, most of the <code>select_...()</code> functions contain the <code>set_op</code> argument, so, they behave the same way with regard to modifying the node or edge selection in a series of consecutive selection operations.</p>
+<p>For a graph with 5 nodes (with IDs <code>1</code> through <code>5</code>), creating an initial selection of nodes with <code>select_nodes()</code> will result in the selection of all 10 nodes in the graph. A subsequent call of <code>select_nodes_by_id()</code> specifying <code>nodes = c(1, 3, 5)</code> and <code>set_op = &quot;difference&quot;</code> will result in a selection of nodes <code>2</code> and <code>4</code>. We can verify the selection any time with the <code>get_selection()</code> function. Here is a the complete pipeline, starting with <code>create_graph()</code> and finishing with <code>get_selection()</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a 5-node graph and use 2</span>
+<span class="co"># `select_...()` functions; show</span>
+<span class="co"># the final node selection</span>
+<span class="kw">create_graph</span>() %&gt;%
+<span class="st">  </span><span class="kw">add_n_nodes</span>(<span class="dv">5</span>) %&gt;%
+<span class="st">  </span><span class="kw">select_nodes</span>() %&gt;%
+<span class="st">  </span><span class="kw">select_nodes_by_id</span>(
+    <span class="dt">nodes =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>),
+    <span class="dt">set_op =</span> <span class="st">&quot;difference&quot;</span>) %&gt;%
+<span class="st">  </span><span class="kw">get_selection</span>()</code></pre></div>
+<pre><code>## [1] 2 4</code></pre>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="attrs.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="creation.html" class="navigation navigation-next navigation-unique" aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
