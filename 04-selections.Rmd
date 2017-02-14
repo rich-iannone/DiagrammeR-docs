@@ -2,6 +2,29 @@
 library(DiagrammeR)
 ```
 
+```{r make_simple_property_graph, include=FALSE, results=FALSE}
+property_graph <-
+  create_random_graph(
+    n = 4,
+    m = 6,
+    directed = TRUE,
+    set_seed = 23) %>%
+  select_nodes() %>%
+  set_node_attrs(
+    node_attr = "label",
+    values = c("sjd", "qhd", "i0p", "235")) %>%
+  set_node_attrs(
+    node_attr = "type",
+    values = c("A", "A", "B", "B")) %>%
+  select_edges() %>%
+  set_edge_attrs(
+    edge_attr = "rel",
+    values = c("X", "X", "Y", "Y", "Z", "Z")) %>%
+  set_edge_attrs(
+    edge_attr = "weight",
+    values = c(3.7, 8.3, 12.5, 1.3, 2.9, 2.4))
+```
+
 # Selections {#selections}
 
 Occasionally, you'll want to operate on a select group of nodes or edges. Some functions affect a single node or edge while others (or, sometimes, the same functions) operate on all nodes or edges in a graph. Selections allow you to target specified nodes or edges and then apply specialized functions to operate on just those selected entities. Most of the selection functions support rudimentary set operations across several calls of the selection functions (i.e., for the union, intersection, or difference between selection sets of nodes or edges).
@@ -77,6 +100,33 @@ create_graph() %>%
   select_nodes_by_id(nodes = c(1, 3)) %>%
   get_selection()
 ```
+
+If you don't know the node ID values that should be part of a selection, and this is often the case in practice, you can use a vector of filtering statements as `conditions`. Some of these can be `conditions = "type == 'z'"` (selecting nodes where the `type` value is `z`), or `conditions = "value > 3.0"` (node selection where the `value` attribute is greater than `3.0`), or, `conditions = c("value < 2.0", "type %in% c('a', 'b', 'd')")` (all nodes with `value` less than `2.0` and having a `type` value of `a`, `b`, or `d`).
+
+The graph `property_graph` is a simple property graph of 4 nodes and 6 edges. Numerical values are assigned to the nodes as the `value` attribute and to the edges as the `weight` attribute. Nodes have unique `label` values, and, `type` group labels are available for nodes (as `A` and `B`) and `rel` values are set for the edges (as `X`, `Y`, and `Z`). We'll use this prepared graph to go through a few examples that further demonstrate selections with condition statements.
+
+```{r}
+# The `property_graph` is, indeed, a
+# property graph; let's select all nodes
+# of type `a`
+property_graph %>%
+  select_nodes(
+    conditions = "type == 'A'") %>%
+  create_subgraph_ws() %>%
+  get_node_df()
+```
+
+```{r}
+# Now, get all nodes with a `value`
+# greater than 4.0
+property_graph %>%
+  select_nodes(
+    conditions = "value > 4.0") %>%
+  create_subgraph_ws() %>%
+  get_node_df()
+```
+
+A vector of `condition` statements creates a set of `AND` conditions, so, all conditions need to be fulfilled in the selection of nodes. We can also specify conditions with a set of `OR` conditions 
 
 ## Consecutive Selections
 
