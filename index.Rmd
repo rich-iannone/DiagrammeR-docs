@@ -1,5 +1,5 @@
 --- 
-title: "DiagrammeR Documentation"
+title: "The DiagrammeR Package"
 author: "Richard Iannone"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -9,8 +9,38 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rich-iannone/DiagrammeR-docs
-description: "This book provides a wealth of information about the DiagrammeR package for R."
+description: "Contains information on how to use the DiagrammeR package for R."
+twitter-handle: riannone
 ---
+
+# This book is not yet finished {-}
+
+In the book now (in somewhat acceptable form):
+
+  * Basic graph creation.
+  * Introduction to graph attributes.
+  * Graph selections (nodes and edges).
+
+What is coming:
+
+  * An introduction.
+  * Traversals.
+  * Graph generators.
+  * Graph metrics and properties.
+  * Graph transformations.
+  * Import/Export of graphs.
+  * A series of graphs.
+  * Node positioning.
+  * Whole-graph algorithms.
+    - centrality measures.
+    - community detection.
+  * Use cases.
+    - Using the package to mine tweets and model as a graph.
+    - Taking several data tables and merging into a complex, multi-domain graph.
+
+The repository for this book is: <https://github.com/rich-iannone/DiagrammeR-docs>
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">The DiagrammeR Package</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/rich-iannone/DiagrammeR-docs" property="cc:attributionName" rel="cc:attributionURL">Richard Iannone</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 
 
 ```{r include=FALSE}
