@@ -5,28 +5,28 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>DiagrammeR Documentation</title>
+  <title>The DiagrammeR Package</title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-  <meta name="description" content="This book provides a wealth of information about the DiagrammeR package for R.">
+  <meta name="description" content="Contains information on how to use the DiagrammeR package for R.">
   <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
 
-  <meta property="og:title" content="DiagrammeR Documentation" />
+  <meta property="og:title" content="The DiagrammeR Package" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This book provides a wealth of information about the DiagrammeR package for R." />
+  <meta property="og:description" content="Contains information on how to use the DiagrammeR package for R." />
   <meta name="github-repo" content="rich-iannone/DiagrammeR-docs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="DiagrammeR Documentation" />
-  
-  <meta name="twitter:description" content="This book provides a wealth of information about the DiagrammeR package for R." />
+  <meta name="twitter:title" content="The DiagrammeR Package" />
+  <meta name="twitter:site" content="@riannone" />
+  <meta name="twitter:description" content="Contains information on how to use the DiagrammeR package for R." />
   
 
 <meta name="author" content="Richard Iannone">
 
 
-<meta name="date" content="2017-02-12">
+<meta name="date" content="2017-02-14">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -96,7 +96,7 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="dgr-docs.css" type="text/css" />
 </head>
 
 <body>
@@ -108,8 +108,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">The DiagrammeR Docs</a></li>
+<li><strong><a href="./">The DiagrammeR Package</a></strong></li>
+
 <li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>This book is not yet finished</a></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="creation.html"><a href="creation.html"><i class="fa fa-check"></i><b>2</b> Graph Creation</a><ul>
 <li class="chapter" data-level="2.1" data-path="creation.html"><a href="creation.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting Started</a></li>
@@ -124,9 +126,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.4" data-path="attrs.html"><a href="attrs.html#adding-attributes-to-selections-of-nodes-or-edges"><i class="fa fa-check"></i><b>3.4</b> Adding Attributes to Selections of Nodes or Edges</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="selections.html"><a href="selections.html"><i class="fa fa-check"></i><b>4</b> Selections</a><ul>
-<li class="chapter" data-level="4.1" data-path="selections.html"><a href="selections.html#the-selection-functions"><i class="fa fa-check"></i><b>4.1</b> The Selection Functions</a></li>
-<li class="chapter" data-level="4.2" data-path="selections.html"><a href="selections.html#creating-a-node-selection"><i class="fa fa-check"></i><b>4.2</b> Creating a Node Selection</a></li>
-<li class="chapter" data-level="4.3" data-path="selections.html"><a href="selections.html#consecutive-selections"><i class="fa fa-check"></i><b>4.3</b> Consecutive Selections</a></li>
+<li class="chapter" data-level="4.1" data-path="selections.html"><a href="selections.html#setup-for-this-chapter"><i class="fa fa-check"></i><b>4.1</b> Setup for this Chapter</a></li>
+<li class="chapter" data-level="4.2" data-path="selections.html"><a href="selections.html#the-selection-functions"><i class="fa fa-check"></i><b>4.2</b> The Selection Functions</a></li>
+<li class="chapter" data-level="4.3" data-path="selections.html"><a href="selections.html#creating-a-node-selection"><i class="fa fa-check"></i><b>4.3</b> Creating a Node Selection</a></li>
+<li class="chapter" data-level="4.4" data-path="selections.html"><a href="selections.html#consecutive-selections"><i class="fa fa-check"></i><b>4.4</b> Consecutive Selections</a></li>
 </ul></li>
 </ul>
 
@@ -137,7 +140,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DiagrammeR Documentation</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The DiagrammeR Package</a>
           </h1>
         </div>
 
@@ -148,8 +151,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="selections" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Selections</h1>
 <p>Occasionally, you’ll want to operate on a select group of nodes or edges. Some functions affect a single node or edge while others (or, sometimes, the same functions) operate on all nodes or edges in a graph. Selections allow you to target specified nodes or edges and then apply specialized functions to operate on just those selected entities. Most of the selection functions support rudimentary set operations across several calls of the selection functions (i.e., for the union, intersection, or difference between selection sets of nodes or edges).</p>
+<div id="setup-for-this-chapter" class="section level2">
+<h2><span class="header-section-number">4.1</span> Setup for this Chapter</h2>
+<p>Ensure that the latest development build of <strong>DiagrammeR</strong> is installed. If the <strong>devtools</strong> package is not availble in your <strong>R</strong> library, install it and then use the <code>install_github()</code> function to get the latest <strong>DiagrammeR</strong> build.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)
+devtools::<span class="kw">install_github</span>(<span class="st">&quot;rich-iannone/DiagrammeR&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(DiagrammeR)</code></pre></div>
+<p>For this chapter, the graph <code>property_graph</code> has been created and it’s a simple property graph of 4 nodes and 6 edges. Numerical values are assigned to the nodes as the <code>value</code> attribute and to the edges as the <code>weight</code> attribute. Nodes have unique <code>label</code> values, and, <code>type</code> group labels are available for nodes (as <code>A</code> and <code>B</code>) and <code>rel</code> values are set for the edges (as <code>X</code>, <code>Y</code>, and <code>Z</code>). This schematic provides a visual representation of the graph as well as the attributes and data associated with each node and edge.</p>
+<p><img src="diagrams/property_graph_chp_04.png"></p>
+<p>This graph adheres to the concept of a property graph as in that:</p>
+<ul>
+<li>all nodes have an assigned, non-<code>NA</code> <code>type</code> value</li>
+<li>all edges have an assigned, non-<code>NA</code> <code>rel</code> value</li>
+</ul>
+<p>We can always verify whether a graph satisfies these conditions with the <code>is_property_graph()</code> function, which either returns a <code>TRUE</code> or <code>FALSE</code> logical result.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is_property_graph</span>(property_graph)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>We’ll use this graph in most of the chapter examples to demonstrate how selections work. Working with a property graph in such examples is especially useful for showing how more complicated selections can be accomplished (i.e., using set operations and/or conditional statements).</p>
+</div>
 <div id="the-selection-functions" class="section level2">
-<h2><span class="header-section-number">4.1</span> The Selection Functions</h2>
+<h2><span class="header-section-number">4.2</span> The Selection Functions</h2>
 <p>The following table provides a summary of all the available <code>select_...()</code> functions available in <strong>DiagrammeR</strong>.</p>
 <table>
 <thead>
@@ -202,9 +223,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tbody>
 </table>
 <p>When any selection is performed using using a <code>select_...()</code> function, the selection is stored in the graph object. We can always use <code>get_selection()</code> to verify this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Select nodes `1` and `4` of</span>
+<span class="co"># `property_graph` and then return</span>
+<span class="co"># the node IDs for the selection</span>
+property_graph %&gt;%
+<span class="st">  </span><span class="kw">select_nodes</span>(<span class="dt">nodes =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)) %&gt;%
+<span class="st">  </span><span class="kw">get_selection</span>()</code></pre></div>
+<pre><code>## [1] 1 4</code></pre>
 </div>
 <div id="creating-a-node-selection" class="section level2">
-<h2><span class="header-section-number">4.2</span> Creating a Node Selection</h2>
+<h2><span class="header-section-number">4.3</span> Creating a Node Selection</h2>
 <p>Let’s begin with an in-depth look on how to select graph nodes using the <code>select_nodes()</code> function. Selecting nodes in a graph with <code>select_nodes()</code> can be done in multiple ways:</p>
 <ul>
 <li>providing only a set of node ID values</li>
@@ -229,9 +257,32 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="st">  </span><span class="kw">select_nodes_by_id</span>(<span class="dt">nodes =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)) %&gt;%
 <span class="st">  </span><span class="kw">get_selection</span>()</code></pre></div>
 <pre><code>## [1] 1 3</code></pre>
+<p>If you don’t know the node ID values that should be part of a selection, and this is often the case in practice, you can use a vector of filtering statements as <code>conditions</code>. Some of these can be <code>conditions = &quot;type == 'z'&quot;</code> (selecting nodes where the <code>type</code> value is <code>z</code>), or <code>conditions = &quot;value &gt; 3.0&quot;</code> (node selection where the <code>value</code> attribute is greater than <code>3.0</code>), or, <code>conditions = c(&quot;value &lt; 2.0&quot;, &quot;type %in% c('a', 'b', 'd')&quot;)</code> (all nodes with <code>value</code> less than <code>2.0</code> and having a <code>type</code> value of <code>a</code>, <code>b</code>, or <code>d</code>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The `property_graph` is, indeed, a</span>
+<span class="co"># property graph; let&#39;s select all nodes</span>
+<span class="co"># of type `a`</span>
+property_graph %&gt;%
+<span class="st">  </span><span class="kw">select_nodes</span>(
+    <span class="dt">conditions =</span> <span class="st">&quot;type == &#39;A&#39;&quot;</span>) %&gt;%
+<span class="st">  </span><span class="kw">create_subgraph_ws</span>() %&gt;%
+<span class="st">  </span><span class="kw">get_node_df</span>()</code></pre></div>
+<pre><code>##   id type label value
+## 1  1    A   sjd   6.0
+## 2  2    A   qhd   2.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Now, get all nodes with a `value`</span>
+<span class="co"># greater than 4.0</span>
+property_graph %&gt;%
+<span class="st">  </span><span class="kw">select_nodes</span>(
+    <span class="dt">conditions =</span> <span class="st">&quot;value &gt; 4.0&quot;</span>) %&gt;%
+<span class="st">  </span><span class="kw">create_subgraph_ws</span>() %&gt;%
+<span class="st">  </span><span class="kw">get_node_df</span>()</code></pre></div>
+<pre><code>##   id type label value
+## 1  1    A   sjd   6.0
+## 2  4    B   235   7.5</code></pre>
+<p>A vector of <code>condition</code> statements creates a set of <code>AND</code> conditions, so, all conditions need to be fulfilled in the selection of nodes. We can also specify conditions with a set of <code>OR</code> conditions</p>
 </div>
 <div id="consecutive-selections" class="section level2">
-<h2><span class="header-section-number">4.3</span> Consecutive Selections</h2>
+<h2><span class="header-section-number">4.4</span> Consecutive Selections</h2>
 <p>The situation may arise when a more specialized match needs to be made (i.e., matching this but not that, or, matching two different types of things). This is where the <code>set_op</code> argument (short for <em>set operation</em>) becomes useful. Multiple function calls with the <code>select_nodes_by_id()</code> function, for instance, can modify the set of selected nodes depending on the option provided in the <code>set_op</code> argument. These set operations are:</p>
 <ul>
 <li><code>union</code> — creates a union of selected nodes in consecutive operations that create a selection of nodes (this is the default option)</li>
@@ -272,16 +323,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <script>
 require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"google": false,
-"weibo": false,
-"instapper": false,
-"vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
-},
+"sharing": false,
 "fontsettings": {
 "theme": "white",
 "family": "sans",
@@ -293,7 +335,7 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "subsection"
+"collapse": "section"
 }
 });
 });
