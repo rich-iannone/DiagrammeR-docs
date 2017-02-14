@@ -6,8 +6,10 @@ bookdown::pdf_book:
   keep_tex: yes
 bookdown::epub_book: default
 bookdown::gitbook:
-  css: style.css
   config:
     toc:
+      collapse: section
       before: |
-        <li><a href="./">The DiagrammeR Docs</a></li>
+        <li><strong><a href="./">The DiagrammeR Package</a></strong></li>
+    sharing: no
+  css: dgr-docs.css
