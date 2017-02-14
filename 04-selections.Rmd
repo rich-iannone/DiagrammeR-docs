@@ -27,7 +27,37 @@ property_graph <-
 
 # Selections {#selections}
 
-Occasionally, you'll want to operate on a select group of nodes or edges. Some functions affect a single node or edge while others (or, sometimes, the same functions) operate on all nodes or edges in a graph. Selections allow you to target specified nodes or edges and then apply specialized functions to operate on just those selected entities. Most of the selection functions support rudimentary set operations across several calls of the selection functions (i.e., for the union, intersection, or difference between selection sets of nodes or edges).
+Occasionally, you'll want to operate on a select group of nodes or edges. Some functions affect a single node or edge while others (or, sometimes, the same functions) operate on all nodes or edges in a graph. Selections allow you to target specified nodes or edges and then apply specialized functions to operate on just those selected entities. Most of the selection functions support rudimentary set operations across several calls of the selection functions (i.e., for the union, intersection, or difference between selected sets of nodes or edges).
+
+## Setup for this Chapter
+
+Ensure that the latest development build of **DiagrammeR** is installed. If the **devtools** package is not availble in your **R** library, install it and then use the `install_github()` function to get the latest **DiagrammeR** build. 
+
+```{r install_packages_dgr_chp_04, eval=FALSE, include=TRUE, results=FALSE}
+install.packages("devtools")
+devtools::install_github("rich-iannone/DiagrammeR")
+```
+
+```{r library_chp_04, eval=FALSE, include=TRUE, results=FALSE}
+library(DiagrammeR)
+```
+
+For this chapter, the graph `property_graph` has been created and it's a simple property graph of 4 nodes and 6 edges. Numerical values are assigned to the nodes as the `value` attribute and to the edges as the `weight` attribute. Nodes have unique `label` values, and, `type` group labels are available for nodes (as `A` and `B`) and `rel` values are set for the edges (as `X`, `Y`, and `Z`). This schematic provides a visual representation of the graph as well as the attributes and data associated with each node and edge.
+
+<img src="diagrams/property_graph_chp_04.png">
+
+This graph adheres to the concept of a property graph as in that:
+
+- all nodes have an assigned, non-`NA` `type` value
+- all edges have an assigned, non-`NA` `rel` value
+
+We can always verify whether a graph satisfies these conditions with the `is_property_graph()` function, which either returns a `TRUE` or `FALSE` logical result.
+
+```{r is_property_graph}
+is_property_graph(property_graph)
+```
+
+We'll use this graph in most of the chapter examples to demonstrate how selections work. Working with a property graph in such examples is especially useful for showing how more complicated selections can be accomplished (i.e., using set operations and/or conditional statements).
 
 ## The Selection Functions
 
@@ -68,6 +98,16 @@ kable(
 
 When any selection is performed using using a `select_...()` function, the selection is stored in the graph object. We can always use `get_selection()` to verify this:
 
+```{r select_nodes_get_selection}
+# Select nodes `1` and `4` of
+# `property_graph` and then return
+# the node IDs for the selection
+property_graph %>%
+  select_nodes(nodes = c(1, 4)) %>%
+  get_selection()
+```
+
+
 ## Creating a Node Selection
 
 Let's begin with an in-depth look on how to select graph nodes using the `select_nodes()` function. 
@@ -103,7 +143,7 @@ create_graph() %>%
 
 If you don't know the node ID values that should be part of a selection, and this is often the case in practice, you can use a vector of filtering statements as `conditions`. Some of these can be `conditions = "type == 'z'"` (selecting nodes where the `type` value is `z`), or `conditions = "value > 3.0"` (node selection where the `value` attribute is greater than `3.0`), or, `conditions = c("value < 2.0", "type %in% c('a', 'b', 'd')")` (all nodes with `value` less than `2.0` and having a `type` value of `a`, `b`, or `d`).
 
-The graph `property_graph` is a simple property graph of 4 nodes and 6 edges. Numerical values are assigned to the nodes as the `value` attribute and to the edges as the `weight` attribute. Nodes have unique `label` values, and, `type` group labels are available for nodes (as `A` and `B`) and `rel` values are set for the edges (as `X`, `Y`, and `Z`). We'll use this prepared graph to go through a few examples that further demonstrate selections with condition statements.
+
 
 ```{r}
 # The `property_graph` is, indeed, a
