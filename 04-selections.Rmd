@@ -110,7 +110,7 @@ property_graph %>%
 
 And indeed the selection we get back is the selection we asked for, nodes `1` and `4`. We can similarly get a selection of edge ID values and return a vector of edge IDs with `get_selection()`:
 
-```{r select_nodes_get_selection}
+```{r select_nodes_get_selection_2}
 # Select edges `1` and `4` of
 # `property_graph` and then return
 # the node IDs for the selection
@@ -177,7 +177,7 @@ property_graph %>%
 
 Regular expressions can also be used. Suppose we want nodes in this graph where the label only consists of 3 letters, and no numerals. To do this, we could use the **R** `grepl()` function with the regular expression (`^[a-z]{3}$`) first and then the attribute where matches are sought (in this case, `label`).
 
-```{r}
+```{r select_nodes_cond_regex}
 property_graph %>%
   select_nodes(conditions = "grepl('^[a-z]{3}$', label)") %>%
   create_subgraph_ws() %>%
@@ -186,7 +186,7 @@ property_graph %>%
 
 Comparison operators such as `>`, `>=`, `==`, `<=`, `<`, `!=` could be used with numerical attributes to filter nodes. Here, we make a selection of nodes where any `value` is greater than `4.0`.
 
-```{r}
+```{r select_nodes_cond_gt_numeric}
 # Now, get all nodes with a `value`
 # greater than 4.0
 property_graph %>%
@@ -196,7 +196,36 @@ property_graph %>%
   get_node_df()
 ```
 
-A vector of `condition` statements creates a set of `AND` conditions, so, all conditions need to be fulfilled in the selection of nodes. We can also specify conditions with a set of `OR` conditions 
+We can extend any conditions string to contain multiple filtering steps, linked by and `&` (`AND`) or `|` (`OR`) operators. To select nodes that have a `value` less than `3.0` or a `value` greater than `7.0`, the following will work:
+
+```{r select_nodes_or_cond}
+property_graph %>%
+  select_nodes(
+    conditions = "value < 3.0 | value > 7.0") %>%
+  create_subgraph_ws() %>%
+  get_node_df()
+```
+
+To get a selection of nodes that must satisfy all conditions, link expressions with `&`. The following example will filter nodes with a `value` greater than `4.0`, and, with a `type` of `A`:
+
+```{r select_nodes_and_cond}
+property_graph %>%
+  select_nodes(
+    conditions = "value > 4.0 & type == 'A'") %>%
+  create_subgraph_ws() %>%
+  get_node_df()
+```
+
+A vector of `condition` statements creates a set of `AND` conditions, where all conditions need to be fulfilled. The above example could be reworked using a vector of `conditions` statements:
+```{r select_nodes_and_cond_vector}
+property_graph %>%
+  select_nodes(
+    conditions = c("value > 4.0", "type == 'A'")) %>%
+  create_subgraph_ws() %>%
+  get_node_df()
+```
+
+This retrieves the same selection and is useful for `AND`ing a sequence of filter statements.
 
 ## Consecutive Selections
 
