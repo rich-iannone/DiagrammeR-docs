@@ -158,10 +158,11 @@ devtools::<span class="kw">install_github</span>(<span class="st">&quot;rich-ian
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(DiagrammeR)</code></pre></div>
 <p>For this chapter, the graph <code>property_graph</code> has been created and it’s a simple property graph of 4 nodes and 6 edges. Numerical values are assigned to the nodes as the <code>value</code> attribute and to the edges as the <code>weight</code> attribute. Nodes have unique <code>label</code> values, and, <code>type</code> group labels are available for nodes (as <code>A</code> and <code>B</code>) and <code>rel</code> values are set for the edges (as <code>X</code>, <code>Y</code>, and <code>Z</code>). This schematic provides a visual representation of the graph as well as the attributes and data associated with each node and edge.</p>
 <p><img src="diagrams/property_graph_chp_04.png"></p>
-<p>This graph adheres to the concept of a property graph as in that:</p>
+<p>This graph adheres to the concept of a property graph in that:</p>
 <ul>
 <li>all nodes have an assigned, non-<code>NA</code> <code>type</code> value</li>
 <li>all edges have an assigned, non-<code>NA</code> <code>rel</code> value</li>
+<li>the graph is a <em>directed</em> graph</li>
 </ul>
 <p>We can always verify whether a graph satisfies these conditions with the <code>is_property_graph()</code> function, which either returns a <code>TRUE</code> or <code>FALSE</code> logical result.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is_property_graph</span>(property_graph)</code></pre></div>
