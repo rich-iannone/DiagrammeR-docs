@@ -47,10 +47,11 @@ For this chapter, the graph `property_graph` has been created and it's a simple 
 
 <img src="diagrams/property_graph_chp_04.png">
 
-This graph adheres to the concept of a property graph as in that:
+This graph adheres to the concept of a property graph in that:
 
 - all nodes have an assigned, non-`NA` `type` value
 - all edges have an assigned, non-`NA` `rel` value
+- the graph is a *directed* graph
 
 We can always verify whether a graph satisfies these conditions with the `is_property_graph()` function, which either returns a `TRUE` or `FALSE` logical result.
 
