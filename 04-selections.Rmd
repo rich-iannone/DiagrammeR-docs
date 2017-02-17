@@ -242,19 +242,28 @@ This schematic describes what's happening in 2 consecutive `select_...()` functi
 
 These set operations behave in exactly the same way as the base **R** functions `union()`, `intersect()`, and `setdiff()`. Furthermore, most of the `select_...()` functions contain the `set_op` argument, so, they behave the same way with regard to modifying the node or edge selection in a series of consecutive selection operations.
 
-For a graph with 5 nodes (with IDs `1` through `5`), creating an initial selection of nodes with `select_nodes()` will result in the selection of all 10 nodes in the graph. A subsequent call of `select_nodes_by_id()` specifying `nodes = c(1, 3, 5)` and `set_op = "difference"` will result in a selection of nodes `2` and `4`. We can verify the selection any time with the `get_selection()` function. Here is a the complete pipeline, starting with `create_graph()` and finishing with `get_selection()`:
+For our small property graph with 4 nodes (with IDs `1` through `4`), creating an initial selection of nodes with `select_nodes()` will result in the selection of all 4 nodes in the graph. A subsequent call of `select_nodes_by_id()` specifying `nodes = c(1, 3)` and `set_op = "difference"` will result in a selection of nodes `2` and `4` (the difference of removing `1` and `3` from the complete set). Let's verify the final selection by finishing with `get_selection()` this time.
 
 ```{r select_nodes_2x_w_difference}
-# Create a 5-node graph and use 2
-# `select_...()` functions; show
-# the final node selection
-create_graph() %>%
-  add_n_nodes(5) %>%
+property_graph %>%
   select_nodes() %>%
   select_nodes_by_id(
-    nodes = c(1, 3, 5),
+    nodes = c(1, 3),
     set_op = "difference") %>%
   get_selection()
+```
+
+For a somewhat more realistic application, where exact node IDs are not known, imagine a situation where you would want select nodes of a certain degree but only those having a certain value range. Here, we do something to that effect, where we want to select nodes with an *outdegree* (number of outward edges from a given node) greater than `1` with the added condition of having a `value` greater than `4.0`. In this case, we want the intersection of these selections.
+
+```{r select_nodes_by_degree_and_value}
+property_graph %>%
+  select_nodes_by_degree(
+    expressions = "outdeg > 1") %>%
+  select_nodes(
+    conditions = "value > 4.0",
+    set_op = "intersect") %>%
+  create_subgraph_ws() %>%
+  get_node_df()
 ```
 
 
