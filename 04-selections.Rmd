@@ -64,7 +64,7 @@ Great! We'll use this graph in most of the chapter examples to demonstrate how s
 
 The following table provides a summary of all the available `select_...()` functions available in **DiagrammeR**.
 
-```{r, echo=FALSE, results='asis'}
+```{r table_select_functions, echo=FALSE, results='asis'}
 library(knitr)
 
 kable(
@@ -227,13 +227,17 @@ property_graph %>%
 
 This retrieves the same selection and is useful for `AND`ing a sequence of filter statements.
 
-## Consecutive Selections
+The situation may arise when an even more specialized selection of nodes needs to be made. Or, you'd like to make a selection, do something with it, then modify the selection (and then do yet another thing). This is where the `set_op` argument (short for *set operation*) becomes useful. Essentially the first selection will disregard `set_op`--it's just making an initial selection--but the next selection will modify the previous one and how it does so depends on what's given for `set_op`.
 
-The situation may arise when a more specialized match needs to be made (i.e., matching this but not that, or, matching two different types of things). This is where the `set_op` argument (short for *set operation*) becomes useful. Multiple function calls with the `select_nodes_by_id()` function, for instance, can modify the set of selected nodes depending on the option provided in the `set_op` argument. These set operations are:
+These set operations are:
 
 * `union` — creates a union of selected nodes in consecutive operations that create a selection of nodes (this is the default option)
 * `intersect` — modifies the list of selected nodes such that only those nodes common to both consecutive node selection operations will retained
 * `difference` — modifies the list of selected nodes such that the only nodes retained are those that are different in the second node selection operation compared to the first
+
+This schematic describes what's happening in 2 consecutive `select_...()` function calls for each of the aforementioned set operations.
+
+<img src="diagrams/set_ops_chp_04.png">
 
 These set operations behave in exactly the same way as the base **R** functions `union()`, `intersect()`, and `setdiff()`. Furthermore, most of the `select_...()` functions contain the `set_op` argument, so, they behave the same way with regard to modifying the node or edge selection in a series of consecutive selection operations.
 
