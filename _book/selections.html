@@ -26,7 +26,7 @@
 <meta name="author" content="Richard Iannone">
 
 
-<meta name="date" content="2017-02-16">
+<meta name="date" content="2017-02-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -129,6 +129,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.1" data-path="selections.html"><a href="selections.html#setup-for-this-chapter"><i class="fa fa-check"></i><b>4.1</b> Setup for this Chapter</a></li>
 <li class="chapter" data-level="4.2" data-path="selections.html"><a href="selections.html#the-selection-functions"><i class="fa fa-check"></i><b>4.2</b> The Selection Functions</a></li>
 <li class="chapter" data-level="4.3" data-path="selections.html"><a href="selections.html#creating-a-node-selection"><i class="fa fa-check"></i><b>4.3</b> Creating a Node Selection</a></li>
+<li class="chapter" data-level="4.4" data-path="selections.html"><a href="selections.html#creating-an-edge-selection"><i class="fa fa-check"></i><b>4.4</b> Creating an Edge Selection</a></li>
 </ul></li>
 </ul>
 
@@ -347,7 +348,7 @@ property_graph %&gt;%
 <p>This schematic describes what’s happening in 2 consecutive <code>select_...()</code> function calls for each of the aforementioned set operations.</p>
 <p><img src="diagrams/set_ops_chp_04.png"></p>
 <p>These set operations behave in exactly the same way as the base <strong>R</strong> functions <code>union()</code>, <code>intersect()</code>, and <code>setdiff()</code>. Furthermore, most of the <code>select_...()</code> functions contain the <code>set_op</code> argument, so, they behave the same way with regard to modifying the node or edge selection in a series of consecutive selection operations.</p>
-<p>For our small property graph with 4 nodes (with IDs <code>1</code> through <code>4</code>), creating an initial selection of nodes with <code>select_nodes()</code> will result in the selection of all 4 nodes in the graph. A subsequent call of <code>select_nodes_by_id()</code> specifying <code>nodes = c(1, 3)</code> and <code>set_op = &quot;difference&quot;</code> will result in a selection of nodes <code>2</code> and <code>4</code> (the difference of removing <code>1</code> and <code>3</code> from the complete set). Let’s verify the final selection by finishing with <code>get_selection()</code> this time.</p>
+<p>For our small property graph with 4 nodes (with IDs <code>1</code> through <code>4</code>), creating an initial selection of nodes with <code>select_nodes()</code> will result in the selection of all 4 nodes in the graph. A subsequent call of <code>select_nodes_by_id()</code> specifying <code>nodes = c(1, 3)</code> and <code>set_op = &quot;difference&quot;</code> will result in a selection of nodes <code>2</code> and <code>4</code> (the difference of removing <code>1</code> and <code>3</code> from the complete set). Let’s verify the final selection by finishing with <code>get_selection()</code> this time, which output node ID values for the selected nodes.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">property_graph %&gt;%
 <span class="st">  </span><span class="kw">select_nodes</span>() %&gt;%
 <span class="st">  </span><span class="kw">select_nodes_by_id</span>(
@@ -355,7 +356,7 @@ property_graph %&gt;%
     <span class="dt">set_op =</span> <span class="st">&quot;difference&quot;</span>) %&gt;%
 <span class="st">  </span><span class="kw">get_selection</span>()</code></pre></div>
 <pre><code>## [1] 2 4</code></pre>
-<p>For a somewhat more realistic application, where exact node IDs are not known, imagine a situation where you would want select nodes of a certain degree but only those having a certain value range. Here, we do something to that effect, where we want to select nodes with an <em>outdegree</em> (number of outward edges from a given node) greater than <code>1</code> with the added condition of having a <code>value</code> greater than <code>4.0</code>. In this case, we want the intersection of these selections.</p>
+<p>For a somewhat more realistic application, where the node IDs are not known, imagine a situation where you would want select nodes of a certain degree but only those having a certain value range. Here, we do something to that effect, where we want to select nodes with an <em>outdegree</em> (number of outward edges from a given node) greater than <code>1</code> with the added condition of having a <code>value</code> greater than <code>4.0</code>. In this case, we want the intersection of these selections.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">property_graph %&gt;%
 <span class="st">  </span><span class="kw">select_nodes_by_degree</span>(
     <span class="dt">expressions =</span> <span class="st">&quot;outdeg &gt; 1&quot;</span>) %&gt;%
@@ -366,6 +367,27 @@ property_graph %&gt;%
 <span class="st">  </span><span class="kw">get_node_df</span>()</code></pre></div>
 <pre><code>##   id type label value
 ## 1  1    A   sjd     6</code></pre>
+<p>This returns a single value. Just so you know, using <code>set_op == &quot;union&quot;</code> would result in 3 nodes in the selection (<code>1</code>, <code>2</code>, and <code>4</code>), and, using <code>set_op == &quot;difference&quot;</code> would yield a selection with the node <code>2</code>.</p>
+<p>Most often, selections will be performed without knowing the node ID values for the nodes to be selected but, instead, some attributes of the nodes to be selected and perhaps the nodes to exclude from that selection. And this sort of makes sense when you have thousands, hundreds of thousands, and maybe millions of nodes: you’re not often going to visualize the entire graph at this point (much like you wouldn’t usually display a table of even hundreds of rows).</p>
+</div>
+<div id="creating-an-edge-selection" class="section level2">
+<h2><span class="header-section-number">4.4</span> Creating an Edge Selection</h2>
+<p>We’ll run through selections of edges in perhaps an abbreviated fashion since many of the concepts that apply to node selections also apply to edge selections. First off, recall that edges have ID values! This is great because edges can also be defined by their attachments to nodes. So an edge defined as <code>1-&gt;2</code> in a directed graph (where <code>1</code> and <code>2</code> are node ID values) can also be defined as an edge with ID <code>1</code> (in this hypothetical case). Let’s have a look at the internal edge data frame within <code>property_graph</code> to remind ourselves of the edge ID values available in this graph:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">property_graph %&gt;%
+<span class="st">  </span><span class="kw">get_edge_df</span>()</code></pre></div>
+<pre><code>##   id from to rel weight
+## 1  1    2  4   X    3.7
+## 2  2    1  4   X    8.3
+## 3  3    2  3   Y   12.5
+## 4  4    3  4   Y    1.3
+## 5  5    1  3   Z    2.9
+## 6  6    1  2   Z    2.4</code></pre>
+<p>The first column in the edge data frame is the <code>id</code> attribute. The next two are <code>from</code> and <code>to</code>, and <code>rel</code> is always the 4th attribute column. We can select edges using IDs (of both the edge and node varieties) with three different functions:</p>
+<ul>
+<li><code>select_edges()</code></li>
+<li><code>select_edges_by_edge_id()</code></li>
+<li><code>select_edges_by_node_id()</code></li>
+</ul>
 
 </div>
 </div>
