@@ -8,7 +8,7 @@ A graph can often convey more useful information when aesthetic properties are a
 
 ## Adding Attributes in NDFs and EDFs Outside of a Graph
 
-One way to add node or edge attributes, using the functions we've already explored, is to include the these attributes and their values when generating node and edge data frames. For a node data frame, we can provide our own argument names and values when calling the `create_node_df()` function. In the example below, we provide values for `n` (the number of nodes, `4` in this case), `label`, and `type` but, in addition, we add the columns: `color`, `shape`, and `data`. Note that we either provide a single-length vector (i.e., a single value) or an *n*-length vector. Anything in between results in `NA` values applied to fill in the length of the data frame. The `color` and `shape` node attributes are instantly recognized by the **Graphviz** rendering engine. (Having the correct types of values are important here, more on that later.) The `data` column is ignored by the rendering engine, however, it is useful to have for other reasons (more on this later, as well). 
+One way to add node or edge attributes, using the functions we've already explored, is to include these attributes and their values when generating node and edge data frames. For a node data frame, we can provide our own argument names and values when calling the `create_node_df()` function. In the example below, we provide values for `n` (the number of nodes, `4` in this case), `label`, and `type` but, in addition, we add the columns: `color`, `shape`, and `data`. Note that we either provide a single-length vector (i.e., a single value) or an *n*-length vector. Anything in between results in `NA` values applied to fill in the length of the data frame. The `color` and `shape` node attributes are instantly recognized by the **Graphviz** rendering engine. (Having the correct types of values are important here, more on that later.) The `data` column is ignored by the rendering engine, however, it is useful to have for other reasons (more on this later, as well). 
 
 ```{r create_ndf_w_color_shape_data}
 # Create a node data frame and display it
@@ -38,10 +38,10 @@ graph_4n <-
 render_graph(graph_4n)
 ```
 
-We can take a very similar approach to adding styling attributes and a data column to an edge data frame with the `create_edge_df()` function. Here, let's add the `penwidth` (line thicknesses for edges) and the `color` sytling attributes, and, a `data` attribute column.
+We can take a very similar approach to adding styling attributes and a data column to an edge data frame with the `create_edge_df()` function. Here, let's add the `penwidth` (line thicknesses for edges) and the `color` styling attributes as well as a `data` attribute column.
 
 ```{r create_edf_w_penwidth_color_data}
-# Create e node data frame and display it
+# Create an edge data frame
 edf <-
   create_edge_df(
     from = c(1, 4, 3),
@@ -174,8 +174,8 @@ render_graph(graph = graph_2)
 Finally, individual edges can be targeted if supplying vectors for both the `from` and `to` arguments.
 
 ```{r set_edge_attrs_specfic_from_to}
-# Set attribute `color = "green"` for edges
-# `1`->`4` and `3`->`1` using the edge
+# Set attribute `color = "black"` for edges
+# `7`->`9` and `1`->`6` using the edge
 # data frame
 graph_3 <-
   graph_2 %>%
@@ -193,7 +193,7 @@ render_graph(graph = graph_3)
 
 There is a large number of functions that store either a selection of nodes or edges within the graph object. Such functions begin with `select_...` and `trav_...`. Complementing this class of functions are functions that take a graph with an active selection and perform some transformation based on the selection of nodes or edges. These functions are identifiable by ending with `...ws` (with selection). We'll devote two entire chapters on the `select...()` and `trav...()` functions but, for now, we'll provide simple use cases with `select_nodes()` and `select_edges()`.
 
-So, we can make a selection of nodes or edges (but not both at the same time), how do we style these groups? We can do it with the `set_node_attrs_ws()` and `set_edge_attrs_ws()` functions. In this example, let's make a simple graph, select 2 of the 4 nodes using `select_nodes()` and specifying `nodes = c(1, 2)`, add `fillcolor` attribute values of `lightgreen` for those nodes with `set_node_attrs_ws()`, and then clear the selection with `clear_selection()` (it clears any selection of nodes or edges).
+So, if we can make a selection of nodes or edges (but not both at the same time), how do we style these groups? We can do it with the `set_node_attrs_ws()` and `set_edge_attrs_ws()` functions. In this example, let's make a simple graph, select 2 of the 4 nodes using `select_nodes()` and specifying `nodes = c(1, 2)`, add `fillcolor` attribute values of `lightgreen` for those nodes with `set_node_attrs_ws()`, and then clear the selection with `clear_selection()` (it clears any selection of nodes or edges).
 
 ```{r set_node_attrs_ws}
 # Create a simple graph, select nodes
@@ -240,10 +240,10 @@ render_graph(graph = graph_5)
 There are a few more `select_...()` functions that are useful and they allow you to make selections based on properties of nodes or edges in a graph. For nodes, these include:
 
 - `select_nodes_by_degree()`: supply some information on degree (number of connections to/from/total for a node) to an `expressions` argument and a selection of nodes satisfying the expressions will be made
-- `select_nodes_in_neighborhood()`: create a selection of based on a walk distance from a specified node (supplying a single node ID for `node`)
-- `select_last_nodes_created()`: if you just created a large amount of nodes, you can select them straight away with this function and this apply some transformation with a `..._ws()` function like `set_node_attrs_ws()`
+- `select_nodes_in_neighborhood()`: create a selection of nodes based on a walk distance from a specified node (supplying a single node ID for `node`)
+- `select_last_nodes_created()`: if you just created a large amount of nodes, you can select them straight away with this function and then apply some transformation with a `..._ws()` function like `set_node_attrs_ws()`
 
-The `select_nodes()` function also has some advanced functionality that can be accessed by supplying filtering statements to its `conditions` argument. Moreover, the `select_edges()` also has selective filtering capabilities. More details are available on this in a later chapter, but, it is good to know that this is possible now.
+The `select_nodes()` function also has some advanced functionality that can be accessed by supplying filtering statements to its `conditions` argument. Moreover, the `select_edges()` function also has selective filtering capabilities. More details are available on this in a later chapter, but for now it is good to know that this is possible.
 
 In addition, edges can be selected with:
 
@@ -251,7 +251,7 @@ In addition, edges can be selected with:
 - `select_edges_by_node_id()`: given some node ID values, select all edges associated (i.e., linked to or from) those nodes
 - `select_last_edges_created()`: analogous to the `select_last_nodes_created()` function; useful for applying attribute values to just-created edges
 
-These functions are best illustrated with a few examples. First, let's make a random graph (`30` nodes and `50` edges) and select nodes with a total degree (number of edges inbound + number of edges outbound) greater than or equal to `6`. The graph will be generated by the `create_random_graph()` function, the selection will be performed by the `select_nodes_by_degree()` function (using `expressions = "deg >= 6"` to express our filtering of nodes by total degree), and the coloring of the selected nodes will be accomplished using the `set_node_attrs_ws()` function. We'll also do another interesting thing: color all nodes not satisfying our stated condition. This last modification will be done by inverting the node selection with `invert_selection()` and then using `set_node_attrs_ws()` again, this time on the complementary node selection. 
+These functions are best illustrated with a few examples. First, let's make a random graph (`26` nodes and `52` edges) and select nodes with a total degree (number of edges inbound + number of edges outbound) greater than or equal to `6`. The graph will be generated by the `create_random_graph()` function, the selection will be performed by the `select_nodes_by_degree()` function (using `expressions = "deg >= 6"` to express our filtering of nodes by total degree), and the coloring of the selected nodes will be accomplished using the `set_node_attrs_ws()` function. We'll also do another interesting thing: color all nodes not satisfying our stated condition. This last modification will be done by inverting the node selection with `invert_selection()` and then using `set_node_attrs_ws()` again, this time on the complementary node selection. 
 
 ```{r select_nodes_by_degree}
 # Create a random graph and label
@@ -306,7 +306,7 @@ paste(
   "all have high degree.")
 ```
 
-Getting a targeted list of node IDs is a great start, however, node ID values aren't usually very meaningful to the end user. Usually, we ascribe labels to nodes to represent entities we'd like to model in the graph. Examples include (unique) user names, gene identifers, project names, etc. So, let's get the values associated with the `label` and `values` node attributes in the selection. One strategy for doing this is involves the following sequence of functions: `select_nodes_by_degree()` (as before), `create_subgraph_ws()` to makes a graph *subset* based on the selection of nodes, `get_node_df()` to return a data frame containing the graph's nodes and all attributes (the internal node data frame), and, finally, **dplyr**'s `select()` function to select only those data frame columns we want to keep (`label` and `value`).
+Getting a targeted list of node IDs is a great start, however, node ID values aren't usually very meaningful to the end user. Usually, we ascribe labels to nodes to represent entities we'd like to model in the graph. Examples include (unique) user names, gene identifers, project names, etc. So, let's get the values associated with the `label` and `values` node attributes in the selection. One strategy for doing this is involves the following sequence of functions: `select_nodes_by_degree()` (as before), `create_subgraph_ws()` to make a graph *subset* based on the selection of nodes, `get_node_df()` to return a data frame containing the graph's nodes and all attributes (the internal node data frame), and, finally, **dplyr**'s `select()` function to select only those data frame columns we want to keep (`label` and `value`).
 
 ```{r select_nodes_by_degree_create_subgraph}
 # Load in the dplyr package
