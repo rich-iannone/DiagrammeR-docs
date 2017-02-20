@@ -235,7 +235,7 @@ knitr::kable(
 
 Comparison operators such as `>`, `>=`, `==`, `<=`, `<`, `!=` could be used with numerical attributes to filter nodes. Here, we make a selection of nodes where any `value` is greater than `4.0`.
 
-```{r select_nodes_cond_gt_numeric}
+```{r select_nodes_cond_gt_numeric, eval=FALSE, include=TRUE}
 # Now, get all nodes with a `value`
 # greater than 4.0
 property_graph %>%
@@ -245,9 +245,19 @@ property_graph %>%
   get_node_df()
 ```
 
+```{r select_nodes_cond_gt_numeric_kable, echo=FALSE}
+knitr::kable(
+  property_graph %>%
+    select_nodes(
+      conditions = "value > 4.0") %>%
+    create_subgraph_ws() %>%
+    get_node_df()
+)
+```
+
 We can extend any conditions string to contain multiple filtering steps, linked by and `&` (`AND`) or `|` (`OR`) operators. To select nodes that have a `value` less than `3.0` or a `value` greater than `7.0`, the following will work:
 
-```{r select_nodes_or_cond}
+```{r select_nodes_or_cond, eval=FALSE, include=TRUE}
 property_graph %>%
   select_nodes(
     conditions = "value < 3.0 | value > 7.0") %>%
@@ -255,9 +265,19 @@ property_graph %>%
   get_node_df()
 ```
 
+```{r select_nodes_or_cond_kable, echo=FALSE}
+knitr::kable(
+  property_graph %>%
+    select_nodes(
+      conditions = "value < 3.0 | value > 7.0") %>%
+    create_subgraph_ws() %>%
+    get_node_df()
+)
+```
+
 To get a selection of nodes that must satisfy all conditions, link expressions with `&`. The following example will filter nodes with a `value` greater than `4.0`, and, with a `type` of `A`:
 
-```{r select_nodes_and_cond}
+```{r select_nodes_and_cond, eval=FALSE, include=TRUE}
 property_graph %>%
   select_nodes(
     conditions = "value > 4.0 & type == 'A'") %>%
@@ -265,13 +285,34 @@ property_graph %>%
   get_node_df()
 ```
 
+```{r select_nodes_and_cond_kable, echo=FALSE}
+knitr::kable(
+  property_graph %>%
+    select_nodes(
+      conditions = "value > 4.0 & type == 'A'") %>%
+    create_subgraph_ws() %>%
+    get_node_df()
+)
+```
+
 A vector of `condition` statements creates a set of `AND` conditions, where all conditions need to be fulfilled. The above example could be reworked using a vector of `conditions` statements:
-```{r select_nodes_and_cond_vector}
+
+```{r select_nodes_and_cond_vector, eval=FALSE, include=TRUE}
 property_graph %>%
   select_nodes(
     conditions = c("value > 4.0", "type == 'A'")) %>%
   create_subgraph_ws() %>%
   get_node_df()
+```
+
+```{r select_nodes_and_cond_vector_kable, echo=FALSE}
+knitr::kable(
+  property_graph %>%
+    select_nodes(
+      conditions = c("value > 4.0", "type == 'A'")) %>%
+    create_subgraph_ws() %>%
+    get_node_df()
+)
 ```
 
 This retrieves the same selection and is useful for `AND`ing a sequence of filter statements.
@@ -303,7 +344,7 @@ property_graph %>%
 
 For a somewhat more realistic application, where the node IDs are not known, imagine a situation where you would want select nodes of a certain degree but only those having a certain value range. Here, we do something to that effect, where we want to select nodes with an *outdegree* (number of outward edges from a given node) greater than `1` with the added condition of having a `value` greater than `4.0`. In this case, we want the intersection of these selections.
 
-```{r select_nodes_by_degree_and_value}
+```{r select_nodes_by_degree_and_value, eval=FALSE, include=TRUE}
 property_graph %>%
   select_nodes_by_degree(
     expressions = "outdeg > 1") %>%
@@ -314,6 +355,19 @@ property_graph %>%
   get_node_df()
 ```
 
+```{r select_nodes_by_degree_and_value_kable, echo=FALSE}
+knitr::kable(
+  property_graph %>%
+    select_nodes_by_degree(
+      expressions = "outdeg > 1") %>%
+    select_nodes(
+      conditions = "value > 4.0",
+      set_op = "intersect") %>%
+    create_subgraph_ws() %>%
+    get_node_df()
+)
+```
+
 This returns a single value. Just so you know, using `set_op == "union"` would result in 3 nodes in the selection (`1`, `2`, and `4`), and, using `set_op == "difference"` would yield a selection with the node `2`.
 
 Most often, selections will be performed without knowing the node ID values for the nodes to be selected but, instead, some attributes of the nodes to be selected and perhaps the nodes to exclude from that selection. And this sort of makes sense when you have thousands, hundreds of thousands, and maybe millions of nodes: you're not often going to visualize the entire graph at this point (much like you wouldn't usually  display a table of even hundreds of rows).
@@ -322,9 +376,16 @@ Most often, selections will be performed without knowing the node ID values for 
 
 We'll run through selections of edges in perhaps an abbreviated fashion since many of the concepts that apply to node selections also apply to edge selections. First off, recall that edges have ID values! This is great because edges can also be defined by their attachments to nodes. So an edge defined as `1->2` in a directed graph (where `1` and `2` are node ID values) can also be defined as an edge with ID `1` (in this hypothetical case). Let's have a look at the internal edge data frame within `property_graph` to remind ourselves of the edge ID values available in this graph:
 
-```{r}
+```{r get_edge_df_all_edges, eval=FALSE, include=TRUE}
 property_graph %>%
   get_edge_df()
+```
+
+```{r get_edge_df_all_edges_kable, echo=FALSE}
+knitr::kable(
+  property_graph %>%
+    get_edge_df()
+)
 ```
 
 The first column in the edge data frame is the `id` attribute. The next two are `from` and `to`, and `rel` is always the 4th attribute column. We can select edges using IDs (of both the edge and node varieties) with three different functions:
