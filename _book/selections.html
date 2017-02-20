@@ -26,7 +26,7 @@
 <meta name="author" content="Richard Iannone">
 
 
-<meta name="date" content="2017-02-18">
+<meta name="date" content="2017-02-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -259,9 +259,30 @@ property_graph %&gt;%
 <span class="st">  </span><span class="kw">select_nodes</span>(<span class="dt">nodes =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)) %&gt;%
 <span class="st">  </span><span class="kw">create_subgraph_ws</span>() %&gt;%
 <span class="st">  </span><span class="kw">get_node_df</span>()</code></pre></div>
-<pre><code>##   id type label value
-## 1  1    A   sjd   6.0
-## 2  3    B   i0p   3.5</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">type</th>
+<th align="left">label</th>
+<th align="right">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">A</td>
+<td align="left">sjd</td>
+<td align="right">6.0</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="left">B</td>
+<td align="left">i0p</td>
+<td align="right">3.5</td>
+</tr>
+</tbody>
+</table>
 <p>The <code>select_nodes_by_id()</code> function serves as a plug-in replacement for <code>select_nodes()</code> when used exactly in this way. Its <code>nodes</code> argument simply takes a vector of node ID values. Passing in the same node ID values will result in the same node data frame as in the previous example.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Select nodes `1` and `3` using the</span>
 <span class="co"># `select_nodes_by_id()` function</span>
@@ -269,9 +290,30 @@ property_graph %&gt;%
 <span class="st">  </span><span class="kw">select_nodes_by_id</span>(<span class="dt">nodes =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)) %&gt;%
 <span class="st">  </span><span class="kw">create_subgraph_ws</span>() %&gt;%
 <span class="st">  </span><span class="kw">get_node_df</span>()</code></pre></div>
-<pre><code>##   id type label value
-## 1  1    A   sjd   6.0
-## 2  3    B   i0p   3.5</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">type</th>
+<th align="left">label</th>
+<th align="right">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">A</td>
+<td align="left">sjd</td>
+<td align="right">6.0</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="left">B</td>
+<td align="left">i0p</td>
+<td align="right">3.5</td>
+</tr>
+</tbody>
+</table>
 <p>If you don’t know the node ID values that should be part of a selection, and this is often the case in practice, you can use a vector of filtering statements as <code>conditions</code>. Some of these can be <code>conditions = &quot;type == 'z'&quot;</code> (selecting nodes where the <code>type</code> value is <code>z</code>), or <code>conditions = &quot;value &gt; 3.0&quot;</code> (node selection where the <code>value</code> attribute is greater than <code>3.0</code>), or, <code>conditions = c(&quot;value &lt; 2.0&quot;, &quot;type %in% c('a', 'b', 'd')&quot;)</code> (all nodes with <code>value</code> less than <code>2.0</code> and having a <code>type</code> value of <code>a</code>, <code>b</code>, or <code>d</code>). Here’s an example using an <code>==</code> operator to get all nodes of <code>type</code> <code>A</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># From our `property_graph`, select all</span>
 <span class="co"># nodes of type `A`</span>
@@ -280,9 +322,30 @@ property_graph %&gt;%
     <span class="dt">conditions =</span> <span class="st">&quot;type == &#39;A&#39;&quot;</span>) %&gt;%
 <span class="st">  </span><span class="kw">create_subgraph_ws</span>() %&gt;%
 <span class="st">  </span><span class="kw">get_node_df</span>()</code></pre></div>
-<pre><code>##   id type label value
-## 1  1    A   sjd   6.0
-## 2  2    A   qhd   2.5</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">type</th>
+<th align="left">label</th>
+<th align="right">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">A</td>
+<td align="left">sjd</td>
+<td align="right">6.0</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">A</td>
+<td align="left">qhd</td>
+<td align="right">2.5</td>
+</tr>
+</tbody>
+</table>
 <p>Need more than one type? Use the familiar <code>%in%</code> operator to get nodes with a <code>type</code> of <code>A</code> or <code>B</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># From our `property_graph`, select all</span>
 <span class="co"># nodes of type `A`</span>
@@ -291,19 +354,71 @@ property_graph %&gt;%
     <span class="dt">conditions =</span> <span class="st">&quot;type %in% c(&#39;A&#39;, &#39;B&#39;)&quot;</span>) %&gt;%
 <span class="st">  </span><span class="kw">create_subgraph_ws</span>() %&gt;%
 <span class="st">  </span><span class="kw">get_node_df</span>()</code></pre></div>
-<pre><code>##   id type label value
-## 1  1    A   sjd   6.0
-## 2  2    A   qhd   2.5
-## 3  3    B   i0p   3.5
-## 4  4    B   235   7.5</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">type</th>
+<th align="left">label</th>
+<th align="right">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">A</td>
+<td align="left">sjd</td>
+<td align="right">6.0</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">A</td>
+<td align="left">qhd</td>
+<td align="right">2.5</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">B</td>
+<td align="left">i0p</td>
+<td align="right">3.5</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">B</td>
+<td align="left">235</td>
+<td align="right">7.5</td>
+</tr>
+</tbody>
+</table>
 <p>Regular expressions can also be used. Suppose we want nodes in this graph where the label only consists of 3 letters, and no numerals. To do this, we could use the <strong>R</strong> <code>grepl()</code> function with the regular expression (<code>^[a-z]{3}$</code>) first and then the attribute where matches are sought (in this case, <code>label</code>).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">property_graph %&gt;%
 <span class="st">  </span><span class="kw">select_nodes</span>(<span class="dt">conditions =</span> <span class="st">&quot;grepl(&#39;^[a-z]{3}$&#39;, label)&quot;</span>) %&gt;%
 <span class="st">  </span><span class="kw">create_subgraph_ws</span>() %&gt;%
 <span class="st">  </span><span class="kw">get_node_df</span>()</code></pre></div>
-<pre><code>##   id type label value
-## 1  1    A   sjd   6.0
-## 2  2    A   qhd   2.5</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">type</th>
+<th align="left">label</th>
+<th align="right">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">A</td>
+<td align="left">sjd</td>
+<td align="right">6.0</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">A</td>
+<td align="left">qhd</td>
+<td align="right">2.5</td>
+</tr>
+</tbody>
+</table>
 <p>Comparison operators such as <code>&gt;</code>, <code>&gt;=</code>, <code>==</code>, <code>&lt;=</code>, <code>&lt;</code>, <code>!=</code> could be used with numerical attributes to filter nodes. Here, we make a selection of nodes where any <code>value</code> is greater than <code>4.0</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Now, get all nodes with a `value`</span>
 <span class="co"># greater than 4.0</span>
@@ -312,34 +427,108 @@ property_graph %&gt;%
     <span class="dt">conditions =</span> <span class="st">&quot;value &gt; 4.0&quot;</span>) %&gt;%
 <span class="st">  </span><span class="kw">create_subgraph_ws</span>() %&gt;%
 <span class="st">  </span><span class="kw">get_node_df</span>()</code></pre></div>
-<pre><code>##   id type label value
-## 1  1    A   sjd   6.0
-## 2  4    B   235   7.5</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">type</th>
+<th align="left">label</th>
+<th align="right">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">A</td>
+<td align="left">sjd</td>
+<td align="right">6.0</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">B</td>
+<td align="left">235</td>
+<td align="right">7.5</td>
+</tr>
+</tbody>
+</table>
 <p>We can extend any conditions string to contain multiple filtering steps, linked by and <code>&amp;</code> (<code>AND</code>) or <code>|</code> (<code>OR</code>) operators. To select nodes that have a <code>value</code> less than <code>3.0</code> or a <code>value</code> greater than <code>7.0</code>, the following will work:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">property_graph %&gt;%
 <span class="st">  </span><span class="kw">select_nodes</span>(
     <span class="dt">conditions =</span> <span class="st">&quot;value &lt; 3.0 | value &gt; 7.0&quot;</span>) %&gt;%
 <span class="st">  </span><span class="kw">create_subgraph_ws</span>() %&gt;%
 <span class="st">  </span><span class="kw">get_node_df</span>()</code></pre></div>
-<pre><code>##   id type label value
-## 1  2    A   qhd   2.5
-## 2  4    B   235   7.5</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">type</th>
+<th align="left">label</th>
+<th align="right">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">A</td>
+<td align="left">qhd</td>
+<td align="right">2.5</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">B</td>
+<td align="left">235</td>
+<td align="right">7.5</td>
+</tr>
+</tbody>
+</table>
 <p>To get a selection of nodes that must satisfy all conditions, link expressions with <code>&amp;</code>. The following example will filter nodes with a <code>value</code> greater than <code>4.0</code>, and, with a <code>type</code> of <code>A</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">property_graph %&gt;%
 <span class="st">  </span><span class="kw">select_nodes</span>(
     <span class="dt">conditions =</span> <span class="st">&quot;value &gt; 4.0 &amp; type == &#39;A&#39;&quot;</span>) %&gt;%
 <span class="st">  </span><span class="kw">create_subgraph_ws</span>() %&gt;%
 <span class="st">  </span><span class="kw">get_node_df</span>()</code></pre></div>
-<pre><code>##   id type label value
-## 1  1    A   sjd     6</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">type</th>
+<th align="left">label</th>
+<th align="right">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">A</td>
+<td align="left">sjd</td>
+<td align="right">6</td>
+</tr>
+</tbody>
+</table>
 <p>A vector of <code>condition</code> statements creates a set of <code>AND</code> conditions, where all conditions need to be fulfilled. The above example could be reworked using a vector of <code>conditions</code> statements:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">property_graph %&gt;%
 <span class="st">  </span><span class="kw">select_nodes</span>(
     <span class="dt">conditions =</span> <span class="kw">c</span>(<span class="st">&quot;value &gt; 4.0&quot;</span>, <span class="st">&quot;type == &#39;A&#39;&quot;</span>)) %&gt;%
 <span class="st">  </span><span class="kw">create_subgraph_ws</span>() %&gt;%
 <span class="st">  </span><span class="kw">get_node_df</span>()</code></pre></div>
-<pre><code>##   id type label value
-## 1  1    A   sjd     6</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">type</th>
+<th align="left">label</th>
+<th align="right">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">A</td>
+<td align="left">sjd</td>
+<td align="right">6</td>
+</tr>
+</tbody>
+</table>
 <p>This retrieves the same selection and is useful for <code>AND</code>ing a sequence of filter statements.</p>
 <p>The situation may arise when an even more specialized selection of nodes needs to be made. Or, you’d like to make a selection, do something with it, then modify the selection (and then do yet another thing). This is where the <code>set_op</code> argument (short for <em>set operation</em>) becomes useful. Essentially the first selection will disregard <code>set_op</code>–it’s just making an initial selection–but the next selection will modify the previous one and how it does so depends on what’s given for <code>set_op</code>.</p>
 <p>These set operations are:</p>
@@ -368,8 +557,24 @@ property_graph %&gt;%
     <span class="dt">set_op =</span> <span class="st">&quot;intersect&quot;</span>) %&gt;%
 <span class="st">  </span><span class="kw">create_subgraph_ws</span>() %&gt;%
 <span class="st">  </span><span class="kw">get_node_df</span>()</code></pre></div>
-<pre><code>##   id type label value
-## 1  1    A   sjd     6</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">type</th>
+<th align="left">label</th>
+<th align="right">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">A</td>
+<td align="left">sjd</td>
+<td align="right">6</td>
+</tr>
+</tbody>
+</table>
 <p>This returns a single value. Just so you know, using <code>set_op == &quot;union&quot;</code> would result in 3 nodes in the selection (<code>1</code>, <code>2</code>, and <code>4</code>), and, using <code>set_op == &quot;difference&quot;</code> would yield a selection with the node <code>2</code>.</p>
 <p>Most often, selections will be performed without knowing the node ID values for the nodes to be selected but, instead, some attributes of the nodes to be selected and perhaps the nodes to exclude from that selection. And this sort of makes sense when you have thousands, hundreds of thousands, and maybe millions of nodes: you’re not often going to visualize the entire graph at this point (much like you wouldn’t usually display a table of even hundreds of rows).</p>
 </div>
@@ -378,13 +583,61 @@ property_graph %&gt;%
 <p>We’ll run through selections of edges in perhaps an abbreviated fashion since many of the concepts that apply to node selections also apply to edge selections. First off, recall that edges have ID values! This is great because edges can also be defined by their attachments to nodes. So an edge defined as <code>1-&gt;2</code> in a directed graph (where <code>1</code> and <code>2</code> are node ID values) can also be defined as an edge with ID <code>1</code> (in this hypothetical case). Let’s have a look at the internal edge data frame within <code>property_graph</code> to remind ourselves of the edge ID values available in this graph:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">property_graph %&gt;%
 <span class="st">  </span><span class="kw">get_edge_df</span>()</code></pre></div>
-<pre><code>##   id from to rel weight
-## 1  1    2  4   X    3.7
-## 2  2    1  4   X    8.3
-## 3  3    2  3   Y   12.5
-## 4  4    3  4   Y    1.3
-## 5  5    1  3   Z    2.9
-## 6  6    1  2   Z    2.4</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="right">from</th>
+<th align="right">to</th>
+<th align="left">rel</th>
+<th align="right">weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="left">X</td>
+<td align="right">3.7</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="left">X</td>
+<td align="right">8.3</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="left">Y</td>
+<td align="right">12.5</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="left">Y</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="left">Z</td>
+<td align="right">2.9</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="left">Z</td>
+<td align="right">2.4</td>
+</tr>
+</tbody>
+</table>
 <p>The first column in the edge data frame is the <code>id</code> attribute. The next two are <code>from</code> and <code>to</code>, and <code>rel</code> is always the 4th attribute column. We can select edges using IDs (of both the edge and node varieties) with three different functions:</p>
 <ul>
 <li><code>select_edges()</code></li>
