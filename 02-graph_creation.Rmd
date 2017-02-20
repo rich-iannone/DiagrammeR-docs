@@ -33,7 +33,7 @@ graph_1n <- add_node(graph = graph_e)
 graph_2n <- add_node(graph = graph_1n)
 ```
 
-This creates 2 nodes with ID values `1` and `2` (ID values are set for you as auto-incrementing integers). There are a few functions that can be used to check that these additions did occur. We can get a count of nodes as before with the `node_count()`:
+This creates 2 nodes with ID values `1` and `2` (ID values are set for you as auto-incrementing integers). There are a few functions that can be used to check that these additions did occur. We can get a count of nodes as before with the `node_count()` function:
 
 ```{r get_node_count_3_graphs}
 # Count the number of nodes in each graph produced
@@ -50,7 +50,7 @@ Alternatively, we can use the `get_node_ids()` function to return a vector of no
 get_node_ids(x = graph_2n)
 ```
 
-Finally, we can visualize the graph by using the `render_graph()` function. They nodes typically appear very large when there are few of them but scale down in size if there are many. The values shown inside the nodes are the automatically-assigned node ID values. If we were to assign `label` values to each of the nodes (which could be done when using `add_node(label = "label_name")`, for example), those values would be shown instead. 
+Finally, we can visualize the graph by using the `render_graph()` function. The nodes typically appear very large when there are few of them but scale down in size if there are many. The values shown inside the nodes are the automatically-assigned node ID values. If we were to assign `label` values to each of the nodes - which could be done when using `add_node(label = "label_name")`, for example - those values would be shown instead. 
 
 ```{r render_graph_2n}
 render_graph(graph = graph_2n)
@@ -92,7 +92,7 @@ node_count(graph_2n_nested_fcns)
 
 With the `%>%`, the sequence of operations is more easily readable (left to right), plus, only one name to create! The less names the better. Moreover, and not shown above, the situtation for the nested approach gets more confusing as we add arguments and their values (of which, there can be many).
 
-So, we have a made a graph with 2 nodes. The next reasonable thing to do would be adding an edge between the nodes. By default, new graphs produced with `create_graph()` are *directed graphs*. To review, a directed graph is one where any edge between a pair of nodes has a defined direction (e.g., by the definition `1->2`, we mean to say that edge is directed from node `1` to node `2`). Most of what is covered in this book deals with directed graph but we may occasionally delve into *undirected graphs* (where edges have no specified direction between nodes). At any rate, using `create_graph(directed = FALSE)` will create an empty graph designated as undirected (i.e., any edges added will be directionless).
+So, we have made a graph with 2 nodes. The next reasonable thing to do would be adding an edge between the nodes. By default, new graphs produced with `create_graph()` are *directed graphs*. To review, a directed graph is one where any edge between a pair of nodes has a defined direction (e.g., by the definition `1->2`, we mean to say that edge is directed from node `1` to node `2`). This book mainly deals with directed graphs but we may occasionally delve into *undirected graphs* (where edges have no specified direction between nodes). At any rate, using `create_graph(directed = FALSE)` will create an empty graph designated as undirected (i.e., any edges added will be undirected).
 
 Let's use a pipeline with `%>%` to create a graph with 2 nodes and the edge with definition `1->2`. This requires three different functions (`create_graph()`, `add_node()`, and `add_edge()`):
 
@@ -113,7 +113,7 @@ paste("This graph has:",
 We can be sure we created the correct edge definition (`1->2`) by using the `get_edges()` function:
 
 ```{r get_edges_graph_2n_1e}
-# The graph has 1 edge, what is its
+# The graph has 1 edge, what is it's
 # edge definition?
 get_edges(graph_2n_1e)
 ```
@@ -132,7 +132,7 @@ And also, if you like interactivity and fluid physical motions, the **visNetwork
 render_graph(graph = graph_2n_1e, output = "visNetwork")
 ```
 
-Just as we've built up a graph, and can do the opposite and remove edges and nodes. The key functions here are `delete_edge()` and `delete_node()`. Let's remove the edge we just recently added and then remove each of the nodes, leaving us again with an empty graph. Note again that we don't need to repeat the graph's object name throughout this pipeline (which is nice, saves typing). Second useful note: typing `delete_edge(` and then hitting the tab in **RStudio** brings up useful information on the function's argument names along with useful descriptions. I find this very helpful and use this feature quite often.
+Just as we've built up a graph, we can do the opposite and remove edges and nodes. The key functions here are `delete_edge()` and `delete_node()`. Let's remove the edge we just recently added and then remove each of the nodes, leaving us again with an empty graph. Note again that we don't need to repeat the graph's object name throughout this pipeline (which is nice, saves typing). Second useful note: typing `delete_edge(` and then hitting the tab in **RStudio** brings up useful information on the function's argument names along with useful descriptions. I find this very helpful and use this feature quite often.
 
 ```{r delete_node_delete_edge}
 # Remove the edge from the graph, then,
@@ -200,7 +200,7 @@ edf <-
 edf
 ```
 
-Now that we have an *ndf* and an *edf*, we can now combine those into a new graph object by using those specialized data frames within the `create_graph()` function call.
+Now that we have an *ndf* and an *edf*, we can combine those into a new graph object by using these specialized data frames within the `create_graph()` function call.
 
 ```{r create_graph_ndf_edf}
 # Create a graph object using node and
