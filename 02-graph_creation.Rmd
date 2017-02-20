@@ -113,7 +113,7 @@ paste("This graph has:",
 We can be sure we created the correct edge definition (`1->2`) by using the `get_edges()` function:
 
 ```{r get_edges_graph_2n_1e}
-# The graph has 1 edge, what is it's
+# The graph has 1 edge, what is its
 # edge definition?
 get_edges(graph_2n_1e)
 ```
