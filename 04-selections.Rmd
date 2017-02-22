@@ -150,7 +150,6 @@ knitr::kable(
 )
 ```
 
-
 The `select_nodes_by_id()` function serves as a plug-in replacement for `select_nodes()` when used exactly in this way. Its `nodes` argument simply takes a vector of node ID values. Passing in the same node ID values will result in the same node data frame as in the previous example.
 
 ```{r select_nodes_by_id_2_ids, eval=FALSE, include=TRUE}
