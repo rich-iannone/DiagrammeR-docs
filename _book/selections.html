@@ -26,7 +26,7 @@
 <meta name="author" content="Richard Iannone">
 
 
-<meta name="date" content="2017-02-20">
+<meta name="date" content="2017-02-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -156,7 +156,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Occasionally, you’ll want to operate on a select group of nodes or edges. Some functions affect a single node or edge while others (or, sometimes, the same functions) operate on all nodes or edges in a graph. Selections allow you to target specified nodes or edges and then apply specialized functions to operate on just those selected entities. Most of the selection functions support rudimentary set operations across several calls of the selection functions (i.e., for the union, intersection, or difference between selected sets of nodes or edges).</p>
 <div id="setup-for-this-chapter" class="section level2">
 <h2><span class="header-section-number">4.1</span> Setup for this Chapter</h2>
-<p>Ensure that the latest development build of <strong>DiagrammeR</strong> is installed. If the <strong>devtools</strong> package is not availble in your <strong>R</strong> library, install it and then use the <code>install_github()</code> function to get the latest <strong>DiagrammeR</strong> build.</p>
+<p>Ensure that the latest development build of <strong>DiagrammeR</strong> is installed. If the <strong>devtools</strong> package is not available in your <strong>R</strong> library, install it and then use the <code>install_github()</code> function to get the latest <strong>DiagrammeR</strong> build.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)
 devtools::<span class="kw">install_github</span>(<span class="st">&quot;rich-iannone/DiagrammeR&quot;</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(DiagrammeR)</code></pre></div>
@@ -226,7 +226,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">&quot;rich-ian
 </tr>
 </tbody>
 </table>
-<p>When any selection is performed using using a <code>select_...()</code> function, the selection is stored in the graph object. We can always use <code>get_selection()</code> to verify this:</p>
+<p>When any selection is performed using a <code>select_...()</code> function, the selection is stored in the graph object. We can always use <code>get_selection()</code> to verify this:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Select nodes `1` and `4` of</span>
 <span class="co"># `property_graph` and then return</span>
 <span class="co"># the node IDs for the selection</span>
@@ -245,13 +245,13 @@ property_graph %&gt;%
 </div>
 <div id="creating-a-node-selection" class="section level2">
 <h2><span class="header-section-number">4.3</span> Creating a Node Selection</h2>
-<p>Let’s begin our in-depth look on how to select graph nodes using the <code>select_nodes()</code> function. Selecting nodes in a graph with <code>select_nodes()</code> can be done in multiple ways:</p>
+<p>Let’s begin our in-depth look at how to select graph nodes using the <code>select_nodes()</code> function. Selecting nodes in a graph with <code>select_nodes()</code> can be done in multiple ways:</p>
 <ul>
 <li>providing only a set of node ID values</li>
 <li>by providing one or more filtering statements to <code>conditions</code></li>
 <li>doing both of the above, where each set of values/statements work toward filtering the nodes that will comprise the node selection</li>
 </ul>
-<p>The first example using <code>select_nodes()</code> will pertain to first case, where you know which node ID values should make up the node selection. To show the node selection with all associated metadata as a node data frame, we’ll use 2 functions after the selection: <code>create_subgraph_ws()</code> (creates a subgraph, or subset, with only the selected nodes), and, <code>get_node_df()</code> (returns a node data frame for all nodes in the graph, now limited by the nodes in the selection).</p>
+<p>The first example using <code>select_nodes()</code> will pertain to the first case, where you know which node ID values should make up the node selection. To show the node selection with all associated metadata as a node data frame, we’ll use 2 functions after the selection: <code>create_subgraph_ws()</code> (creates a subgraph, or subset, with only the selected nodes), and, <code>get_node_df()</code> (returns a node data frame for all nodes in the graph, now limited by the nodes in the selection).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># From `property_graph`, select nodes</span>
 <span class="co"># `1` and `3`; show the ndf based on</span>
 <span class="co"># the node selection</span>
@@ -314,7 +314,7 @@ property_graph %&gt;%
 </tr>
 </tbody>
 </table>
-<p>If you don’t know the node ID values that should be part of a selection, and this is often the case in practice, you can use a vector of filtering statements as <code>conditions</code>. Some of these can be <code>conditions = &quot;type == 'z'&quot;</code> (selecting nodes where the <code>type</code> value is <code>z</code>), or <code>conditions = &quot;value &gt; 3.0&quot;</code> (node selection where the <code>value</code> attribute is greater than <code>3.0</code>), or, <code>conditions = c(&quot;value &lt; 2.0&quot;, &quot;type %in% c('a', 'b', 'd')&quot;)</code> (all nodes with <code>value</code> less than <code>2.0</code> and having a <code>type</code> value of <code>a</code>, <code>b</code>, or <code>d</code>). Here’s an example using an <code>==</code> operator to get all nodes of <code>type</code> <code>A</code>:</p>
+<p>If you don’t know the node ID values that should be part of a selection - and this is often the case in practice - you can use a vector of filtering statements as <code>conditions</code>. Some of these can be <code>conditions = &quot;type == 'z'&quot;</code> (selecting nodes where the <code>type</code> value is <code>z</code>), or <code>conditions = &quot;value &gt; 3.0&quot;</code> (node selection where the <code>value</code> attribute is greater than <code>3.0</code>), or, <code>conditions = c(&quot;value &lt; 2.0&quot;, &quot;type %in% c('a', 'b', 'd')&quot;)</code> (all nodes with <code>value</code> less than <code>2.0</code> and having a <code>type</code> value of <code>a</code>, <code>b</code>, or <code>d</code>). Here’s an example using an <code>==</code> operator to get all nodes of <code>type</code> <code>A</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># From our `property_graph`, select all</span>
 <span class="co"># nodes of type `A`</span>
 property_graph %&gt;%
@@ -451,7 +451,7 @@ property_graph %&gt;%
 </tr>
 </tbody>
 </table>
-<p>We can extend any conditions string to contain multiple filtering steps, linked by and <code>&amp;</code> (<code>AND</code>) or <code>|</code> (<code>OR</code>) operators. To select nodes that have a <code>value</code> less than <code>3.0</code> or a <code>value</code> greater than <code>7.0</code>, the following will work:</p>
+<p>We can extend any conditions string to contain multiple filtering steps, linked by <code>&amp;</code> (<code>AND</code>) or <code>|</code> (<code>OR</code>) operators. To select nodes that have a <code>value</code> less than <code>3.0</code> or a <code>value</code> greater than <code>7.0</code>, the following will work:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">property_graph %&gt;%
 <span class="st">  </span><span class="kw">select_nodes</span>(
     <span class="dt">conditions =</span> <span class="st">&quot;value &lt; 3.0 | value &gt; 7.0&quot;</span>) %&gt;%
@@ -540,7 +540,7 @@ property_graph %&gt;%
 <p>This schematic describes what’s happening in 2 consecutive <code>select_...()</code> function calls for each of the aforementioned set operations.</p>
 <p><img src="diagrams/set_ops_chp_04.png"></p>
 <p>These set operations behave in exactly the same way as the base <strong>R</strong> functions <code>union()</code>, <code>intersect()</code>, and <code>setdiff()</code>. Furthermore, most of the <code>select_...()</code> functions contain the <code>set_op</code> argument, so, they behave the same way with regard to modifying the node or edge selection in a series of consecutive selection operations.</p>
-<p>For our small property graph with 4 nodes (with IDs <code>1</code> through <code>4</code>), creating an initial selection of nodes with <code>select_nodes()</code> will result in the selection of all 4 nodes in the graph. A subsequent call of <code>select_nodes_by_id()</code> specifying <code>nodes = c(1, 3)</code> and <code>set_op = &quot;difference&quot;</code> will result in a selection of nodes <code>2</code> and <code>4</code> (the difference of removing <code>1</code> and <code>3</code> from the complete set). Let’s verify the final selection by finishing with <code>get_selection()</code> this time, which output node ID values for the selected nodes.</p>
+<p>For our small property graph with 4 nodes (with IDs <code>1</code> through <code>4</code>), creating an initial selection of nodes with <code>select_nodes()</code> will result in the selection of all 4 nodes in the graph. A subsequent call of <code>select_nodes_by_id()</code> specifying <code>nodes = c(1, 3)</code> and <code>set_op = &quot;difference&quot;</code> will result in a selection of nodes <code>2</code> and <code>4</code> (the difference of removing <code>1</code> and <code>3</code> from the complete set). Let’s verify the final selection by finishing with <code>get_selection()</code> this time, which outputs node ID values for the selected nodes.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">property_graph %&gt;%
 <span class="st">  </span><span class="kw">select_nodes</span>() %&gt;%
 <span class="st">  </span><span class="kw">select_nodes_by_id</span>(
@@ -548,7 +548,7 @@ property_graph %&gt;%
     <span class="dt">set_op =</span> <span class="st">&quot;difference&quot;</span>) %&gt;%
 <span class="st">  </span><span class="kw">get_selection</span>()</code></pre></div>
 <pre><code>## [1] 2 4</code></pre>
-<p>For a somewhat more realistic application, where the node IDs are not known, imagine a situation where you would want select nodes of a certain degree but only those having a certain value range. Here, we do something to that effect, where we want to select nodes with an <em>outdegree</em> (number of outward edges from a given node) greater than <code>1</code> with the added condition of having a <code>value</code> greater than <code>4.0</code>. In this case, we want the intersection of these selections.</p>
+<p>For a somewhat more realistic application, where the node IDs are not known, imagine a situation where you would want to select nodes of a certain degree but only those having a certain value range. Here, we do something to that effect, where we want to select nodes with an <em>outdegree</em> (number of outward edges from a given node) greater than <code>1</code> with the added condition of having a <code>value</code> greater than <code>4.0</code>. In this case, we want the intersection of these selections.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">property_graph %&gt;%
 <span class="st">  </span><span class="kw">select_nodes_by_degree</span>(
     <span class="dt">expressions =</span> <span class="st">&quot;outdeg &gt; 1&quot;</span>) %&gt;%

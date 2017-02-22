@@ -26,7 +26,7 @@
 <meta name="author" content="Richard Iannone">
 
 
-<meta name="date" content="2017-02-20">
+<meta name="date" content="2017-02-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -160,7 +160,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="the-diagrammer-graph-model" class="section level2">
 <h2><span class="header-section-number">1.2</span> The DiagrammeR Graph Model</h2>
-<p><strong>DiagrammeR</strong> provides a framework and collection of functions to model network graphs as property graphs. A property graph is one that has labeled nodes (for informational entities) that are connected via directed, typed relationships. Both nodes and relationships hold arbitrary properties (attributes, as key-value pairs). There is no rigid schema, but with node and edge labeling we can have as much metadata as we’d like.</p>
+<p><strong>DiagrammeR</strong> provides a framework and collection of functions to model network graphs as property graphs. A property graph is one that has labeled nodes (for informational entities) that are connected via directed, typed relationships. Both nodes and relationships hold arbitrary properties (attributes, as key-value pairs). There is no rigid schema, but with node and edge labeling we can have as much metadata as we’d like. Taking the example of a typical software repository with multiple users, entities can be users, comments, issues, repositories, organizations, etc., and they are related to each other in specific ways. A user can create or delete a repository, and, the same user could also push a commit (a separate entity, having its own metadata) to a repository. The following schematic provides a simplified graph model of how entities can be related to each other in the context of an multiuser software repository.</p>
+<p><img src="diagrams/property_graph_chp_01.png"></p>
 <p>A graph object in <strong>DiagrammeR</strong> maintains a series of interrelated elements. Most importantly, the set of nodes (vertices) and edges (links) resides here, along with elements for graph metadata such as styling attributes, active node/edge selections, data frames linked to nodes or edges, and other user-defined caches of graph features.</p>
 <p>Nodes and edges contain attributes (properties) as key-value pairs. Formally, the graph object contains separate <strong>R</strong> data frames for nodes and their attributes and an analogous data frame for edges and their attributes. The user does not directly modify the contents of the graph object, rather, access to graph functions modifies the objects internal to the graph object, ensuring synchronization of all elements without corruption.</p>
 
