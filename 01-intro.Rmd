@@ -8,7 +8,9 @@ Using a network graph usually means you have fast navigation (i.e., traversals) 
 
 ## The DiagrammeR Graph Model
 
-**DiagrammeR** provides a framework and collection of functions to model network graphs as property graphs. A property graph is one that has labeled nodes (for informational entities) that are connected via directed, typed relationships. Both nodes and relationships hold arbitrary properties (attributes, as key-value pairs). There is no rigid schema, but with node and edge labeling we can have as much metadata as we’d like.
+**DiagrammeR** provides a framework and collection of functions to model network graphs as property graphs. A property graph is one that has labeled nodes (for informational entities) that are connected via directed, typed relationships. Both nodes and relationships hold arbitrary properties (attributes, as key-value pairs). There is no rigid schema, but with node and edge labeling we can have as much metadata as we’d like. Taking the example of a typical software repository with multiple users, entities can be users, comments, issues, repositories, organizations, etc., and they are related to each other in specific ways. A user can create or delete a repository, and, the same user could also push a commit (a separate entity, having its own metadata) to a repository. The following schematic provides a simplified graph model of how entities can be related to each other in the context of an multiuser software repository.
+
+<img src="diagrams/property_graph_chp_01.png">
 
 A graph object in **DiagrammeR** maintains a series of interrelated elements. Most importantly, the set of nodes (vertices) and edges (links) resides here, along with elements for graph metadata such as styling attributes, active node/edge selections, data frames linked to nodes or edges, and other user-defined caches of graph features.
 
