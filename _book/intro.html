@@ -26,7 +26,7 @@
 <meta name="author" content="Richard Iannone">
 
 
-<meta name="date" content="2017-02-22">
+<meta name="date" content="2017-02-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -114,19 +114,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>This book is not yet finished</a></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#why-model-data-as-a-graph"><i class="fa fa-check"></i><b>1.1</b> Why Model Data as a Graph?</a></li>
-<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#the-diagrammer-graph-model"><i class="fa fa-check"></i><b>1.2</b> The DiagrammeR Graph Model</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#the-diagrammer-graph-object"><i class="fa fa-check"></i><b>1.2</b> The DiagrammeR Graph Object</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="creation.html"><a href="creation.html"><i class="fa fa-check"></i><b>2</b> Graph Creation</a><ul>
 <li class="chapter" data-level="2.1" data-path="creation.html"><a href="creation.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting Started</a></li>
-<li class="chapter" data-level="2.2" data-path="creation.html"><a href="creation.html#creating-a-graph-object-and-adding-nodes-and-edges"><i class="fa fa-check"></i><b>2.2</b> Creating a Graph Object and Adding Nodes and Edges</a></li>
-<li class="chapter" data-level="2.3" data-path="creation.html"><a href="creation.html#creating-a-simple-graph-using-data-frames"><i class="fa fa-check"></i><b>2.3</b> Creating a Simple Graph Using Data Frames</a></li>
-<li class="chapter" data-level="2.4" data-path="creation.html"><a href="creation.html#moving-toward-nodes-and-edges-with-more-descriptive-attributes"><i class="fa fa-check"></i><b>2.4</b> Moving Toward Nodes and Edges with More Descriptive Attributes</a></li>
+<li class="chapter" data-level="2.2" data-path="creation.html"><a href="creation.html#simple-creation-and-visualization"><i class="fa fa-check"></i><b>2.2</b> Simple Creation and Visualization</a></li>
+<li class="chapter" data-level="2.3" data-path="creation.html"><a href="creation.html#creation-using-data-frames"><i class="fa fa-check"></i><b>2.3</b> Creation Using Data Frames</a></li>
+<li class="chapter" data-level="2.4" data-path="creation.html"><a href="creation.html#adding-basic-attributes"><i class="fa fa-check"></i><b>2.4</b> Adding Basic Attributes</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="attrs.html"><a href="attrs.html"><i class="fa fa-check"></i><b>3</b> Graph Attributes</a><ul>
-<li class="chapter" data-level="3.1" data-path="attrs.html"><a href="attrs.html#adding-attributes-in-ndfs-and-edfs-outside-of-a-graph"><i class="fa fa-check"></i><b>3.1</b> Adding Attributes in NDFs and EDFs Outside of a Graph</a></li>
-<li class="chapter" data-level="3.2" data-path="attrs.html"><a href="attrs.html#adding-attributes-to-nodes-or-edges-already-in-the-graph"><i class="fa fa-check"></i><b>3.2</b> Adding Attributes to Nodes or Edges Already in the Graph</a></li>
-<li class="chapter" data-level="3.3" data-path="attrs.html"><a href="attrs.html#setting-attributes-globally-or-selectively"><i class="fa fa-check"></i><b>3.3</b> Setting Attributes Globally or Selectively</a></li>
-<li class="chapter" data-level="3.4" data-path="attrs.html"><a href="attrs.html#adding-attributes-to-selections-of-nodes-or-edges"><i class="fa fa-check"></i><b>3.4</b> Adding Attributes to Selections of Nodes or Edges</a></li>
+<li class="chapter" data-level="3.1" data-path="attrs.html"><a href="attrs.html#external-ndfs-and-edfs"><i class="fa fa-check"></i><b>3.1</b> External NDFs and EDFs</a></li>
+<li class="chapter" data-level="3.2" data-path="attrs.html"><a href="attrs.html#internal-ndfs-and-edfs"><i class="fa fa-check"></i><b>3.2</b> Internal NDFs and EDFs</a></li>
+<li class="chapter" data-level="3.3" data-path="attrs.html"><a href="attrs.html#specific-nodes-or-edges"><i class="fa fa-check"></i><b>3.3</b> Specific Nodes or Edges</a></li>
+<li class="chapter" data-level="3.4" data-path="attrs.html"><a href="attrs.html#adding-attributes-to-selections"><i class="fa fa-check"></i><b>3.4</b> Adding Attributes to Selections</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="selections.html"><a href="selections.html"><i class="fa fa-check"></i><b>4</b> Selections</a><ul>
 <li class="chapter" data-level="4.1" data-path="selections.html"><a href="selections.html#setup-for-this-chapter"><i class="fa fa-check"></i><b>4.1</b> Setup for this Chapter</a></li>
@@ -157,14 +157,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">1.1</span> Why Model Data as a Graph?</h2>
 <p>Network graphs allow for relationship-based data models. Positioning the relationships between entities as first class lets us more easily model complex, real-world information. A distinguishing feature of network graph models is that the relationships are treated with as much value as the node entity data records themselves. The connections within data are often not considered but we really need to work closely with relationship data to extract valuable insights.</p>
 <p>Using a network graph usually means you have fast navigation (i.e., traversals) between nodes (performed in constant time). Modeling data with a relational, tabular approach will require working with data as a set of tables and columns, and this necessitates carrying out complex joins and self-joins when the dataset becomes more interrelated. Such queries are technically complicated to construct and can be expensive to run. Furthermore, making them work synchronously is not easy, with performance dropping precipitously as the total dataset size increases. The tabular data model is also typically hard to reason about since it doesn’t readily correspond to mental models for a given application.</p>
-</div>
-<div id="the-diagrammer-graph-model" class="section level2">
-<h2><span class="header-section-number">1.2</span> The DiagrammeR Graph Model</h2>
 <p><strong>DiagrammeR</strong> provides a framework and collection of functions to model network graphs as property graphs. A property graph is one that has labeled nodes (for informational entities) that are connected via directed, typed relationships. Both nodes and relationships hold arbitrary properties (attributes, as key-value pairs). There is no rigid schema, but with node and edge labeling we can have as much metadata as we’d like. Taking the example of a typical software repository with multiple users, entities can be users, comments, issues, repositories, organizations, etc., and they are related to each other in specific ways. A user can create or delete a repository, and, the same user could also push a commit (a separate entity, having its own metadata) to a repository. The following schematic provides a simplified graph model of how entities can be related to each other in the context of an multiuser software repository.</p>
 <p><img src="diagrams/property_graph_chp_01.png"></p>
+</div>
+<div id="the-diagrammer-graph-object" class="section level2">
+<h2><span class="header-section-number">1.2</span> The DiagrammeR Graph Object</h2>
 <p>A graph object in <strong>DiagrammeR</strong> maintains a series of interrelated elements. Most importantly, the set of nodes (vertices) and edges (links) resides here, along with elements for graph metadata such as styling attributes, active node/edge selections, data frames linked to nodes or edges, and other user-defined caches of graph features.</p>
-<p>Nodes and edges contain attributes (properties) as key-value pairs. Formally, the graph object contains separate <strong>R</strong> data frames for nodes and their attributes and an analogous data frame for edges and their attributes. The user does not directly modify the contents of the graph object, rather, access to graph functions modifies the objects internal to the graph object, ensuring synchronization of all elements without corruption.</p>
 <p><img src="diagrams/diagrammer_graph_chp_01.png"></p>
+<p>The user does not directly modify the contents of the graph object. Rather, the package provides access to a wide range of graph functions for modifying the internal components of the graph object. This both provides ease-of-use and assurances that all graph elements are synchronized, avoiding unintentional corruption of the graph.</p>
+<p>Nodes and edges contain properties (called <em>attributes</em> throughout) as key-value pairs. Formally, the graph object contains an <strong>R</strong> data frame for all graph nodes and their attributes (<code>nodes_df</code>) and an analogous data frame for edges and their attributes (<code>edges_df</code>). In the context of <strong>DiagrammeR</strong> these are typically called the node data frame (<em>ndf</em>) and the edge data frame (<em>edf</em>).</p>
+<p>There are several additional data frames used to support the modification and display of graphs. The Global Graph Attributes (<code>global_attrs</code>) data frame stores data for the default appearance of a graph when display. One entry may include using a <code>fontsize</code> of <code>10</code> for each <code>node</code>. Another may affect the whole graph, where the <code>layout</code> is the <code>circo</code> type. These defaults, set for nodes and edges, can be subject to overrides on a per-node or per-edge basis by including values for the same attributes in the node or edge data frames.</p>
+<p>Two data frames are reserved for node and edge selection values (<code>node_selection</code> and <code>edge_selection</code>). If there is no active selection, then these data frames are empty (i.e., have 0 rows). If there is a selection (and there can only be one type of selection at any given time), then rows containing node IDs or edge IDs will be populated. This will generally persist (even as other graph functions are used) until the selection is formally cleared. These types of selections are useful because we can target specific parts of the graph and apply specific functions that recognize selections to do useful graph work.</p>
+<p>The graph stores useful metadata about itself such as identifiers and control options (in <code>graph_info</code>) and a log of which graph modification functions where used (in <code>graph_log</code>). This is valuable for the system to understand the graph history and state and this allows for some graph functions to work with less user-provided information.</p>
+<p>Finally, we have the option to store some other <strong>R</strong> objects in the graph. One is a cache space for <strong>R</strong> vectors. This cached vector could consist of a series of labels extracted from one part of the graph that may be useful in a function that does something to another part of the graph. The other reserved space for data is for entire data frames that could belong to any node or edge in the graph. This is great if you have extended metadata that doesn’t easily correspond to a key-value attribute pair.</p>
 
 </div>
 </div>
