@@ -15,3 +15,5 @@ Using a network graph usually means you have fast navigation (i.e., traversals) 
 A graph object in **DiagrammeR** maintains a series of interrelated elements. Most importantly, the set of nodes (vertices) and edges (links) resides here, along with elements for graph metadata such as styling attributes, active node/edge selections, data frames linked to nodes or edges, and other user-defined caches of graph features.
 
 Nodes and edges contain attributes (properties) as key-value pairs. Formally, the graph object contains separate **R** data frames for nodes and their attributes and an analogous data frame for edges and their attributes. The user does not directly modify the contents of the graph object, rather, access to graph functions modifies the objects internal to the graph object, ensuring synchronization of all elements without corruption.
+
+<img src="diagrams/diagrammer_graph_chp_01.png">
