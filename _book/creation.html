@@ -26,7 +26,7 @@
 <meta name="author" content="Richard Iannone">
 
 
-<meta name="date" content="2017-03-20">
+<meta name="date" content="2017-03-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -125,8 +125,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.2.4" data-path="creation.html"><a href="creation.html#adding-edges"><i class="fa fa-check"></i><b>2.2.4</b> Adding Edges</a></li>
 <li class="chapter" data-level="2.2.5" data-path="creation.html"><a href="creation.html#deleting-graph-elements"><i class="fa fa-check"></i><b>2.2.5</b> Deleting Graph Elements</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="creation.html"><a href="creation.html#creation-using-data-frames"><i class="fa fa-check"></i><b>2.3</b> Creation Using Data Frames</a></li>
+<li class="chapter" data-level="2.3" data-path="creation.html"><a href="creation.html#using-data-frames"><i class="fa fa-check"></i><b>2.3</b> Using Data Frames</a></li>
 <li class="chapter" data-level="2.4" data-path="creation.html"><a href="creation.html#adding-basic-attributes"><i class="fa fa-check"></i><b>2.4</b> Adding Basic Attributes</a></li>
+<li class="chapter" data-level="2.5" data-path="creation.html"><a href="creation.html#the-internal-ndfedf"><i class="fa fa-check"></i><b>2.5</b> The Internal NDF/EDF</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="attrs.html"><a href="attrs.html"><i class="fa fa-check"></i><b>3</b> Graph Attributes</a><ul>
 <li class="chapter" data-level="3.1" data-path="attrs.html"><a href="attrs.html#external-ndfs-and-edfs"><i class="fa fa-check"></i><b>3.1</b> External NDFs and EDFs</a></li>
@@ -196,8 +197,8 @@ graph_2n &lt;-<span class="st"> </span><span class="kw">add_node</span>(<span cl
 <h3><span class="header-section-number">2.2.2</span> Viewing the Graph</h3>
 <p>Finally, we can visualize the graph by using the <code>render_graph()</code> function. The nodes typically appear very large when there are few of them but scale down in size if there are many. The values shown inside the nodes are the automatically-assigned node ID values. If we were to assign <code>label</code> values to each of the nodes - which could be done when using <code>add_node(label = &quot;label_name&quot;)</code>, for example - those values would be shown instead.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_2n)</code></pre></div>
-<div id="htmlwidget-a67925a756e1ecbb40db" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a67925a756e1ecbb40db">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n}","config":{"engine":["function (mat, widths = rep.int(1, ncol(mat)), heights = rep.int(1, ","    nrow(mat)), respect = FALSE) ","{","    storage.mode(mat) <- \"integer\"","    mat <- as.matrix(mat)","    if (!is.logical(respect)) {","        respect <- as.matrix(respect)","        if (!is.matrix(respect) || any(dim(respect) != dim(mat))) ","            stop(\"'respect' must be logical or matrix with same dimension as 'mat'\")","    }","    num.figures <- as.integer(max(mat))","    for (i in 1L:num.figures) if (match(i, mat, nomatch = 0L) == ","        0L) ","        stop(gettextf(\"layout matrix must contain at least one reference\\nto each of the values {1 ... %d}\\n\", ","            num.figures), domain = NA)","    dm <- dim(mat)","    num.rows <- dm[1L]","    num.cols <- dm[2L]","    cm.widths <- if (is.character(widths)) ","        grep(\"cm\", widths, fixed = TRUE)","    cm.heights <- if (is.character(heights)) ","        grep(\"cm\", heights, fixed = TRUE)","    pad1.rm.cm <- function(v, cm.v, len) {","        if ((ll <- length(v)) < len) ","            v <- c(v, rep.int(1, len - ll))","        if (is.character(v)) {","            wcm <- v[cm.v]","            v[cm.v] <- substring(wcm, 1L, nchar(wcm, type = \"c\") - ","                3)","            v <- chartr(getOption(\"OutDec\"), \".\", v)","        }","        as.numeric(v)","    }","    widths <- pad1.rm.cm(widths, cm.widths, len = num.cols)","    heights <- pad1.rm.cm(heights, cm.heights, len = num.rows)","    if (is.matrix(respect)) {","        respect.mat <- as.integer(respect)","        respect <- 2","    }","    else {","        respect.mat <- matrix(0L, num.rows, num.cols)","    }","    .External.graphics(C_layout, num.rows, num.cols, mat, as.integer(num.figures), ","        col.widths = widths, row.heights = heights, cm.widths, ","        cm.heights, respect = as.integer(respect), respect.mat)","    invisible(num.figures)","}"],"options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-623745f51b62730bc49f" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-623745f51b62730bc49f">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n}","config":{"engine":["function (mat, widths = rep.int(1, ncol(mat)), heights = rep.int(1, ","    nrow(mat)), respect = FALSE) ","{","    storage.mode(mat) <- \"integer\"","    mat <- as.matrix(mat)","    if (!is.logical(respect)) {","        respect <- as.matrix(respect)","        if (!is.matrix(respect) || any(dim(respect) != dim(mat))) ","            stop(\"'respect' must be logical or matrix with same dimension as 'mat'\")","    }","    num.figures <- as.integer(max(mat))","    for (i in 1L:num.figures) if (match(i, mat, nomatch = 0L) == ","        0L) ","        stop(gettextf(\"layout matrix must contain at least one reference\\nto each of the values {1 ... %d}\\n\", ","            num.figures), domain = NA)","    dm <- dim(mat)","    num.rows <- dm[1L]","    num.cols <- dm[2L]","    cm.widths <- if (is.character(widths)) ","        grep(\"cm\", widths, fixed = TRUE)","    cm.heights <- if (is.character(heights)) ","        grep(\"cm\", heights, fixed = TRUE)","    pad1.rm.cm <- function(v, cm.v, len) {","        if ((ll <- length(v)) < len) ","            v <- c(v, rep.int(1, len - ll))","        if (is.character(v)) {","            wcm <- v[cm.v]","            v[cm.v] <- substring(wcm, 1L, nchar(wcm, type = \"c\") - ","                3)","            v <- chartr(getOption(\"OutDec\"), \".\", v)","        }","        as.numeric(v)","    }","    widths <- pad1.rm.cm(widths, cm.widths, len = num.cols)","    heights <- pad1.rm.cm(heights, cm.heights, len = num.rows)","    if (is.matrix(respect)) {","        respect.mat <- as.integer(respect)","        respect <- 2","    }","    else {","        respect.mat <- matrix(0L, num.rows, num.cols)","    }","    .External.graphics(C_layout, num.rows, num.cols, mat, as.integer(num.figures), ","        col.widths = widths, row.heights = heights, cm.widths, ","        cm.heights, respect = as.integer(respect), respect.mat)","    invisible(num.figures)","}"],"options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Adding nodes does not automatically add edges. We can check that there are no edges in the graph by using the <code>edge_count()</code> function. A graph with no edges will return <code>0</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">edge_count</span>(<span class="dt">graph =</span> graph_2n)</code></pre></div>
 <pre><code>## [1] 0</code></pre>
@@ -252,13 +253,13 @@ graph_2n_1e &lt;-
 <p>We now have this simple and small graph. We can view it again by calling the <code>render_graph()</code> function. You probably do not want to assign the graph to an object when calling <code>render_graph()</code> (as you would likely mistakenly overwrite a graph you’ve previously made). We are purely using this function for its side effect, which is viewing. We can view the graph using the <strong>Graphviz</strong> renderer:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show the graph using the Graphviz engine</span>
 <span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_2n_1e)</code></pre></div>
-<div id="htmlwidget-9009a83fcf678a392d8e" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9009a83fcf678a392d8e">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n\"1\"->\"2\" [id = \"1\"] \n}","config":{"engine":["function (mat, widths = rep.int(1, ncol(mat)), heights = rep.int(1, ","    nrow(mat)), respect = FALSE) ","{","    storage.mode(mat) <- \"integer\"","    mat <- as.matrix(mat)","    if (!is.logical(respect)) {","        respect <- as.matrix(respect)","        if (!is.matrix(respect) || any(dim(respect) != dim(mat))) ","            stop(\"'respect' must be logical or matrix with same dimension as 'mat'\")","    }","    num.figures <- as.integer(max(mat))","    for (i in 1L:num.figures) if (match(i, mat, nomatch = 0L) == ","        0L) ","        stop(gettextf(\"layout matrix must contain at least one reference\\nto each of the values {1 ... %d}\\n\", ","            num.figures), domain = NA)","    dm <- dim(mat)","    num.rows <- dm[1L]","    num.cols <- dm[2L]","    cm.widths <- if (is.character(widths)) ","        grep(\"cm\", widths, fixed = TRUE)","    cm.heights <- if (is.character(heights)) ","        grep(\"cm\", heights, fixed = TRUE)","    pad1.rm.cm <- function(v, cm.v, len) {","        if ((ll <- length(v)) < len) ","            v <- c(v, rep.int(1, len - ll))","        if (is.character(v)) {","            wcm <- v[cm.v]","            v[cm.v] <- substring(wcm, 1L, nchar(wcm, type = \"c\") - ","                3)","            v <- chartr(getOption(\"OutDec\"), \".\", v)","        }","        as.numeric(v)","    }","    widths <- pad1.rm.cm(widths, cm.widths, len = num.cols)","    heights <- pad1.rm.cm(heights, cm.heights, len = num.rows)","    if (is.matrix(respect)) {","        respect.mat <- as.integer(respect)","        respect <- 2","    }","    else {","        respect.mat <- matrix(0L, num.rows, num.cols)","    }","    .External.graphics(C_layout, num.rows, num.cols, mat, as.integer(num.figures), ","        col.widths = widths, row.heights = heights, cm.widths, ","        cm.heights, respect = as.integer(respect), respect.mat)","    invisible(num.figures)","}"],"options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a2d874b975953cb2a5d5" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a2d874b975953cb2a5d5">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n\"1\"->\"2\" [id = \"1\"] \n}","config":{"engine":["function (mat, widths = rep.int(1, ncol(mat)), heights = rep.int(1, ","    nrow(mat)), respect = FALSE) ","{","    storage.mode(mat) <- \"integer\"","    mat <- as.matrix(mat)","    if (!is.logical(respect)) {","        respect <- as.matrix(respect)","        if (!is.matrix(respect) || any(dim(respect) != dim(mat))) ","            stop(\"'respect' must be logical or matrix with same dimension as 'mat'\")","    }","    num.figures <- as.integer(max(mat))","    for (i in 1L:num.figures) if (match(i, mat, nomatch = 0L) == ","        0L) ","        stop(gettextf(\"layout matrix must contain at least one reference\\nto each of the values {1 ... %d}\\n\", ","            num.figures), domain = NA)","    dm <- dim(mat)","    num.rows <- dm[1L]","    num.cols <- dm[2L]","    cm.widths <- if (is.character(widths)) ","        grep(\"cm\", widths, fixed = TRUE)","    cm.heights <- if (is.character(heights)) ","        grep(\"cm\", heights, fixed = TRUE)","    pad1.rm.cm <- function(v, cm.v, len) {","        if ((ll <- length(v)) < len) ","            v <- c(v, rep.int(1, len - ll))","        if (is.character(v)) {","            wcm <- v[cm.v]","            v[cm.v] <- substring(wcm, 1L, nchar(wcm, type = \"c\") - ","                3)","            v <- chartr(getOption(\"OutDec\"), \".\", v)","        }","        as.numeric(v)","    }","    widths <- pad1.rm.cm(widths, cm.widths, len = num.cols)","    heights <- pad1.rm.cm(heights, cm.heights, len = num.rows)","    if (is.matrix(respect)) {","        respect.mat <- as.integer(respect)","        respect <- 2","    }","    else {","        respect.mat <- matrix(0L, num.rows, num.cols)","    }","    .External.graphics(C_layout, num.rows, num.cols, mat, as.integer(num.figures), ","        col.widths = widths, row.heights = heights, cm.widths, ","        cm.heights, respect = as.integer(respect), respect.mat)","    invisible(num.figures)","}"],"options":null}},"evals":[],"jsHooks":[]}</script>
 <p>And also, if you like interactivity and fluid physical motions, try using the <strong>visNetwork</strong> renderer.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show the graph using the visNetwork engine</span>
 <span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_2n_1e, <span class="dt">output =</span> <span class="st">&quot;visNetwork&quot;</span>)</code></pre></div>
-<div id="htmlwidget-b320ef8bd90da62cc5b4" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b320ef8bd90da62cc5b4">{"x":{"nodes":{"id":[1,2],"group":[null,null],"label":[null,null]},"edges":{"id":[1],"from":[1],"to":[2],"label":[null]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"edges":{"arrows":{"to":{"enabled":true,"scaleFactor":1}}},"physics":{"stabilization":{"enabled":true,"onlyDynamicEdges":false,"fit":true}},"layout":{"improvedLayout":true}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-64cc5fde31f2446f59fe" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-64cc5fde31f2446f59fe">{"x":{"nodes":{"id":[1,2],"group":[null,null],"label":[null,null]},"edges":{"id":[1],"from":[1],"to":[2],"label":[null]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"edges":{"arrows":{"to":{"enabled":true,"scaleFactor":1}}},"physics":{"stabilization":{"enabled":true,"onlyDynamicEdges":false,"fit":true}},"layout":{"improvedLayout":true}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="deleting-graph-elements" class="section level3">
 <h3><span class="header-section-number">2.2.5</span> Deleting Graph Elements</h3>
@@ -278,53 +279,129 @@ graph_2n_1e_empty &lt;-
 <p>There are some shortcuts/variations for doing the same thing (there are often numerous ways to transform graphs). You could simply call <code>delete_node()</code> twice, for instance, to get an empty graph. This is because removing a node with edges attached will automatically remove those edges. If we were now to display the graph with <code>render_graph()</code> you would get a field of nothingness. Since that’s not very interesting, I’m not going to show it here.</p>
 </div>
 </div>
-<div id="creation-using-data-frames" class="section level2">
-<h2><span class="header-section-number">2.3</span> Creation Using Data Frames</h2>
-<p>For many graph diagrams you may need many nodes and edges. Let’s use the <code>create_node_df()</code> function to specify a collection of nodes and contain them in a data frame (a <em>node data frame</em>, or <em>ndf</em>). Immediately after that, inspect the node data frame.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ndf &lt;-<span class="st"> </span>
-<span class="st">  </span><span class="kw">create_node_df</span>(
-    <span class="dt">n =</span> <span class="dv">3</span>,
-    <span class="dt">label =</span> <span class="ot">TRUE</span>)
-
-ndf</code></pre></div>
-<pre><code>##   id type label
-## 1  1 &lt;NA&gt;     1
-## 2  2 &lt;NA&gt;     2
-## 3  3 &lt;NA&gt;     3</code></pre>
+<div id="using-data-frames" class="section level2">
+<h2><span class="header-section-number">2.3</span> Using Data Frames</h2>
+<p>For certain graph diagrams there will be many nodes and edges, and, it may not be practical to add nodes/edges a few at a time. Let’s take advantage of <strong>R</strong> and its data frames! We can construct a specialized data frame for nodes (a <em>node data frame</em>, or <em>ndf</em>) and include the basic node information (ID values, a <code>type</code>, and a text-based <code>label</code>), and, also include <em>extra</em> columns that could be used for node aesthetics when displayed or even just metadata. To start simply, let’s use the <code>create_node_df()</code> function to specify a minimal collection of nodes in an ndf.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">create_node_df</span>(
+  <span class="dt">n =</span> <span class="dv">3</span>,
+  <span class="dt">label =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">type</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">NA</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">NA</td>
+<td align="left">2</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">NA</td>
+<td align="left">3</td>
+</tr>
+</tbody>
+</table>
 <p>The <code>n</code> argument is required here and it must indicate the number of nodes you intend this object to contain. The use of <code>label = TRUE</code> allows for copying of the node IDs as the node <code>label</code> (which is a node attribute). This is not always desirable, however. A better option is to specify a vector of label values (you can use all manner of characters, it will be coerced to a <code>character</code> vector). Make certain that this vector is the same length as specified by <code>n</code>. Also, if we ensure that the <code>label</code> node attribute always contains unique values, we can later select individual nodes by their <code>label</code> values and perform actions on these selections.</p>
-<p>You may have noticed the node attribute <code>type</code> in the output. Values may optionally be provided for this attribute and, again, having this extra metadata is useful for categorizing collections of nodes. Let’s refine the <code>ndf</code> object and include two different <code>type</code> values (<code>A</code> and <code>B</code>).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ndf &lt;-<span class="st"> </span>
+<p>You may have noticed the node attribute <code>type</code> in the output (alas, all <code>NA</code>s). Values may optionally be provided for this attribute and, again, having this extra metadata is recommended as it is helpful for categorizing nodes. Let’s display a different <code>ndf</code> object that includes two different <code>type</code> values (<code>A</code> and <code>B</code>) and unique <code>label</code> values that are not strict copies of the node <code>id</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ndf &lt;-
 <span class="st">  </span><span class="kw">create_node_df</span>(
     <span class="dt">n =</span> <span class="dv">3</span>,
     <span class="dt">type =</span> <span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>),
-    <span class="dt">label =</span> <span class="ot">TRUE</span>)
-
-ndf</code></pre></div>
-<pre><code>##   id type label
-## 1  1    A     1
-## 2  2    A     2
-## 3  3    B     3</code></pre>
+    <span class="dt">label =</span> <span class="kw">c</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">type</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">A</td>
+<td align="left">one</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">A</td>
+<td align="left">two</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">B</td>
+<td align="left">three</td>
+</tr>
+</tbody>
+</table>
 <p>Now onto the edges, those connections between the nodes. The edges are also collected in a data frame (this time, as an <em>edge data frame</em> or <em>edf</em>). The <code>create_edge_df()</code> function is used to generate this type of object.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">edf &lt;-<span class="st"> </span>
-<span class="st">  </span><span class="kw">create_edge_df</span>(
-    <span class="dt">from =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>),
-    <span class="dt">to   =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))
-
-edf</code></pre></div>
-<pre><code>##   id from to  rel
-## 1  1    1  2 &lt;NA&gt;
-## 2  2    1  3 &lt;NA&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">create_edge_df</span>(
+  <span class="dt">from =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>),
+  <span class="dt">to   =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="right">from</th>
+<th align="right">to</th>
+<th align="left">rel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
 <p>The <code>from</code> and <code>to</code> arguments specify which nodes for the edge are outgoing and incoming, respectively. Here, the edges are: <code>1-&gt;2</code> and <code>1-&gt;3</code>. As stated before, for directed graphs, the order is essential. The <code>rel</code> argument allows for the inclusion of text labels in the same manner as the node <code>type</code>. This is useful for targeting specific groups of edges during a selection or traversal. Let’s refine the <code>edf</code> object and include two different <code>rel</code> values (<code>X</code> and <code>Y</code>).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">edf &lt;-<span class="st"> </span>
 <span class="st">  </span><span class="kw">create_edge_df</span>(
     <span class="dt">from =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>),
     <span class="dt">to   =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>),
-    <span class="dt">rel =</span> <span class="kw">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>))
-
-edf</code></pre></div>
-<pre><code>##   id from to rel
-## 1  1    1  2   X
-## 2  2    1  3   Y</code></pre>
+    <span class="dt">rel =</span> <span class="kw">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="right">from</th>
+<th align="right">to</th>
+<th align="left">rel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="left">X</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="left">Y</td>
+</tr>
+</tbody>
+</table>
 <p>Now that we have an <em>ndf</em> and an <em>edf</em>, we can combine those into a new graph object by using these specialized data frames within the <code>create_graph()</code> function call.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a graph object using node and</span>
 <span class="co"># edge data frames</span>
@@ -335,40 +412,129 @@ graph_ndf_edf &lt;-<span class="st"> </span>
 <p>What exactly happened? These data frames (<code>ndf</code> and <code>edf</code>) were placed within the graph object when it was created. They essentially became internal <code>ndf</code> and <code>edf</code> objects. We can inspect the graph’s internal <em>ndf</em> and <em>edf</em> at any time using the <code>get_node_df()</code> and <code>get_edge_df()</code> functions:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show the graph&#39;s internal node data frame</span>
 <span class="kw">get_node_df</span>(graph_ndf_edf)</code></pre></div>
-<pre><code>##   id type label
-## 1  1    A     1
-## 2  2    A     2
-## 3  3    B     3</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">type</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">A</td>
+<td align="left">one</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">A</td>
+<td align="left">two</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">B</td>
+<td align="left">three</td>
+</tr>
+</tbody>
+</table>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show the graph&#39;s internal edge data frame</span>
 <span class="kw">get_edge_df</span>(graph_ndf_edf)</code></pre></div>
-<pre><code>##   id from to rel
-## 1  1    1  2   X
-## 2  2    1  3   Y</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="right">from</th>
+<th align="right">to</th>
+<th align="left">rel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="left">X</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="left">Y</td>
+</tr>
+</tbody>
+</table>
 <p>Let’s view the graph using <code>render_graph()</code>. The output will clearly show us how the 3 nodes are connected to each other.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show the graph using `render_graph()`</span>
 <span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_ndf_edf)</code></pre></div>
-<div id="htmlwidget-1754305fd8e7672cffae" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1754305fd8e7672cffae">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"1\"] \n  \"2\" [label = \"2\"] \n  \"3\" [label = \"3\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":["function (mat, widths = rep.int(1, ncol(mat)), heights = rep.int(1, ","    nrow(mat)), respect = FALSE) ","{","    storage.mode(mat) <- \"integer\"","    mat <- as.matrix(mat)","    if (!is.logical(respect)) {","        respect <- as.matrix(respect)","        if (!is.matrix(respect) || any(dim(respect) != dim(mat))) ","            stop(\"'respect' must be logical or matrix with same dimension as 'mat'\")","    }","    num.figures <- as.integer(max(mat))","    for (i in 1L:num.figures) if (match(i, mat, nomatch = 0L) == ","        0L) ","        stop(gettextf(\"layout matrix must contain at least one reference\\nto each of the values {1 ... %d}\\n\", ","            num.figures), domain = NA)","    dm <- dim(mat)","    num.rows <- dm[1L]","    num.cols <- dm[2L]","    cm.widths <- if (is.character(widths)) ","        grep(\"cm\", widths, fixed = TRUE)","    cm.heights <- if (is.character(heights)) ","        grep(\"cm\", heights, fixed = TRUE)","    pad1.rm.cm <- function(v, cm.v, len) {","        if ((ll <- length(v)) < len) ","            v <- c(v, rep.int(1, len - ll))","        if (is.character(v)) {","            wcm <- v[cm.v]","            v[cm.v] <- substring(wcm, 1L, nchar(wcm, type = \"c\") - ","                3)","            v <- chartr(getOption(\"OutDec\"), \".\", v)","        }","        as.numeric(v)","    }","    widths <- pad1.rm.cm(widths, cm.widths, len = num.cols)","    heights <- pad1.rm.cm(heights, cm.heights, len = num.rows)","    if (is.matrix(respect)) {","        respect.mat <- as.integer(respect)","        respect <- 2","    }","    else {","        respect.mat <- matrix(0L, num.rows, num.cols)","    }","    .External.graphics(C_layout, num.rows, num.cols, mat, as.integer(num.figures), ","        col.widths = widths, row.heights = heights, cm.widths, ","        cm.heights, respect = as.integer(respect), respect.mat)","    invisible(num.figures)","}"],"options":null}},"evals":[],"jsHooks":[]}</script>
-<p>There is a bit more that you can do with node and edge data frames. Extra columns (or attributes) filled with values can be used for several purposes:</p>
-<ul>
-<li>to associate data values that relate to each node or edge</li>
-<li>to provide styling attributes such as color names or relative node sizes</li>
-</ul>
-<p>We can add these extra columns/attrs when making the node or edge data frames. Here is an example where <code>color</code> attribute values for nodes and edges is provided along with some <code>fillcolor</code> values for nodes.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a node data frame</span></code></pre></div>
+<div id="htmlwidget-6cc33dbad8cf801cc2fc" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6cc33dbad8cf801cc2fc">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"one\"] \n  \"2\" [label = \"two\"] \n  \"3\" [label = \"three\"] \n\"1\"->\"2\" [id = \"1\"] \n\"1\"->\"3\" [id = \"2\"] \n}","config":{"engine":["function (mat, widths = rep.int(1, ncol(mat)), heights = rep.int(1, ","    nrow(mat)), respect = FALSE) ","{","    storage.mode(mat) <- \"integer\"","    mat <- as.matrix(mat)","    if (!is.logical(respect)) {","        respect <- as.matrix(respect)","        if (!is.matrix(respect) || any(dim(respect) != dim(mat))) ","            stop(\"'respect' must be logical or matrix with same dimension as 'mat'\")","    }","    num.figures <- as.integer(max(mat))","    for (i in 1L:num.figures) if (match(i, mat, nomatch = 0L) == ","        0L) ","        stop(gettextf(\"layout matrix must contain at least one reference\\nto each of the values {1 ... %d}\\n\", ","            num.figures), domain = NA)","    dm <- dim(mat)","    num.rows <- dm[1L]","    num.cols <- dm[2L]","    cm.widths <- if (is.character(widths)) ","        grep(\"cm\", widths, fixed = TRUE)","    cm.heights <- if (is.character(heights)) ","        grep(\"cm\", heights, fixed = TRUE)","    pad1.rm.cm <- function(v, cm.v, len) {","        if ((ll <- length(v)) < len) ","            v <- c(v, rep.int(1, len - ll))","        if (is.character(v)) {","            wcm <- v[cm.v]","            v[cm.v] <- substring(wcm, 1L, nchar(wcm, type = \"c\") - ","                3)","            v <- chartr(getOption(\"OutDec\"), \".\", v)","        }","        as.numeric(v)","    }","    widths <- pad1.rm.cm(widths, cm.widths, len = num.cols)","    heights <- pad1.rm.cm(heights, cm.heights, len = num.rows)","    if (is.matrix(respect)) {","        respect.mat <- as.integer(respect)","        respect <- 2","    }","    else {","        respect.mat <- matrix(0L, num.rows, num.cols)","    }","    .External.graphics(C_layout, num.rows, num.cols, mat, as.integer(num.figures), ","        col.widths = widths, row.heights = heights, cm.widths, ","        cm.heights, respect = as.integer(respect), respect.mat)","    invisible(num.figures)","}"],"options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="adding-basic-attributes" class="section level2">
 <h2><span class="header-section-number">2.4</span> Adding Basic Attributes</h2>
+<p>As stated previously, there is quite a bit more that you can do with node and edge data frames. Extra columns (representing attributes) filled with attribute values can be used for these two main purposes:</p>
+<ul>
+<li>associating data values to each node or edge</li>
+<li>providing styling attributes such as color names, node sizes, etc.</li>
+</ul>
+<p>We can add these extra columns/attrs when making the node or edge data frames. Here is an example where <code>color</code> attribute values for nodes and edges is provided along with some <code>fillcolor</code> values for nodes.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a node data frame</span>
+ndf &lt;-
+<span class="st">  </span><span class="kw">create_node_df</span>(
+    <span class="dt">n =</span> <span class="dv">3</span>,
+    <span class="dt">type =</span> <span class="st">&quot;a&quot;</span>,
+    <span class="dt">label =</span> <span class="kw">c</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>),
+    <span class="dt">color =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>),
+    <span class="dt">fillcolor =</span> <span class="st">&quot;gray95&quot;</span>)
+
+<span class="co"># Create an edge data frame</span>
+edf &lt;-
+<span class="st">  </span><span class="kw">create_edge_df</span>(
+    <span class="dt">from =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>),
+    <span class="dt">to =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>),
+    <span class="dt">color =</span> <span class="st">&quot;darkgreen&quot;</span>)
+
+<span class="co"># Create a graph with the ndf and edf</span>
+graph_colors &lt;-
+<span class="st">  </span><span class="kw">create_graph</span>(
+    <span class="dt">nodes_df =</span> ndf,
+    <span class="dt">edges_df =</span> edf)
+
+<span class="co"># Show the graph using `render_graph()`</span>
+<span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_colors)</code></pre></div>
+<div id="htmlwidget-119f44885734db4d7166" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-119f44885734db4d7166">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"one\", color = \"red\", fillcolor = \"gray95\"] \n  \"2\" [label = \"two\", color = \"blue\", fillcolor = \"gray95\"] \n  \"3\" [label = \"three\", color = \"red\", fillcolor = \"gray95\"] \n\"1\"->\"2\" [id = \"1\", color = \"darkgreen\"] \n\"2\"->\"3\" [id = \"2\", color = \"darkgreen\"] \n}","config":{"engine":["function (mat, widths = rep.int(1, ncol(mat)), heights = rep.int(1, ","    nrow(mat)), respect = FALSE) ","{","    storage.mode(mat) <- \"integer\"","    mat <- as.matrix(mat)","    if (!is.logical(respect)) {","        respect <- as.matrix(respect)","        if (!is.matrix(respect) || any(dim(respect) != dim(mat))) ","            stop(\"'respect' must be logical or matrix with same dimension as 'mat'\")","    }","    num.figures <- as.integer(max(mat))","    for (i in 1L:num.figures) if (match(i, mat, nomatch = 0L) == ","        0L) ","        stop(gettextf(\"layout matrix must contain at least one reference\\nto each of the values {1 ... %d}\\n\", ","            num.figures), domain = NA)","    dm <- dim(mat)","    num.rows <- dm[1L]","    num.cols <- dm[2L]","    cm.widths <- if (is.character(widths)) ","        grep(\"cm\", widths, fixed = TRUE)","    cm.heights <- if (is.character(heights)) ","        grep(\"cm\", heights, fixed = TRUE)","    pad1.rm.cm <- function(v, cm.v, len) {","        if ((ll <- length(v)) < len) ","            v <- c(v, rep.int(1, len - ll))","        if (is.character(v)) {","            wcm <- v[cm.v]","            v[cm.v] <- substring(wcm, 1L, nchar(wcm, type = \"c\") - ","                3)","            v <- chartr(getOption(\"OutDec\"), \".\", v)","        }","        as.numeric(v)","    }","    widths <- pad1.rm.cm(widths, cm.widths, len = num.cols)","    heights <- pad1.rm.cm(heights, cm.heights, len = num.rows)","    if (is.matrix(respect)) {","        respect.mat <- as.integer(respect)","        respect <- 2","    }","    else {","        respect.mat <- matrix(0L, num.rows, num.cols)","    }","    .External.graphics(C_layout, num.rows, num.cols, mat, as.integer(num.figures), ","        col.widths = widths, row.heights = heights, cm.widths, ","        cm.heights, respect = as.integer(respect), respect.mat)","    invisible(num.figures)","}"],"options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Note that whenever we use the default values for <code>type</code> or <code>label</code> in each <code>add_node()</code> call, we don’t get values for the <code>type</code> attribute and the <code>label</code> attribute is assigned the node ID value. In the ideal case, values for <code>type</code> and <code>label</code> are supplied. Something to keep in mind is that including <code>label</code> values that are unique or distinct across all nodes in the graph will make it possible to specify node selections and perform useful actions on specific nodes. Let’s create the <code>graph</code> object once more with <code>type</code> and <code>label</code> node attributes included.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">graph_node_type_label &lt;-<span class="st"> </span>
 <span class="st">  </span><span class="kw">create_graph</span>() %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw">add_node</span>(<span class="dt">type =</span> <span class="st">&quot;number&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;one&quot;</span>) %&gt;%
 <span class="st">  </span><span class="kw">add_node</span>(<span class="dt">type =</span> <span class="st">&quot;number&quot;</span>, <span class="dt">label =</span> <span class="st">&quot;two&quot;</span>)</code></pre></div>
-<p>View the graph’s internal node data frame with the <code>get_node_df()</code> function so we can see that these attributes have been included alongside the graph’s nodes.</p>
+</div>
+<div id="the-internal-ndfedf" class="section level2">
+<h2><span class="header-section-number">2.5</span> The Internal NDF/EDF</h2>
+<p>We can view the graph’s internal node data frame with the <code>get_node_df()</code> function so we can see that these attributes have been included alongside the graph’s nodes.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">get_node_df</span>(graph_node_type_label)</code></pre></div>
-<pre><code>##   id   type label
-## 1  1 number   one
-## 2  2 number   two</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">type</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">number</td>
+<td align="left">one</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">number</td>
+<td align="left">two</td>
+</tr>
+</tbody>
+</table>
 <p>Now let’s add a single, directed edge between nodes <code>1</code> and <code>2</code> using <code>add_edge()</code>. This edge will also be given a value for its <code>rel</code> attribute (<code>to_number</code>). After adding the edge to the graph, use the <code>get_edges()</code> function to show that the edge has been produced.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Add an edge between nodes `1` and `2` and</span>
 <span class="co"># set the `rel` attribute as `to_number`</span>
@@ -399,18 +565,23 @@ graph_edge_w_ids &lt;-<span class="st"> </span>
 <span class="co"># vector with pairs of node `label` values)</span>
 graph_edge_w_ids %&gt;%<span class="st"> </span><span class="kw">get_edges</span>(<span class="dt">return_values =</span> <span class="st">&quot;label&quot;</span>)</code></pre></div>
 <pre><code>## [1] &quot;one-&gt;two&quot;</code></pre>
-<p>The <code>get_edges()</code> function can output the pairs of nodes in edges either as a character vector (as above, which is the default), as a data frame (with 2 columns: <code>from</code> and <code>to</code>), or as a list (first component is the <code>from</code> vector and the second represents the <code>to</code> nodes). Here are examples of the latter two output types:</p>
+<p>By default, the <code>get_edges()</code> function outputs the pairs of nodes in edges as a character vector (as above). There is also the option to return this information as a data frame (with 2 columns: <code>from</code> and <code>to</code>):</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get the graph&#39;s edges as a data frame</span>
 <span class="kw">get_edges</span>(graph_edge_w_ids, <span class="dt">return_type =</span> <span class="st">&quot;df&quot;</span>)</code></pre></div>
-<pre><code>##   from to
-## 1    1  2</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get the graph&#39;s edges as a list</span>
-<span class="kw">get_edges</span>(graph_edge_w_ids, <span class="dt">return_type =</span> <span class="st">&quot;list&quot;</span>)</code></pre></div>
-<pre><code>## [[1]]
-## [1] 1
-## 
-## [[2]]
-## [1] 2</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">from</th>
+<th align="right">to</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
 <p>The addition of a node and the creation of edges can also be performed in a single <code>add_node()</code> step. You can use either (or both) of the optional <code>from</code> and <code>to</code> arguments in the <code>add_node()</code> function. Let’s make various graph objects and see how both nodes and edges can be created with a single call to <code>add_node()</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Add initial node (ID `1`) and then</span>
 <span class="co"># add node `2` and edge `1-&gt;2`</span>
@@ -458,8 +629,8 @@ graph_d &lt;-
 
 <span class="co"># View the graph in the RStudio Viewer</span>
 <span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_d)</code></pre></div>
-<div id="htmlwidget-e1232f62a8463b8fb256" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e1232f62a8463b8fb256">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n  \"3\"\n  \"4\"\n  \"5\"\n  \"6\"\n\"6\"->\"1\" [id = \"1\"] \n\"6\"->\"2\" [id = \"2\"] \n\"6\"->\"3\" [id = \"3\"] \n\"6\"->\"4\" [id = \"4\"] \n\"6\"->\"5\" [id = \"5\"] \n}","config":{"engine":["function (mat, widths = rep.int(1, ncol(mat)), heights = rep.int(1, ","    nrow(mat)), respect = FALSE) ","{","    storage.mode(mat) <- \"integer\"","    mat <- as.matrix(mat)","    if (!is.logical(respect)) {","        respect <- as.matrix(respect)","        if (!is.matrix(respect) || any(dim(respect) != dim(mat))) ","            stop(\"'respect' must be logical or matrix with same dimension as 'mat'\")","    }","    num.figures <- as.integer(max(mat))","    for (i in 1L:num.figures) if (match(i, mat, nomatch = 0L) == ","        0L) ","        stop(gettextf(\"layout matrix must contain at least one reference\\nto each of the values {1 ... %d}\\n\", ","            num.figures), domain = NA)","    dm <- dim(mat)","    num.rows <- dm[1L]","    num.cols <- dm[2L]","    cm.widths <- if (is.character(widths)) ","        grep(\"cm\", widths, fixed = TRUE)","    cm.heights <- if (is.character(heights)) ","        grep(\"cm\", heights, fixed = TRUE)","    pad1.rm.cm <- function(v, cm.v, len) {","        if ((ll <- length(v)) < len) ","            v <- c(v, rep.int(1, len - ll))","        if (is.character(v)) {","            wcm <- v[cm.v]","            v[cm.v] <- substring(wcm, 1L, nchar(wcm, type = \"c\") - ","                3)","            v <- chartr(getOption(\"OutDec\"), \".\", v)","        }","        as.numeric(v)","    }","    widths <- pad1.rm.cm(widths, cm.widths, len = num.cols)","    heights <- pad1.rm.cm(heights, cm.heights, len = num.rows)","    if (is.matrix(respect)) {","        respect.mat <- as.integer(respect)","        respect <- 2","    }","    else {","        respect.mat <- matrix(0L, num.rows, num.cols)","    }","    .External.graphics(C_layout, num.rows, num.cols, mat, as.integer(num.figures), ","        col.widths = widths, row.heights = heights, cm.widths, ","        cm.heights, respect = as.integer(respect), respect.mat)","    invisible(num.figures)","}"],"options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-281c9ea6b04854bc2824" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-281c9ea6b04854bc2824">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n  \"3\"\n  \"4\"\n  \"5\"\n  \"6\"\n\"6\"->\"1\" [id = \"1\"] \n\"6\"->\"2\" [id = \"2\"] \n\"6\"->\"3\" [id = \"3\"] \n\"6\"->\"4\" [id = \"4\"] \n\"6\"->\"5\" [id = \"5\"] \n}","config":{"engine":["function (mat, widths = rep.int(1, ncol(mat)), heights = rep.int(1, ","    nrow(mat)), respect = FALSE) ","{","    storage.mode(mat) <- \"integer\"","    mat <- as.matrix(mat)","    if (!is.logical(respect)) {","        respect <- as.matrix(respect)","        if (!is.matrix(respect) || any(dim(respect) != dim(mat))) ","            stop(\"'respect' must be logical or matrix with same dimension as 'mat'\")","    }","    num.figures <- as.integer(max(mat))","    for (i in 1L:num.figures) if (match(i, mat, nomatch = 0L) == ","        0L) ","        stop(gettextf(\"layout matrix must contain at least one reference\\nto each of the values {1 ... %d}\\n\", ","            num.figures), domain = NA)","    dm <- dim(mat)","    num.rows <- dm[1L]","    num.cols <- dm[2L]","    cm.widths <- if (is.character(widths)) ","        grep(\"cm\", widths, fixed = TRUE)","    cm.heights <- if (is.character(heights)) ","        grep(\"cm\", heights, fixed = TRUE)","    pad1.rm.cm <- function(v, cm.v, len) {","        if ((ll <- length(v)) < len) ","            v <- c(v, rep.int(1, len - ll))","        if (is.character(v)) {","            wcm <- v[cm.v]","            v[cm.v] <- substring(wcm, 1L, nchar(wcm, type = \"c\") - ","                3)","            v <- chartr(getOption(\"OutDec\"), \".\", v)","        }","        as.numeric(v)","    }","    widths <- pad1.rm.cm(widths, cm.widths, len = num.cols)","    heights <- pad1.rm.cm(heights, cm.heights, len = num.rows)","    if (is.matrix(respect)) {","        respect.mat <- as.integer(respect)","        respect <- 2","    }","    else {","        respect.mat <- matrix(0L, num.rows, num.cols)","    }","    .External.graphics(C_layout, num.rows, num.cols, mat, as.integer(num.figures), ","        col.widths = widths, row.heights = heights, cm.widths, ","        cm.heights, respect = as.integer(respect), respect.mat)","    invisible(num.figures)","}"],"options":null}},"evals":[],"jsHooks":[]}</script>
 <p>While this works and produces the result that was intended, it’s slightly inconvenient. We have to mentally keep track of which node ID values were created and use those directly in the <code>from</code> or <code>to</code> arguments to create the edges. A better way is to capture a selection of nodes and perform graph transformations with an active selection:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a graph, add 5 nodes, set those nodes</span>
 <span class="co"># as a node selection, and then add a new node</span>
@@ -472,10 +643,10 @@ graph_e &lt;-
 
 <span class="co"># View the graph in the RStudio Viewer</span>
 <span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_e)</code></pre></div>
-<div id="htmlwidget-9a9549b1ce4ea3b96f98" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9a9549b1ce4ea3b96f98">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n  \"3\"\n  \"4\"\n  \"5\"\n  \"6\"\n\"6\"->\"1\" [id = \"1\"] \n\"6\"->\"2\" [id = \"2\"] \n\"6\"->\"3\" [id = \"3\"] \n\"6\"->\"4\" [id = \"4\"] \n\"6\"->\"5\" [id = \"5\"] \n}","config":{"engine":["function (mat, widths = rep.int(1, ncol(mat)), heights = rep.int(1, ","    nrow(mat)), respect = FALSE) ","{","    storage.mode(mat) <- \"integer\"","    mat <- as.matrix(mat)","    if (!is.logical(respect)) {","        respect <- as.matrix(respect)","        if (!is.matrix(respect) || any(dim(respect) != dim(mat))) ","            stop(\"'respect' must be logical or matrix with same dimension as 'mat'\")","    }","    num.figures <- as.integer(max(mat))","    for (i in 1L:num.figures) if (match(i, mat, nomatch = 0L) == ","        0L) ","        stop(gettextf(\"layout matrix must contain at least one reference\\nto each of the values {1 ... %d}\\n\", ","            num.figures), domain = NA)","    dm <- dim(mat)","    num.rows <- dm[1L]","    num.cols <- dm[2L]","    cm.widths <- if (is.character(widths)) ","        grep(\"cm\", widths, fixed = TRUE)","    cm.heights <- if (is.character(heights)) ","        grep(\"cm\", heights, fixed = TRUE)","    pad1.rm.cm <- function(v, cm.v, len) {","        if ((ll <- length(v)) < len) ","            v <- c(v, rep.int(1, len - ll))","        if (is.character(v)) {","            wcm <- v[cm.v]","            v[cm.v] <- substring(wcm, 1L, nchar(wcm, type = \"c\") - ","                3)","            v <- chartr(getOption(\"OutDec\"), \".\", v)","        }","        as.numeric(v)","    }","    widths <- pad1.rm.cm(widths, cm.widths, len = num.cols)","    heights <- pad1.rm.cm(heights, cm.heights, len = num.rows)","    if (is.matrix(respect)) {","        respect.mat <- as.integer(respect)","        respect <- 2","    }","    else {","        respect.mat <- matrix(0L, num.rows, num.cols)","    }","    .External.graphics(C_layout, num.rows, num.cols, mat, as.integer(num.figures), ","        col.widths = widths, row.heights = heights, cm.widths, ","        cm.heights, respect = as.integer(respect), respect.mat)","    invisible(num.figures)","}"],"options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-54a95b89977b14618c15" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-54a95b89977b14618c15">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\"]\n\nnode [fontname = \"Helvetica\",\n     fontsize = \"10\",\n     shape = \"circle\",\n     fixedsize = \"true\",\n     width = \"0.5\",\n     style = \"filled\",\n     fillcolor = \"aliceblue\",\n     color = \"gray70\",\n     fontcolor = \"gray50\"]\n\nedge [len = \"1.5\",\n     color = \"gray40\",\n     arrowsize = \"0.5\"]\n\n  \"1\"\n  \"2\"\n  \"3\"\n  \"4\"\n  \"5\"\n  \"6\"\n\"6\"->\"1\" [id = \"1\"] \n\"6\"->\"2\" [id = \"2\"] \n\"6\"->\"3\" [id = \"3\"] \n\"6\"->\"4\" [id = \"4\"] \n\"6\"->\"5\" [id = \"5\"] \n}","config":{"engine":["function (mat, widths = rep.int(1, ncol(mat)), heights = rep.int(1, ","    nrow(mat)), respect = FALSE) ","{","    storage.mode(mat) <- \"integer\"","    mat <- as.matrix(mat)","    if (!is.logical(respect)) {","        respect <- as.matrix(respect)","        if (!is.matrix(respect) || any(dim(respect) != dim(mat))) ","            stop(\"'respect' must be logical or matrix with same dimension as 'mat'\")","    }","    num.figures <- as.integer(max(mat))","    for (i in 1L:num.figures) if (match(i, mat, nomatch = 0L) == ","        0L) ","        stop(gettextf(\"layout matrix must contain at least one reference\\nto each of the values {1 ... %d}\\n\", ","            num.figures), domain = NA)","    dm <- dim(mat)","    num.rows <- dm[1L]","    num.cols <- dm[2L]","    cm.widths <- if (is.character(widths)) ","        grep(\"cm\", widths, fixed = TRUE)","    cm.heights <- if (is.character(heights)) ","        grep(\"cm\", heights, fixed = TRUE)","    pad1.rm.cm <- function(v, cm.v, len) {","        if ((ll <- length(v)) < len) ","            v <- c(v, rep.int(1, len - ll))","        if (is.character(v)) {","            wcm <- v[cm.v]","            v[cm.v] <- substring(wcm, 1L, nchar(wcm, type = \"c\") - ","                3)","            v <- chartr(getOption(\"OutDec\"), \".\", v)","        }","        as.numeric(v)","    }","    widths <- pad1.rm.cm(widths, cm.widths, len = num.cols)","    heights <- pad1.rm.cm(heights, cm.heights, len = num.rows)","    if (is.matrix(respect)) {","        respect.mat <- as.integer(respect)","        respect <- 2","    }","    else {","        respect.mat <- matrix(0L, num.rows, num.cols)","    }","    .External.graphics(C_layout, num.rows, num.cols, mat, as.integer(num.figures), ","        col.widths = widths, row.heights = heights, cm.widths, ","        cm.heights, respect = as.integer(respect), respect.mat)","    invisible(num.figures)","}"],"options":null}},"evals":[],"jsHooks":[]}</script>
 <p>This produces the same graph as before but, this time, we didn’t have to manually supply node ID values. The <code>select_last_nodes_created()</code> function simply made a selection of node ID values and we retrieved those IDs using the <code>get_selection()</code> function. The dot (<code>.</code>) as the sole argument referred to the graph itself, which is needed for the <code>graph</code> argument to <code>get_selection</code>.</p>
-<p>While the graph was constructed to our specification, the nodes and the edges within that graph do not have their basic attributes filled with values. We can check this using <code>get_node_df()</code> and <code>get_edges_df</code> and we see that values for the <code>type</code>, <code>label</code>, and <code>rel</code> attributes are all <code>NA</code> values.</p>
+<p>While the graph was constructed to our specification, the nodes and the edges within that graph do not have their basic attributes filled with values. We can check this using <code>get_node_df()</code> and <code>get_edges_df()</code> and we see that values for the <code>type</code>, <code>label</code>, and <code>rel</code> attributes are all <code>NA</code> values.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">get_node_df</span>(<span class="dt">graph =</span> graph_e)</code></pre></div>
 <pre><code>##   id type label
 ## 1  1 &lt;NA&gt;  &lt;NA&gt;
@@ -546,8 +717,8 @@ rel_edge_attr_values &lt;-
 ## &quot;to_number&quot; &quot;to_number&quot; &quot;to_number&quot; &quot;to_number&quot; &quot;to_number&quot;</code></pre>
 <p>View the graph again to see that all edges are labeled with the <code>to_number</code> <code>rel</code> edge attribute. We will render the graph using <code>output = visNetwork</code> since that rendering method automatically includes node <code>label</code> and edge <code>rel</code> values (but not the edge <code>type</code>).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">render_graph</span>(<span class="dt">graph =</span> graph_f, <span class="dt">output =</span> <span class="st">&quot;visNetwork&quot;</span>)</code></pre></div>
-<div id="htmlwidget-d8b5d934dcd8b0e21d0d" style="width:80%;height:504px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d8b5d934dcd8b0e21d0d">{"x":{"nodes":{"id":[1,2,3,4,5,6],"group":["a","a","a","a","a","a"],"label":["one","two","three","four","five","six"]},"edges":{"id":[1,2,3,4,5],"from":[6,6,6,6,6],"to":[1,2,3,4,5],"label":["to_number","to_number","to_number","to_number","to_number"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"edges":{"arrows":{"to":{"enabled":true,"scaleFactor":1}}},"physics":{"stabilization":{"enabled":true,"onlyDynamicEdges":false,"fit":true}},"layout":{"improvedLayout":true}},"groups":"a","width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-43d29aa0c2acf779b84b" style="width:80%;height:504px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-43d29aa0c2acf779b84b">{"x":{"nodes":{"id":[1,2,3,4,5,6],"group":["a","a","a","a","a","a"],"label":["one","two","three","four","five","six"]},"edges":{"id":[1,2,3,4,5],"from":[6,6,6,6,6],"to":[1,2,3,4,5],"label":["to_number","to_number","to_number","to_number","to_number"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"edges":{"arrows":{"to":{"enabled":true,"scaleFactor":1}}},"physics":{"stabilization":{"enabled":true,"onlyDynamicEdges":false,"fit":true}},"layout":{"improvedLayout":true}},"groups":"a","width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null},"evals":[],"jsHooks":[]}</script>
 <p>Go ahead, play with the graph by dragging nodes this way and that way. It’s fun! Graphs should always be this fun…</p>
 
 </div>
