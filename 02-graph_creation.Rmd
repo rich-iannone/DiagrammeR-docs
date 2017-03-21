@@ -18,7 +18,7 @@ When considering the visualization of a graph we often have to consider the even
 
 This tension between visualizing a graph or simply using the graph data to perform queries is often present. However, for now, let's cast such considerations aside and learn how to create and visualize very simple graphs. We'll use of few of **DiagrammeR**'s functions to build up graphs and also to modify the graph. While some of these functions may not be as useful for building graphs with real-world data (where, instead, one might opt for bulk imports of tabular data), it'll provide some basis for the more advanced functionality we'll explore later on. 
 
-### Creation and Inspection
+### Creating Nodes
 
 Let's get to making a graph. The `create_graph()` function creates a graph object and, optionally, allows for intialization of nodes, edges, and a few global attributes for the graph. We can create an empty graph by simply using `create_graph()` as is.
 
@@ -55,6 +55,8 @@ Alternatively, we can use the `get_node_ids()` function to return a vector of no
 # the data argument is `x` and not `graph`
 get_node_ids(x = graph_2n)
 ```
+
+### Viewing the Graph
 
 Finally, we can visualize the graph by using the `render_graph()` function. The nodes typically appear very large when there are few of them but scale down in size if there are many. The values shown inside the nodes are the automatically-assigned node ID values. If we were to assign `label` values to each of the nodes - which could be done when using `add_node(label = "label_name")`, for example - those values would be shown instead. 
 
@@ -99,6 +101,8 @@ node_count(graph_2n_nested_fcns)
 ```
 
 With the `%>%`, the sequence of operations is more easily readable (left to right), plus, only one name to create! The less names the better. Moreover, and not shown above, the situtation for the nested approach gets more confusing as we add arguments and their values (of which, there can be many).
+
+### Adding Edges
 
 So, we have made a graph with 2 nodes. The next reasonable thing to do would be adding an edge between the nodes. By default, new graphs produced with `create_graph()` are *directed graphs*. To review, a directed graph is one where any edge between a pair of nodes has a defined direction (e.g., by the definition `1->2`, we mean to say that edge is directed from node `1` to node `2`). This book mainly deals with directed graphs but we may occasionally delve into *undirected graphs* (where edges have no specified direction between nodes). At any rate, using `create_graph(directed = FALSE)` will create an empty graph designated as undirected (i.e., any edges added will be undirected).
 
@@ -160,9 +164,9 @@ node_count(graph_2n_1e_empty)
 
 There are some shortcuts/variations for doing the same thing (there are often numerous ways to transform graphs). You could simply call `delete_node()` twice, for instance, to get an empty graph. This is because removing a node with edges attached will automatically remove those edges. If we were now to display the graph with `render_graph()` you would get a field of nothingness. Since that's not very interesting, I'm not going to show it here.
 
-## Creation Using Data Frames
+## Using Data Frames
 
-For many graph diagrams you may need many nodes and edges. Let's use the `create_node_df()` function to specify a collection of nodes and contain them in a data frame (a *node data frame*, or *ndf*). Immediately after that, inspect the node data frame.
+For certain graph diagrams there will be many nodes and edges, and, it may not be practical to add nodes/edges a few at a time. Let's use the `create_node_df()` function to specify a collection of nodes and contain them in a data frame (a *node data frame*, or *ndf*). Immediately after that, inspect the node data frame.
 
 ```{r create_node_df}
 ndf <- 
