@@ -26,7 +26,7 @@
 <meta name="author" content="Richard Iannone">
 
 
-<meta name="date" content="2017-02-23">
+<meta name="date" content="2017-03-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -118,7 +118,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="2" data-path="creation.html"><a href="creation.html"><i class="fa fa-check"></i><b>2</b> Graph Creation</a><ul>
 <li class="chapter" data-level="2.1" data-path="creation.html"><a href="creation.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting Started</a></li>
-<li class="chapter" data-level="2.2" data-path="creation.html"><a href="creation.html#simple-creation-and-visualization"><i class="fa fa-check"></i><b>2.2</b> Simple Creation and Visualization</a></li>
+<li class="chapter" data-level="2.2" data-path="creation.html"><a href="creation.html#visualizing-a-simple-graph"><i class="fa fa-check"></i><b>2.2</b> Visualizing a Simple Graph</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="creation.html"><a href="creation.html#creating-nodes"><i class="fa fa-check"></i><b>2.2.1</b> Creating Nodes</a></li>
+<li class="chapter" data-level="2.2.2" data-path="creation.html"><a href="creation.html#viewing-the-graph"><i class="fa fa-check"></i><b>2.2.2</b> Viewing the Graph</a></li>
+<li class="chapter" data-level="2.2.3" data-path="creation.html"><a href="creation.html#piping-has-its-advantages"><i class="fa fa-check"></i><b>2.2.3</b> Piping Has Its Advantages</a></li>
+<li class="chapter" data-level="2.2.4" data-path="creation.html"><a href="creation.html#adding-edges"><i class="fa fa-check"></i><b>2.2.4</b> Adding Edges</a></li>
+<li class="chapter" data-level="2.2.5" data-path="creation.html"><a href="creation.html#deleting-graph-elements"><i class="fa fa-check"></i><b>2.2.5</b> Deleting Graph Elements</a></li>
+</ul></li>
 <li class="chapter" data-level="2.3" data-path="creation.html"><a href="creation.html#creation-using-data-frames"><i class="fa fa-check"></i><b>2.3</b> Creation Using Data Frames</a></li>
 <li class="chapter" data-level="2.4" data-path="creation.html"><a href="creation.html#adding-basic-attributes"><i class="fa fa-check"></i><b>2.4</b> Adding Basic Attributes</a></li>
 </ul></li>
@@ -166,9 +172,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><img src="diagrams/diagrammer_graph_chp_01.png"></p>
 <p>The user does not directly modify the contents of the graph object. Rather, the package provides access to a wide range of graph functions for modifying the internal components of the graph object. This both provides ease-of-use and assurances that all graph elements are synchronized, avoiding unintentional corruption of the graph.</p>
 <p>Nodes and edges contain properties (called <em>attributes</em> throughout) as key-value pairs. Formally, the graph object contains an <strong>R</strong> data frame for all graph nodes and their attributes (<code>nodes_df</code>) and an analogous data frame for edges and their attributes (<code>edges_df</code>). In the context of <strong>DiagrammeR</strong> these are typically called the node data frame (<em>ndf</em>) and the edge data frame (<em>edf</em>).</p>
-<p>There are several additional data frames used to support the modification and display of graphs. The Global Graph Attributes (<code>global_attrs</code>) data frame stores data for the default appearance of a graph when display. One entry may include using a <code>fontsize</code> of <code>10</code> for each <code>node</code>. Another may affect the whole graph, where the <code>layout</code> is the <code>circo</code> type. These defaults, set for nodes and edges, can be subject to overrides on a per-node or per-edge basis by including values for the same attributes in the node or edge data frames.</p>
+<p>There are several additional data frames used to support the modification and display of graphs. The Global Graph Attributes (<code>global_attrs</code>) data frame stores data for the default appearance of a graph when displayed. One entry may include using a <code>fontsize</code> of <code>10</code> for each <code>node</code>. Another may affect the whole graph, where the <code>layout</code> is the <code>circo</code> type. These defaults, set for nodes and edges, can be subject to overrides on a per-node or per-edge basis by including values for the same attributes in the node or edge data frames.</p>
 <p>Two data frames are reserved for node and edge selection values (<code>node_selection</code> and <code>edge_selection</code>). If there is no active selection, then these data frames are empty (i.e., have 0 rows). If there is a selection (and there can only be one type of selection at any given time), then rows containing node IDs or edge IDs will be populated. This will generally persist (even as other graph functions are used) until the selection is formally cleared. These types of selections are useful because we can target specific parts of the graph and apply specific functions that recognize selections to do useful graph work.</p>
-<p>The graph stores useful metadata about itself such as identifiers and control options (in <code>graph_info</code>) and a log of which graph modification functions where used (in <code>graph_log</code>). This is valuable for the system to understand the graph history and state and this allows for some graph functions to work with less user-provided information.</p>
+<p>The graph stores useful metadata about itself such as identifiers and control options (in <code>graph_info</code>) and a log of which graph modification functions were used (in <code>graph_log</code>). This is valuable for the system to understand the graph history and state and this allows for some graph functions to work with less user-provided information.</p>
 <p>Finally, we have the option to store some other <strong>R</strong> objects in the graph. One is a cache space for <strong>R</strong> vectors. This cached vector could consist of a series of labels extracted from one part of the graph that may be useful in a function that does something to another part of the graph. The other reserved space for data is for entire data frames that could belong to any node or edge in the graph. This is great if you have extended metadata that doesn’t easily correspond to a key-value attribute pair.</p>
 
 </div>
