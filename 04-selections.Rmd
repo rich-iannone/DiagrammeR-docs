@@ -80,8 +80,7 @@ kable(
         "`select_edges()`",
         "`select_edges_by_edge_id()`",
         "`select_edges_by_node_id()`",
-        "`select_last_edges_created()`",
-        "`select_rev_edges_ws()`"
+        "`select_last_edges_created()`"
       ),
     Description = 
       c(
@@ -93,8 +92,7 @@ kable(
         "Select nodes graph using filtering conditions.",
         "Select edges by their ID values.",
         "Select edges associated with specified node ID values.",
-        "Select the last group of edges created in the graph.",
-        "Select any reverse edges from a selection of edges."
+        "Select the last group of edges created in the graph."
         )))
 ```
 
