@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>The DiagrammeR Package</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Contains information on how to use the DiagrammeR package for R.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="The DiagrammeR Package" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Contains information on how to use the DiagrammeR package for R." />
+  <meta name="github-repo" content="rich-iannone/DiagrammeR-docs" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="The DiagrammeR Package" />
+  <meta name="twitter:site" content="@riannone" />
+  <meta name="twitter:description" content="Contains information on how to use the DiagrammeR package for R." />
+  
+
+<meta name="author" content="Richard Iannone">
+
+
+<meta name="date" content="2017-03-21">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="selections.html">
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<script src="libs/viz-0.3/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-0.9.1/grViz.js"></script>
+<link href="libs/vis-4.17.0/vis.css" rel="stylesheet" />
+<script src="libs/vis-4.17.0/vis.min.js"></script>
+<script src="libs/visNetwork-binding-1.0.3/visNetwork.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="dgr-docs.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong><a href="./">The DiagrammeR Package</a></strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>This book is not yet finished</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#why-model-data-as-a-graph"><i class="fa fa-check"></i><b>1.1</b> Why Model Data as a Graph?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#the-diagrammer-graph-object"><i class="fa fa-check"></i><b>1.2</b> The DiagrammeR Graph Object</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="creation.html"><a href="creation.html"><i class="fa fa-check"></i><b>2</b> Graph Creation</a><ul>
+<li class="chapter" data-level="2.1" data-path="creation.html"><a href="creation.html#getting-started"><i class="fa fa-check"></i><b>2.1</b> Getting Started</a></li>
+<li class="chapter" data-level="2.2" data-path="creation.html"><a href="creation.html#visualizing-a-simple-graph"><i class="fa fa-check"></i><b>2.2</b> Visualizing a Simple Graph</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="creation.html"><a href="creation.html#creating-nodes"><i class="fa fa-check"></i><b>2.2.1</b> Creating Nodes</a></li>
+<li class="chapter" data-level="2.2.2" data-path="creation.html"><a href="creation.html#viewing-the-graph"><i class="fa fa-check"></i><b>2.2.2</b> Viewing the Graph</a></li>
+<li class="chapter" data-level="2.2.3" data-path="creation.html"><a href="creation.html#piping-has-its-advantages"><i class="fa fa-check"></i><b>2.2.3</b> Piping Has Its Advantages</a></li>
+<li class="chapter" data-level="2.2.4" data-path="creation.html"><a href="creation.html#adding-edges"><i class="fa fa-check"></i><b>2.2.4</b> Adding Edges</a></li>
+<li class="chapter" data-level="2.2.5" data-path="creation.html"><a href="creation.html#deleting-graph-elements"><i class="fa fa-check"></i><b>2.2.5</b> Deleting Graph Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="creation.html"><a href="creation.html#using-data-frames"><i class="fa fa-check"></i><b>2.3</b> Using Data Frames</a></li>
+<li class="chapter" data-level="2.4" data-path="creation.html"><a href="creation.html#adding-basic-attributes"><i class="fa fa-check"></i><b>2.4</b> Adding Basic Attributes</a></li>
+<li class="chapter" data-level="2.5" data-path="creation.html"><a href="creation.html#the-internal-ndfedf"><i class="fa fa-check"></i><b>2.5</b> The Internal NDF/EDF</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="attrs.html"><a href="attrs.html"><i class="fa fa-check"></i><b>3</b> Graph Attributes</a><ul>
+<li class="chapter" data-level="3.1" data-path="attrs.html"><a href="attrs.html#external-ndfs-and-edfs"><i class="fa fa-check"></i><b>3.1</b> External NDFs and EDFs</a></li>
+<li class="chapter" data-level="3.2" data-path="attrs.html"><a href="attrs.html#internal-ndfs-and-edfs"><i class="fa fa-check"></i><b>3.2</b> Internal NDFs and EDFs</a></li>
+<li class="chapter" data-level="3.3" data-path="attrs.html"><a href="attrs.html#specific-nodes-or-edges"><i class="fa fa-check"></i><b>3.3</b> Specific Nodes or Edges</a></li>
+<li class="chapter" data-level="3.4" data-path="attrs.html"><a href="attrs.html#adding-attributes-to-selections"><i class="fa fa-check"></i><b>3.4</b> Adding Attributes to Selections</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="selections.html"><a href="selections.html"><i class="fa fa-check"></i><b>4</b> Selections</a><ul>
+<li class="chapter" data-level="4.1" data-path="selections.html"><a href="selections.html#setup-for-this-chapter"><i class="fa fa-check"></i><b>4.1</b> Setup for this Chapter</a></li>
+<li class="chapter" data-level="4.2" data-path="selections.html"><a href="selections.html#the-selection-functions"><i class="fa fa-check"></i><b>4.2</b> The Selection Functions</a></li>
+<li class="chapter" data-level="4.3" data-path="selections.html"><a href="selections.html#creating-a-node-selection"><i class="fa fa-check"></i><b>4.3</b> Creating a Node Selection</a></li>
+<li class="chapter" data-level="4.4" data-path="selections.html"><a href="selections.html#creating-an-edge-selection"><i class="fa fa-check"></i><b>4.4</b> Creating an Edge Selection</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="function-reference.html"><a href="function-reference.html"><i class="fa fa-check"></i><b>5</b> Function Reference</a><ul>
+<li class="chapter" data-level="5.1" data-path="function-reference.html"><a href="function-reference.html#functions-creation-io"><i class="fa fa-check"></i><b>5.1</b> Functions: Creation, I/O</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="function-reference.html"><a href="function-reference.html#create_node_df"><i class="fa fa-check"></i><b>5.1.1</b> <code>create_node_df()</code></a></li>
+<li class="chapter" data-level="5.1.2" data-path="function-reference.html"><a href="function-reference.html#create_edge_df"><i class="fa fa-check"></i><b>5.1.2</b> <code>create_edge_df()</code></a></li>
+<li class="chapter" data-level="5.1.3" data-path="function-reference.html"><a href="function-reference.html#combine_ndfs"><i class="fa fa-check"></i><b>5.1.3</b> <code>combine_ndfs()</code></a></li>
+<li class="chapter" data-level="5.1.4" data-path="function-reference.html"><a href="function-reference.html#combine_edfs"><i class="fa fa-check"></i><b>5.1.4</b> <code>combine_edfs()</code></a></li>
+<li class="chapter" data-level="5.1.5" data-path="function-reference.html"><a href="function-reference.html#create_graph"><i class="fa fa-check"></i><b>5.1.5</b> <code>create_graph()</code></a></li>
+<li class="chapter" data-level="5.1.6" data-path="function-reference.html"><a href="function-reference.html#create_random_graph"><i class="fa fa-check"></i><b>5.1.6</b> <code>create_random_graph()</code></a></li>
+<li class="chapter" data-level="5.1.7" data-path="function-reference.html"><a href="function-reference.html#combine_graphs"><i class="fa fa-check"></i><b>5.1.7</b> <code>combine_graphs()</code></a></li>
+<li class="chapter" data-level="5.1.8" data-path="function-reference.html"><a href="function-reference.html#import_graph"><i class="fa fa-check"></i><b>5.1.8</b> <code>import_graph()</code></a></li>
+<li class="chapter" data-level="5.1.9" data-path="function-reference.html"><a href="function-reference.html#from_adj_matrix"><i class="fa fa-check"></i><b>5.1.9</b> <code>from_adj_matrix()</code></a></li>
+<li class="chapter" data-level="5.1.10" data-path="function-reference.html"><a href="function-reference.html#from_igraph"><i class="fa fa-check"></i><b>5.1.10</b> <code>from_igraph()</code></a></li>
+<li class="chapter" data-level="5.1.11" data-path="function-reference.html"><a href="function-reference.html#to_igraph"><i class="fa fa-check"></i><b>5.1.11</b> <code>to_igraph()</code></a></li>
+<li class="chapter" data-level="5.1.12" data-path="function-reference.html"><a href="function-reference.html#render_graph"><i class="fa fa-check"></i><b>5.1.12</b> <code>render_graph()</code></a></li>
+<li class="chapter" data-level="5.1.13" data-path="function-reference.html"><a href="function-reference.html#export_graph"><i class="fa fa-check"></i><b>5.1.13</b> <code>export_graph()</code></a></li>
+<li class="chapter" data-level="5.1.14" data-path="function-reference.html"><a href="function-reference.html#export_csv"><i class="fa fa-check"></i><b>5.1.14</b> <code>export_csv()</code></a></li>
+<li class="chapter" data-level="5.1.15" data-path="function-reference.html"><a href="function-reference.html#save_graph"><i class="fa fa-check"></i><b>5.1.15</b> <code>save_graph()</code></a></li>
+<li class="chapter" data-level="5.1.16" data-path="function-reference.html"><a href="function-reference.html#open_graph"><i class="fa fa-check"></i><b>5.1.16</b> <code>open_graph()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="function-reference.html"><a href="function-reference.html#nodeedge-selection"><i class="fa fa-check"></i><b>5.2</b> Node/Edge Selection</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="function-reference.html"><a href="function-reference.html#select_nodes"><i class="fa fa-check"></i><b>5.2.1</b> <code>select_nodes()</code></a></li>
+<li class="chapter" data-level="5.2.2" data-path="function-reference.html"><a href="function-reference.html#select_edges"><i class="fa fa-check"></i><b>5.2.2</b> <code>select_edges()</code></a></li>
+<li class="chapter" data-level="5.2.3" data-path="function-reference.html"><a href="function-reference.html#select_last_nodes_created"><i class="fa fa-check"></i><b>5.2.3</b> <code>select_last_nodes_created()</code></a></li>
+<li class="chapter" data-level="5.2.4" data-path="function-reference.html"><a href="function-reference.html#select_last_edges_created"><i class="fa fa-check"></i><b>5.2.4</b> <code>select_last_edges_created()</code></a></li>
+<li class="chapter" data-level="5.2.5" data-path="function-reference.html"><a href="function-reference.html#select_nodes_by_id"><i class="fa fa-check"></i><b>5.2.5</b> <code>select_nodes_by_id()</code></a></li>
+<li class="chapter" data-level="5.2.6" data-path="function-reference.html"><a href="function-reference.html#select_nodes_in_neighborhood"><i class="fa fa-check"></i><b>5.2.6</b> <code>select_nodes_in_neighborhood()</code></a></li>
+<li class="chapter" data-level="5.2.7" data-path="function-reference.html"><a href="function-reference.html#select_nodes_by_degree"><i class="fa fa-check"></i><b>5.2.7</b> <code>select_nodes_by_degree()</code></a></li>
+<li class="chapter" data-level="5.2.8" data-path="function-reference.html"><a href="function-reference.html#select_edges_by_edge_id"><i class="fa fa-check"></i><b>5.2.8</b> <code>select_edges_by_edge_id()</code></a></li>
+<li class="chapter" data-level="5.2.9" data-path="function-reference.html"><a href="function-reference.html#select_edges_by_node_id"><i class="fa fa-check"></i><b>5.2.9</b> <code>select_edges_by_node_id()</code></a></li>
+<li class="chapter" data-level="5.2.10" data-path="function-reference.html"><a href="function-reference.html#invert_selection"><i class="fa fa-check"></i><b>5.2.10</b> <code>invert_selection()</code></a></li>
+<li class="chapter" data-level="5.2.11" data-path="function-reference.html"><a href="function-reference.html#clear_selection"><i class="fa fa-check"></i><b>5.2.11</b> <code>clear_selection()</code></a></li>
+<li class="chapter" data-level="5.2.12" data-path="function-reference.html"><a href="function-reference.html#get_selection"><i class="fa fa-check"></i><b>5.2.12</b> <code>get_selection()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="function-reference.html"><a href="function-reference.html#traversals"><i class="fa fa-check"></i><b>5.3</b> Traversals</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="function-reference.html"><a href="function-reference.html#trav_out"><i class="fa fa-check"></i><b>5.3.1</b> <code>trav_out()</code></a></li>
+<li class="chapter" data-level="5.3.2" data-path="function-reference.html"><a href="function-reference.html#trav_in"><i class="fa fa-check"></i><b>5.3.2</b> <code>trav_in()</code></a></li>
+<li class="chapter" data-level="5.3.3" data-path="function-reference.html"><a href="function-reference.html#trav_both"><i class="fa fa-check"></i><b>5.3.3</b> <code>trav_both()</code></a></li>
+<li class="chapter" data-level="5.3.4" data-path="function-reference.html"><a href="function-reference.html#trav_out_edge"><i class="fa fa-check"></i><b>5.3.4</b> <code>trav_out_edge()</code></a></li>
+<li class="chapter" data-level="5.3.5" data-path="function-reference.html"><a href="function-reference.html#trav_in_edge"><i class="fa fa-check"></i><b>5.3.5</b> <code>trav_in_edge()</code></a></li>
+<li class="chapter" data-level="5.3.6" data-path="function-reference.html"><a href="function-reference.html#trav_both_edge"><i class="fa fa-check"></i><b>5.3.6</b> <code>trav_both_edge()</code></a></li>
+<li class="chapter" data-level="5.3.7" data-path="function-reference.html"><a href="function-reference.html#trav_out_node"><i class="fa fa-check"></i><b>5.3.7</b> <code>trav_out_node()</code></a></li>
+<li class="chapter" data-level="5.3.8" data-path="function-reference.html"><a href="function-reference.html#trav_in_node"><i class="fa fa-check"></i><b>5.3.8</b> <code>trav_in_node()</code></a></li>
+<li class="chapter" data-level="5.3.9" data-path="function-reference.html"><a href="function-reference.html#trav_reverse_edge"><i class="fa fa-check"></i><b>5.3.9</b> <code>trav_reverse_edge()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="function-reference.html"><a href="function-reference.html#graph-inspection"><i class="fa fa-check"></i><b>5.4</b> Graph Inspection</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="function-reference.html"><a href="function-reference.html#node_info"><i class="fa fa-check"></i><b>5.4.1</b> <code>node_info()</code></a></li>
+<li class="chapter" data-level="5.4.2" data-path="function-reference.html"><a href="function-reference.html#edge_info"><i class="fa fa-check"></i><b>5.4.2</b> <code>edge_info()</code></a></li>
+<li class="chapter" data-level="5.4.3" data-path="function-reference.html"><a href="function-reference.html#graph_info"><i class="fa fa-check"></i><b>5.4.3</b> <code>graph_info()</code></a></li>
+<li class="chapter" data-level="5.4.4" data-path="function-reference.html"><a href="function-reference.html#get_nodes"><i class="fa fa-check"></i><b>5.4.4</b> <code>get_nodes()</code></a></li>
+<li class="chapter" data-level="5.4.5" data-path="function-reference.html"><a href="function-reference.html#get_edges"><i class="fa fa-check"></i><b>5.4.5</b> <code>get_edges()</code></a></li>
+<li class="chapter" data-level="5.4.6" data-path="function-reference.html"><a href="function-reference.html#get_predecessors"><i class="fa fa-check"></i><b>5.4.6</b> <code>get_predecessors()</code></a></li>
+<li class="chapter" data-level="5.4.7" data-path="function-reference.html"><a href="function-reference.html#get_successors"><i class="fa fa-check"></i><b>5.4.7</b> <code>get_successors()</code></a></li>
+<li class="chapter" data-level="5.4.8" data-path="function-reference.html"><a href="function-reference.html#get_node_df"><i class="fa fa-check"></i><b>5.4.8</b> <code>get_node_df()</code></a></li>
+<li class="chapter" data-level="5.4.9" data-path="function-reference.html"><a href="function-reference.html#get_edge_df"><i class="fa fa-check"></i><b>5.4.9</b> <code>get_edge_df()</code></a></li>
+<li class="chapter" data-level="5.4.10" data-path="function-reference.html"><a href="function-reference.html#node_count"><i class="fa fa-check"></i><b>5.4.10</b> <code>node_count()</code></a></li>
+<li class="chapter" data-level="5.4.11" data-path="function-reference.html"><a href="function-reference.html#edge_count"><i class="fa fa-check"></i><b>5.4.11</b> <code>edge_count()</code></a></li>
+<li class="chapter" data-level="5.4.12" data-path="function-reference.html"><a href="function-reference.html#node_present"><i class="fa fa-check"></i><b>5.4.12</b> <code>node_present()</code></a></li>
+<li class="chapter" data-level="5.4.13" data-path="function-reference.html"><a href="function-reference.html#edge_present"><i class="fa fa-check"></i><b>5.4.13</b> <code>edge_present()</code></a></li>
+<li class="chapter" data-level="5.4.14" data-path="function-reference.html"><a href="function-reference.html#is_graph_empty"><i class="fa fa-check"></i><b>5.4.14</b> <code>is_graph_empty()</code></a></li>
+<li class="chapter" data-level="5.4.15" data-path="function-reference.html"><a href="function-reference.html#is_graph_directed"><i class="fa fa-check"></i><b>5.4.15</b> <code>is_graph_directed()</code></a></li>
+<li class="chapter" data-level="5.4.16" data-path="function-reference.html"><a href="function-reference.html#is_graph_connected"><i class="fa fa-check"></i><b>5.4.16</b> <code>is_graph_connected()</code></a></li>
+<li class="chapter" data-level="5.4.17" data-path="function-reference.html"><a href="function-reference.html#is_property_graph"><i class="fa fa-check"></i><b>5.4.17</b> <code>is_property_graph()</code></a></li>
+<li class="chapter" data-level="5.4.18" data-path="function-reference.html"><a href="function-reference.html#get_degree_in"><i class="fa fa-check"></i><b>5.4.18</b> <code>get_degree_in()</code></a></li>
+<li class="chapter" data-level="5.4.19" data-path="function-reference.html"><a href="function-reference.html#get_degree_out"><i class="fa fa-check"></i><b>5.4.19</b> <code>get_degree_out()</code></a></li>
+<li class="chapter" data-level="5.4.20" data-path="function-reference.html"><a href="function-reference.html#get_degree_total"><i class="fa fa-check"></i><b>5.4.20</b> <code>get_degree_total()</code></a></li>
+<li class="chapter" data-level="5.4.21" data-path="function-reference.html"><a href="function-reference.html#get_degree_histogram"><i class="fa fa-check"></i><b>5.4.21</b> <code>get_degree_histogram()</code></a></li>
+<li class="chapter" data-level="5.4.22" data-path="function-reference.html"><a href="function-reference.html#get_degree_distribution"><i class="fa fa-check"></i><b>5.4.22</b> <code>get_degree_distribution()</code></a></li>
+<li class="chapter" data-level="5.4.23" data-path="function-reference.html"><a href="function-reference.html#get_graph_diameter"><i class="fa fa-check"></i><b>5.4.23</b> <code>get_graph_diameter()</code></a></li>
+<li class="chapter" data-level="5.4.24" data-path="function-reference.html"><a href="function-reference.html#get_constraint"><i class="fa fa-check"></i><b>5.4.24</b> <code>get_constraint()</code></a></li>
+<li class="chapter" data-level="5.4.25" data-path="function-reference.html"><a href="function-reference.html#get_betweenness"><i class="fa fa-check"></i><b>5.4.25</b> <code>get_betweenness()</code></a></li>
+<li class="chapter" data-level="5.4.26" data-path="function-reference.html"><a href="function-reference.html#get_closeness"><i class="fa fa-check"></i><b>5.4.26</b> <code>get_closeness()</code></a></li>
+<li class="chapter" data-level="5.4.27" data-path="function-reference.html"><a href="function-reference.html#get_bridging"><i class="fa fa-check"></i><b>5.4.27</b> <code>get_bridging()</code></a></li>
+<li class="chapter" data-level="5.4.28" data-path="function-reference.html"><a href="function-reference.html#get_eccentricity"><i class="fa fa-check"></i><b>5.4.28</b> <code>get_eccentricity()</code></a></li>
+<li class="chapter" data-level="5.4.29" data-path="function-reference.html"><a href="function-reference.html#get_jaccard_similarity"><i class="fa fa-check"></i><b>5.4.29</b> <code>get_jaccard_similarity()</code></a></li>
+<li class="chapter" data-level="5.4.30" data-path="function-reference.html"><a href="function-reference.html#get_dice_similarity"><i class="fa fa-check"></i><b>5.4.30</b> <code>get_dice_similarity()</code></a></li>
+<li class="chapter" data-level="5.4.31" data-path="function-reference.html"><a href="function-reference.html#get_periphery"><i class="fa fa-check"></i><b>5.4.31</b> <code>get_periphery()</code></a></li>
+<li class="chapter" data-level="5.4.32" data-path="function-reference.html"><a href="function-reference.html#get_cmty_walktrap"><i class="fa fa-check"></i><b>5.4.32</b> <code>get_cmty_walktrap()</code></a></li>
+<li class="chapter" data-level="5.4.33" data-path="function-reference.html"><a href="function-reference.html#get_cmty_louvain"><i class="fa fa-check"></i><b>5.4.33</b> <code>get_cmty_louvain()</code></a></li>
+<li class="chapter" data-level="5.4.34" data-path="function-reference.html"><a href="function-reference.html#get_cmty_l_eigenvector"><i class="fa fa-check"></i><b>5.4.34</b> <code>get_cmty_l_eigenvector()</code></a></li>
+<li class="chapter" data-level="5.4.35" data-path="function-reference.html"><a href="function-reference.html#get_cmty_fast_greedy"><i class="fa fa-check"></i><b>5.4.35</b> <code>get_cmty_fast_greedy()</code></a></li>
+<li class="chapter" data-level="5.4.36" data-path="function-reference.html"><a href="function-reference.html#get_cmty_edge_btwns"><i class="fa fa-check"></i><b>5.4.36</b> <code>get_cmty_edge_btwns()</code></a></li>
+<li class="chapter" data-level="5.4.37" data-path="function-reference.html"><a href="function-reference.html#get_nbrs"><i class="fa fa-check"></i><b>5.4.37</b> <code>get_nbrs()</code></a></li>
+<li class="chapter" data-level="5.4.38" data-path="function-reference.html"><a href="function-reference.html#get_non_nbrs"><i class="fa fa-check"></i><b>5.4.38</b> <code>get_non_nbrs()</code></a></li>
+<li class="chapter" data-level="5.4.39" data-path="function-reference.html"><a href="function-reference.html#get_common_neighbors"><i class="fa fa-check"></i><b>5.4.39</b> <code>get_common_neighbors()</code></a></li>
+<li class="chapter" data-level="5.4.40" data-path="function-reference.html"><a href="function-reference.html#get_similar_nbrs"><i class="fa fa-check"></i><b>5.4.40</b> <code>get_similar_nbrs()</code></a></li>
+<li class="chapter" data-level="5.4.41" data-path="function-reference.html"><a href="function-reference.html#get_paths"><i class="fa fa-check"></i><b>5.4.41</b> <code>get_paths()</code></a></li>
+<li class="chapter" data-level="5.4.42" data-path="function-reference.html"><a href="function-reference.html#get_w_connected_cmpts"><i class="fa fa-check"></i><b>5.4.42</b> <code>get_w_connected_cmpts()</code></a></li>
+<li class="chapter" data-level="5.4.43" data-path="function-reference.html"><a href="function-reference.html#get_s_connected_cmpts"><i class="fa fa-check"></i><b>5.4.43</b> <code>get_s_connected_cmpts()</code></a></li>
+<li class="chapter" data-level="5.4.44" data-path="function-reference.html"><a href="function-reference.html#get_articulation_points"><i class="fa fa-check"></i><b>5.4.44</b> <code>get_articulation_points()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="function-reference.html"><a href="function-reference.html#graph-modification"><i class="fa fa-check"></i><b>5.5</b> Graph Modification</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="function-reference.html"><a href="function-reference.html#add_node"><i class="fa fa-check"></i><b>5.5.1</b> <code>add_node()</code></a></li>
+<li class="chapter" data-level="5.5.2" data-path="function-reference.html"><a href="function-reference.html#add_edge"><i class="fa fa-check"></i><b>5.5.2</b> <code>add_edge()</code></a></li>
+<li class="chapter" data-level="5.5.3" data-path="function-reference.html"><a href="function-reference.html#add_node_df"><i class="fa fa-check"></i><b>5.5.3</b> <code>add_node_df()</code></a></li>
+<li class="chapter" data-level="5.5.4" data-path="function-reference.html"><a href="function-reference.html#add_edge_df"><i class="fa fa-check"></i><b>5.5.4</b> <code>add_edge_df()</code></a></li>
+<li class="chapter" data-level="5.5.5" data-path="function-reference.html"><a href="function-reference.html#add_n_nodes"><i class="fa fa-check"></i><b>5.5.5</b> <code>add_n_nodes()</code></a></li>
+<li class="chapter" data-level="5.5.6" data-path="function-reference.html"><a href="function-reference.html#add_n_nodes_ws"><i class="fa fa-check"></i><b>5.5.6</b> <code>add_n_nodes_ws()</code></a></li>
+<li class="chapter" data-level="5.5.7" data-path="function-reference.html"><a href="function-reference.html#add_edges_w_string"><i class="fa fa-check"></i><b>5.5.7</b> <code>add_edges_w_string()</code></a></li>
+<li class="chapter" data-level="5.5.8" data-path="function-reference.html"><a href="function-reference.html#rev_edge_dir"><i class="fa fa-check"></i><b>5.5.8</b> <code>rev_edge_dir()</code></a></li>
+<li class="chapter" data-level="5.5.9" data-path="function-reference.html"><a href="function-reference.html#rev_edge_dir_ws"><i class="fa fa-check"></i><b>5.5.9</b> <code>rev_edge_dir_ws()</code></a></li>
+<li class="chapter" data-level="5.5.10" data-path="function-reference.html"><a href="function-reference.html#add_nodes_from_table"><i class="fa fa-check"></i><b>5.5.10</b> <code>add_nodes_from_table()</code></a></li>
+<li class="chapter" data-level="5.5.11" data-path="function-reference.html"><a href="function-reference.html#add_edges_from_table"><i class="fa fa-check"></i><b>5.5.11</b> <code>add_edges_from_table()</code></a></li>
+<li class="chapter" data-level="5.5.12" data-path="function-reference.html"><a href="function-reference.html#add_nodes_from_df_cols"><i class="fa fa-check"></i><b>5.5.12</b> <code>add_nodes_from_df_cols()</code></a></li>
+<li class="chapter" data-level="5.5.13" data-path="function-reference.html"><a href="function-reference.html#add_path"><i class="fa fa-check"></i><b>5.5.13</b> <code>add_path()</code></a></li>
+<li class="chapter" data-level="5.5.14" data-path="function-reference.html"><a href="function-reference.html#add_cycle"><i class="fa fa-check"></i><b>5.5.14</b> <code>add_cycle()</code></a></li>
+<li class="chapter" data-level="5.5.15" data-path="function-reference.html"><a href="function-reference.html#add_star"><i class="fa fa-check"></i><b>5.5.15</b> <code>add_star()</code></a></li>
+<li class="chapter" data-level="5.5.16" data-path="function-reference.html"><a href="function-reference.html#add_prism"><i class="fa fa-check"></i><b>5.5.16</b> <code>add_prism()</code></a></li>
+<li class="chapter" data-level="5.5.17" data-path="function-reference.html"><a href="function-reference.html#add_balanced_tree"><i class="fa fa-check"></i><b>5.5.17</b> <code>add_balanced_tree()</code></a></li>
+<li class="chapter" data-level="5.5.18" data-path="function-reference.html"><a href="function-reference.html#add_full_graph"><i class="fa fa-check"></i><b>5.5.18</b> <code>add_full_graph()</code></a></li>
+<li class="chapter" data-level="5.5.19" data-path="function-reference.html"><a href="function-reference.html#join_node_attrs"><i class="fa fa-check"></i><b>5.5.19</b> <code>join_node_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.20" data-path="function-reference.html"><a href="function-reference.html#join_edge_attrs"><i class="fa fa-check"></i><b>5.5.20</b> <code>join_edge_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.21" data-path="function-reference.html"><a href="function-reference.html#set_graph_undirected"><i class="fa fa-check"></i><b>5.5.21</b> <code>set_graph_undirected()</code></a></li>
+<li class="chapter" data-level="5.5.22" data-path="function-reference.html"><a href="function-reference.html#delete_node"><i class="fa fa-check"></i><b>5.5.22</b> <code>delete_node()</code></a></li>
+<li class="chapter" data-level="5.5.23" data-path="function-reference.html"><a href="function-reference.html#delete_edge"><i class="fa fa-check"></i><b>5.5.23</b> <code>delete_edge()</code></a></li>
+<li class="chapter" data-level="5.5.24" data-path="function-reference.html"><a href="function-reference.html#delete_nodes_ws"><i class="fa fa-check"></i><b>5.5.24</b> <code>delete_nodes_ws()</code></a></li>
+<li class="chapter" data-level="5.5.25" data-path="function-reference.html"><a href="function-reference.html#delete_edges_ws"><i class="fa fa-check"></i><b>5.5.25</b> <code>delete_edges_ws()</code></a></li>
+<li class="chapter" data-level="5.5.26" data-path="function-reference.html"><a href="function-reference.html#node_type"><i class="fa fa-check"></i><b>5.5.26</b> <code>node_type()</code></a></li>
+<li class="chapter" data-level="5.5.27" data-path="function-reference.html"><a href="function-reference.html#edge_rel"><i class="fa fa-check"></i><b>5.5.27</b> <code>edge_rel()</code></a></li>
+<li class="chapter" data-level="5.5.28" data-path="function-reference.html"><a href="function-reference.html#create_subgraph_ws"><i class="fa fa-check"></i><b>5.5.28</b> <code>create_subgraph_ws()</code></a></li>
+<li class="chapter" data-level="5.5.29" data-path="function-reference.html"><a href="function-reference.html#get_min_spanning_tree"><i class="fa fa-check"></i><b>5.5.29</b> <code>get_min_spanning_tree()</code></a></li>
+<li class="chapter" data-level="5.5.30" data-path="function-reference.html"><a href="function-reference.html#set_df_as_node_attr"><i class="fa fa-check"></i><b>5.5.30</b> <code>set_df_as_node_attr()</code></a></li>
+<li class="chapter" data-level="5.5.31" data-path="function-reference.html"><a href="function-reference.html#set_df_as_edge_attr"><i class="fa fa-check"></i><b>5.5.31</b> <code>set_df_as_edge_attr()</code></a></li>
+<li class="chapter" data-level="5.5.32" data-path="function-reference.html"><a href="function-reference.html#set_node_attrs"><i class="fa fa-check"></i><b>5.5.32</b> <code>set_node_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.33" data-path="function-reference.html"><a href="function-reference.html#set_edge_attrs"><i class="fa fa-check"></i><b>5.5.33</b> <code>set_edge_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.34" data-path="function-reference.html"><a href="function-reference.html#set_node_attrs_ws"><i class="fa fa-check"></i><b>5.5.34</b> <code>set_node_attrs_ws()</code></a></li>
+<li class="chapter" data-level="5.5.35" data-path="function-reference.html"><a href="function-reference.html#set_edge_attrs_ws"><i class="fa fa-check"></i><b>5.5.35</b> <code>set_edge_attrs_ws()</code></a></li>
+<li class="chapter" data-level="5.5.36" data-path="function-reference.html"><a href="function-reference.html#copy_node_attrs"><i class="fa fa-check"></i><b>5.5.36</b> <code>copy_node_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.37" data-path="function-reference.html"><a href="function-reference.html#copy_edge_attrs"><i class="fa fa-check"></i><b>5.5.37</b> <code>copy_edge_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.38" data-path="function-reference.html"><a href="function-reference.html#drop_node_attrs"><i class="fa fa-check"></i><b>5.5.38</b> <code>drop_node_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.39" data-path="function-reference.html"><a href="function-reference.html#drop_edge_attrs"><i class="fa fa-check"></i><b>5.5.39</b> <code>drop_edge_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.40" data-path="function-reference.html"><a href="function-reference.html#rename_node_attrs"><i class="fa fa-check"></i><b>5.5.40</b> <code>rename_node_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.41" data-path="function-reference.html"><a href="function-reference.html#rename_edge_attrs"><i class="fa fa-check"></i><b>5.5.41</b> <code>rename_edge_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.42" data-path="function-reference.html"><a href="function-reference.html#rescale_node_attrs"><i class="fa fa-check"></i><b>5.5.42</b> <code>rescale_node_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.43" data-path="function-reference.html"><a href="function-reference.html#rescale_edge_attrs"><i class="fa fa-check"></i><b>5.5.43</b> <code>rescale_edge_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.44" data-path="function-reference.html"><a href="function-reference.html#mutate_node_attrs"><i class="fa fa-check"></i><b>5.5.44</b> <code>mutate_node_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.45" data-path="function-reference.html"><a href="function-reference.html#mutate_edge_attrs"><i class="fa fa-check"></i><b>5.5.45</b> <code>mutate_edge_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.46" data-path="function-reference.html"><a href="function-reference.html#recode_node_attrs"><i class="fa fa-check"></i><b>5.5.46</b> <code>recode_node_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.47" data-path="function-reference.html"><a href="function-reference.html#recode_edge_attrs"><i class="fa fa-check"></i><b>5.5.47</b> <code>recode_edge_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.48" data-path="function-reference.html"><a href="function-reference.html#colorize_node_attrs"><i class="fa fa-check"></i><b>5.5.48</b> <code>colorize_node_attrs()</code></a></li>
+<li class="chapter" data-level="5.5.49" data-path="function-reference.html"><a href="function-reference.html#colorize_edge_attrs"><i class="fa fa-check"></i><b>5.5.49</b> <code>colorize_edge_attrs()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="function-reference.html"><a href="function-reference.html#caching-values"><i class="fa fa-check"></i><b>5.6</b> Caching Values</a></li>
+<li class="chapter" data-level="5.7" data-path="function-reference.html"><a href="function-reference.html#graph-metadata"><i class="fa fa-check"></i><b>5.7</b> Graph Metadata</a></li>
+<li class="chapter" data-level="5.8" data-path="function-reference.html"><a href="function-reference.html#graph-series"><i class="fa fa-check"></i><b>5.8</b> Graph Series</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The DiagrammeR Package</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="function_reference" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Function Reference</h1>
+<div id="functions-creation-io" class="section level2">
+<h2><span class="header-section-number">5.1</span> Functions: Creation, I/O</h2>
+<div id="create_node_df" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> <code>create_node_df()</code></h3>
+</div>
+<div id="create_edge_df" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> <code>create_edge_df()</code></h3>
+</div>
+<div id="combine_ndfs" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> <code>combine_ndfs()</code></h3>
+</div>
+<div id="combine_edfs" class="section level3">
+<h3><span class="header-section-number">5.1.4</span> <code>combine_edfs()</code></h3>
+</div>
+<div id="create_graph" class="section level3">
+<h3><span class="header-section-number">5.1.5</span> <code>create_graph()</code></h3>
+</div>
+<div id="create_random_graph" class="section level3">
+<h3><span class="header-section-number">5.1.6</span> <code>create_random_graph()</code></h3>
+</div>
+<div id="combine_graphs" class="section level3">
+<h3><span class="header-section-number">5.1.7</span> <code>combine_graphs()</code></h3>
+</div>
+<div id="import_graph" class="section level3">
+<h3><span class="header-section-number">5.1.8</span> <code>import_graph()</code></h3>
+</div>
+<div id="from_adj_matrix" class="section level3">
+<h3><span class="header-section-number">5.1.9</span> <code>from_adj_matrix()</code></h3>
+</div>
+<div id="from_igraph" class="section level3">
+<h3><span class="header-section-number">5.1.10</span> <code>from_igraph()</code></h3>
+</div>
+<div id="to_igraph" class="section level3">
+<h3><span class="header-section-number">5.1.11</span> <code>to_igraph()</code></h3>
+</div>
+<div id="render_graph" class="section level3">
+<h3><span class="header-section-number">5.1.12</span> <code>render_graph()</code></h3>
+</div>
+<div id="export_graph" class="section level3">
+<h3><span class="header-section-number">5.1.13</span> <code>export_graph()</code></h3>
+</div>
+<div id="export_csv" class="section level3">
+<h3><span class="header-section-number">5.1.14</span> <code>export_csv()</code></h3>
+</div>
+<div id="save_graph" class="section level3">
+<h3><span class="header-section-number">5.1.15</span> <code>save_graph()</code></h3>
+</div>
+<div id="open_graph" class="section level3">
+<h3><span class="header-section-number">5.1.16</span> <code>open_graph()</code></h3>
+</div>
+</div>
+<div id="nodeedge-selection" class="section level2">
+<h2><span class="header-section-number">5.2</span> Node/Edge Selection</h2>
+<div id="select_nodes" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> <code>select_nodes()</code></h3>
+</div>
+<div id="select_edges" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> <code>select_edges()</code></h3>
+</div>
+<div id="select_last_nodes_created" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> <code>select_last_nodes_created()</code></h3>
+</div>
+<div id="select_last_edges_created" class="section level3">
+<h3><span class="header-section-number">5.2.4</span> <code>select_last_edges_created()</code></h3>
+</div>
+<div id="select_nodes_by_id" class="section level3">
+<h3><span class="header-section-number">5.2.5</span> <code>select_nodes_by_id()</code></h3>
+</div>
+<div id="select_nodes_in_neighborhood" class="section level3">
+<h3><span class="header-section-number">5.2.6</span> <code>select_nodes_in_neighborhood()</code></h3>
+</div>
+<div id="select_nodes_by_degree" class="section level3">
+<h3><span class="header-section-number">5.2.7</span> <code>select_nodes_by_degree()</code></h3>
+</div>
+<div id="select_edges_by_edge_id" class="section level3">
+<h3><span class="header-section-number">5.2.8</span> <code>select_edges_by_edge_id()</code></h3>
+</div>
+<div id="select_edges_by_node_id" class="section level3">
+<h3><span class="header-section-number">5.2.9</span> <code>select_edges_by_node_id()</code></h3>
+</div>
+<div id="invert_selection" class="section level3">
+<h3><span class="header-section-number">5.2.10</span> <code>invert_selection()</code></h3>
+</div>
+<div id="clear_selection" class="section level3">
+<h3><span class="header-section-number">5.2.11</span> <code>clear_selection()</code></h3>
+</div>
+<div id="get_selection" class="section level3">
+<h3><span class="header-section-number">5.2.12</span> <code>get_selection()</code></h3>
+</div>
+</div>
+<div id="traversals" class="section level2">
+<h2><span class="header-section-number">5.3</span> Traversals</h2>
+<div id="trav_out" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> <code>trav_out()</code></h3>
+</div>
+<div id="trav_in" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> <code>trav_in()</code></h3>
+</div>
+<div id="trav_both" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> <code>trav_both()</code></h3>
+</div>
+<div id="trav_out_edge" class="section level3">
+<h3><span class="header-section-number">5.3.4</span> <code>trav_out_edge()</code></h3>
+</div>
+<div id="trav_in_edge" class="section level3">
+<h3><span class="header-section-number">5.3.5</span> <code>trav_in_edge()</code></h3>
+</div>
+<div id="trav_both_edge" class="section level3">
+<h3><span class="header-section-number">5.3.6</span> <code>trav_both_edge()</code></h3>
+</div>
+<div id="trav_out_node" class="section level3">
+<h3><span class="header-section-number">5.3.7</span> <code>trav_out_node()</code></h3>
+</div>
+<div id="trav_in_node" class="section level3">
+<h3><span class="header-section-number">5.3.8</span> <code>trav_in_node()</code></h3>
+</div>
+<div id="trav_reverse_edge" class="section level3">
+<h3><span class="header-section-number">5.3.9</span> <code>trav_reverse_edge()</code></h3>
+</div>
+</div>
+<div id="graph-inspection" class="section level2">
+<h2><span class="header-section-number">5.4</span> Graph Inspection</h2>
+<div id="node_info" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> <code>node_info()</code></h3>
+</div>
+<div id="edge_info" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> <code>edge_info()</code></h3>
+</div>
+<div id="graph_info" class="section level3">
+<h3><span class="header-section-number">5.4.3</span> <code>graph_info()</code></h3>
+</div>
+<div id="get_nodes" class="section level3">
+<h3><span class="header-section-number">5.4.4</span> <code>get_nodes()</code></h3>
+</div>
+<div id="get_edges" class="section level3">
+<h3><span class="header-section-number">5.4.5</span> <code>get_edges()</code></h3>
+</div>
+<div id="get_predecessors" class="section level3">
+<h3><span class="header-section-number">5.4.6</span> <code>get_predecessors()</code></h3>
+</div>
+<div id="get_successors" class="section level3">
+<h3><span class="header-section-number">5.4.7</span> <code>get_successors()</code></h3>
+</div>
+<div id="get_node_df" class="section level3">
+<h3><span class="header-section-number">5.4.8</span> <code>get_node_df()</code></h3>
+</div>
+<div id="get_edge_df" class="section level3">
+<h3><span class="header-section-number">5.4.9</span> <code>get_edge_df()</code></h3>
+</div>
+<div id="node_count" class="section level3">
+<h3><span class="header-section-number">5.4.10</span> <code>node_count()</code></h3>
+</div>
+<div id="edge_count" class="section level3">
+<h3><span class="header-section-number">5.4.11</span> <code>edge_count()</code></h3>
+</div>
+<div id="node_present" class="section level3">
+<h3><span class="header-section-number">5.4.12</span> <code>node_present()</code></h3>
+</div>
+<div id="edge_present" class="section level3">
+<h3><span class="header-section-number">5.4.13</span> <code>edge_present()</code></h3>
+</div>
+<div id="is_graph_empty" class="section level3">
+<h3><span class="header-section-number">5.4.14</span> <code>is_graph_empty()</code></h3>
+</div>
+<div id="is_graph_directed" class="section level3">
+<h3><span class="header-section-number">5.4.15</span> <code>is_graph_directed()</code></h3>
+</div>
+<div id="is_graph_connected" class="section level3">
+<h3><span class="header-section-number">5.4.16</span> <code>is_graph_connected()</code></h3>
+</div>
+<div id="is_property_graph" class="section level3">
+<h3><span class="header-section-number">5.4.17</span> <code>is_property_graph()</code></h3>
+</div>
+<div id="get_degree_in" class="section level3">
+<h3><span class="header-section-number">5.4.18</span> <code>get_degree_in()</code></h3>
+</div>
+<div id="get_degree_out" class="section level3">
+<h3><span class="header-section-number">5.4.19</span> <code>get_degree_out()</code></h3>
+</div>
+<div id="get_degree_total" class="section level3">
+<h3><span class="header-section-number">5.4.20</span> <code>get_degree_total()</code></h3>
+</div>
+<div id="get_degree_histogram" class="section level3">
+<h3><span class="header-section-number">5.4.21</span> <code>get_degree_histogram()</code></h3>
+</div>
+<div id="get_degree_distribution" class="section level3">
+<h3><span class="header-section-number">5.4.22</span> <code>get_degree_distribution()</code></h3>
+</div>
+<div id="get_graph_diameter" class="section level3">
+<h3><span class="header-section-number">5.4.23</span> <code>get_graph_diameter()</code></h3>
+</div>
+<div id="get_constraint" class="section level3">
+<h3><span class="header-section-number">5.4.24</span> <code>get_constraint()</code></h3>
+</div>
+<div id="get_betweenness" class="section level3">
+<h3><span class="header-section-number">5.4.25</span> <code>get_betweenness()</code></h3>
+</div>
+<div id="get_closeness" class="section level3">
+<h3><span class="header-section-number">5.4.26</span> <code>get_closeness()</code></h3>
+</div>
+<div id="get_bridging" class="section level3">
+<h3><span class="header-section-number">5.4.27</span> <code>get_bridging()</code></h3>
+</div>
+<div id="get_eccentricity" class="section level3">
+<h3><span class="header-section-number">5.4.28</span> <code>get_eccentricity()</code></h3>
+</div>
+<div id="get_jaccard_similarity" class="section level3">
+<h3><span class="header-section-number">5.4.29</span> <code>get_jaccard_similarity()</code></h3>
+</div>
+<div id="get_dice_similarity" class="section level3">
+<h3><span class="header-section-number">5.4.30</span> <code>get_dice_similarity()</code></h3>
+</div>
+<div id="get_periphery" class="section level3">
+<h3><span class="header-section-number">5.4.31</span> <code>get_periphery()</code></h3>
+</div>
+<div id="get_cmty_walktrap" class="section level3">
+<h3><span class="header-section-number">5.4.32</span> <code>get_cmty_walktrap()</code></h3>
+</div>
+<div id="get_cmty_louvain" class="section level3">
+<h3><span class="header-section-number">5.4.33</span> <code>get_cmty_louvain()</code></h3>
+</div>
+<div id="get_cmty_l_eigenvector" class="section level3">
+<h3><span class="header-section-number">5.4.34</span> <code>get_cmty_l_eigenvector()</code></h3>
+</div>
+<div id="get_cmty_fast_greedy" class="section level3">
+<h3><span class="header-section-number">5.4.35</span> <code>get_cmty_fast_greedy()</code></h3>
+</div>
+<div id="get_cmty_edge_btwns" class="section level3">
+<h3><span class="header-section-number">5.4.36</span> <code>get_cmty_edge_btwns()</code></h3>
+</div>
+<div id="get_nbrs" class="section level3">
+<h3><span class="header-section-number">5.4.37</span> <code>get_nbrs()</code></h3>
+</div>
+<div id="get_non_nbrs" class="section level3">
+<h3><span class="header-section-number">5.4.38</span> <code>get_non_nbrs()</code></h3>
+</div>
+<div id="get_common_neighbors" class="section level3">
+<h3><span class="header-section-number">5.4.39</span> <code>get_common_neighbors()</code></h3>
+</div>
+<div id="get_similar_nbrs" class="section level3">
+<h3><span class="header-section-number">5.4.40</span> <code>get_similar_nbrs()</code></h3>
+</div>
+<div id="get_paths" class="section level3">
+<h3><span class="header-section-number">5.4.41</span> <code>get_paths()</code></h3>
+</div>
+<div id="get_w_connected_cmpts" class="section level3">
+<h3><span class="header-section-number">5.4.42</span> <code>get_w_connected_cmpts()</code></h3>
+</div>
+<div id="get_s_connected_cmpts" class="section level3">
+<h3><span class="header-section-number">5.4.43</span> <code>get_s_connected_cmpts()</code></h3>
+</div>
+<div id="get_articulation_points" class="section level3">
+<h3><span class="header-section-number">5.4.44</span> <code>get_articulation_points()</code></h3>
+</div>
+</div>
+<div id="graph-modification" class="section level2">
+<h2><span class="header-section-number">5.5</span> Graph Modification</h2>
+<div id="add_node" class="section level3">
+<h3><span class="header-section-number">5.5.1</span> <code>add_node()</code></h3>
+</div>
+<div id="add_edge" class="section level3">
+<h3><span class="header-section-number">5.5.2</span> <code>add_edge()</code></h3>
+</div>
+<div id="add_node_df" class="section level3">
+<h3><span class="header-section-number">5.5.3</span> <code>add_node_df()</code></h3>
+</div>
+<div id="add_edge_df" class="section level3">
+<h3><span class="header-section-number">5.5.4</span> <code>add_edge_df()</code></h3>
+</div>
+<div id="add_n_nodes" class="section level3">
+<h3><span class="header-section-number">5.5.5</span> <code>add_n_nodes()</code></h3>
+</div>
+<div id="add_n_nodes_ws" class="section level3">
+<h3><span class="header-section-number">5.5.6</span> <code>add_n_nodes_ws()</code></h3>
+</div>
+<div id="add_edges_w_string" class="section level3">
+<h3><span class="header-section-number">5.5.7</span> <code>add_edges_w_string()</code></h3>
+</div>
+<div id="rev_edge_dir" class="section level3">
+<h3><span class="header-section-number">5.5.8</span> <code>rev_edge_dir()</code></h3>
+</div>
+<div id="rev_edge_dir_ws" class="section level3">
+<h3><span class="header-section-number">5.5.9</span> <code>rev_edge_dir_ws()</code></h3>
+</div>
+<div id="add_nodes_from_table" class="section level3">
+<h3><span class="header-section-number">5.5.10</span> <code>add_nodes_from_table()</code></h3>
+</div>
+<div id="add_edges_from_table" class="section level3">
+<h3><span class="header-section-number">5.5.11</span> <code>add_edges_from_table()</code></h3>
+</div>
+<div id="add_nodes_from_df_cols" class="section level3">
+<h3><span class="header-section-number">5.5.12</span> <code>add_nodes_from_df_cols()</code></h3>
+</div>
+<div id="add_path" class="section level3">
+<h3><span class="header-section-number">5.5.13</span> <code>add_path()</code></h3>
+</div>
+<div id="add_cycle" class="section level3">
+<h3><span class="header-section-number">5.5.14</span> <code>add_cycle()</code></h3>
+</div>
+<div id="add_star" class="section level3">
+<h3><span class="header-section-number">5.5.15</span> <code>add_star()</code></h3>
+</div>
+<div id="add_prism" class="section level3">
+<h3><span class="header-section-number">5.5.16</span> <code>add_prism()</code></h3>
+</div>
+<div id="add_balanced_tree" class="section level3">
+<h3><span class="header-section-number">5.5.17</span> <code>add_balanced_tree()</code></h3>
+</div>
+<div id="add_full_graph" class="section level3">
+<h3><span class="header-section-number">5.5.18</span> <code>add_full_graph()</code></h3>
+</div>
+<div id="join_node_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.19</span> <code>join_node_attrs()</code></h3>
+</div>
+<div id="join_edge_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.20</span> <code>join_edge_attrs()</code></h3>
+</div>
+<div id="set_graph_undirected" class="section level3">
+<h3><span class="header-section-number">5.5.21</span> <code>set_graph_undirected()</code></h3>
+</div>
+<div id="delete_node" class="section level3">
+<h3><span class="header-section-number">5.5.22</span> <code>delete_node()</code></h3>
+</div>
+<div id="delete_edge" class="section level3">
+<h3><span class="header-section-number">5.5.23</span> <code>delete_edge()</code></h3>
+</div>
+<div id="delete_nodes_ws" class="section level3">
+<h3><span class="header-section-number">5.5.24</span> <code>delete_nodes_ws()</code></h3>
+</div>
+<div id="delete_edges_ws" class="section level3">
+<h3><span class="header-section-number">5.5.25</span> <code>delete_edges_ws()</code></h3>
+</div>
+<div id="node_type" class="section level3">
+<h3><span class="header-section-number">5.5.26</span> <code>node_type()</code></h3>
+</div>
+<div id="edge_rel" class="section level3">
+<h3><span class="header-section-number">5.5.27</span> <code>edge_rel()</code></h3>
+</div>
+<div id="create_subgraph_ws" class="section level3">
+<h3><span class="header-section-number">5.5.28</span> <code>create_subgraph_ws()</code></h3>
+</div>
+<div id="get_min_spanning_tree" class="section level3">
+<h3><span class="header-section-number">5.5.29</span> <code>get_min_spanning_tree()</code></h3>
+</div>
+<div id="set_df_as_node_attr" class="section level3">
+<h3><span class="header-section-number">5.5.30</span> <code>set_df_as_node_attr()</code></h3>
+</div>
+<div id="set_df_as_edge_attr" class="section level3">
+<h3><span class="header-section-number">5.5.31</span> <code>set_df_as_edge_attr()</code></h3>
+</div>
+<div id="set_node_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.32</span> <code>set_node_attrs()</code></h3>
+</div>
+<div id="set_edge_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.33</span> <code>set_edge_attrs()</code></h3>
+</div>
+<div id="set_node_attrs_ws" class="section level3">
+<h3><span class="header-section-number">5.5.34</span> <code>set_node_attrs_ws()</code></h3>
+</div>
+<div id="set_edge_attrs_ws" class="section level3">
+<h3><span class="header-section-number">5.5.35</span> <code>set_edge_attrs_ws()</code></h3>
+</div>
+<div id="copy_node_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.36</span> <code>copy_node_attrs()</code></h3>
+</div>
+<div id="copy_edge_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.37</span> <code>copy_edge_attrs()</code></h3>
+</div>
+<div id="drop_node_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.38</span> <code>drop_node_attrs()</code></h3>
+</div>
+<div id="drop_edge_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.39</span> <code>drop_edge_attrs()</code></h3>
+</div>
+<div id="rename_node_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.40</span> <code>rename_node_attrs()</code></h3>
+</div>
+<div id="rename_edge_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.41</span> <code>rename_edge_attrs()</code></h3>
+</div>
+<div id="rescale_node_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.42</span> <code>rescale_node_attrs()</code></h3>
+</div>
+<div id="rescale_edge_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.43</span> <code>rescale_edge_attrs()</code></h3>
+</div>
+<div id="mutate_node_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.44</span> <code>mutate_node_attrs()</code></h3>
+</div>
+<div id="mutate_edge_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.45</span> <code>mutate_edge_attrs()</code></h3>
+</div>
+<div id="recode_node_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.46</span> <code>recode_node_attrs()</code></h3>
+</div>
+<div id="recode_edge_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.47</span> <code>recode_edge_attrs()</code></h3>
+</div>
+<div id="colorize_node_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.48</span> <code>colorize_node_attrs()</code></h3>
+</div>
+<div id="colorize_edge_attrs" class="section level3">
+<h3><span class="header-section-number">5.5.49</span> <code>colorize_edge_attrs()</code></h3>
+</div>
+</div>
+<div id="caching-values" class="section level2">
+<h2><span class="header-section-number">5.6</span> Caching Values</h2>
+</div>
+<div id="graph-metadata" class="section level2">
+<h2><span class="header-section-number">5.7</span> Graph Metadata</h2>
+</div>
+<div id="graph-series" class="section level2">
+<h2><span class="header-section-number">5.8</span> Graph Series</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="selections.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
