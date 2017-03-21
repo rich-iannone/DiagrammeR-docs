@@ -12,7 +12,13 @@ library(DiagrammeR)
 
 A few notes are useful here, the package automatically enables the **magrittr** pipe operator (`%>%`) which allows for chaining between statements in a left-to-right, easy-to-read manner. The **pipeR** package's `%>>%` (which works very similarly) is not loaded by **DiagrammeR** but it can be used. In the examples throughout, we'll stick with **magrittr**'s pipe.
 
-## Simple Creation and Visualization
+## Visualizing a Simple Graph
+
+When considering the visualization of a graph we often have to consider the eventual size of the graph. Size matters both to the computation time of the visualization and also to the effectiveness of the visualization itself. Very large graphs (i.e., millions of nodes) would be difficult to visualize without some care taken to ensure that not all the nodes are actually drawn; otherwise, the visualization may not even be created without out-of-memory errors (or, and I'm not sure this is much better, giant vector graphics files). Furthermore, displaying huge volumes of nodes and edges does not always offer great insight unless great care has been taken toward using visual aesthetics.
+
+This tension between visualizing a graph or simply using the graph data to perform queries is often present. However, for now, let's cast such considerations aside and learn how to create and visualize very simple graphs. We'll use of few of **DiagrammeR**'s functions to build up graphs and also to modify the graph. While some of these functions may not be as useful for building graphs with real-world data (where, instead, one might opt for bulk imports of tabular data), it'll provide some basis for the more advanced functionality we'll explore later on. 
+
+### Creation and Inspection
 
 Let's get to making a graph. The `create_graph()` function creates a graph object and, optionally, allows for intialization of nodes, edges, and a few global attributes for the graph. We can create an empty graph by simply using `create_graph()` as is.
 
@@ -62,7 +68,9 @@ Adding nodes does not automatically add edges. We can check that there are no ed
 edge_count(graph = graph_2n)
 ```
 
-The vast majority of the functions in **DiagrammeR** have the `graph` argument (or `x` as we've seen) as their first argument. This is useful in the context of using the **magrittr** pipe operator, `%>%` as we can start with a graph object, perform a transformation on that graph, expect a modified graph, and use that as input for the next transformation function, all while joining such operations with the pipe. With this piping approach, we can create the same graph as before (2 nodes, no edges) by chaining with `%>%`:
+### Piping Has Its Advantages
+
+The vast majority of the functions in **DiagrammeR** have the `graph` argument (or `x` as we've also seen) as their first argument. This is useful in the context of using the **magrittr** pipe operator, `%>%` as we can start with a graph object, perform a transformation on that graph, expect a modified graph, and use that as input for the next transformation function, all while joining such operations with the pipe. With this piping approach, we can create the same graph as before (2 nodes, no edges) by chaining with `%>%`:
 
 ```{r create_graph_add_nodes_pipes}
 # Create the equivalent `graph_2n` object
@@ -125,12 +133,14 @@ We now have this simple and small graph. We can view it again by calling the `re
 render_graph(graph = graph_2n_1e)
 ```
 
-And also, if you like interactivity and fluid physical motions, the **visNetwork** renderer.
+And also, if you like interactivity and fluid physical motions, try using the **visNetwork** renderer.
 
 ```{r render_graph_visnetwork}
 # Show the graph using the visNetwork engine
 render_graph(graph = graph_2n_1e, output = "visNetwork")
 ```
+
+### Deleting Graph Elements
 
 Just as we've built up a graph, we can do the opposite and remove edges and nodes. The key functions here are `delete_edge()` and `delete_node()`. Let's remove the edge we just recently added and then remove each of the nodes, leaving us again with an empty graph. Note again that we don't need to repeat the graph's object name throughout this pipeline (which is nice, saves typing). Second useful note: typing `delete_edge(` and then hitting the tab in **RStudio** brings up useful information on the function's argument names along with useful descriptions. I find this very helpful and use this feature quite often.
 
