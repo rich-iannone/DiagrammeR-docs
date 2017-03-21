@@ -166,52 +166,76 @@ There are some shortcuts/variations for doing the same thing (there are often nu
 
 ## Using Data Frames
 
-For certain graph diagrams there will be many nodes and edges, and, it may not be practical to add nodes/edges a few at a time. Let's use the `create_node_df()` function to specify a collection of nodes and contain them in a data frame (a *node data frame*, or *ndf*). Immediately after that, inspect the node data frame.
+For certain graph diagrams there will be many nodes and edges, and, it may not be practical to add nodes/edges a few at a time. Let's take advantage of **R** and its data frames! We can construct a specialized data frame for nodes (a *node data frame*, or *ndf*) and include the basic node information (ID values, a `type`, and a text-based `label`), and, also include *extra* columns that could be used for node aesthetics when displayed or even just metadata. To start simply, let's use the `create_node_df()` function to specify a minimal collection of nodes in an ndf.
 
-```{r create_node_df}
-ndf <- 
+```{r create_node_df, eval=FALSE, include=TRUE}
+create_node_df(
+  n = 3,
+  label = TRUE)
+```
+
+```{r create_node_df_kable, echo=FALSE}
+knitr::kable(
   create_node_df(
     n = 3,
     label = TRUE)
-
-ndf
+)
 ```
 
 The `n` argument is required here and it must indicate the number of nodes you intend this object to contain. The use of `label = TRUE` allows for copying of the node IDs as the node `label` (which is a node attribute). This is not always desirable, however. A better option is to specify a vector of label values (you can use all manner of characters, it will be coerced to a `character` vector). Make certain that this vector is the same length as specified by `n`. Also, if we ensure that the `label` node attribute always contains unique values, we can later select individual nodes by their `label` values and perform actions on these selections.
 
-You may have noticed the node attribute `type` in the output. Values may optionally be provided for this attribute and, again, having this extra metadata is useful for categorizing collections of nodes. Let's refine the `ndf` object and include two different `type` values (`A` and `B`).
+You may have noticed the node attribute `type` in the output (alas, all `NA`s). Values may optionally be provided for this attribute and, again, having this extra metadata is recommended as it is helpful for categorizing nodes. Let's display a different `ndf` object that includes two different `type` values (`A` and `B`) and unique `label` values that are not strict copies of the node `id`.
 
-```{r create_ndf_type}
-ndf <- 
+```{r create_ndf_type, eval=TRUE, include=TRUE}
+ndf <-
   create_node_df(
     n = 3,
     type = c("A", "A", "B"),
-    label = TRUE)
+    label = c("one", "two", "three"))
+```
 
-ndf
+```{r create_ndf_type_kable, echo=FALSE}
+knitr::kable(
+  create_node_df(
+    n = 3,
+    type = c("A", "A", "B"),
+    label = c("one", "two", "three"))
+)
 ```
 
 Now onto the edges, those connections between the nodes. The edges are also collected in a data frame (this time, as an *edge data frame* or *edf*). The `create_edge_df()` function is used to generate this type of object.
 
-```{r create_edge_df}
-edf <- 
+```{r create_edf, eval=FALSE, include=TRUE}
+create_edge_df(
+  from = c(1, 1),
+  to   = c(2, 3))
+```
+
+```{r create_edf_kable, echo=FALSE}
+knitr::kable(
   create_edge_df(
     from = c(1, 1),
     to   = c(2, 3))
-
-edf
+)
 ```
 
 The `from` and `to` arguments specify which nodes for the edge are outgoing and incoming, respectively. Here, the edges are: `1->2` and `1->3`. As stated before, for directed graphs, the order is essential. The `rel` argument allows for the inclusion of text labels in the same manner as the node `type`. This is useful for targeting specific groups of edges during a selection or traversal. Let's refine the `edf` object and include two different `rel` values (`X` and `Y`).
 
-```{r create_edf_rel}
+```{r create_edf_rel, eval=TRUE, include=TRUE}
 edf <- 
   create_edge_df(
     from = c(1, 1),
     to   = c(2, 3),
     rel = c("X", "Y"))
+```
 
-edf
+```{r create_edf_rel_kable, echo=FALSE}
+knitr::kable(
+  create_edge_df(
+    from = c(1, 1),
+    to   = c(2, 3),
+    rel = c("X", "Y"))
+)
 ```
 
 Now that we have an *ndf* and an *edf*, we can combine those into a new graph object by using these specialized data frames within the `create_graph()` function call.
@@ -227,14 +251,26 @@ graph_ndf_edf <-
 
 What exactly happened? These data frames (`ndf` and `edf`) were placed within the graph object when it was created. They essentially became internal `ndf` and `edf` objects. We can inspect the graph's internal *ndf* and *edf* at any time using the `get_node_df()` and `get_edge_df()` functions:
 
-```{r inspect_internal_ndf}
+```{r inspect_internal_ndf, eval=FALSE, include=TRUE}
 # Show the graph's internal node data frame
 get_node_df(graph_ndf_edf)
 ```
 
-```{r inspect_internal_edf}
+```{r inspect_internal_ndf_kable, echo=FALSE}
+knitr::kable(
+  get_node_df(graph_ndf_edf)
+)
+```
+
+```{r inspect_internal_edf, eval=FALSE, include=TRUE}
 # Show the graph's internal edge data frame
 get_edge_df(graph_ndf_edf)
+```
+
+```{r inspect_internal_edf_kable, echo=FALSE}
+knitr::kable(
+  get_edge_df(graph_ndf_edf)
+)
 ```
 
 Let's view the graph using `render_graph()`. The output will clearly show us how the 3 nodes are connected to each other.
@@ -244,19 +280,41 @@ Let's view the graph using `render_graph()`. The output will clearly show us how
 render_graph(graph = graph_ndf_edf)
 ```
 
-There is a bit more that you can do with node and edge data frames. Extra columns (or attributes) filled with values can be used for several purposes:
+## Adding Basic Attributes
 
-- to associate data values that relate to each node or edge
-- to provide styling attributes such as color names or relative node sizes
+As stated previously, there is quite a bit more that you can do with node and edge data frames. Extra columns (representing attributes) filled with attribute values can be used for these two main purposes:
+
+- associating data values to each node or edge
+- providing styling attributes such as color names, node sizes, etc.
 
 We can add these extra columns/attrs when making the node or edge data frames. Here is an example where `color` attribute values for nodes and edges is provided along with some `fillcolor` values for nodes.
 
 ```{r generate_render_graph_w_colors}
 # Create a node data frame
+ndf <-
+  create_node_df(
+    n = 3,
+    type = "a",
+    label = c("one", "two", "three"),
+    color = c("red", "blue", "red"),
+    fillcolor = "gray95")
 
+# Create an edge data frame
+edf <-
+  create_edge_df(
+    from = c(1, 2),
+    to = c(2, 3),
+    color = "darkgreen")
+
+# Create a graph with the ndf and edf
+graph_colors <-
+  create_graph(
+    nodes_df = ndf,
+    edges_df = edf)
+
+# Show the graph using `render_graph()`
+render_graph(graph = graph_colors)
 ```
-
-## Adding Basic Attributes
 
 Note that whenever we use the default values for `type` or `label` in each `add_node()` call, we don't get values for the `type` attribute and the `label` attribute is assigned the node ID value. In the ideal case, values for `type` and `label` are supplied. Something to keep in mind is that including `label` values that are unique or distinct across all nodes in the graph will make it possible to specify node selections and perform useful actions on specific nodes. Let's create the `graph` object once more with `type` and `label` node attributes included.
 
@@ -267,10 +325,18 @@ graph_node_type_label <-
   add_node(type = "number", label = "two")
 ```
 
-View the graph's internal node data frame with the `get_node_df()` function so we can see that these attributes have been included alongside the graph's nodes.
+## The Internal NDF/EDF
 
-```{r get_node_df_graph_node_type_label}
+We can view the graph's internal node data frame with the `get_node_df()` function so we can see that these attributes have been included alongside the graph's nodes.
+
+```{r get_node_df_graph_node_type_label, eval=FALSE, include=TRUE}
 get_node_df(graph_node_type_label)
+```
+
+```{r get_node_df_graph_node_type_label_kable, echo=FALSE}
+knitr::kable(
+  get_node_df(graph_node_type_label)
+)
 ```
 
 Now let's add a single, directed edge between nodes `1` and `2` using `add_edge()`. This edge will also be given a value for its `rel` attribute (`to_number`). After adding the edge to the graph, use the `get_edges()` function to show that the edge has been produced.
@@ -310,16 +376,17 @@ graph_edge_w_ids <-
 graph_edge_w_ids %>% get_edges(return_values = "label")
 ```
 
-The `get_edges()` function can output the pairs of nodes in edges either as a character vector (as above, which is the default), as a data frame (with 2 columns: `from` and `to`), or as a list (first component is the `from` vector and the second represents the `to` nodes). Here are examples of the latter two output types:
+By default, the `get_edges()` function outputs the pairs of nodes in edges as a character vector (as above). There is also the option to return this information as a data frame (with 2 columns: `from` and `to`):
 
-```{r get_edges_return_type_df}
+```{r get_edges_return_type_df, eval=FALSE, include=TRUE}
 # Get the graph's edges as a data frame
 get_edges(graph_edge_w_ids, return_type = "df")
 ```
 
-```{r get_edges_return_type_list}
-# Get the graph's edges as a list
-get_edges(graph_edge_w_ids, return_type = "list")
+```{r get_edges_return_type_df_kable, echo=FALSE}
+knitr::kable(
+  get_edges(graph_edge_w_ids, return_type = "df")
+)
 ```
 
 The addition of a node and the creation of edges can also be performed in a single `add_node()` step. You can use either (or both) of the optional `from` and `to` arguments in the `add_node()` function. Let's make various graph objects and see how both nodes and edges can be created with a single call to `add_node()`.
@@ -387,7 +454,7 @@ render_graph(graph = graph_e)
 
 This produces the same graph as before but, this time, we didn't have to manually supply node ID values. The `select_last_nodes_created()` function simply made a selection of node ID values and we retrieved those IDs using the `get_selection()` function. The dot (`.`) as the sole argument referred to the graph itself, which is needed for the `graph` argument to `get_selection`.
 
-While the graph was constructed to our specification, the nodes and the edges within that graph do not have their basic attributes filled with values. We can check this using `get_node_df()` and `get_edges_df` and we see that values for the `type`, `label`, and `rel` attributes are all `NA` values.
+While the graph was constructed to our specification, the nodes and the edges within that graph do not have their basic attributes filled with values. We can check this using `get_node_df()` and `get_edges_df()` and we see that values for the `type`, `label`, and `rel` attributes are all `NA` values.
 
 ```{r check_internal_node_df}
 get_node_df(graph = graph_e)
