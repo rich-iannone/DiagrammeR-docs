@@ -1,0 +1,136 @@
+# Functions: Inspection {#fcns_inspection}
+
+
+
+## `node_info()`
+
+
+## `edge_info()`
+
+
+## `graph_info()`
+
+
+## `get_nodes()`
+
+
+## `get_edges()`
+
+
+## `get_predecessors()`
+
+
+## `get_successors()`
+
+
+## `get_node_df()`
+
+
+## `get_edge_df()`
+
+
+## `node_count()`
+
+
+## `edge_count()`
+
+
+## `node_present()`
+
+
+## `edge_present()`
+
+
+## `is_graph_empty()`
+
+
+## `is_graph_directed()`
+
+
+## `is_graph_connected()`
+
+
+## `is_property_graph()`
+
+
+## `get_degree_in()`
+
+
+## `get_degree_out()`
+
+
+## `get_degree_total()`
+
+
+## `get_degree_histogram()`
+
+
+## `get_degree_distribution()`
+
+
+## `get_graph_diameter()`
+
+
+## `get_constraint()`
+
+
+## `get_betweenness()`
+
+
+## `get_closeness()`
+
+
+## `get_bridging()`
+
+
+## `get_eccentricity()`
+
+
+## `get_jaccard_similarity()`
+
+
+## `get_dice_similarity()`
+
+
+## `get_periphery()`
+
+
+## `get_cmty_walktrap()`
+
+
+## `get_cmty_louvain()`
+
+
+## `get_cmty_l_eigenvector()`
+
+
+## `get_cmty_fast_greedy()`
+
+
+## `get_cmty_edge_btwns()`
+
+
+## `get_nbrs()`
+
+
+## `get_non_nbrs()`
+
+
+## `get_common_neighbors()`
+
+
+## `get_similar_nbrs()`
+
+
+## `get_paths()`
+
+
+## `get_w_connected_cmpts()`
+
+
+## `get_s_connected_cmpts()`
+
+
+## `get_articulation_points()`
+
+

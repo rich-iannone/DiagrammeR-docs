@@ -1,0 +1,39 @@
+# Functions: Selection {#fcns_selection}
+
+
+
+## `select_nodes()`
+
+
+## `select_edges()`
+
+
+## `select_last_nodes_created()`
+
+
+## `select_last_edges_created()`
+
+
+## `select_nodes_by_id()`
+
+
+## `select_nodes_in_neighborhood()`
+
+
+## `select_nodes_by_degree()`
+
+
+## `select_edges_by_edge_id()`
+
+
+## `select_edges_by_node_id()`
+
+
+## `invert_selection()`
+
+
+## `clear_selection()`
+
+
+## `get_selection()`
+

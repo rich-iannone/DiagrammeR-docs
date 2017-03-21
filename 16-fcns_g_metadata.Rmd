@@ -1,0 +1,25 @@
+# Functions: Graph Metadata {#fcns_g_metadata}
+
+
+
+## `set_graph_name()`
+
+
+## `set_graph_time()`
+
+
+## `set_global_graph_attrs()`
+
+
+## `add_global_graph_attrs()`
+
+
+## `get_global_graph_attrs()`
+
+
+## `delete_global_graph_attrs()`
+
+
+## `clear_global_graph_attrs()`
+
+

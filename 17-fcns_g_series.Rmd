@@ -1,0 +1,39 @@
+# Functions: Graph Series {#fcns_g_series}
+
+
+
+## `create_series()`
+
+
+
+## `add_to_series()`
+
+
+
+## `remove_from_series()`
+
+
+
+## `subset_series()`
+
+
+
+## `get_graph_from_series()`
+
+
+
+## `trigger_script()`
+
+
+
+## `series_info()`
+
+
+
+## `graph_count()`
+
+
+
+## `render_graph_from_series()`
+
+

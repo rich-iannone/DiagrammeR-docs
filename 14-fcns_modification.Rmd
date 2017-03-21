@@ -1,0 +1,150 @@
+# Functions: Modification {#fcns_modification}
+
+
+
+## `add_node()`
+
+
+## `add_edge()`
+
+
+## `add_node_df()`
+
+
+## `add_edge_df()`
+
+
+## `add_n_nodes()`
+
+
+## `add_n_nodes_ws()`
+
+
+## `add_edges_w_string()`
+
+
+## `rev_edge_dir()`
+
+
+## `rev_edge_dir_ws()`
+
+
+## `add_nodes_from_table()`
+
+
+## `add_edges_from_table()`
+
+
+## `add_nodes_from_df_cols()`
+
+
+## `add_path()`
+
+
+## `add_cycle()`
+
+
+## `add_star()`
+
+
+## `add_prism()`
+
+
+## `add_balanced_tree()`
+
+
+## `add_full_graph()`
+
+
+## `join_node_attrs()`
+
+
+## `join_edge_attrs()`
+
+
+## `set_graph_undirected()`
+
+
+## `delete_node()`
+
+
+## `delete_edge()`
+
+
+## `delete_nodes_ws()`
+
+
+## `delete_edges_ws()`
+
+
+## `node_type()`
+
+
+## `edge_rel()`
+
+
+## `create_subgraph_ws()`
+
+
+## `get_min_spanning_tree()`
+
+
+## `set_df_as_node_attr()`
+
+
+## `set_df_as_edge_attr()`
+
+
+## `set_node_attrs()`
+
+
+## `set_edge_attrs()`
+
+
+## `set_node_attrs_ws()`
+
+
+## `set_edge_attrs_ws()`
+
+
+## `copy_node_attrs()`
+
+
+## `copy_edge_attrs()`
+
+
+## `drop_node_attrs()`
+
+
+## `drop_edge_attrs()`
+
+
+## `rename_node_attrs()`
+
+
+## `rename_edge_attrs()`
+
+
+## `rescale_node_attrs()`
+
+
+## `rescale_edge_attrs()`
+
+
+## `mutate_node_attrs()`
+
+
+## `mutate_edge_attrs()`
+
+
+## `recode_node_attrs()`
+
+
+## `recode_edge_attrs()`
+
+
+## `colorize_node_attrs()`
+
+
+## `colorize_edge_attrs()`
+
