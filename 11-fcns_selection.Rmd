@@ -4,36 +4,180 @@
 
 ## `select_nodes()`
 
+<h4><em>Select nodes in a graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Select nodes from a graph object of class `dgr_graph`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`conditions`** an option to use filtering conditions for the retrieval of nodes.
+
+**`set_op`** the set operation to perform upon consecutive selections of graph nodes. This can either be as a `union` (the default), as an intersection of selections with `intersect`, or, as a `difference` on the previous selection, if it exists.
+
+**`nodes`** an optional vector of node IDs for filtering list of nodes present in the graph.
 
 ## `select_edges()`
 
+<h4><em>Select edges in a graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Select edges from a graph object of class `dgr_graph`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`conditions`** an option to use filtering conditions for the retrieval of edges.
+
+**`set_op`** the set operation to perform upon consecutive selections of graph nodes. This can either be as a `union` (the default), as an intersection of selections with `intersect`, or, as a `difference` on the previous selection, if it exists.
+
+**`from`** an optional vector of node IDs from which the edge is outgoing for filtering the list of edges present in the graph.
+
+**`to`** an optional vector of node IDs to which the edge is incoming for filtering the list of edges present in the graph.
 
 ## `select_last_nodes_created()`
 
+<h4><em>Select the last set of nodes created in a graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Select the last nodes that were created in a graph object of class `dgr_graph`. This function should ideally be used just after creating the nodes to be selected.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
 
 ## `select_last_edges_created()`
 
+<h4><em>Select the last set of edges created in a graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Select the last edges that were created in a graph object of class `dgr_graph`. This function should ideally be used just after creating the edges to be selected.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
 
 ## `select_nodes_by_id()`
 
+<h4><em>Select nodes in a graph by ID values</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Select nodes in a graph object of class `dgr_graph` by their node ID values. If nodes have IDs that are monotonically increasing integer values, then numeric ranges can be used for the selection.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`nodes`** a vector of node IDs for the selection of nodes present in the graph.
+
+**`set_op`** the set operation to perform upon consecutive selections of graph nodes. This can either be as a `union` (the default), as an intersection of selections with `intersect`, or, as a `difference` on the previous selection, if it exists.
 
 ## `select_nodes_in_neighborhood()`
 
+<h4><em>Select nodes based on a walk distance from a specified node</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Select those nodes in the neighborhood of nodes connected a specified distance from an initial node.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`node`** the node from which the traversal will originate.
+
+**`distance`** the maximum number of steps from the `node` for inclusion in the selection.
+
+**`set_op`** the set operation to perform upon consecutive selections of graph nodes. This can either be as a `union` (the default), as an intersection of selections with `intersect`, or, as a `difference` on the previous selection, if it exists.
 
 ## `select_nodes_by_degree()`
 
+<h4><em>Select nodes in the graph based on their degree values</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Using a graph object of class `dgr_graph`, create a selection of nodes that have certain degree values.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`expressions`** one or more expressions for filtering of nodes by degree values. Use a combination of a degree type (`deg` for total degree, `indeg` for indegree, and `outdeg` for outdegree) with a comparison operator and values for comparison (e.g., use \code{"deg >= 2"} to select nodes with a degree greater than or equal to 2).
+
+**`set_op`** the set operation to perform upon consecutive selections of graph nodes. This can either be as a `union` (the default), as an intersection of selections with `intersect`, or, as a `difference` on the previous selection, if it exists.
 
 ## `select_edges_by_edge_id()`
 
+<h4><em>Select edges in a graph using edge ID values</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Select edges in a graph object of class `dgr_graph` using edge ID values. **`graph`** a graph object of class `dgr_graph`.
+
+<h5>PARAMETERS</h5>
+
+**`edges`** a vector of edge IDs for the selection of edges present in the graph.
+
+**`set_op`** the set operation to perform upon consecutive selections of graph edges This can either be as a `union` (the default), as an intersection of selections with `intersect`, or, as a `difference` on the previous selection, if it exists.
 
 ## `select_edges_by_node_id()`
 
+<h4><em>Select edges in a graph using node ID values</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Select edges in a graph object of class `dgr_graph` using node ID values. All edges associated with the provided nodes will be included in the selection.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`nodes`** a vector of node IDs for the selection of edges present in the graph.
+
+**`set_op`** the set operation to perform upon consecutive selections of graph edges This can either be as a `union` (the default), as an intersection of selections with `intersect`, or, as a `difference` on the previous selection, if it exists.
 
 ## `invert_selection()`
 
+<h4><em>Invert selection of nodes or edges in a graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Modify the selection of nodes or edges within a graph object such that all nodes or edges previously unselected will now be selected and vice versa.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
 
 ## `clear_selection()`
 
+<h4><em>Clear a selection of nodes or edges in a graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Clear the selection of nodes or edges within a graph object.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
 
 ## `get_selection()`
+
+<h4><em>Get the current selection available in a graph object</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Get the current selection of nodes or edges from a graph object of class `dgr_graph`. 
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
 

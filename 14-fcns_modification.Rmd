@@ -4,147 +4,893 @@
 
 ## `add_node()`
 
+<h4><em>Add a node to an existing graph object</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+With a graph object of class `dgr_graph`, add a new node of a specified type to extant nodes within the graph.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`type`** an optional character object that acts as a group identifier for the node to be added.
+
+**`label`** an optional character object that describes the node.
+
+**`from`** an optional vector containing node IDs from which edges will be directed to the new node.
+
+**`to`** an optional vector containing node IDs to which edges will be directed from the new node.
 
 ## `add_edge()`
 
+<h4><em>Add an edge between nodes in a graph object</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+With a graph object of class `dgr_graph`, add an edge to nodes within the graph.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`from`** the outgoing node from which the edge is connected.
+
+**`to`** the incoming nodes to which each edge is connected.
+
+**`rel`** an optional string specifying the relationship between the connected nodes.
+
+**`use_labels`** an option to use node `label` values in `from` and `to` for defining node connections. Note that this is only possible if all nodes have distinct `label` values set and none exist as an empty string.
+
+**`allow_multiple_edges`** an option to allow or disallow the possibility of creating an edge with an edge definition already extant in the graph.
 
 ## `add_node_df()`
 
+<h4><em>Add nodes from a node data frame to an existing graph object</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+With a graph object of class `dgr_graph` add nodes from a node data frame to that graph.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`node_df`** a node data frame that is created using `create_node_df`.
 
 ## `add_edge_df()`
 
+<h4><em>Add edges from an edge data frame to an existing graph object</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+With a graph object of class `dgr_graph` add edges from an edge data frame to that graph.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`edge_df`** an edge data frame that is created using `create_edge_df`.
 
 ## `add_n_nodes()`
 
+<h4><em>Add one or several unconnected nodes to the graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Add n new nodes to a graph object of class `dgr_graph`. Optionally, set node `type` values for the new nodes.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`n`** the number of new nodes to add to the graph.
+
+**`type`** an optional character vector that provides group identifiers for the nodes to be added.
+
+**`label`** an optional character object that describes the nodes to be added.
 
 ## `add_n_nodes_ws()`
 
+<h4><em>Add a multiple of new nodes with edges to or from one or more selected nodes</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Add n new nodes to or from one or more nodes available as a selection in a graph object of class `dgr_graph`. New graph edges will all move either from the nodes in the selection toward the newly created nodes (with the option `direction = "from"`), or to the selected nodes alredy in the graph (using `direction = "to"`). Optionally, set node `type` and edge `rel` values for all the new nodes and edges created, respectively.
+
+Selections of nodes can be performed using the following `select_...` functions: `select_nodes()`, `select_last_nodes_created()`, `select_nodes_by_degree()`, `select_nodes_by_id()`, or `select_nodes_in_neighborhood()`. Selections of nodes can also be performed using the following traversal functions: (`trav_...`): `trav_out()`, `trav_in()`, `trav_both()`, `trav_in_node()`, `trav_out_node()`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`n`** the number of new nodes to attach as successor nodes to the nodes in the selection.
+
+**`direction`** using `from` will create new edges from existing nodes to the new nodes. The `to` option will create new edges directed toward the existing nodes.
+
+**`type`** an optional character vector that provides group identifiers for the nodes to be added.
+
+**`label`** an optional character object that describes the nodes to be added.
+
+**`rel`** an optional string to apply a `rel` attribute to all newly created edges.
 
 ## `add_edges_w_string()`
 
+<h4><em>Add one or more edges using a text string</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+With a graph object of class `dgr_graph`, add one or more edges to the graph using a text string.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`edges`** a single-length vector with a character string specifying the edges. For a directed graph, the string object should be formatted as a series of node ID values as `[node_ID_1]->[node_ID_2]` separated by a one or more space characters. For undirected graphs, `--` should replace `->`. Linebreaks in the vector won't cause an error.
+
+**`rel`** an optional vector specifying the relationship between the connected nodes.
+
+**`use_labels`** an option to use node `label` values in the `edges` string to define node connections. Note that this is only possible if all nodes have distinct `label` values set and none exist as an empty string.
 
 ## `rev_edge_dir()`
 
+<h4><em>Reverse the direction of all edges in a graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Using a directed graph as input, reverse the direction of all edges in that graph.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
 
 ## `rev_edge_dir_ws()`
 
+<h4><em>Reverse the direction of selected edges in a graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Using a directed graph with a selection of edges as input, reverse the direction of those selected edges in input graph.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
 
 ## `add_nodes_from_table()`
 
+<h4><em>Add nodes and attributes to graph from a table</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Add nodes and their attributes to an existing graph object from data in a CSV file or a data frame.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`table`** either a path to a CSV file, or, a data frame object.
+
+**`label_col`** an option to apply a column of data in the table as `label` attribute values.
+
+**`type_col`** an option to apply a column of data in the table as `type` attribute values.
+
+**`set_type`** an optional string to apply a `type` attribute to all nodes created from the table records.
+
+**`drop_cols`** an optional character vector for dropping columns from the incoming data.
 
 ## `add_edges_from_table()`
 
+<h4><em>Add edges and attributes to graph from a table</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Add edges and their attributes to an existing graph object from data in a CSV file or a data frame.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`table`** either a path to a CSV file, or, a data frame object.
+
+**`from_col`** the name of the table column from which edges originate.
+
+**`to_col`** the name of the table column to which edges terminate.
+
+**`ndf_mapping`** a single character value for the mapping of the `from` and `to` columns in the external table (supplied as `from_col` and `to_col`, respectively) to a column in the graph's internal node data frame (ndf).
+
+**`rel_col`** an option to apply a column of data in the table as `rel` attribute values.
+
+**`set_rel`** an optional string to apply a `rel` attribute to all edges created from the table records.
+
+**`drop_cols`** an optional character vector for dropping columns from the incoming data.
 
 ## `add_nodes_from_df_cols()`
 
+<h4><em>Add nodes from distinct values in data frame columns</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Add new nodes to a graph object of class `dgr_graph` using distinct values from one or more columns in a data frame. The values will serve as node labels and the number of nodes added depends on the number of distinct values found in the specified columns.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`df`** a data frame from which values will be taken as new nodes for the graph.
+
+**`columns`** a character vector of column names or a numeric vector of column numbers for the data frame supplied in `df`. The distinct values in these columns will serve as labels for the nodes added to the graph.
+
+**`type`** an optional, single-length character vector that provides a group identifier for the nodes to be added to the graph.
+
+**`keep_duplicates`** an option to exclude incoming nodes where the any labels (i.e., values found in columns of the specified `df`) match label values available in the graph's nodes. By default, this is set to `FALSE`.
 
 ## `add_path()`
 
+<h4><em>Add a path of nodes to the graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+With a graph object of class `dgr_graph`, add a node path to the graph.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`n`** the number of nodes comprising the path.
+
+**`type`** an optional string that describes the entity type for the nodes to be added.
+
+**`label`** either a vector object of length `n` that provides optional labels for the new nodes, or, a boolean value where setting to `TRUE` ascribes node IDs to the label and `FALSE` yields a blank label.
+
+**`rel`** an optional string for providing a relationship label to all new edges created in the node path.
 
 ## `add_cycle()`
 
+<h4><em>Add a cycle of nodes to the graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+With a graph object of class `dgr_graph`, add a node cycle to the graph.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`n`** the number of nodes comprising the cycle.
+
+**`type`** an optional string that describes the entity type for the nodes to be added.
+
+**`label`** either a vector object of length `n` that provides optional labels for the new nodes, or, a boolean value where setting to `TRUE` ascribes node IDs to the label and `FALSE` yields a blank label.
+
+**`rel`** an optional string for providing a relationship label to all new edges created in the node cycle.
 
 ## `add_star()`
 
+<h4><em>Add a star of nodes to the graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+With a graph object of class `dgr_graph`, add a node star to the graph.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`n`** the number of nodes comprising the star. The first node will be the center of the star.
+
+**`type`** an optional string that describes the entity type for the nodes to be added.
+
+**`label`** either a vector object of length `n` that provides optional labels for the new nodes, or, a boolean value where setting to `TRUE` ascribes node IDs to the label and `FALSE` yields a blank label.
+
+**`rel`** an optional string for providing a relationship label to all new edges created in the node star.
 
 ## `add_prism()`
 
+<h4><em>Add a prism of nodes to the graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+With a graph object of class `dgr_graph`, add a node prism to the graph.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`n`** the number of nodes describing the shape of the prism. For example, the triangonal prism has `n` equal to 3 and it is composed of 6 nodes and 9 edges. For any n-gonal prism, the graph will be generated with 2`n` nodes and 3`n` edges.
+
+**`type`** an optional string that describes the entity type for the nodes to be added.
+
+**`label`** either a vector object of length `n` that provides optional labels for the new nodes, or, a boolean value where setting to `TRUE` ascribes node IDs to the label and `FALSE` yields a blank label.
+
+**`rel`** an optional string for providing a relationship label to all new edges created in the node prism.
 
 ## `add_balanced_tree()`
 
+<h4><em>Add a balanced tree of nodes to the graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+With a graph object of class `dgr_graph`, add a balanced tree to the graph.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`k`** the branching factor for the tree.
+
+**`h`** the height of the tree.
+
+**`type`** an optional string that describes the entity type for the nodes to be added.
+
+**`label`** either a vector object of length `n` that provides optional labels for the new nodes, or, a boolean value where setting to `TRUE` ascribes node IDs to the label and `FALSE` yields a blank label.
+
+**`rel`** an optional string for providing a relationship label to all new edges created in the node tree.
 
 ## `add_full_graph()`
 
+<h4><em>Add a fully connected graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+With a graph object of class `dgr_graph`, add a fully connected graph either with or without loops. If the graph object set as directed, the added graph will have edges to and from each pair of nodes. In the undirected case, a single edge will link each pair of nodes.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`n`** the number of nodes comprising the fully connected graph.
+
+**`type`** an optional string that describes the entity type for the nodes to be added.
+
+**`label`** either a vector object of length `n` that provides optional labels for the new nodes, or, a boolean value where setting to `TRUE` ascribes node IDs to the label and `FALSE` or `NULL` yields a blank label.
+
+**`rel`** an optional string for providing a relationship label to all new edges created in the connected graph.
+
+**`edge_wt_matrix`** an optional matrix of `n` by `n` dimensions containing values to apply as edge weights. If the matrix has row names or column names and `label = TRUE`, those row or column names will be used as node label values.
+
+**`keep_loops`** an option to simplify the fully connected graph by removing loops (edges from and to the same node). The default value is `FALSE`.
 
 ## `join_node_attrs()`
 
+<h4><em>Join new node attribute values using a data frame</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Join new node attribute values in a left join using a data frame. The use of a left join in this function allows for no possibility that nodes in the graph might be removed after the join.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`df`** the data frame to use for joining.
+
+**`by_graph`** optional specification of the column in the graph's internal node data frame for the left join. If both `by_graph` and `by_df` are not provided, then a natural join will occur if there are columns in the graph's ndf and in `df` with identical names.
+
+**`by_df`** optional specification of the column in `df` for the left join. If both `by_graph` and `by_df` are not provided, then a natural join will occur if there are columns in the graph's ndf and in `df` with identical names. `dgr_graph` that is created using `create_graph`.
 
 ## `join_edge_attrs()`
 
+<h4><em>Join new edge attribute values using a data frame</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Join new edge attribute values in a left join using a data frame. The use of a left join in this function allows for no possibility that edges in the graph might be removed after the join.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class
+`dgr_graph`.
+
+**`df`** the data frame to use for joining.
+
+**`by_graph`** optional specification of the column in the graph's internal edge data frame for the left join. If both `by_graph` and `by_df` are not provided, then a natural join will occur if there are columns in the graph's edf and in `df` with identical names.
+
+**`by_df`** optional specification of the column in `df` for the left join. If both `by_graph` and `by_df` are not provided, then a natural join will occur if there are columns in the graph's edf and in `df` with identical names.
 
 ## `set_graph_undirected()`
 
+<h4><em>Convert graph to an undirected graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Take a graph which is directed and convert it to an undirected graph.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
 
 ## `delete_node()`
 
+<h4><em>Delete a node from an existing graph object</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph`, delete an existing node by specifying its node ID.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`node`** a node ID for the node to be deleted from the graph.
 
 ## `delete_edge()`
 
+<h4><em>Delete an edge from an existing graph object</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph`, delete an existing edge by specifying either: (1) a pair of node IDs corresponding to the edge (keeping into consideration the direction of the edge in a directed graph), or (2) an edge ID.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`from`** a node ID from which the edge to be removed is outgoing. If an edge ID is provided to `id`, then this argument is ignored.
+
+**`to`** a node ID to which the edge to be removed is incoming. If an edge ID is provided to `id`, then this argument is ignored.
+
+**`id`** an edge ID of the edge to be removed.
 
 ## `delete_nodes_ws()`
 
+<h4><em>Delete all selected nodes in a node selection</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+In a graph object of class `dgr_graph`, delete all nodes present in a selection.
+
+Selections of nodes can be performed using the following `select_...` functions: `select_nodes()`, `select_last_nodes_created()`, `select_nodes_by_degree()`, `select_nodes_by_id()`, or `select_nodes_in_neighborhood()`. Selections of nodes can also be performed using the following traversal functions: (`trav_...`): `trav_out()`, `trav_in()`, `trav_both()`, `trav_in_node()`, `trav_out_node()`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
 
 ## `delete_edges_ws()`
 
+<h4><em>Delete all selected edges in an edge selection</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+In a graph object of class `dgr_graph`, delete all edges present in a selection.
+
+Selections of edges can be performed using the following `select_...` functions: `select_edges()`, `select_last_edge()`, or `select_edges_by_node_id()`. Selections of edges can also be performed using the following traversal functions: `trav_out_edge()`, `trav_in_edge()`, or `trav_both_edge()`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
 
 ## `node_type()`
 
+<h4><em>Create, read, update, delete, or report status of a node type definition</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph`, query a node in the graph (using the node ID) and perform operations on the type definition for that node.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`node`** a node ID corresponding to the node to be selected.
+
+**`action`** the operation to perform on the node's type attribute. To remove the type definition from a node, use either `delete`, `remove`, or `drop`. To add a type definition to a node with no type set, use `add` or `create`. To update a node's type definition, use `update`. To return the value of a node type, use `read`. To determine whether there is a type set for the selected node, use `check`.
+
+**`value`** a string denoting the node type, to be supplied when either adding or updating a node type definition.
 
 ## `edge_rel()`
 
+<h4><em>Create, read, update, delete, or report status of an edge relationship</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph`, query an edge in the graph (defined by a pair of node IDs extant in the graph) and perform operations on the relationship for that edge.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`from`** a node ID from which the edge to be queried is outgoing.
+
+**`to`** a node ID to which the edge to be queried is incoming.
+
+**`action`** the operation to perform on the edge's relationship attribute. To remove a relationship from an edge, use either `delete`, `remove`, or `drop`. To add a relationship to an edge with no set relationship, use `add` or `create`. To update an edge relationship, use `update`. To return the value of an edge relationship, use `read`. To determine whether there is a set relationship, use `check`.
+
+**`value`** a string denoting the relationship, to be supplied when either adding or updating an edge relationship.
 
 ## `create_subgraph_ws()`
 
+<h4><em>Create a subgraph based on a selection of nodes or edges</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Create a subgraph based on a selection of nodes or edges stored in the graph object. Selections of nodes can be performed using the following `select_...` functions: `select_nodes()`, `select_last_nodes_created()`, `select_nodes_by_degree()`, `select_nodes_by_id()`, or `select_nodes_in_neighborhood()`. Alternatively, selections of edges can be made with these functions: `select_edges()`, `select_last_edge()`, or `select_edges_by_node_id()`. Selections of nodes or edges can also be performed using any of the traversal functions (`trav_...`).
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph` that is created using `create_graph`.
 
 ## `get_min_spanning_tree()`
 
+<h4><em>Get a minimum spanning tree subgraph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Get a minimum spanning tree subgraph for a connected graph of class `dgr_graph`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
 
 ## `set_df_as_node_attr()`
 
+<h4><em>Set a data frame as a node attribute</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph`, bind a data frame as a node attribute property for one given graph node. The data frames are stored in list columns within a `df_tbl` object. A `df_id` value is generated and serves as a pointer to the table row that contains the ingested data frame.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`node`** the node ID to which the data frame will be bound as an attribute.
+
+**`df`** the data frame to be bound to the node as an attribute.
 
 ## `set_df_as_edge_attr()`
 
+<h4><em>Set a data frame as an edge attribute</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph`, bind a data frame as an edge attribute property for one given graph edge. The data frames are stored in list columns within a `df_tbl` object, itself residing within the graph object. A `df_id` value is generated and serves as a pointer to the table row that contains the ingested data frame.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`edge`** the edge ID to which the data frame will be bound as an attribute.
+
+**`df`** the data frame to be bound to the edge as an attribute.
 
 ## `set_node_attrs()`
 
+<h4><em>Set node attributes</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph` or a node data frame, set node attribute properties for one or more nodes.
+
+<h5>PARAMETERS</h5>
+
+**`x`** either a graph object of class `dgr_graph` or a node data frame.
+
+**`node_attr`** the name of the attribute to set.
+
+**`values`** the values to be set for the chosen attribute for the chosen nodes.
+
+**`nodes`** an optional vector of node IDs for filtering the list of nodes present in the graph.
 
 ## `set_edge_attrs()`
 
+<h4><em>Set edge attributes</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph` or an edge data frame, set edge attribute properties for one or more edges
+
+<h5>PARAMETERS</h5>
+
+**`x`** either a graph object of class `dgr_graph` or an edge data frame.
+
+**`edge_attr`** the name of the attribute to set.
+
+**`values`** the values to be set for the chosen attribute for the chosen edges.
+
+**`from`** an optional vector of node IDs from which the edge is outgoing for filtering list of nodes with outgoing edges in the graph.
+
+**`to`** an optional vector of node IDs from which the edge is incoming for filtering list of nodes with incoming edges in the graph.
 
 ## `set_node_attrs_ws()`
 
+<h4><em>Set node attributes with a node selection</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph` or a node data frame, set node attribute properties for nodes present in a node selection.
+
+Selections of nodes can be performed using the following `select_...` functions: `select_nodes()`, `select_last_nodes_created()`, `select_nodes_by_degree()`, `select_nodes_by_id()`, or `select_nodes_in_neighborhood()`. Selections of nodes can also be performed using the following traversal functions: (`trav_...`): `trav_out()`, `trav_in()`, `trav_both()`, `trav_in_node()`, `trav_out_node()`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`node_attr`** the name of the attribute to set.
+
+**`value`** the value to be set for the chosen attribute for the nodes in the current selection.
 
 ## `set_edge_attrs_ws()`
 
+<h4><em>Set edge attributes with an edge selection</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph` or an edge data frame, set edge attribute properties for one or more edges.
+
+Selections of edges can be performed using the following `select_...` functions: `select_edges()`, `select_last_edge()`, or `select_edges_by_node_id()`. Selections of edges can also be performed using the following traversal functions: `trav_out_edge()`, `trav_in_edge()`, or `trav_both_edge()`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`edge_attr`** the name of the attribute to set.
+
+**`value`** the value to be set for the chosen attribute for the edges in the current selection.
 
 ## `copy_node_attrs()`
 
+<h4><em>Copy a node attribute column and set the name</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Within a graph's internal node data frame (ndf), copy the contents an existing node attribute and create a distinct node attribute within the ndf with a different attribute name.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`node_attr_from`** the name of the node attribute column from which values will be copied.
+
+**`node_attr_to`** the name of the new node attribute column to which the copied values will be placed.
 
 ## `copy_edge_attrs()`
 
+<h4><em>Copy an edge attribute column and set the name</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Within a graph's internal edge data frame (edf), copy the contents an existing edge attribute and create a distinct edge attribute within the edf with a different attribute name.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`edge_attr_from`** the name of the edge attribute column from which values will be copied.
+
+**`edge_attr_to`** the name of the new edge attribute column to which the copied values will be placed.
 
 ## `drop_node_attrs()`
 
+<h4><em>Drop a node attribute column</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Within a graph's internal NDF, remove an existing node attribute.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`node_attr`** the name of the node attribute column to drop.
 
 ## `drop_edge_attrs()`
 
+<h4><em>Drop an edge attribute column</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Within a graph's internal edge data frame (edf), remove an existing edge attribute.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`edge_attr`** the name of the edge attribute column to drop.
 
 ## `rename_node_attrs()`
 
+<h4><em>Rename a node attribute</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Within a graph's internal node data frame (ndf), rename an existing node attribute.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`node_attr_from`** the name of the node attribute that will be renamed.
+
+**`node_attr_to`** the new name of the node attribute column identified in `node_attr_from`.
 
 ## `rename_edge_attrs()`
 
+<h4><em>Rename an edge attribute</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Within a graph's internal edge data frame (edf), rename an existing edge attribute.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`edge_attr_from`** the name of the edge attribute that will be renamed.
+
+**`edge_attr_to`** the new name of the edge attribute column identified in `edge_attr_from`.
 
 ## `rescale_node_attrs()`
 
+<h4><em>Rescale numeric node attribute values</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph`, take a set of numeric values for a node attribute, rescale to a new numeric or color range, then write to the same node attribute or to a new node attribute column.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`node_attr_from`** the node attribute containing numeric data that is to be rescaled to new numeric or color values.
+
+**`to_lower_bound`** the lower bound value for the set of rescaled values. This can be a numeric value or an X11 color name.
+
+**`to_upper_bound`** the upper bound value for the set of rescaled values. This can be a numeric value or an X11 color name.
+
+**`node_attr_to`** an optional name of a new node attribute to which the recoded values will be applied. This will retain the original node attribute and its values.
+
+**`from_lower_bound`** an optional, manually set lower bound value for the rescaled values. If not set, the minimum value from the set will be used.
+
+**`from_upper_bound`** an optional, manually set upper bound value for the rescaled values. If not set, the minimum value from the set will be used.
 
 ## `rescale_edge_attrs()`
 
+<h4><em>Rescale numeric edge attribute values</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph`, take a set of numeric values for an edge attribute, rescale to a new numeric or color range, then write to the same edge attribute or to a new edge attribute column.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`edge_attr_from`** the edge attribute containing numeric data that is to be rescaled to new numeric or color values.
+
+**`to_lower_bound`** the lower bound value for the set of rescaled values. This can be a numeric value or an X11 color name.
+
+**`to_upper_bound`** the upper bound value for the set of rescaled values. This can be a numeric value or an X11 color name.
+
+**`edge_attr_to`** an optional name of a new edge attribute to which the recoded values will be applied. This will retain the original edge attribute and its values.
+
+**`from_lower_bound`** an optional, manually set lower bound value for the rescaled values. If not set, the minimum value from the set will be used.
+
+**`from_upper_bound`** an optional, manually set upper bound value for the rescaled values. If not set, the minimum value from the set will be used.
 
 ## `mutate_node_attrs()`
 
+<h4><em>Mutate a set of node attribute values</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Within a graph's internal node data frame (ndf), mutate numeric node attribute values using one or more expressions. Optionally, one can specify a different node attribute name and create a new node attribute while retaining the original node attribute and its values.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`node_attr_from`** the name of the node attribute column from which values will be mutated. An `NA` value can be provided here if node attribute names are used in `expressions` statements. Note that if `NA` is used, a value must be provided for `node_attr_to`.
+
+**`expressions`** one or more expressions for mutation of all node attribute values specified by `node_attr_from`. To reference the node attribute given in `node_attr_from`, use the `~` character. Otherwise, all node attributes can be referenced by using the names of those node attributes directly in the expressions. Expressions are evaluated in the order provided.
+
+**`node_attr_to`** an optionally supplied name of a new node attribute to which the mutated values will be applied. This will retain the original node attribute(s) and its values. If `NA` is used with `node_attr_from`, a value must be provided here (since mutated values must be placed somewhere).
 
 ## `mutate_edge_attrs()`
 
+<h4><em>Mutate a set of edge attribute values</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Within a graph's internal edge data frame (edf), mutate numeric edge attribute values using one or more expressions. Optionally, one can specify a different edge attribute name and create a new edge attribute while retaining the original edge attribute and its values.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`edge_attr_from`** the name of the edge attribute column from which values will be mutated. An `NA` value can be provided here if edge attribute names are used in `expressions` statements. Note that if `NA` is used, a value must be provided for `edge_attr_to`.
+
+**`expressions`** one or more expressions for mutation of all edge attribute values specified by `edge_attr_from`. To reference the edge attribute given in `edge_attr_from`, use the `~` character. Otherwise, all edge attributes can be referenced by using the names of those edge attributes directly in the expressions. Expressions are evaluated in the order provided.
+
+**`edge_attr_to`** an optionally supplied name of a new edge attribute to which the mutated values will be applied. This will retain the original edge attribute and its values. If `NA` is used with `edge_attr_from`, a value must be provided here (since mutated values must be placed somewhere).
 
 ## `recode_node_attrs()`
 
+<h4><em>Recode a set of node attribute values</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Within a graph's internal node data frame (ndf), recode character or numeric node attribute values. Optionally, one can specify a replacement value for any unmatched mappings.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`node_attr_from`** the name of the node attribute column from which values will be recoded.
+
+**`...`** single-length character vectors with the recoding instructions. The first component should have the value to replace and the second should have the replacement value (in the form `"[to_replace] -> [replacement]", ...`).
+
+**`otherwise`** an optional single value for recoding any unmatched values.
+
+**`node_attr_to`** an optional name of a new node attribute to which the recoded values will be applied. This will retain the original node attribute and its values.
 
 ## `recode_edge_attrs()`
 
+<h4><em>Recode a set of edge attribute values</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Within a graph's internal edge data frame (edf), recode character or numeric edge attribute values. Optionally, one can specify a replacement value for any unmatched mappings.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`edge_attr_from`** the name of the edge attribute column from which values will be recoded.
+
+**`...`** single-length character vectors with the recoding instructions. The first component should have the value to replace and the second should have the replacement value (in the form `"[to_replace] -> [replacement]", ...`).
+
+**`otherwise`** an optional single value for recoding any unmatched values.
+
+**`edge_attr_to`** an optional name of a new edge attribute to which the recoded values will be applied. This will retain the original edge attribute and its values.
 
 ## `colorize_node_attrs()`
 
+<h4><em>Apply colors based on node attribute values</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Within a graph's internal node data frame (ndf), use a categorical node attribute to generate a new node attribute with color values.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`node_attr_from`** the name of the node attribute column from which color values will be based.
+
+**`node_attr_to`** the name of the new node attribute to which the color values will be applied.
+
+**`cut_points`** an optional vector of numerical breaks for bucketizing continuous numerical values available in a node attribute column.
+
+**`palette`** can either be: (1) a palette name from the RColorBrewer package (e.g., `Greens`, `OrRd`, `RdYlGn`), (2) `viridis`, which indicates use of the `viridis` color scale from the package of the same name, or (3) a vector of hexadecimal color names.
+
+**`alpha`** an optional alpha transparency value to apply to the generated colors. Should be in the range of `0` (completely transparent) to `100` (completely opaque).
+
+**`reverse_palette`** an option to reverse the order of colors in the chosen palette. The default is `FALSE`.
+
+**`default_color`** a hexadecimal color value to use for instances when the values do not fall into the bucket ranges specified in the `cut_points` vector.
 
 ## `colorize_edge_attrs()`
 
+<h4><em>Apply colors based on edge attribute values</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Within a graph's internal edge data frame (edf), use a categorical edge attribute to generate a new edge attribute with color values.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`edge_attr_from`** the name of the edge attribute column from which color values will be based.
+
+**`edge_attr_to`** the name of the new edge attribute to which the color values will be applied.
+
+**`cut_points`** an optional vector of numerical breaks for bucketizing continuous numerical values available in a edge attribute column.
+
+**`palette`** can either be: (1) a palette name from the RColorBrewer package (e.g., `Greens`, `OrRd`, `RdYlGn`), (2) `viridis`, which indicates use of the `viridis` color scale from the package of the same name, or (3) a vector of hexadecimal color names.
+
+**`alpha`** an optional alpha transparency value to apply to the generated colors. Should be in the range of `0` (completely transparent) to `100` (completely opaque).
+
+**`reverse_palette`** an option to reverse the order of colors in the chosen palette. The default is `FALSE`.
+
+**`default_color`** a hexadecimal color value to use for instances when the values do not fall into the bucket ranges specified in the `cut_points` vector.

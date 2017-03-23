@@ -4,59 +4,263 @@
 
 ## `create_node_df()`
 
+<h4><em>Create a node data frame</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Combine several vectors for nodes and their attributes into a data frame, which can be combined with other similarly-generated data frames, or, added to a graph object.
+
+<h5>PARAMETERS</h5>
+
+**`n`** the total number of nodes to include in the node data frame.
+
+**`type`** an optional `type` for each node.
+
+**`label`** an optional `label` for each node.
+
+**`...`** one or more vectors for associated node attributes.
 
 ## `create_edge_df()`
 
+<h4><em>Create an edge data frame</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Combine several vectors for edges and their attributes into a data frame, which can be combined with other similarly-generated data frames, or, added to a graph object.
+
+<h5>PARAMETERS</h5>
+
+**`from`** a vector of node ID values from which edges are outbound. The vector length must equal that of the `to` vector.
+
+**`to`** a vector of node ID values to which edges are incoming. The vector length must equal that of the `from` vector.
+
+**`rel`** an optional `rel` label for each edge.
+
+**`...`** one or more vectors for associated edge attributes.
 
 ## `combine_ndfs()`
 
+<h4><em>Combine multiple node data frames</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Combine several node data frames into a single node data frame.
+
+<h5>PARAMETERS</h5>
+
+**`...`** two or more node data frames, which contain node IDs and associated attributes.
 
 ## `combine_edfs()`
 
+<h4><em>Combine multiple edge data frames into a single edge data frame</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Combine several edge data frames in the style of `rbind`, except, it works regardless of the number and ordering of the columns.
+
+<h5>PARAMETERS</h5>
+
+**`...`** two or more edge data frames, which contain edge IDs and associated attributes.
 
 ## `create_graph()`
 
+<h4><em>Create a graph object</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Generates a graph object with the option to use node data frames (ndfs) and/or edge data frames (edfs) to populate the initial graph.
+
+<h5>PARAMETERS</h5>
+
+**`nodes_df`** an optional data frame containing, at minimum, a column (called `nodes`) which contains node IDs for the graph. Additional columns (node attributes) can be included with values for the named node attribute.
+
+**`edges_df`** an optional data frame containing, at minimum, two columns (called `from` and `to`) where node IDs are provided. Additional columns (edge attributes) can be included with values for the named edge attribute.
+
+**`directed`** with `TRUE` (the default) or `FALSE`, either directed or undirected edge operations will be generated, respectively.
+
+**`graph_name`** an optional string for labeling the graph object.
+
+**`attr_theme`** the theme (i.e., collection of `graph`, `node`, and `edge` global graph attributes) to use for this graph. The default theme is called `default`. If this is set to `NULL` then no global graph attributes will be applied to the graph upon creation.
+
+**`write_backups`** an option to write incremental backups of changing graph states to disk. If `TRUE`, a subdirectory of the working directory will be used to store `RDS` files. The default value is `FALSE` so one has to opt in to use this functionality.
 
 ## `create_random_graph()`
 
+<h4><em>Create a randomized graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Create a graph of up to `n` nodes with randomized edge assignments.
+
+<h5>PARAMETERS</h5>
+
+**`n`** the number of nodes to use in the random graph.
+
+**`m`** the number of edges to use in the random graph.
+
+**`directed`** an option for whether the random graph should be undirected (default) or directed.
+
+**`display_labels`** display node labels.
+
+**`set_seed`** supplying a value sets a random seed of the `Mersenne-Twister` implementation.
+
+**`write_backups`** an option to write incremental backups of changing graph states to disk. If `TRUE`, a subdirectory of the working directory will be used to store `RDS` files. The default value is `FALSE` so one has to opt in to use this functionality.
 
 ## `combine_graphs()`
 
+<h4><em>Combine two graphs into a single graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Combine two graphs in order to make a new graph.
+
+<h5>PARAMETERS</h5>
+
+**`x`** a `DiagrammeR` graph object to which another graph will be unioned. This graph should be considered the graph from which global graph attributes will be inherited in the resulting graph.
+
+**`y`** a `DiagrammeR` graph object that is to be unioned with the graph suppled as `x`.
 
 ## `import_graph()`
 
+<h4><em>Import a graph from various graph formats</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Import a variety of graphs from different graph formats and create a graph object.
+
+<h5>PARAMETERS</h5>
+
+**`graph_file`** a connection to a graph file.
+
+**`file_type`** the type of file to be imported. Options are: `graphml` (GraphML), `gml` (GML), `sif` (SIF), `edges` (a .edges file), and `mtx` (MatrixMarket format). If not supplied, the function will infer the type by its file extension.
 
 ## `from_adj_matrix()`
 
+<h4><em>Create a graph using an adjacency matrix</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Using an adjacency matrix object, generate a graph of class `dgr_graph`.
+
+<h5>PARAMETERS</h5>
+
+**`x`** a square `matrix` object serving as the adjacency matrix.
+
+**`mode`** the method in which to interpret the input adjacency matrix. Options include: `undirected`, `directed`, `upper`, `lower`, `max`, `min`, and `plus`.
+
+**`weighted`** whether to create a weighted graph from the adjacency matrix.
+
+**`use_diag`** whether to use the diagonal of the adjacency matrix in calculations. If `TRUE` then the diagonal values will be included as is. If `FALSE` then the diagonal values will be replaced with zero values before inclusion in any calculations.
+
+**`write_backups`** an option to write incremental backups of changing graph states to disk. If `TRUE`, a subdirectory of the working directory will be used to store `RDS` files. The default value is `FALSE` so one has to opt in to use this functionality.
 
 ## `from_igraph()`
 
+<h4><em>Convert an igraph graph to a DiagrammeR one</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Convert an igraph graph to a DiagrammeR graph object.
+
+<h5>PARAMETERS</h5>
+
+**`igraph`** an igraph graph object.
+
+**`write_backups`** an option to write incremental backups of changing graph states to disk. If `TRUE`, a subdirectory of the working directory will be used to store `RDS` files. The default value is `FALSE` so one has to opt in to use this functionality.
 
 ## `to_igraph()`
 
+<h4><em>Convert a DiagrammeR graph to an igraph one</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Convert a DiagrammeR graph to an igraph graph object.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
 
 ## `render_graph()`
 
+<h4><em>Render the graph in various formats</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Using a `dgr_graph` object, render the graph in the RStudio Viewer.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`output`** a string specifying the output type; `graph` (the default) renders the graph using the `grViz` function and `visNetwork` renders the graph using the `visnetwork` function.
+
+**`title`** an optional title for a graph when using `output = "graph"`.
+
+**`width`** an optional parameter for specifying the width of the resulting graphic in pixels.
+
+**`height`** an optional parameter for specifying the height of the resulting graphic in pixels.
 
 ## `export_graph()`
 
+<h4><em>Export a graph to various file formats</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Export a graph to a variety of file formats, including image formats such as PNG, PDF, SVG, and PostScript, and graph file formats such as GEXF.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`file_name`** the name of the exported file (including it's extension).
+
+**`file_type`** the type of file to be exported. Options for graph files are: `png`, `pdf`, `svg`, and `ps`. Options for graph file formats are: `gexf`.
+
+**`width`** output width in pixels or `NULL` for default. Only useful for export to image file formats `png`, `pdf`, `svg`, and `ps`.
+
+**`height`** output height in pixels or `NULL` for default. Only useful for export to image file formats `png`, `pdf`, `svg`, and `ps`.
 
 ## `export_csv()`
 
+<h4><em>Export a graph to CSV files</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Export a graph to CSV files. **`graph`** a graph object of class `dgr_graph`.
+
+<h5>PARAMETERS</h5>
+
+**`ndf_name`** the name to provide to the CSV file containing node information. By default this CSV will be called `nodes.csv`.
+
+**`edf_name`** the name to provide to the CSV file containing edge information. By default this CSV will be called `edges.csv`.
+
+**`output_path`** the path to which the CSV files will be placed. By default, this is the current working directory.
+
+**`colnames_type`** provides options to modify CSV column names to allow for easier import into other graph systems. The `neo4j` option modifies column names to allow for direct import of CSVs into Neo4J with the `LOAD CSV` clause. The `graphframes` option modifies column names to match those required by the Spark GraphFrames package.
 
 ## `save_graph()`
 
+<h4><em>Save a graph or graph series to disk</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Save a graph or a graph series object to disk.
+
+<h5>PARAMETERS</h5>
+
+**`x`** a graph object of class `dgr_graph` or a graph series object of type `dgr_graph_1D`.
+
+**`file`** a file name for the graph or graph series. Provide a character string and the `.dgr` extension will be applied to it.
 
 ## `open_graph()`
 
+<h4><em>Read a graph or graph series from disk</em></h4>
 
+<h5>DESCRIPTION</h5>
 
+Load a graph or a graph series object from disk.
 
-## Graph Metadata
+<h5>PARAMETERS</h5>
 
-
-
-
-## Graph Series
-
+**`file`** the filename for the graph or graph series. Optionally, this may contain a path to the file.
 
