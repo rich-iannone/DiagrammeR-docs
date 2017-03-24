@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="772px" height="80px" viewBox="0 0 772 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>create_edge_df</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="-6" y="2" width="784" height="76"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="784" height="76" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="0" y="0" width="57" height="40.7272727" rx="4"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="57" height="40.7272727" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Graph-Functions---Book" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <use id="Rectangle-Copy" stroke="#979797" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+        <g id="small_icon__create_edge_df" transform="translate(401.000000, 19.000000)">
+            <g id="graphviz_graph__DF_nodes-8" transform="translate(0.500000, 0.500000)">
+                <text id="EDF" transform="translate(8.563639, 21.066095) rotate(-90.000000) translate(-8.563639, -21.066095) " font-family="HelveticaNeue-Light, Helvetica Neue" font-size="13.5384615" font-weight="300" fill="#9B9B9B">
+                    <tspan x="-3.72251442" y="25.8697399">EDF</tspan>
+                </text>
+                <rect id="Rectangle-32" fill="#50C1E3" x="16.6089007" y="16.5454545" width="9.54199823" height="17.8181818"></rect>
+                <rect id="Rectangle-38" fill-opacity="0.501443614" fill="#50C1E3" x="16.6089007" y="6.36363636" width="9.54199823" height="6.36363636"></rect>
+                <rect id="Rectangle-34" fill="#CD96FD" x="25.696518" y="16.5454545" width="9.08761736" height="17.8181818"></rect>
+                <rect id="Rectangle-39" fill-opacity="0.496971241" fill="#CD96FD" x="25.696518" y="6.36363636" width="9.08761736" height="6.36363636"></rect>
+                <rect id="Rectangle-37" fill="#FE9E9E" x="34.3297545" y="16.5454545" width="9.08761736" height="17.8181818"></rect>
+                <rect id="Rectangle-40" fill-opacity="0.503283514" fill="#FE9E9E" x="34.3297545" y="6.36363636" width="9.08761736" height="6.36363636"></rect>
+                <rect id="Rectangle-35" fill="#93D749" x="43.4173719" y="16.5454545" width="8.78003031" height="17.8181818"></rect>
+                <rect id="Rectangle-41" fill-opacity="0.498443161" fill="#93D749" x="43.4173719" y="6.36363636" width="8.61727204" height="6.36363636"></rect>
+                <use id="Rectangle-1" stroke="#ADADAD" mask="url(#mask-4)" stroke-width="2" xlink:href="#path-3"></use>
+                <path d="M16.3817102,7 L16.3817102,33.6202125" id="Line" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M25.9237085,7 L25.9237085,33.6202125" id="Line-2" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M34.556945,7 L34.556945,33.6202125" id="Line-8" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M51.823418,7 L51.823418,33.6202125" id="Line-4" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M43.1901815,7 L43.1901815,33.6202125" id="Line-53" stroke="#979797" stroke-linecap="square"></path>
+            </g>
+        </g>
+        <g id="Wireframe-Line-01" transform="translate(314.000000, 30.000000)" stroke="#666666">
+            <g>
+                <polyline id="arrowhead" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="56 2 64 10 56 18"></polyline>
+                <path d="M63,10 L0,10" id="Line" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>
