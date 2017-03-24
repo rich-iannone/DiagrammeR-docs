@@ -4,6 +4,8 @@
 
 ## `create_node_df()`
 
+<img src="diagrams/create_node_df.svg">
+
 <h4><em>Create a node data frame</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -21,6 +23,8 @@ Combine several vectors for nodes and their attributes into a data frame, which 
 **`...`** one or more vectors for associated node attributes.
 
 ## `create_edge_df()`
+
+<img src="diagrams/create_edge_df.svg">
 
 <h4><em>Create an edge data frame</em></h4>
 
@@ -40,6 +44,8 @@ Combine several vectors for edges and their attributes into a data frame, which 
 
 ## `combine_ndfs()`
 
+<img src="diagrams/combine_ndfs.svg">
+
 <h4><em>Combine multiple node data frames</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -52,6 +58,8 @@ Combine several node data frames into a single node data frame.
 
 ## `combine_edfs()`
 
+<img src="diagrams/combine_edfs.svg">
+
 <h4><em>Combine multiple edge data frames into a single edge data frame</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -63,6 +71,8 @@ Combine several edge data frames in the style of `rbind`, except, it works regar
 **`...`** two or more edge data frames, which contain edge IDs and associated attributes.
 
 ## `create_graph()`
+
+<img src="diagrams/create_graph.svg">
 
 <h4><em>Create a graph object</em></h4>
 
@@ -88,6 +98,8 @@ Generates a graph object with the option to use node data frames (ndfs) and/or e
 
 <h4><em>Create a randomized graph</em></h4>
 
+<img src="diagrams/create_random_graph.svg">
+
 <h5>DESCRIPTION</h5>
 
 Create a graph of up to `n` nodes with randomized edge assignments.
@@ -110,6 +122,8 @@ Create a graph of up to `n` nodes with randomized edge assignments.
 
 <h4><em>Combine two graphs into a single graph</em></h4>
 
+<img src="diagrams/combine_graphs.svg">
+
 <h5>DESCRIPTION</h5>
 
 Combine two graphs in order to make a new graph.
@@ -123,6 +137,8 @@ Combine two graphs in order to make a new graph.
 ## `import_graph()`
 
 <h4><em>Import a graph from various graph formats</em></h4>
+
+<img src="diagrams/import_graph.svg">
 
 <h5>DESCRIPTION</h5>
 
