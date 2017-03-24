@@ -4,7 +4,7 @@
 
 ## `create_node_df()`
 
-<img src="diagrams/create_node_df.svg">
+<img src="diagrams/creation_io/create_node_df.svg">
 
 <h4><em>Create a node data frame</em></h4>
 
@@ -24,7 +24,7 @@ Combine several vectors for nodes and their attributes into a data frame, which 
 
 ## `create_edge_df()`
 
-<img src="diagrams/create_edge_df.svg">
+<img src="diagrams/creation_io/create_edge_df.svg">
 
 <h4><em>Create an edge data frame</em></h4>
 
@@ -44,7 +44,7 @@ Combine several vectors for edges and their attributes into a data frame, which 
 
 ## `combine_ndfs()`
 
-<img src="diagrams/combine_ndfs.svg">
+<img src="diagrams/creation_io/combine_ndfs.svg">
 
 <h4><em>Combine multiple node data frames</em></h4>
 
@@ -58,7 +58,7 @@ Combine several node data frames into a single node data frame.
 
 ## `combine_edfs()`
 
-<img src="diagrams/combine_edfs.svg">
+<img src="diagrams/creation_io/combine_edfs.svg">
 
 <h4><em>Combine multiple edge data frames into a single edge data frame</em></h4>
 
@@ -72,7 +72,7 @@ Combine several edge data frames in the style of `rbind`, except, it works regar
 
 ## `create_graph()`
 
-<img src="diagrams/create_graph.svg">
+<img src="diagrams/creation_io/create_graph.svg">
 
 <h4><em>Create a graph object</em></h4>
 
@@ -98,7 +98,7 @@ Generates a graph object with the option to use node data frames (ndfs) and/or e
 
 <h4><em>Create a randomized graph</em></h4>
 
-<img src="diagrams/create_random_graph.svg">
+<img src="diagrams/creation_io/create_random_graph.svg">
 
 <h5>DESCRIPTION</h5>
 
@@ -122,7 +122,7 @@ Create a graph of up to `n` nodes with randomized edge assignments.
 
 <h4><em>Combine two graphs into a single graph</em></h4>
 
-<img src="diagrams/combine_graphs.svg">
+<img src="diagrams/creation_io/combine_graphs.svg">
 
 <h5>DESCRIPTION</h5>
 
@@ -138,7 +138,7 @@ Combine two graphs in order to make a new graph.
 
 <h4><em>Import a graph from various graph formats</em></h4>
 
-<img src="diagrams/import_graph.svg">
+<img src="diagrams/creation_io/import_graph.svg">
 
 <h5>DESCRIPTION</h5>
 
@@ -153,6 +153,8 @@ Import a variety of graphs from different graph formats and create a graph objec
 ## `from_adj_matrix()`
 
 <h4><em>Create a graph using an adjacency matrix</em></h4>
+
+<img src="diagrams/creation_io/from_adj_matrix.svg">
 
 <h5>DESCRIPTION</h5>
 
@@ -174,6 +176,8 @@ Using an adjacency matrix object, generate a graph of class `dgr_graph`.
 
 <h4><em>Convert an igraph graph to a DiagrammeR one</em></h4>
 
+<img src="diagrams/creation_io/from_igraph.svg">
+
 <h5>DESCRIPTION</h5>
 
 Convert an igraph graph to a DiagrammeR graph object.
@@ -188,6 +192,8 @@ Convert an igraph graph to a DiagrammeR graph object.
 
 <h4><em>Convert a DiagrammeR graph to an igraph one</em></h4>
 
+<img src="diagrams/creation_io/to_igraph.svg">
+
 <h5>DESCRIPTION</h5>
 
 Convert a DiagrammeR graph to an igraph graph object.
@@ -199,6 +205,8 @@ Convert a DiagrammeR graph to an igraph graph object.
 ## `render_graph()`
 
 <h4><em>Render the graph in various formats</em></h4>
+
+<img src="diagrams/creation_io/render_graph.svg">
 
 <h5>DESCRIPTION</h5>
 
@@ -220,6 +228,8 @@ Using a `dgr_graph` object, render the graph in the RStudio Viewer.
 
 <h4><em>Export a graph to various file formats</em></h4>
 
+<img src="diagrams/creation_io/export_graph.svg">
+
 <h5>DESCRIPTION</h5>
 
 Export a graph to a variety of file formats, including image formats such as PNG, PDF, SVG, and PostScript, and graph file formats such as GEXF.
@@ -240,6 +250,8 @@ Export a graph to a variety of file formats, including image formats such as PNG
 
 <h4><em>Export a graph to CSV files</em></h4>
 
+<img src="diagrams/creation_io/export_csv.svg">
+
 <h5>DESCRIPTION</h5>
 
 Export a graph to CSV files. **`graph`** a graph object of class `dgr_graph`.
@@ -258,6 +270,8 @@ Export a graph to CSV files. **`graph`** a graph object of class `dgr_graph`.
 
 <h4><em>Save a graph or graph series to disk</em></h4>
 
+<img src="diagrams/creation_io/save_graph.svg">
+
 <h5>DESCRIPTION</h5>
 
 Save a graph or a graph series object to disk.
@@ -271,6 +285,8 @@ Save a graph or a graph series object to disk.
 ## `open_graph()`
 
 <h4><em>Read a graph or graph series from disk</em></h4>
+
+<img src="diagrams/creation_io/open_graph.svg">
 
 <h5>DESCRIPTION</h5>
 
