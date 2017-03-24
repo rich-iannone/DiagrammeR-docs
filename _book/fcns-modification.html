@@ -26,7 +26,7 @@
 <meta name="author" content="Richard Iannone">
 
 
-<meta name="date" content="2017-03-22">
+<meta name="date" content="2017-03-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -333,150 +333,841 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 9</span> Functions: Modification</h1>
 <div id="add_node" class="section level2">
 <h2><span class="header-section-number">9.1</span> <code>add_node()</code></h2>
+<h4>
+<em>Add a node to an existing graph object</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>With a graph object of class <code>dgr_graph</code>, add a new node of a specified type to extant nodes within the graph.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>type</code></strong> an optional character object that acts as a group identifier for the node to be added.</p>
+<p><strong><code>label</code></strong> an optional character object that describes the node.</p>
+<p><strong><code>from</code></strong> an optional vector containing node IDs from which edges will be directed to the new node.</p>
+<p><strong><code>to</code></strong> an optional vector containing node IDs to which edges will be directed from the new node.</p>
 </div>
 <div id="add_edge" class="section level2">
 <h2><span class="header-section-number">9.2</span> <code>add_edge()</code></h2>
+<h4>
+<em>Add an edge between nodes in a graph object</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>With a graph object of class <code>dgr_graph</code>, add an edge to nodes within the graph.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>from</code></strong> the outgoing node from which the edge is connected.</p>
+<p><strong><code>to</code></strong> the incoming nodes to which each edge is connected.</p>
+<p><strong><code>rel</code></strong> an optional string specifying the relationship between the connected nodes.</p>
+<p><strong><code>use_labels</code></strong> an option to use node <code>label</code> values in <code>from</code> and <code>to</code> for defining node connections. Note that this is only possible if all nodes have distinct <code>label</code> values set and none exist as an empty string.</p>
+<p><strong><code>allow_multiple_edges</code></strong> an option to allow or disallow the possibility of creating an edge with an edge definition already extant in the graph.</p>
 </div>
 <div id="add_node_df" class="section level2">
 <h2><span class="header-section-number">9.3</span> <code>add_node_df()</code></h2>
+<h4>
+<em>Add nodes from a node data frame to an existing graph object</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>With a graph object of class <code>dgr_graph</code> add nodes from a node data frame to that graph.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>node_df</code></strong> a node data frame that is created using <code>create_node_df</code>.</p>
 </div>
 <div id="add_edge_df" class="section level2">
 <h2><span class="header-section-number">9.4</span> <code>add_edge_df()</code></h2>
+<h4>
+<em>Add edges from an edge data frame to an existing graph object</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>With a graph object of class <code>dgr_graph</code> add edges from an edge data frame to that graph.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>edge_df</code></strong> an edge data frame that is created using <code>create_edge_df</code>.</p>
 </div>
 <div id="add_n_nodes" class="section level2">
 <h2><span class="header-section-number">9.5</span> <code>add_n_nodes()</code></h2>
+<h4>
+<em>Add one or several unconnected nodes to the graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Add n new nodes to a graph object of class <code>dgr_graph</code>. Optionally, set node <code>type</code> values for the new nodes.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>n</code></strong> the number of new nodes to add to the graph.</p>
+<p><strong><code>type</code></strong> an optional character vector that provides group identifiers for the nodes to be added.</p>
+<p><strong><code>label</code></strong> an optional character object that describes the nodes to be added.</p>
 </div>
 <div id="add_n_nodes_ws" class="section level2">
 <h2><span class="header-section-number">9.6</span> <code>add_n_nodes_ws()</code></h2>
+<h4>
+<em>Add a multiple of new nodes with edges to or from one or more selected nodes</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Add n new nodes to or from one or more nodes available as a selection in a graph object of class <code>dgr_graph</code>. New graph edges will all move either from the nodes in the selection toward the newly created nodes (with the option <code>direction = &quot;from&quot;</code>), or to the selected nodes alredy in the graph (using <code>direction = &quot;to&quot;</code>). Optionally, set node <code>type</code> and edge <code>rel</code> values for all the new nodes and edges created, respectively.</p>
+<p>Selections of nodes can be performed using the following <code>select_...</code> functions: <code>select_nodes()</code>, <code>select_last_nodes_created()</code>, <code>select_nodes_by_degree()</code>, <code>select_nodes_by_id()</code>, or <code>select_nodes_in_neighborhood()</code>. Selections of nodes can also be performed using the following traversal functions: (<code>trav_...</code>): <code>trav_out()</code>, <code>trav_in()</code>, <code>trav_both()</code>, <code>trav_in_node()</code>, <code>trav_out_node()</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>n</code></strong> the number of new nodes to attach as successor nodes to the nodes in the selection.</p>
+<p><strong><code>direction</code></strong> using <code>from</code> will create new edges from existing nodes to the new nodes. The <code>to</code> option will create new edges directed toward the existing nodes.</p>
+<p><strong><code>type</code></strong> an optional character vector that provides group identifiers for the nodes to be added.</p>
+<p><strong><code>label</code></strong> an optional character object that describes the nodes to be added.</p>
+<p><strong><code>rel</code></strong> an optional string to apply a <code>rel</code> attribute to all newly created edges.</p>
 </div>
 <div id="add_edges_w_string" class="section level2">
 <h2><span class="header-section-number">9.7</span> <code>add_edges_w_string()</code></h2>
+<h4>
+<em>Add one or more edges using a text string</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>With a graph object of class <code>dgr_graph</code>, add one or more edges to the graph using a text string.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>edges</code></strong> a single-length vector with a character string specifying the edges. For a directed graph, the string object should be formatted as a series of node ID values as <code>[node_ID_1]-&gt;[node_ID_2]</code> separated by a one or more space characters. For undirected graphs, <code>--</code> should replace <code>-&gt;</code>. Linebreaks in the vector won’t cause an error.</p>
+<p><strong><code>rel</code></strong> an optional vector specifying the relationship between the connected nodes.</p>
+<p><strong><code>use_labels</code></strong> an option to use node <code>label</code> values in the <code>edges</code> string to define node connections. Note that this is only possible if all nodes have distinct <code>label</code> values set and none exist as an empty string.</p>
 </div>
 <div id="rev_edge_dir" class="section level2">
 <h2><span class="header-section-number">9.8</span> <code>rev_edge_dir()</code></h2>
+<h4>
+<em>Reverse the direction of all edges in a graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Using a directed graph as input, reverse the direction of all edges in that graph.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
 </div>
 <div id="rev_edge_dir_ws" class="section level2">
 <h2><span class="header-section-number">9.9</span> <code>rev_edge_dir_ws()</code></h2>
+<h4>
+<em>Reverse the direction of selected edges in a graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Using a directed graph with a selection of edges as input, reverse the direction of those selected edges in input graph.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
 </div>
 <div id="add_nodes_from_table" class="section level2">
 <h2><span class="header-section-number">9.10</span> <code>add_nodes_from_table()</code></h2>
+<h4>
+<em>Add nodes and attributes to graph from a table</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Add nodes and their attributes to an existing graph object from data in a CSV file or a data frame.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>table</code></strong> either a path to a CSV file, or, a data frame object.</p>
+<p><strong><code>label_col</code></strong> an option to apply a column of data in the table as <code>label</code> attribute values.</p>
+<p><strong><code>type_col</code></strong> an option to apply a column of data in the table as <code>type</code> attribute values.</p>
+<p><strong><code>set_type</code></strong> an optional string to apply a <code>type</code> attribute to all nodes created from the table records.</p>
+<p><strong><code>drop_cols</code></strong> an optional character vector for dropping columns from the incoming data.</p>
 </div>
 <div id="add_edges_from_table" class="section level2">
 <h2><span class="header-section-number">9.11</span> <code>add_edges_from_table()</code></h2>
+<h4>
+<em>Add edges and attributes to graph from a table</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Add edges and their attributes to an existing graph object from data in a CSV file or a data frame.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>table</code></strong> either a path to a CSV file, or, a data frame object.</p>
+<p><strong><code>from_col</code></strong> the name of the table column from which edges originate.</p>
+<p><strong><code>to_col</code></strong> the name of the table column to which edges terminate.</p>
+<p><strong><code>ndf_mapping</code></strong> a single character value for the mapping of the <code>from</code> and <code>to</code> columns in the external table (supplied as <code>from_col</code> and <code>to_col</code>, respectively) to a column in the graph’s internal node data frame (ndf).</p>
+<p><strong><code>rel_col</code></strong> an option to apply a column of data in the table as <code>rel</code> attribute values.</p>
+<p><strong><code>set_rel</code></strong> an optional string to apply a <code>rel</code> attribute to all edges created from the table records.</p>
+<p><strong><code>drop_cols</code></strong> an optional character vector for dropping columns from the incoming data.</p>
 </div>
 <div id="add_nodes_from_df_cols" class="section level2">
 <h2><span class="header-section-number">9.12</span> <code>add_nodes_from_df_cols()</code></h2>
+<h4>
+<em>Add nodes from distinct values in data frame columns</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Add new nodes to a graph object of class <code>dgr_graph</code> using distinct values from one or more columns in a data frame. The values will serve as node labels and the number of nodes added depends on the number of distinct values found in the specified columns.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>df</code></strong> a data frame from which values will be taken as new nodes for the graph.</p>
+<p><strong><code>columns</code></strong> a character vector of column names or a numeric vector of column numbers for the data frame supplied in <code>df</code>. The distinct values in these columns will serve as labels for the nodes added to the graph.</p>
+<p><strong><code>type</code></strong> an optional, single-length character vector that provides a group identifier for the nodes to be added to the graph.</p>
+<p><strong><code>keep_duplicates</code></strong> an option to exclude incoming nodes where the any labels (i.e., values found in columns of the specified <code>df</code>) match label values available in the graph’s nodes. By default, this is set to <code>FALSE</code>.</p>
 </div>
 <div id="add_path" class="section level2">
 <h2><span class="header-section-number">9.13</span> <code>add_path()</code></h2>
+<h4>
+<em>Add a path of nodes to the graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>With a graph object of class <code>dgr_graph</code>, add a node path to the graph.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>n</code></strong> the number of nodes comprising the path.</p>
+<p><strong><code>type</code></strong> an optional string that describes the entity type for the nodes to be added.</p>
+<p><strong><code>label</code></strong> either a vector object of length <code>n</code> that provides optional labels for the new nodes, or, a boolean value where setting to <code>TRUE</code> ascribes node IDs to the label and <code>FALSE</code> yields a blank label.</p>
+<p><strong><code>rel</code></strong> an optional string for providing a relationship label to all new edges created in the node path.</p>
 </div>
 <div id="add_cycle" class="section level2">
 <h2><span class="header-section-number">9.14</span> <code>add_cycle()</code></h2>
+<h4>
+<em>Add a cycle of nodes to the graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>With a graph object of class <code>dgr_graph</code>, add a node cycle to the graph.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>n</code></strong> the number of nodes comprising the cycle.</p>
+<p><strong><code>type</code></strong> an optional string that describes the entity type for the nodes to be added.</p>
+<p><strong><code>label</code></strong> either a vector object of length <code>n</code> that provides optional labels for the new nodes, or, a boolean value where setting to <code>TRUE</code> ascribes node IDs to the label and <code>FALSE</code> yields a blank label.</p>
+<p><strong><code>rel</code></strong> an optional string for providing a relationship label to all new edges created in the node cycle.</p>
 </div>
 <div id="add_star" class="section level2">
 <h2><span class="header-section-number">9.15</span> <code>add_star()</code></h2>
+<h4>
+<em>Add a star of nodes to the graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>With a graph object of class <code>dgr_graph</code>, add a node star to the graph.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>n</code></strong> the number of nodes comprising the star. The first node will be the center of the star.</p>
+<p><strong><code>type</code></strong> an optional string that describes the entity type for the nodes to be added.</p>
+<p><strong><code>label</code></strong> either a vector object of length <code>n</code> that provides optional labels for the new nodes, or, a boolean value where setting to <code>TRUE</code> ascribes node IDs to the label and <code>FALSE</code> yields a blank label.</p>
+<p><strong><code>rel</code></strong> an optional string for providing a relationship label to all new edges created in the node star.</p>
 </div>
 <div id="add_prism" class="section level2">
 <h2><span class="header-section-number">9.16</span> <code>add_prism()</code></h2>
+<h4>
+<em>Add a prism of nodes to the graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>With a graph object of class <code>dgr_graph</code>, add a node prism to the graph.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>n</code></strong> the number of nodes describing the shape of the prism. For example, the triangonal prism has <code>n</code> equal to 3 and it is composed of 6 nodes and 9 edges. For any n-gonal prism, the graph will be generated with 2<code>n</code> nodes and 3<code>n</code> edges.</p>
+<p><strong><code>type</code></strong> an optional string that describes the entity type for the nodes to be added.</p>
+<p><strong><code>label</code></strong> either a vector object of length <code>n</code> that provides optional labels for the new nodes, or, a boolean value where setting to <code>TRUE</code> ascribes node IDs to the label and <code>FALSE</code> yields a blank label.</p>
+<p><strong><code>rel</code></strong> an optional string for providing a relationship label to all new edges created in the node prism.</p>
 </div>
 <div id="add_balanced_tree" class="section level2">
 <h2><span class="header-section-number">9.17</span> <code>add_balanced_tree()</code></h2>
+<h4>
+<em>Add a balanced tree of nodes to the graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>With a graph object of class <code>dgr_graph</code>, add a balanced tree to the graph.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>k</code></strong> the branching factor for the tree.</p>
+<p><strong><code>h</code></strong> the height of the tree.</p>
+<p><strong><code>type</code></strong> an optional string that describes the entity type for the nodes to be added.</p>
+<p><strong><code>label</code></strong> either a vector object of length <code>n</code> that provides optional labels for the new nodes, or, a boolean value where setting to <code>TRUE</code> ascribes node IDs to the label and <code>FALSE</code> yields a blank label.</p>
+<p><strong><code>rel</code></strong> an optional string for providing a relationship label to all new edges created in the node tree.</p>
 </div>
 <div id="add_full_graph" class="section level2">
 <h2><span class="header-section-number">9.18</span> <code>add_full_graph()</code></h2>
+<h4>
+<em>Add a fully connected graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>With a graph object of class <code>dgr_graph</code>, add a fully connected graph either with or without loops. If the graph object set as directed, the added graph will have edges to and from each pair of nodes. In the undirected case, a single edge will link each pair of nodes.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>n</code></strong> the number of nodes comprising the fully connected graph.</p>
+<p><strong><code>type</code></strong> an optional string that describes the entity type for the nodes to be added.</p>
+<p><strong><code>label</code></strong> either a vector object of length <code>n</code> that provides optional labels for the new nodes, or, a boolean value where setting to <code>TRUE</code> ascribes node IDs to the label and <code>FALSE</code> or <code>NULL</code> yields a blank label.</p>
+<p><strong><code>rel</code></strong> an optional string for providing a relationship label to all new edges created in the connected graph.</p>
+<p><strong><code>edge_wt_matrix</code></strong> an optional matrix of <code>n</code> by <code>n</code> dimensions containing values to apply as edge weights. If the matrix has row names or column names and <code>label = TRUE</code>, those row or column names will be used as node label values.</p>
+<p><strong><code>keep_loops</code></strong> an option to simplify the fully connected graph by removing loops (edges from and to the same node). The default value is <code>FALSE</code>.</p>
 </div>
 <div id="join_node_attrs" class="section level2">
 <h2><span class="header-section-number">9.19</span> <code>join_node_attrs()</code></h2>
+<h4>
+<em>Join new node attribute values using a data frame</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Join new node attribute values in a left join using a data frame. The use of a left join in this function allows for no possibility that nodes in the graph might be removed after the join.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>df</code></strong> the data frame to use for joining.</p>
+<p><strong><code>by_graph</code></strong> optional specification of the column in the graph’s internal node data frame for the left join. If both <code>by_graph</code> and <code>by_df</code> are not provided, then a natural join will occur if there are columns in the graph’s ndf and in <code>df</code> with identical names.</p>
+<p><strong><code>by_df</code></strong> optional specification of the column in <code>df</code> for the left join. If both <code>by_graph</code> and <code>by_df</code> are not provided, then a natural join will occur if there are columns in the graph’s ndf and in <code>df</code> with identical names. <code>dgr_graph</code> that is created using <code>create_graph</code>.</p>
 </div>
 <div id="join_edge_attrs" class="section level2">
 <h2><span class="header-section-number">9.20</span> <code>join_edge_attrs()</code></h2>
+<h4>
+<em>Join new edge attribute values using a data frame</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Join new edge attribute values in a left join using a data frame. The use of a left join in this function allows for no possibility that edges in the graph might be removed after the join.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>df</code></strong> the data frame to use for joining.</p>
+<p><strong><code>by_graph</code></strong> optional specification of the column in the graph’s internal edge data frame for the left join. If both <code>by_graph</code> and <code>by_df</code> are not provided, then a natural join will occur if there are columns in the graph’s edf and in <code>df</code> with identical names.</p>
+<p><strong><code>by_df</code></strong> optional specification of the column in <code>df</code> for the left join. If both <code>by_graph</code> and <code>by_df</code> are not provided, then a natural join will occur if there are columns in the graph’s edf and in <code>df</code> with identical names.</p>
 </div>
 <div id="set_graph_undirected" class="section level2">
 <h2><span class="header-section-number">9.21</span> <code>set_graph_undirected()</code></h2>
+<h4>
+<em>Convert graph to an undirected graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Take a graph which is directed and convert it to an undirected graph.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
 </div>
 <div id="delete_node" class="section level2">
 <h2><span class="header-section-number">9.22</span> <code>delete_node()</code></h2>
+<h4>
+<em>Delete a node from an existing graph object</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code>, delete an existing node by specifying its node ID.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>node</code></strong> a node ID for the node to be deleted from the graph.</p>
 </div>
 <div id="delete_edge" class="section level2">
 <h2><span class="header-section-number">9.23</span> <code>delete_edge()</code></h2>
+<h4>
+<em>Delete an edge from an existing graph object</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code>, delete an existing edge by specifying either: (1) a pair of node IDs corresponding to the edge (keeping into consideration the direction of the edge in a directed graph), or (2) an edge ID.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>from</code></strong> a node ID from which the edge to be removed is outgoing. If an edge ID is provided to <code>id</code>, then this argument is ignored.</p>
+<p><strong><code>to</code></strong> a node ID to which the edge to be removed is incoming. If an edge ID is provided to <code>id</code>, then this argument is ignored.</p>
+<p><strong><code>id</code></strong> an edge ID of the edge to be removed.</p>
 </div>
 <div id="delete_nodes_ws" class="section level2">
 <h2><span class="header-section-number">9.24</span> <code>delete_nodes_ws()</code></h2>
+<h4>
+<em>Delete all selected nodes in a node selection</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>In a graph object of class <code>dgr_graph</code>, delete all nodes present in a selection.</p>
+<p>Selections of nodes can be performed using the following <code>select_...</code> functions: <code>select_nodes()</code>, <code>select_last_nodes_created()</code>, <code>select_nodes_by_degree()</code>, <code>select_nodes_by_id()</code>, or <code>select_nodes_in_neighborhood()</code>. Selections of nodes can also be performed using the following traversal functions: (<code>trav_...</code>): <code>trav_out()</code>, <code>trav_in()</code>, <code>trav_both()</code>, <code>trav_in_node()</code>, <code>trav_out_node()</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
 </div>
 <div id="delete_edges_ws" class="section level2">
 <h2><span class="header-section-number">9.25</span> <code>delete_edges_ws()</code></h2>
+<h4>
+<em>Delete all selected edges in an edge selection</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>In a graph object of class <code>dgr_graph</code>, delete all edges present in a selection.</p>
+<p>Selections of edges can be performed using the following <code>select_...</code> functions: <code>select_edges()</code>, <code>select_last_edge()</code>, or <code>select_edges_by_node_id()</code>. Selections of edges can also be performed using the following traversal functions: <code>trav_out_edge()</code>, <code>trav_in_edge()</code>, or <code>trav_both_edge()</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
 </div>
 <div id="node_type" class="section level2">
 <h2><span class="header-section-number">9.26</span> <code>node_type()</code></h2>
+<h4>
+<em>Create, read, update, delete, or report status of a node type definition</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code>, query a node in the graph (using the node ID) and perform operations on the type definition for that node.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>node</code></strong> a node ID corresponding to the node to be selected.</p>
+<p><strong><code>action</code></strong> the operation to perform on the node’s type attribute. To remove the type definition from a node, use either <code>delete</code>, <code>remove</code>, or <code>drop</code>. To add a type definition to a node with no type set, use <code>add</code> or <code>create</code>. To update a node’s type definition, use <code>update</code>. To return the value of a node type, use <code>read</code>. To determine whether there is a type set for the selected node, use <code>check</code>.</p>
+<p><strong><code>value</code></strong> a string denoting the node type, to be supplied when either adding or updating a node type definition.</p>
 </div>
 <div id="edge_rel" class="section level2">
 <h2><span class="header-section-number">9.27</span> <code>edge_rel()</code></h2>
+<h4>
+<em>Create, read, update, delete, or report status of an edge relationship</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code>, query an edge in the graph (defined by a pair of node IDs extant in the graph) and perform operations on the relationship for that edge.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>from</code></strong> a node ID from which the edge to be queried is outgoing.</p>
+<p><strong><code>to</code></strong> a node ID to which the edge to be queried is incoming.</p>
+<p><strong><code>action</code></strong> the operation to perform on the edge’s relationship attribute. To remove a relationship from an edge, use either <code>delete</code>, <code>remove</code>, or <code>drop</code>. To add a relationship to an edge with no set relationship, use <code>add</code> or <code>create</code>. To update an edge relationship, use <code>update</code>. To return the value of an edge relationship, use <code>read</code>. To determine whether there is a set relationship, use <code>check</code>.</p>
+<p><strong><code>value</code></strong> a string denoting the relationship, to be supplied when either adding or updating an edge relationship.</p>
 </div>
 <div id="create_subgraph_ws" class="section level2">
 <h2><span class="header-section-number">9.28</span> <code>create_subgraph_ws()</code></h2>
+<h4>
+<em>Create a subgraph based on a selection of nodes or edges</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Create a subgraph based on a selection of nodes or edges stored in the graph object. Selections of nodes can be performed using the following <code>select_...</code> functions: <code>select_nodes()</code>, <code>select_last_nodes_created()</code>, <code>select_nodes_by_degree()</code>, <code>select_nodes_by_id()</code>, or <code>select_nodes_in_neighborhood()</code>. Alternatively, selections of edges can be made with these functions: <code>select_edges()</code>, <code>select_last_edge()</code>, or <code>select_edges_by_node_id()</code>. Selections of nodes or edges can also be performed using any of the traversal functions (<code>trav_...</code>).</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code> that is created using <code>create_graph</code>.</p>
 </div>
 <div id="get_min_spanning_tree" class="section level2">
 <h2><span class="header-section-number">9.29</span> <code>get_min_spanning_tree()</code></h2>
+<h4>
+<em>Get a minimum spanning tree subgraph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Get a minimum spanning tree subgraph for a connected graph of class <code>dgr_graph</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
 </div>
 <div id="set_df_as_node_attr" class="section level2">
 <h2><span class="header-section-number">9.30</span> <code>set_df_as_node_attr()</code></h2>
+<h4>
+<em>Set a data frame as a node attribute</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code>, bind a data frame as a node attribute property for one given graph node. The data frames are stored in list columns within a <code>df_tbl</code> object. A <code>df_id</code> value is generated and serves as a pointer to the table row that contains the ingested data frame.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>node</code></strong> the node ID to which the data frame will be bound as an attribute.</p>
+<p><strong><code>df</code></strong> the data frame to be bound to the node as an attribute.</p>
 </div>
 <div id="set_df_as_edge_attr" class="section level2">
 <h2><span class="header-section-number">9.31</span> <code>set_df_as_edge_attr()</code></h2>
+<h4>
+<em>Set a data frame as an edge attribute</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code>, bind a data frame as an edge attribute property for one given graph edge. The data frames are stored in list columns within a <code>df_tbl</code> object, itself residing within the graph object. A <code>df_id</code> value is generated and serves as a pointer to the table row that contains the ingested data frame.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>edge</code></strong> the edge ID to which the data frame will be bound as an attribute.</p>
+<p><strong><code>df</code></strong> the data frame to be bound to the edge as an attribute.</p>
 </div>
 <div id="set_node_attrs" class="section level2">
 <h2><span class="header-section-number">9.32</span> <code>set_node_attrs()</code></h2>
+<h4>
+<em>Set node attributes</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code> or a node data frame, set node attribute properties for one or more nodes.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>x</code></strong> either a graph object of class <code>dgr_graph</code> or a node data frame.</p>
+<p><strong><code>node_attr</code></strong> the name of the attribute to set.</p>
+<p><strong><code>values</code></strong> the values to be set for the chosen attribute for the chosen nodes.</p>
+<p><strong><code>nodes</code></strong> an optional vector of node IDs for filtering the list of nodes present in the graph.</p>
 </div>
 <div id="set_edge_attrs" class="section level2">
 <h2><span class="header-section-number">9.33</span> <code>set_edge_attrs()</code></h2>
+<h4>
+<em>Set edge attributes</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code> or an edge data frame, set edge attribute properties for one or more edges</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>x</code></strong> either a graph object of class <code>dgr_graph</code> or an edge data frame.</p>
+<p><strong><code>edge_attr</code></strong> the name of the attribute to set.</p>
+<p><strong><code>values</code></strong> the values to be set for the chosen attribute for the chosen edges.</p>
+<p><strong><code>from</code></strong> an optional vector of node IDs from which the edge is outgoing for filtering list of nodes with outgoing edges in the graph.</p>
+<p><strong><code>to</code></strong> an optional vector of node IDs from which the edge is incoming for filtering list of nodes with incoming edges in the graph.</p>
 </div>
 <div id="set_node_attrs_ws" class="section level2">
 <h2><span class="header-section-number">9.34</span> <code>set_node_attrs_ws()</code></h2>
+<h4>
+<em>Set node attributes with a node selection</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code> or a node data frame, set node attribute properties for nodes present in a node selection.</p>
+<p>Selections of nodes can be performed using the following <code>select_...</code> functions: <code>select_nodes()</code>, <code>select_last_nodes_created()</code>, <code>select_nodes_by_degree()</code>, <code>select_nodes_by_id()</code>, or <code>select_nodes_in_neighborhood()</code>. Selections of nodes can also be performed using the following traversal functions: (<code>trav_...</code>): <code>trav_out()</code>, <code>trav_in()</code>, <code>trav_both()</code>, <code>trav_in_node()</code>, <code>trav_out_node()</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>node_attr</code></strong> the name of the attribute to set.</p>
+<p><strong><code>value</code></strong> the value to be set for the chosen attribute for the nodes in the current selection.</p>
 </div>
 <div id="set_edge_attrs_ws" class="section level2">
 <h2><span class="header-section-number">9.35</span> <code>set_edge_attrs_ws()</code></h2>
+<h4>
+<em>Set edge attributes with an edge selection</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code> or an edge data frame, set edge attribute properties for one or more edges.</p>
+<p>Selections of edges can be performed using the following <code>select_...</code> functions: <code>select_edges()</code>, <code>select_last_edge()</code>, or <code>select_edges_by_node_id()</code>. Selections of edges can also be performed using the following traversal functions: <code>trav_out_edge()</code>, <code>trav_in_edge()</code>, or <code>trav_both_edge()</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>edge_attr</code></strong> the name of the attribute to set.</p>
+<p><strong><code>value</code></strong> the value to be set for the chosen attribute for the edges in the current selection.</p>
 </div>
 <div id="copy_node_attrs" class="section level2">
 <h2><span class="header-section-number">9.36</span> <code>copy_node_attrs()</code></h2>
+<h4>
+<em>Copy a node attribute column and set the name</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Within a graph’s internal node data frame (ndf), copy the contents an existing node attribute and create a distinct node attribute within the ndf with a different attribute name.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>node_attr_from</code></strong> the name of the node attribute column from which values will be copied.</p>
+<p><strong><code>node_attr_to</code></strong> the name of the new node attribute column to which the copied values will be placed.</p>
 </div>
 <div id="copy_edge_attrs" class="section level2">
 <h2><span class="header-section-number">9.37</span> <code>copy_edge_attrs()</code></h2>
+<h4>
+<em>Copy an edge attribute column and set the name</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Within a graph’s internal edge data frame (edf), copy the contents an existing edge attribute and create a distinct edge attribute within the edf with a different attribute name.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>edge_attr_from</code></strong> the name of the edge attribute column from which values will be copied.</p>
+<p><strong><code>edge_attr_to</code></strong> the name of the new edge attribute column to which the copied values will be placed.</p>
 </div>
 <div id="drop_node_attrs" class="section level2">
 <h2><span class="header-section-number">9.38</span> <code>drop_node_attrs()</code></h2>
+<h4>
+<em>Drop a node attribute column</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Within a graph’s internal NDF, remove an existing node attribute.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>node_attr</code></strong> the name of the node attribute column to drop.</p>
 </div>
 <div id="drop_edge_attrs" class="section level2">
 <h2><span class="header-section-number">9.39</span> <code>drop_edge_attrs()</code></h2>
+<h4>
+<em>Drop an edge attribute column</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Within a graph’s internal edge data frame (edf), remove an existing edge attribute.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>edge_attr</code></strong> the name of the edge attribute column to drop.</p>
 </div>
 <div id="rename_node_attrs" class="section level2">
 <h2><span class="header-section-number">9.40</span> <code>rename_node_attrs()</code></h2>
+<h4>
+<em>Rename a node attribute</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Within a graph’s internal node data frame (ndf), rename an existing node attribute.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>node_attr_from</code></strong> the name of the node attribute that will be renamed.</p>
+<p><strong><code>node_attr_to</code></strong> the new name of the node attribute column identified in <code>node_attr_from</code>.</p>
 </div>
 <div id="rename_edge_attrs" class="section level2">
 <h2><span class="header-section-number">9.41</span> <code>rename_edge_attrs()</code></h2>
+<h4>
+<em>Rename an edge attribute</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Within a graph’s internal edge data frame (edf), rename an existing edge attribute.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>edge_attr_from</code></strong> the name of the edge attribute that will be renamed.</p>
+<p><strong><code>edge_attr_to</code></strong> the new name of the edge attribute column identified in <code>edge_attr_from</code>.</p>
 </div>
 <div id="rescale_node_attrs" class="section level2">
 <h2><span class="header-section-number">9.42</span> <code>rescale_node_attrs()</code></h2>
+<h4>
+<em>Rescale numeric node attribute values</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code>, take a set of numeric values for a node attribute, rescale to a new numeric or color range, then write to the same node attribute or to a new node attribute column.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>node_attr_from</code></strong> the node attribute containing numeric data that is to be rescaled to new numeric or color values.</p>
+<p><strong><code>to_lower_bound</code></strong> the lower bound value for the set of rescaled values. This can be a numeric value or an X11 color name.</p>
+<p><strong><code>to_upper_bound</code></strong> the upper bound value for the set of rescaled values. This can be a numeric value or an X11 color name.</p>
+<p><strong><code>node_attr_to</code></strong> an optional name of a new node attribute to which the recoded values will be applied. This will retain the original node attribute and its values.</p>
+<p><strong><code>from_lower_bound</code></strong> an optional, manually set lower bound value for the rescaled values. If not set, the minimum value from the set will be used.</p>
+<p><strong><code>from_upper_bound</code></strong> an optional, manually set upper bound value for the rescaled values. If not set, the minimum value from the set will be used.</p>
 </div>
 <div id="rescale_edge_attrs" class="section level2">
 <h2><span class="header-section-number">9.43</span> <code>rescale_edge_attrs()</code></h2>
+<h4>
+<em>Rescale numeric edge attribute values</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code>, take a set of numeric values for an edge attribute, rescale to a new numeric or color range, then write to the same edge attribute or to a new edge attribute column.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>edge_attr_from</code></strong> the edge attribute containing numeric data that is to be rescaled to new numeric or color values.</p>
+<p><strong><code>to_lower_bound</code></strong> the lower bound value for the set of rescaled values. This can be a numeric value or an X11 color name.</p>
+<p><strong><code>to_upper_bound</code></strong> the upper bound value for the set of rescaled values. This can be a numeric value or an X11 color name.</p>
+<p><strong><code>edge_attr_to</code></strong> an optional name of a new edge attribute to which the recoded values will be applied. This will retain the original edge attribute and its values.</p>
+<p><strong><code>from_lower_bound</code></strong> an optional, manually set lower bound value for the rescaled values. If not set, the minimum value from the set will be used.</p>
+<p><strong><code>from_upper_bound</code></strong> an optional, manually set upper bound value for the rescaled values. If not set, the minimum value from the set will be used.</p>
 </div>
 <div id="mutate_node_attrs" class="section level2">
 <h2><span class="header-section-number">9.44</span> <code>mutate_node_attrs()</code></h2>
+<h4>
+<em>Mutate a set of node attribute values</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Within a graph’s internal node data frame (ndf), mutate numeric node attribute values using one or more expressions. Optionally, one can specify a different node attribute name and create a new node attribute while retaining the original node attribute and its values.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>node_attr_from</code></strong> the name of the node attribute column from which values will be mutated. An <code>NA</code> value can be provided here if node attribute names are used in <code>expressions</code> statements. Note that if <code>NA</code> is used, a value must be provided for <code>node_attr_to</code>.</p>
+<p><strong><code>expressions</code></strong> one or more expressions for mutation of all node attribute values specified by <code>node_attr_from</code>. To reference the node attribute given in <code>node_attr_from</code>, use the <code>~</code> character. Otherwise, all node attributes can be referenced by using the names of those node attributes directly in the expressions. Expressions are evaluated in the order provided.</p>
+<p><strong><code>node_attr_to</code></strong> an optionally supplied name of a new node attribute to which the mutated values will be applied. This will retain the original node attribute(s) and its values. If <code>NA</code> is used with <code>node_attr_from</code>, a value must be provided here (since mutated values must be placed somewhere).</p>
 </div>
 <div id="mutate_edge_attrs" class="section level2">
 <h2><span class="header-section-number">9.45</span> <code>mutate_edge_attrs()</code></h2>
+<h4>
+<em>Mutate a set of edge attribute values</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Within a graph’s internal edge data frame (edf), mutate numeric edge attribute values using one or more expressions. Optionally, one can specify a different edge attribute name and create a new edge attribute while retaining the original edge attribute and its values.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>edge_attr_from</code></strong> the name of the edge attribute column from which values will be mutated. An <code>NA</code> value can be provided here if edge attribute names are used in <code>expressions</code> statements. Note that if <code>NA</code> is used, a value must be provided for <code>edge_attr_to</code>.</p>
+<p><strong><code>expressions</code></strong> one or more expressions for mutation of all edge attribute values specified by <code>edge_attr_from</code>. To reference the edge attribute given in <code>edge_attr_from</code>, use the <code>~</code> character. Otherwise, all edge attributes can be referenced by using the names of those edge attributes directly in the expressions. Expressions are evaluated in the order provided.</p>
+<p><strong><code>edge_attr_to</code></strong> an optionally supplied name of a new edge attribute to which the mutated values will be applied. This will retain the original edge attribute and its values. If <code>NA</code> is used with <code>edge_attr_from</code>, a value must be provided here (since mutated values must be placed somewhere).</p>
 </div>
 <div id="recode_node_attrs" class="section level2">
 <h2><span class="header-section-number">9.46</span> <code>recode_node_attrs()</code></h2>
+<h4>
+<em>Recode a set of node attribute values</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Within a graph’s internal node data frame (ndf), recode character or numeric node attribute values. Optionally, one can specify a replacement value for any unmatched mappings.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>node_attr_from</code></strong> the name of the node attribute column from which values will be recoded.</p>
+<p><strong><code>...</code></strong> single-length character vectors with the recoding instructions. The first component should have the value to replace and the second should have the replacement value (in the form <code>&quot;[to_replace] -&gt; [replacement]&quot;, ...</code>).</p>
+<p><strong><code>otherwise</code></strong> an optional single value for recoding any unmatched values.</p>
+<p><strong><code>node_attr_to</code></strong> an optional name of a new node attribute to which the recoded values will be applied. This will retain the original node attribute and its values.</p>
 </div>
 <div id="recode_edge_attrs" class="section level2">
 <h2><span class="header-section-number">9.47</span> <code>recode_edge_attrs()</code></h2>
+<h4>
+<em>Recode a set of edge attribute values</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Within a graph’s internal edge data frame (edf), recode character or numeric edge attribute values. Optionally, one can specify a replacement value for any unmatched mappings.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>edge_attr_from</code></strong> the name of the edge attribute column from which values will be recoded.</p>
+<p><strong><code>...</code></strong> single-length character vectors with the recoding instructions. The first component should have the value to replace and the second should have the replacement value (in the form <code>&quot;[to_replace] -&gt; [replacement]&quot;, ...</code>).</p>
+<p><strong><code>otherwise</code></strong> an optional single value for recoding any unmatched values.</p>
+<p><strong><code>edge_attr_to</code></strong> an optional name of a new edge attribute to which the recoded values will be applied. This will retain the original edge attribute and its values.</p>
 </div>
 <div id="colorize_node_attrs" class="section level2">
 <h2><span class="header-section-number">9.48</span> <code>colorize_node_attrs()</code></h2>
+<h4>
+<em>Apply colors based on node attribute values</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Within a graph’s internal node data frame (ndf), use a categorical node attribute to generate a new node attribute with color values.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>node_attr_from</code></strong> the name of the node attribute column from which color values will be based.</p>
+<p><strong><code>node_attr_to</code></strong> the name of the new node attribute to which the color values will be applied.</p>
+<p><strong><code>cut_points</code></strong> an optional vector of numerical breaks for bucketizing continuous numerical values available in a node attribute column.</p>
+<p><strong><code>palette</code></strong> can either be: (1) a palette name from the RColorBrewer package (e.g., <code>Greens</code>, <code>OrRd</code>, <code>RdYlGn</code>), (2) <code>viridis</code>, which indicates use of the <code>viridis</code> color scale from the package of the same name, or (3) a vector of hexadecimal color names.</p>
+<p><strong><code>alpha</code></strong> an optional alpha transparency value to apply to the generated colors. Should be in the range of <code>0</code> (completely transparent) to <code>100</code> (completely opaque).</p>
+<p><strong><code>reverse_palette</code></strong> an option to reverse the order of colors in the chosen palette. The default is <code>FALSE</code>.</p>
+<p><strong><code>default_color</code></strong> a hexadecimal color value to use for instances when the values do not fall into the bucket ranges specified in the <code>cut_points</code> vector.</p>
 </div>
 <div id="colorize_edge_attrs" class="section level2">
 <h2><span class="header-section-number">9.49</span> <code>colorize_edge_attrs()</code></h2>
+<h4>
+<em>Apply colors based on edge attribute values</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Within a graph’s internal edge data frame (edf), use a categorical edge attribute to generate a new edge attribute with color values.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>edge_attr_from</code></strong> the name of the edge attribute column from which color values will be based.</p>
+<p><strong><code>edge_attr_to</code></strong> the name of the new edge attribute to which the color values will be applied.</p>
+<p><strong><code>cut_points</code></strong> an optional vector of numerical breaks for bucketizing continuous numerical values available in a edge attribute column.</p>
+<p><strong><code>palette</code></strong> can either be: (1) a palette name from the RColorBrewer package (e.g., <code>Greens</code>, <code>OrRd</code>, <code>RdYlGn</code>), (2) <code>viridis</code>, which indicates use of the <code>viridis</code> color scale from the package of the same name, or (3) a vector of hexadecimal color names.</p>
+<p><strong><code>alpha</code></strong> an optional alpha transparency value to apply to the generated colors. Should be in the range of <code>0</code> (completely transparent) to <code>100</code> (completely opaque).</p>
+<p><strong><code>reverse_palette</code></strong> an option to reverse the order of colors in the chosen palette. The default is <code>FALSE</code>.</p>
+<p><strong><code>default_color</code></strong> a hexadecimal color value to use for instances when the values do not fall into the bucket ranges specified in the <code>cut_points</code> vector.</p>
 
 </div>
 </div>

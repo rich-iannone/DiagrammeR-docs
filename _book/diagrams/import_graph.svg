@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="772px" height="80px" viewBox="0 0 772 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>import_graph</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="-6" y="2" width="784" height="76"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="784" height="76" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <linearGradient x1="14.998694%" y1="13.8375292%" x2="87.3959626%" y2="88.282251%" id="linearGradient-3">
+            <stop stop-color="#DBFAF0" offset="0%"></stop>
+            <stop stop-color="#E8EBF9" offset="97.322136%"></stop>
+            <stop stop-color="#E8EAF9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Graph-Functions---Book" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <use id="Rectangle-Copy-7" stroke="#979797" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+        <g id="small_icon__import_graph" transform="translate(286.000000, 20.000000)">
+            <g id="Group-3">
+                <g id="file" transform="translate(0.000000, 4.000000)">
+                    <rect id="Rectangle-253" stroke="#BDBDBD" stroke-width="1" fill="#F5F5F5" fill-rule="evenodd" x="0" y="0" width="29" height="33"></rect>
+                    <rect id="file-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="3.5" y="10" width="22" height="13" rx="4"></rect>
+                    <text id="file-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
+                        <tspan x="8.11" y="20">file</tspan>
+                    </text>
+                </g>
+                <g id="graph-object" transform="translate(160.000000, 0.000000)">
+                    <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
+                    <rect id="graph-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="4" y="14" width="32" height="13" rx="4"></rect>
+                    <text id="graph-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
+                        <tspan x="6.5" y="23">graph</tspan>
+                    </text>
+                </g>
+                <g id="Wireframe-Line-01" transform="translate(63.000000, 10.000000)" stroke="#666666">
+                    <g>
+                        <polyline id="arrowhead" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="56 2 64 10 56 18"></polyline>
+                        <path d="M63,10 L0,10" id="Line" stroke-width="2"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
