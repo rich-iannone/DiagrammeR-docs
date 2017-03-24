@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="772px" height="80px" viewBox="0 0 772 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>from_adj_matrix</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="-6" y="2" width="784" height="76"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="784" height="76" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <linearGradient x1="14.998694%" y1="13.8375292%" x2="87.3959626%" y2="88.282251%" id="linearGradient-3">
+            <stop stop-color="#DBFAF0" offset="0%"></stop>
+            <stop stop-color="#E8EBF9" offset="97.322136%"></stop>
+            <stop stop-color="#E8EAF9" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-4" x="0" y="0.5" width="49" height="42" rx="4"></rect>
+        <mask id="mask-5" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="49" height="42" fill="white">
+            <use xlink:href="#path-4"></use>
+        </mask>
+        <rect id="path-6" x="17" y="8" width="26" height="26"></rect>
+        <mask id="mask-7" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="26" height="26" fill="white">
+            <use xlink:href="#path-6"></use>
+        </mask>
+    </defs>
+    <g id="Graph-Functions---creation_io" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <use id="Rectangle" stroke="#979797" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+        <g id="Group-4" transform="translate(273.000000, 19.000000)">
+            <g id="graph-object" transform="translate(173.000000, 1.000000)">
+                <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
+                <rect id="graph-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="4" y="14" width="32" height="13" rx="4"></rect>
+                <text id="graph-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
+                    <tspan x="6.5" y="23">graph</tspan>
+                </text>
+            </g>
+            <g id="Wireframe-Line-01" transform="translate(76.000000, 11.000000)" stroke="#666666">
+                <g>
+                    <polyline id="arrowhead" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="56 2 64 10 56 18"></polyline>
+                    <path d="M63,10 L0,10" id="Line" stroke-width="2"></path>
+                </g>
+            </g>
+            <g id="Matrix">
+                <use id="Rectangle-683" stroke="#ADADAD" mask="url(#mask-5)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-4"></use>
+                <text id="MATRIX" transform="translate(9.000000, 22.000000) rotate(-90.000000) translate(-9.000000, -22.000000) " font-family="HelveticaNeue-Light, Helvetica Neue" font-size="10" font-weight="300" fill="#ADADAD">
+                    <tspan x="-8.35" y="26">MATRIX</tspan>
+                </text>
+                <use id="Rectangle-684" stroke="#B99FC9" mask="url(#mask-7)" stroke-width="2" xlink:href="#path-6"></use>
+                <path d="M22.5,9.5 L22.5,32.5" id="Line" stroke="#B99FC9" stroke-linecap="square"></path>
+                <path d="M41.5,13.5 L18.5,13.5" id="Line-Copy-32" stroke="#B99FC9" stroke-linecap="square"></path>
+                <path d="M41.5,18.5 L18.5,18.5" id="Line-Copy-33" stroke="#B99FC9" stroke-linecap="square"></path>
+                <path d="M41.5,23.5 L18.5,23.5" id="Line-Copy-34" stroke="#B99FC9" stroke-linecap="square"></path>
+                <path d="M41.5,28.5 L18.5,28.5" id="Line-Copy-35" stroke="#B99FC9" stroke-linecap="square"></path>
+                <path d="M27.5,9.5 L27.5,32.5" id="Line-Copy-29" stroke="#B99FC9" stroke-linecap="square"></path>
+                <path d="M32.5,9.5 L32.5,32.5" id="Line-Copy-30" stroke="#B99FC9" stroke-linecap="square"></path>
+                <path d="M37.5,9.5 L37.5,32.5" id="Line-Copy-31" stroke="#B99FC9" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>
