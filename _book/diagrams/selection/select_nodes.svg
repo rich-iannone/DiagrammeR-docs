@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="772px" height="80px" viewBox="0 0 772 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>select_nodes</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="-6" y="2" width="784" height="76"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="784" height="76" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <linearGradient x1="14.998694%" y1="13.8375292%" x2="87.3959626%" y2="88.282251%" id="linearGradient-3">
+            <stop stop-color="#DBFAF0" offset="0%"></stop>
+            <stop stop-color="#E8EBF9" offset="97.322136%"></stop>
+            <stop stop-color="#E8EAF9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Graph-Functions---selection" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <use id="Rectangle" stroke="#979797" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+        <g id="select_nodes" transform="translate(218.000000, 20.000000)">
+            <g id="invert_selection">
+                <g id="Wireframe-Line-01" transform="translate(136.000000, 10.000000)" stroke="#666666">
+                    <g>
+                        <polyline id="arrowhead" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="56 2 64 10 56 18"></polyline>
+                        <path d="M63,10 L0,10" id="Line" stroke-width="2"></path>
+                    </g>
+                </g>
+                <g id="small_icon__select_nodes-copy">
+                    <ellipse id="small_icon__node" fill="#50C1E3" cx="63.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-3" fill="#50C1E3" cx="63.7388996" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-4" fill="#50C1E3" cx="63.7388996" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-13" fill="#50C1E3" cx="77.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-12" fill="#50C1E3" cx="77.7388996" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-11" fill="#50C1E3" cx="77.7388996" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-16" fill="#50C1E3" cx="91.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-15" fill="#50C1E3" cx="91.7388996" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-14" fill="#50C1E3" cx="91.7388996" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-19" fill="#50C1E3" cx="105.7389" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-18" fill="#50C1E3" cx="105.7389" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-17" fill="#50C1E3" cx="105.7389" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                    <g id="graph-object">
+                        <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
+                        <rect id="graph-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="4" y="14" width="32" height="13" rx="4"></rect>
+                        <text id="graph-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
+                            <tspan x="6.5" y="23">graph</tspan>
+                        </text>
+                    </g>
+                    <path d="M54.5,0.5 L54.5,40" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                    <path d="M115.5,0.5 L115.5,40" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                    <path d="M54.2656946,19.5124969 L45.4445516,19.5124969" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                </g>
+                <g id="small_icon__select_nodes-copy-2" transform="translate(222.000000, 0.000000)">
+                    <ellipse id="small_icon__node" fill="#50C1E3" cx="63.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-3" fill="#50C1E3" cx="63.7388996" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-4" fill="#BD8DE8" cx="63.7388996" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-13" fill="#BD8DE8" cx="77.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-12" fill="#BD8DE8" cx="77.7388996" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-11" fill="#50C1E3" cx="77.7388996" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-16" fill="#50C1E3" cx="91.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-15" fill="#50C1E3" cx="91.7388996" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-14" fill="#50C1E3" cx="91.7388996" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-19" fill="#50C1E3" cx="105.7389" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-18" fill="#BD8DE8" cx="105.7389" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                    <ellipse id="small_icon__node-copy-17" fill="#BD8DE8" cx="105.7389" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                    <g id="graph-object">
+                        <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
+                        <rect id="graph-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="4" y="14" width="32" height="13" rx="4"></rect>
+                        <text id="graph-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
+                            <tspan x="6.5" y="23">graph</tspan>
+                        </text>
+                    </g>
+                    <path d="M54.5,0.5 L54.5,40" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                    <path d="M115.5,0.5 L115.5,40" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                    <path d="M54.2656946,19.5124969 L45.4445516,19.5124969" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                </g>
+            </g>
+        </g>
+        <g id="selected_unselected_nodes" transform="translate(645.000000, 20.000000)">
+            <ellipse id="small_icon__node-copy-3" fill="#50C1E3" cx="5.73889961" cy="9.75" rx="5.73889961" ry="5.75"></ellipse>
+            <text id="unselected" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="15">unselected</tspan>
+            </text>
+            <ellipse id="small_icon__node-copy-5" fill="#BD8DE8" cx="5.73889961" cy="31.75" rx="5.73889961" ry="5.75"></ellipse>
+            <text id="selected" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="37">selected</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
