@@ -4,6 +4,8 @@
 
 ## `select_nodes()`
 
+<img src="diagrams/selection/select_nodes.svg">
+
 <h4><em>Select nodes in a graph</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -21,6 +23,8 @@ Select nodes from a graph object of class `dgr_graph`.
 **`nodes`** an optional vector of node IDs for filtering list of nodes present in the graph.
 
 ## `select_edges()`
+
+<img src="diagrams/selection/select_edges.svg">
 
 <h4><em>Select edges in a graph</em></h4>
 
@@ -42,6 +46,8 @@ Select edges from a graph object of class `dgr_graph`.
 
 ## `select_last_nodes_created()`
 
+<img src="diagrams/selection/select_last_nodes_created.svg">
+
 <h4><em>Select the last set of nodes created in a graph</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -54,6 +60,8 @@ Select the last nodes that were created in a graph object of class `dgr_graph`. 
 
 ## `select_last_edges_created()`
 
+<img src="diagrams/selection/select_last_edges_created.svg">
+
 <h4><em>Select the last set of edges created in a graph</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -65,6 +73,8 @@ Select the last edges that were created in a graph object of class `dgr_graph`. 
 **`graph`** a graph object of class `dgr_graph`.
 
 ## `select_nodes_by_id()`
+
+<img src="diagrams/selection/select_nodes_by_id.svg">
 
 <h4><em>Select nodes in a graph by ID values</em></h4>
 
@@ -81,6 +91,8 @@ Select nodes in a graph object of class `dgr_graph` by their node ID values. If 
 **`set_op`** the set operation to perform upon consecutive selections of graph nodes. This can either be as a `union` (the default), as an intersection of selections with `intersect`, or, as a `difference` on the previous selection, if it exists.
 
 ## `select_nodes_in_neighborhood()`
+
+<img src="diagrams/selection/select_nodes_in_neighborhood.svg">
 
 <h4><em>Select nodes based on a walk distance from a specified node</em></h4>
 
@@ -100,6 +112,8 @@ Select those nodes in the neighborhood of nodes connected a specified distance f
 
 ## `select_nodes_by_degree()`
 
+<img src="diagrams/selection/select_nodes_by_degree.svg">
+
 <h4><em>Select nodes in the graph based on their degree values</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -116,6 +130,8 @@ Using a graph object of class `dgr_graph`, create a selection of nodes that have
 
 ## `select_edges_by_edge_id()`
 
+<img src="diagrams/selection/select_edges_by_edge_id.svg">
+
 <h4><em>Select edges in a graph using edge ID values</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -129,6 +145,8 @@ Select edges in a graph object of class `dgr_graph` using edge ID values. **`gra
 **`set_op`** the set operation to perform upon consecutive selections of graph edges This can either be as a `union` (the default), as an intersection of selections with `intersect`, or, as a `difference` on the previous selection, if it exists.
 
 ## `select_edges_by_node_id()`
+
+<img src="diagrams/selection/select_edges_by_node_id.svg">
 
 <h4><em>Select edges in a graph using node ID values</em></h4>
 
@@ -146,6 +164,8 @@ Select edges in a graph object of class `dgr_graph` using node ID values. All ed
 
 ## `invert_selection()`
 
+<img src="diagrams/selection/invert_selection.svg">
+
 <h4><em>Invert selection of nodes or edges in a graph</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -158,6 +178,8 @@ Modify the selection of nodes or edges within a graph object such that all nodes
 
 ## `clear_selection()`
 
+<img src="diagrams/selection/clear_selection.svg">
+
 <h4><em>Clear a selection of nodes or edges in a graph</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -169,6 +191,8 @@ Clear the selection of nodes or edges within a graph object.
 **`graph`** a graph object of class `dgr_graph`.
 
 ## `get_selection()`
+
+<img src="diagrams/selection/get_selection.svg">
 
 <h4><em>Get the current selection available in a graph object</em></h4>
 
