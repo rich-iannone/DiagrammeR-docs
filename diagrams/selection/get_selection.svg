@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="772px" height="80px" viewBox="0 0 772 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>get_selection</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="-6" y="3" width="784" height="76"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="784" height="76" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <linearGradient x1="14.998694%" y1="13.8375292%" x2="87.3959626%" y2="88.282251%" id="linearGradient-3">
+            <stop stop-color="#DBFAF0" offset="0%"></stop>
+            <stop stop-color="#E8EBF9" offset="97.322136%"></stop>
+            <stop stop-color="#E8EAF9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Graph-Functions---selection" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <use id="Rectangle" stroke="#979797" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+        <g id="get_selection" transform="translate(233.000000, 21.000000)">
+            <g id="Group-14">
+                <g id="Group-13">
+                    <g id="Group-12">
+                        <g id="Group-11">
+                            <g id="Group-10">
+                                <g id="Group-9">
+                                    <g id="Group-8">
+                                        <g id="Group-7">
+                                            <g id="Group-6">
+                                                <g id="render_graph" transform="translate(161.000000, 10.000000)" stroke="#666666">
+                                                    <g id="Wireframe-Line-01">
+                                                        <g>
+                                                            <polyline id="arrowhead" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="56 2 64 10 56 18"></polyline>
+                                                            <path d="M63,10 L0,10" id="Line" stroke-width="2"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                                <g id="small_icon__select_nodes_by_id-copy">
+                                                    <ellipse id="small_icon__node" fill="#50C1E3" cx="92.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                                                    <ellipse id="small_icon__node-copy-13" fill="#BD8DE8" cx="106.7389" cy="19.75" rx="5.73889961" ry="5.75"></ellipse>
+                                                    <ellipse id="small_icon__node-copy-16" fill="#BD8DE8" cx="120.7389" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                                                    <ellipse id="small_icon__node-copy" fill="#50C1E3" cx="64.7388996" cy="19.75" rx="5.73889961" ry="5.75"></ellipse>
+                                                    <ellipse id="small_icon__node-copy-35" fill="#BD8DE8" cx="78.7388996" cy="19.75" rx="5.73889961" ry="5.75"></ellipse>
+                                                    <ellipse id="small_icon__node-copy-19" fill="#50C1E3" cx="134.7389" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                                                    <g id="graph-object">
+                                                        <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
+                                                        <rect id="graph-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="4" y="14" width="32" height="13" rx="4"></rect>
+                                                        <text id="graph-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
+                                                            <tspan x="6.5" y="23">graph</tspan>
+                                                        </text>
+                                                    </g>
+                                                    <path d="M54.5,0.5 L54.5,40" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                                                    <path d="M144.5,0.5 L144.5,40" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                                                    <path d="M54.2656946,19.5124969 L45.4445516,19.5124969" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                                                    <text id="ID" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                                                        <tspan x="86.85875" y="41">node ID</tspan>
+                                                    </text>
+                                                    <text id="ID-Copy" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                                                        <tspan x="62.6538996" y="33">1</tspan>
+                                                    </text>
+                                                    <text id="ID-Copy-2" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                                                        <tspan x="76.6538996" y="33">2</tspan>
+                                                    </text>
+                                                    <text id="ID-Copy-3" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                                                        <tspan x="90.6538996" y="33">3</tspan>
+                                                    </text>
+                                                    <text id="ID-Copy-4" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                                                        <tspan x="104.6539" y="33">4</tspan>
+                                                    </text>
+                                                    <text id="ID-Copy-5" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                                                        <tspan x="118.6539" y="33">5</tspan>
+                                                    </text>
+                                                    <text id="ID-Copy-6" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                                                        <tspan x="132.6539" y="33">6</tspan>
+                                                    </text>
+                                                    <g id="Down_bfbfbf" transform="translate(75.000000, 0.000000)" fill-rule="nonzero" fill="#BFBFBF">
+                                                        <path d="M3.96875,0.322916667 C3.95465165,0.325489668 3.94073388,0.328969109 3.92708333,0.333333333 C3.77187383,0.368092754 3.66283797,0.507658656 3.66666667,0.666666667 L3.66666667,10.5104167 L0.604166667,7.44791667 C0.541803506,7.38204501 0.455290423,7.34443062 0.364583333,7.34375 C0.229242309,7.34483033 0.1079871,7.42763178 0.0577211036,7.55329677 C0.00745510766,7.67896176 0.0381561548,7.82254572 0.135416667,7.91666667 L3.76041667,11.5520833 L4,11.78125 L4.23958333,11.5520833 L7.86458333,7.91666667 C7.96397488,7.83657315 8.00890539,7.70675712 7.98029015,7.58235929 C7.95167491,7.45796147 7.85453853,7.36082509 7.73014071,7.33220985 C7.60574288,7.30359461 7.47592685,7.34852512 7.39583333,7.44791667 L4.33333333,10.5104167 L4.33333333,0.666666667 C4.33674919,0.570778076 4.29868359,0.478067074 4.22887181,0.412244542 C4.15906004,0.34642201 4.06427208,0.31387108 3.96875,0.322916667 L3.96875,0.322916667 Z" id="Shape"></path>
+                                                    </g>
+                                                    <g id="Down_bfbfbf" transform="translate(103.000000, 0.000000)" fill-rule="nonzero" fill="#BFBFBF">
+                                                        <path d="M3.96875,0.322916667 C3.95465165,0.325489668 3.94073388,0.328969109 3.92708333,0.333333333 C3.77187383,0.368092754 3.66283797,0.507658656 3.66666667,0.666666667 L3.66666667,10.5104167 L0.604166667,7.44791667 C0.541803506,7.38204501 0.455290423,7.34443062 0.364583333,7.34375 C0.229242309,7.34483033 0.1079871,7.42763178 0.0577211036,7.55329677 C0.00745510766,7.67896176 0.0381561548,7.82254572 0.135416667,7.91666667 L3.76041667,11.5520833 L4,11.78125 L4.23958333,11.5520833 L7.86458333,7.91666667 C7.96397488,7.83657315 8.00890539,7.70675712 7.98029015,7.58235929 C7.95167491,7.45796147 7.85453853,7.36082509 7.73014071,7.33220985 C7.60574288,7.30359461 7.47592685,7.34852512 7.39583333,7.44791667 L4.33333333,10.5104167 L4.33333333,0.666666667 C4.33674919,0.570778076 4.29868359,0.478067074 4.22887181,0.412244542 C4.15906004,0.34642201 4.06427208,0.31387108 3.96875,0.322916667 L3.96875,0.322916667 Z" id="Shape"></path>
+                                                    </g>
+                                                    <g id="Down_bfbfbf" transform="translate(117.000000, 0.000000)" fill-rule="nonzero" fill="#BFBFBF">
+                                                        <path d="M3.96875,0.322916667 C3.95465165,0.325489668 3.94073388,0.328969109 3.92708333,0.333333333 C3.77187383,0.368092754 3.66283797,0.507658656 3.66666667,0.666666667 L3.66666667,10.5104167 L0.604166667,7.44791667 C0.541803506,7.38204501 0.455290423,7.34443062 0.364583333,7.34375 C0.229242309,7.34483033 0.1079871,7.42763178 0.0577211036,7.55329677 C0.00745510766,7.67896176 0.0381561548,7.82254572 0.135416667,7.91666667 L3.76041667,11.5520833 L4,11.78125 L4.23958333,11.5520833 L7.86458333,7.91666667 C7.96397488,7.83657315 8.00890539,7.70675712 7.98029015,7.58235929 C7.95167491,7.45796147 7.85453853,7.36082509 7.73014071,7.33220985 C7.60574288,7.30359461 7.47592685,7.34852512 7.39583333,7.44791667 L4.33333333,10.5104167 L4.33333333,0.666666667 C4.33674919,0.570778076 4.29868359,0.478067074 4.22887181,0.412244542 C4.15906004,0.34642201 4.06427208,0.31387108 3.96875,0.322916667 L3.96875,0.322916667 Z" id="Shape"></path>
+                                                    </g>
+                                                </g>
+                                                <text id="ID" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                                                    <tspan x="273.85875" y="36">node ID</tspan>
+                                                </text>
+                                                <g id="Group-5" transform="translate(267.000000, 16.000000)" font-size="7.5" font-family="Menlo-Regular, Menlo" fill="#666666" font-weight="normal">
+                                                    <text id="ID-Copy-2">
+                                                        <tspan x="3.48120918" y="7">2</tspan>
+                                                    </text>
+                                                    <text id="ID-Copy-4">
+                                                        <tspan x="16.4812092" y="7">4</tspan>
+                                                    </text>
+                                                    <text id="ID-Copy-5">
+                                                        <tspan x="29.4812092" y="7">5</tspan>
+                                                    </text>
+                                                </g>
+                                                <text id="VECTOR" transform="translate(258.000000, 21.500000) rotate(-90.000000) translate(-258.000000, -21.500000) " font-family="HelveticaNeue-Light, Helvetica Neue" font-size="10" font-weight="300" fill="#ADADAD">
+                                                    <tspan x="238.73" y="25.5">VECTOR</tspan>
+                                                </text>
+                                                <path d="M303,13.5 L269,13.5" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                                                <path d="M303,26.5 L269,26.5" id="Line-Copy-3" stroke="#CACACA" stroke-linecap="square"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="selected_unselected_nodes" transform="translate(645.000000, 21.000000)">
+            <ellipse id="small_icon__node-copy-3" fill="#50C1E3" cx="5.73889961" cy="9.75" rx="5.73889961" ry="5.75"></ellipse>
+            <text id="unselected" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="15">unselected</tspan>
+            </text>
+            <ellipse id="small_icon__node-copy-5" fill="#BD8DE8" cx="5.73889961" cy="31.75" rx="5.73889961" ry="5.75"></ellipse>
+            <text id="selected" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="37">selected</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

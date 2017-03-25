@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="772px" height="80px" viewBox="0 0 772 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>select_edges_by_edge_id</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="-6" y="2" width="784" height="76"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="784" height="76" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <linearGradient x1="14.998694%" y1="13.8375292%" x2="87.3959626%" y2="88.282251%" id="linearGradient-3">
+            <stop stop-color="#DBFAF0" offset="0%"></stop>
+            <stop stop-color="#E8EBF9" offset="97.322136%"></stop>
+            <stop stop-color="#E8EAF9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Graph-Functions---selection" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <use id="Rectangle" stroke="#979797" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+        <g id="select_edges_by_edge_id" transform="translate(188.000000, 20.000000)">
+            <g id="small_icon__select_nodes_by_id-copy" transform="translate(250.000000, 0.000000)"></g>
+            <g>
+                <g id="Wireframe-Line-01" transform="translate(163.000000, 10.000000)" stroke="#666666">
+                    <g>
+                        <polyline id="arrowhead" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="56 2 64 10 56 18"></polyline>
+                        <path d="M63,10 L0,10" id="Line" stroke-width="2"></path>
+                    </g>
+                </g>
+                <g id="graph-object">
+                    <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
+                    <rect id="graph-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="4" y="14" width="32" height="13" rx="4"></rect>
+                    <text id="graph-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
+                        <tspan x="6.5" y="23">graph</tspan>
+                    </text>
+                </g>
+                <path d="M54.5,0.5 L54.5,40" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                <path d="M144.5,0.5 L144.5,40" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                <path d="M54.2656946,19.5124969 L45.4445516,19.5124969" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                <text id="ID" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                    <tspan x="86.92625" y="41">edge ID</tspan>
+                </text>
+                <text id="ID-Copy" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                    <tspan x="62.6538996" y="33">1</tspan>
+                </text>
+                <text id="ID-Copy-2" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                    <tspan x="76.6538996" y="33">2</tspan>
+                </text>
+                <text id="ID-Copy-3" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                    <tspan x="90.6538996" y="33">3</tspan>
+                </text>
+                <text id="ID-Copy-4" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                    <tspan x="104.6539" y="33">4</tspan>
+                </text>
+                <text id="ID-Copy-5" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                    <tspan x="118.6539" y="33">5</tspan>
+                </text>
+                <text id="ID-Copy-6" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                    <tspan x="132.6539" y="33">6</tspan>
+                </text>
+                <g id="Down_bfbfbf" transform="translate(75.000000, 0.000000)" fill-rule="nonzero" fill="#BFBFBF">
+                    <path d="M3.96875,0.322916667 C3.95465165,0.325489668 3.94073388,0.328969109 3.92708333,0.333333333 C3.77187383,0.368092754 3.66283797,0.507658656 3.66666667,0.666666667 L3.66666667,10.5104167 L0.604166667,7.44791667 C0.541803506,7.38204501 0.455290423,7.34443062 0.364583333,7.34375 C0.229242309,7.34483033 0.1079871,7.42763178 0.0577211036,7.55329677 C0.00745510766,7.67896176 0.0381561548,7.82254572 0.135416667,7.91666667 L3.76041667,11.5520833 L4,11.78125 L4.23958333,11.5520833 L7.86458333,7.91666667 C7.96397488,7.83657315 8.00890539,7.70675712 7.98029015,7.58235929 C7.95167491,7.45796147 7.85453853,7.36082509 7.73014071,7.33220985 C7.60574288,7.30359461 7.47592685,7.34852512 7.39583333,7.44791667 L4.33333333,10.5104167 L4.33333333,0.666666667 C4.33674919,0.570778076 4.29868359,0.478067074 4.22887181,0.412244542 C4.15906004,0.34642201 4.06427208,0.31387108 3.96875,0.322916667 L3.96875,0.322916667 Z" id="Shape"></path>
+                </g>
+                <g id="Down_bfbfbf" transform="translate(103.000000, 0.000000)" fill-rule="nonzero" fill="#BFBFBF">
+                    <path d="M3.96875,0.322916667 C3.95465165,0.325489668 3.94073388,0.328969109 3.92708333,0.333333333 C3.77187383,0.368092754 3.66283797,0.507658656 3.66666667,0.666666667 L3.66666667,10.5104167 L0.604166667,7.44791667 C0.541803506,7.38204501 0.455290423,7.34443062 0.364583333,7.34375 C0.229242309,7.34483033 0.1079871,7.42763178 0.0577211036,7.55329677 C0.00745510766,7.67896176 0.0381561548,7.82254572 0.135416667,7.91666667 L3.76041667,11.5520833 L4,11.78125 L4.23958333,11.5520833 L7.86458333,7.91666667 C7.96397488,7.83657315 8.00890539,7.70675712 7.98029015,7.58235929 C7.95167491,7.45796147 7.85453853,7.36082509 7.73014071,7.33220985 C7.60574288,7.30359461 7.47592685,7.34852512 7.39583333,7.44791667 L4.33333333,10.5104167 L4.33333333,0.666666667 C4.33674919,0.570778076 4.29868359,0.478067074 4.22887181,0.412244542 C4.15906004,0.34642201 4.06427208,0.31387108 3.96875,0.322916667 L3.96875,0.322916667 Z" id="Shape"></path>
+                </g>
+                <g id="Down_bfbfbf" transform="translate(117.000000, 0.000000)" fill-rule="nonzero" fill="#BFBFBF">
+                    <path d="M3.96875,0.322916667 C3.95465165,0.325489668 3.94073388,0.328969109 3.92708333,0.333333333 C3.77187383,0.368092754 3.66283797,0.507658656 3.66666667,0.666666667 L3.66666667,10.5104167 L0.604166667,7.44791667 C0.541803506,7.38204501 0.455290423,7.34443062 0.364583333,7.34375 C0.229242309,7.34483033 0.1079871,7.42763178 0.0577211036,7.55329677 C0.00745510766,7.67896176 0.0381561548,7.82254572 0.135416667,7.91666667 L3.76041667,11.5520833 L4,11.78125 L4.23958333,11.5520833 L7.86458333,7.91666667 C7.96397488,7.83657315 8.00890539,7.70675712 7.98029015,7.58235929 C7.95167491,7.45796147 7.85453853,7.36082509 7.73014071,7.33220985 C7.60574288,7.30359461 7.47592685,7.34852512 7.39583333,7.44791667 L4.33333333,10.5104167 L4.33333333,0.666666667 C4.33674919,0.570778076 4.29868359,0.478067074 4.22887181,0.412244542 C4.15906004,0.34642201 4.06427208,0.31387108 3.96875,0.322916667 L3.96875,0.322916667 Z" id="Shape"></path>
+                </g>
+                <g id="graph-object" transform="translate(250.000000, 0.000000)">
+                    <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
+                    <rect id="graph-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="4" y="14" width="32" height="13" rx="4"></rect>
+                    <text id="graph-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
+                        <tspan x="6.5" y="23">graph</tspan>
+                    </text>
+                </g>
+                <path d="M304.5,0.5 L304.5,40" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                <path d="M394.5,0.5 L394.5,40" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                <path d="M304.265695,19.5124969 L295.444552,19.5124969" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                <text id="ID" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                    <tspan x="336.92625" y="41">edge ID</tspan>
+                </text>
+                <text id="ID-Copy" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                    <tspan x="312.6539" y="33">1</tspan>
+                </text>
+                <text id="ID-Copy-2" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                    <tspan x="326.6539" y="33">2</tspan>
+                </text>
+                <text id="ID-Copy-3" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                    <tspan x="340.6539" y="33">3</tspan>
+                </text>
+                <text id="ID-Copy-4" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                    <tspan x="354.6539" y="33">4</tspan>
+                </text>
+                <text id="ID-Copy-5" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                    <tspan x="368.6539" y="33">5</tspan>
+                </text>
+                <text id="ID-Copy-6" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                    <tspan x="382.6539" y="33">6</tspan>
+                </text>
+                <g id="Down_bfbfbf" transform="translate(325.000000, 0.000000)" fill-rule="nonzero" fill="#BFBFBF">
+                    <path d="M3.96875,0.322916667 C3.95465165,0.325489668 3.94073388,0.328969109 3.92708333,0.333333333 C3.77187383,0.368092754 3.66283797,0.507658656 3.66666667,0.666666667 L3.66666667,10.5104167 L0.604166667,7.44791667 C0.541803506,7.38204501 0.455290423,7.34443062 0.364583333,7.34375 C0.229242309,7.34483033 0.1079871,7.42763178 0.0577211036,7.55329677 C0.00745510766,7.67896176 0.0381561548,7.82254572 0.135416667,7.91666667 L3.76041667,11.5520833 L4,11.78125 L4.23958333,11.5520833 L7.86458333,7.91666667 C7.96397488,7.83657315 8.00890539,7.70675712 7.98029015,7.58235929 C7.95167491,7.45796147 7.85453853,7.36082509 7.73014071,7.33220985 C7.60574288,7.30359461 7.47592685,7.34852512 7.39583333,7.44791667 L4.33333333,10.5104167 L4.33333333,0.666666667 C4.33674919,0.570778076 4.29868359,0.478067074 4.22887181,0.412244542 C4.15906004,0.34642201 4.06427208,0.31387108 3.96875,0.322916667 L3.96875,0.322916667 Z" id="Shape"></path>
+                </g>
+                <g id="Down_bfbfbf" transform="translate(353.000000, 0.000000)" fill-rule="nonzero" fill="#BFBFBF">
+                    <path d="M3.96875,0.322916667 C3.95465165,0.325489668 3.94073388,0.328969109 3.92708333,0.333333333 C3.77187383,0.368092754 3.66283797,0.507658656 3.66666667,0.666666667 L3.66666667,10.5104167 L0.604166667,7.44791667 C0.541803506,7.38204501 0.455290423,7.34443062 0.364583333,7.34375 C0.229242309,7.34483033 0.1079871,7.42763178 0.0577211036,7.55329677 C0.00745510766,7.67896176 0.0381561548,7.82254572 0.135416667,7.91666667 L3.76041667,11.5520833 L4,11.78125 L4.23958333,11.5520833 L7.86458333,7.91666667 C7.96397488,7.83657315 8.00890539,7.70675712 7.98029015,7.58235929 C7.95167491,7.45796147 7.85453853,7.36082509 7.73014071,7.33220985 C7.60574288,7.30359461 7.47592685,7.34852512 7.39583333,7.44791667 L4.33333333,10.5104167 L4.33333333,0.666666667 C4.33674919,0.570778076 4.29868359,0.478067074 4.22887181,0.412244542 C4.15906004,0.34642201 4.06427208,0.31387108 3.96875,0.322916667 L3.96875,0.322916667 Z" id="Shape"></path>
+                </g>
+                <g id="Down_bfbfbf" transform="translate(367.000000, 0.000000)" fill-rule="nonzero" fill="#BFBFBF">
+                    <path d="M3.96875,0.322916667 C3.95465165,0.325489668 3.94073388,0.328969109 3.92708333,0.333333333 C3.77187383,0.368092754 3.66283797,0.507658656 3.66666667,0.666666667 L3.66666667,10.5104167 L0.604166667,7.44791667 C0.541803506,7.38204501 0.455290423,7.34443062 0.364583333,7.34375 C0.229242309,7.34483033 0.1079871,7.42763178 0.0577211036,7.55329677 C0.00745510766,7.67896176 0.0381561548,7.82254572 0.135416667,7.91666667 L3.76041667,11.5520833 L4,11.78125 L4.23958333,11.5520833 L7.86458333,7.91666667 C7.96397488,7.83657315 8.00890539,7.70675712 7.98029015,7.58235929 C7.95167491,7.45796147 7.85453853,7.36082509 7.73014071,7.33220985 C7.60574288,7.30359461 7.47592685,7.34852512 7.39583333,7.44791667 L4.33333333,10.5104167 L4.33333333,0.666666667 C4.33674919,0.570778076 4.29868359,0.478067074 4.22887181,0.412244542 C4.15906004,0.34642201 4.06427208,0.31387108 3.96875,0.322916667 L3.96875,0.322916667 Z" id="Shape"></path>
+                </g>
+                <path d="M59,23.0381803 L70.2369576,16" id="small_icon_edge-copy-41" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M309,23.0381803 L320.236958,16" id="small_icon_edge-copy-51" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M323,23.0381803 L334.236958,16" id="small_icon_edge-copy-52" stroke="#BD8DE7" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M337,23.0381803 L348.236958,16" id="small_icon_edge-copy-53" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M351,23.0381803 L362.236958,16" id="small_icon_edge-copy-54" stroke="#BD8DE7" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M365,23.0381803 L376.236958,16" id="small_icon_edge-copy-55" stroke="#BD8DE7" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M379,23.0381803 L390.236958,16" id="small_icon_edge-copy-56" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M73,23.0381803 L84.2369576,16" id="small_icon_edge-copy-43" stroke="#F5A623" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M87,23.0381803 L98.2369576,16" id="small_icon_edge-copy-44" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M101,23.0381803 L112.236958,16" id="small_icon_edge-copy-45" stroke="#F5A623" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M115,23.0381803 L126.236958,16" id="small_icon_edge-copy-46" stroke="#F5A623" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M129,23.0381803 L140.236958,16" id="small_icon_edge-copy-47" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+            </g>
+        </g>
+        <g id="targeted_edge" transform="translate(7.000000, 32.000000)">
+            <text id="targeted-copy-5" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="15">targeted</tspan>
+            </text>
+            <path d="M0,13.0381803 L11.2369576,6" id="small_icon_edge-copy-43" stroke="#F5A623" stroke-width="2" stroke-linecap="square"></path>
+        </g>
+        <g id="selected_unselected_edges" transform="translate(645.000000, 20.000000)">
+            <text id="unselected" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="15">unselected</tspan>
+            </text>
+            <text id="selected" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="37">selected</tspan>
+            </text>
+            <path d="M0,13.0381803 L11.2369576,6" id="small_icon_edge-copy-10" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M0,35.0381803 L11.2369576,28" id="small_icon_edge-copy-31" stroke="#BD8DE8" stroke-width="2" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>

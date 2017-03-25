@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="772px" height="80px" viewBox="0 0 772 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>select_nodes_in_neighborhood</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="-6" y="2" width="784" height="76"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="784" height="76" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <linearGradient x1="14.998694%" y1="13.8375292%" x2="87.3959626%" y2="88.282251%" id="linearGradient-3">
+            <stop stop-color="#DBFAF0" offset="0%"></stop>
+            <stop stop-color="#E8EBF9" offset="97.322136%"></stop>
+            <stop stop-color="#E8EAF9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Graph-Functions---selection" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <use id="Rectangle" stroke="#979797" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+        <g id="select_nodes_in_neighborhood" transform="translate(178.000000, 20.000000)">
+            <g id="Wireframe-Line-01" transform="translate(173.000000, 10.000000)" stroke="#666666">
+                <g>
+                    <polyline id="arrowhead" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="56 2 64 10 56 18"></polyline>
+                    <path d="M63,10 L0,10" id="Line" stroke-width="2"></path>
+                </g>
+            </g>
+            <g id="small_icon__select_nodes_in_neighborhood-copy" transform="translate(260.000000, 0.000000)">
+                <path d="M90.8795792,34.2690905 L105,20" id="small_icon_edge-copy-13" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M75.8795792,34.2690905 L90.0000004,20" id="small_icon_edge-copy-20" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M64,26.9999998 L77.0000004,20" id="small_icon_edge-copy-21" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M132,19.9999998 L145,13" id="small_icon_edge-copy-22" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M63,19.9999998 L76.0000004,13" id="small_icon_edge-copy-23" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(69.738900, 16.693008) scale(-1, 1) translate(-69.738900, -16.693008) "></path>
+                <path d="M132,26.9999998 L145,20" id="small_icon_edge-copy-24" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(138.738900, 23.693008) scale(-1, 1) translate(-138.738900, -23.693008) "></path>
+                <path d="M122.5,19.9999998 L127.977799,19.9999998" id="small_icon_edge-copy-25" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(125.238900, 20.193008) scale(-1, 1) translate(-125.238900, -20.193008) "></path>
+                <path d="M107.5,19.9999998 L112.977799,19.9999998" id="small_icon_edge-copy-26" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(110.238900, 20.193008) scale(-1, 1) translate(-110.238900, -20.193008) "></path>
+                <path d="M93.5,19.9999998 L98.9777993,19.9999998" id="small_icon_edge-copy-27" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(96.238900, 20.193008) scale(-1, 1) translate(-96.238900, -20.193008) "></path>
+                <path d="M78.5,19.9999998 L83.9777993,19.9999998" id="small_icon_edge-copy-28" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(81.238900, 20.193008) scale(-1, 1) translate(-81.238900, -20.193008) "></path>
+                <path d="M104.977799,8.53619447 L104.977799,14.5569916" id="small_icon_edge-copy-29" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(104.738900, 11.750000) scale(-1, 1) translate(-104.738900, -11.750000) "></path>
+                <path d="M104.977799,25.5361945 L104.977799,31.5569916" id="small_icon_edge-copy-30" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(104.738900, 28.750000) scale(-1, 1) translate(-104.738900, -28.750000) "></path>
+                <path d="M104.879579,20.0190905 L119,5.75000001" id="small_icon_edge-copy-14" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M118.879579,20.0190905 L133,5.75000001" id="small_icon_edge-copy-15" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M89.8795792,20.0190905 L104,5.75000001" id="small_icon_edge-copy-16" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(97.238900, 12.943008) scale(-1, 1) translate(-97.238900, -12.943008) "></path>
+                <path d="M75.8795792,20.0190905 L90.0000004,5.75000001" id="small_icon_edge-copy-17" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(83.238900, 12.943008) scale(-1, 1) translate(-83.238900, -12.943008) "></path>
+                <path d="M103.879579,34.0190905 L118,19.75" id="small_icon_edge-copy-18" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(111.238900, 26.943008) scale(-1, 1) translate(-111.238900, -26.943008) "></path>
+                <path d="M117.879579,34.0190905 L132,19.75" id="small_icon_edge-copy-19" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(125.238900, 26.943008) scale(-1, 1) translate(-125.238900, -26.943008) "></path>
+                <ellipse id="small_icon__node" fill="#50C1E3" cx="63.7388996" cy="12.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-33" fill="#50C1E3" cx="63.7388996" cy="26.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-13" fill="#50C1E3" cx="76.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-12" fill="#50C1E3" cx="76.7388996" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-11" fill="#50C1E3" cx="76.7388996" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-16" fill="#BD8DE8" cx="90.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-15" fill="#BD8DE8" cx="90.7388996" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-14" fill="#BD8DE8" cx="90.7388996" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-31" fill="#BD8DE8" cx="104.7389" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-30" fill="#BD8DE8" cx="104.7389" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-29" fill="#BD8DE8" cx="104.7389" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                <g id="graph-object">
+                    <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
+                    <rect id="graph-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="4" y="14" width="32" height="13" rx="4"></rect>
+                    <text id="graph-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
+                        <tspan x="6.5" y="23">graph</tspan>
+                    </text>
+                </g>
+                <path d="M54.5,0.5 L54.5,40" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                <ellipse id="small_icon__node-copy-28" fill="#BD8DE8" cx="118.7389" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-27" fill="#BD8DE8" cx="118.7389" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-26" fill="#BD8DE8" cx="118.7389" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-25" fill="#50C1E3" cx="132.7389" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-24" fill="#50C1E3" cx="132.7389" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-23" fill="#50C1E3" cx="132.7389" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-22" fill="#50C1E3" cx="144.7389" cy="12.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-32" fill="#50C1E3" cx="144.7389" cy="26.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <path d="M154.5,0.5 L154.5,40" id="Line-Copy" stroke="#CACACA" stroke-linecap="square"></path>
+                <path d="M54.2656946,19.5124969 L45.4445516,19.5124969" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+            </g>
+            <g id="small_icon__select_nodes_by_degree">
+                <path d="M90.8795792,34.2690905 L105,20" id="small_icon_edge-copy-13" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M75.8795792,34.2690905 L90.0000004,20" id="small_icon_edge-copy-20" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M64,26.9999998 L77.0000004,20" id="small_icon_edge-copy-21" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M132,19.9999998 L145,13" id="small_icon_edge-copy-22" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M63,19.9999998 L76.0000004,13" id="small_icon_edge-copy-23" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(69.738900, 16.693008) scale(-1, 1) translate(-69.738900, -16.693008) "></path>
+                <path d="M132,26.9999998 L145,20" id="small_icon_edge-copy-24" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(138.738900, 23.693008) scale(-1, 1) translate(-138.738900, -23.693008) "></path>
+                <path d="M122.5,19.9999998 L127.977799,19.9999998" id="small_icon_edge-copy-25" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(125.238900, 20.193008) scale(-1, 1) translate(-125.238900, -20.193008) "></path>
+                <path d="M107.5,19.9999998 L112.977799,19.9999998" id="small_icon_edge-copy-26" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(110.238900, 20.193008) scale(-1, 1) translate(-110.238900, -20.193008) "></path>
+                <path d="M93.5,19.9999998 L98.9777993,19.9999998" id="small_icon_edge-copy-27" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(96.238900, 20.193008) scale(-1, 1) translate(-96.238900, -20.193008) "></path>
+                <path d="M78.5,19.9999998 L83.9777993,19.9999998" id="small_icon_edge-copy-28" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(81.238900, 20.193008) scale(-1, 1) translate(-81.238900, -20.193008) "></path>
+                <path d="M104.977799,8.53619447 L104.977799,14.5569916" id="small_icon_edge-copy-29" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(104.738900, 11.750000) scale(-1, 1) translate(-104.738900, -11.750000) "></path>
+                <path d="M104.977799,25.5361945 L104.977799,31.5569916" id="small_icon_edge-copy-30" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(104.738900, 28.750000) scale(-1, 1) translate(-104.738900, -28.750000) "></path>
+                <path d="M104.879579,20.0190905 L119,5.75000001" id="small_icon_edge-copy-14" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M118.879579,20.0190905 L133,5.75000001" id="small_icon_edge-copy-15" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M89.8795792,20.0190905 L104,5.75000001" id="small_icon_edge-copy-16" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(97.238900, 12.943008) scale(-1, 1) translate(-97.238900, -12.943008) "></path>
+                <path d="M75.8795792,20.0190905 L90.0000004,5.75000001" id="small_icon_edge-copy-17" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(83.238900, 12.943008) scale(-1, 1) translate(-83.238900, -12.943008) "></path>
+                <path d="M103.879579,34.0190905 L118,19.75" id="small_icon_edge-copy-18" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(111.238900, 26.943008) scale(-1, 1) translate(-111.238900, -26.943008) "></path>
+                <path d="M117.879579,34.0190905 L132,19.75" id="small_icon_edge-copy-19" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(125.238900, 26.943008) scale(-1, 1) translate(-125.238900, -26.943008) "></path>
+                <ellipse id="small_icon__node" fill="#50C1E3" cx="63.7388996" cy="12.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-33" fill="#50C1E3" cx="63.7388996" cy="26.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-13" fill="#50C1E3" cx="76.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-12" fill="#50C1E3" cx="76.7388996" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-11" fill="#50C1E3" cx="76.7388996" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-16" fill="#50C1E3" cx="90.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-15" fill="#50C1E3" cx="90.7388996" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-14" fill="#50C1E3" cx="90.7388996" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-31" fill="#F6A623" cx="104.7389" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-30" fill="#50C1E3" cx="104.7389" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-29" fill="#50C1E3" cx="104.7389" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                <g id="graph-object">
+                    <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
+                    <rect id="graph-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="4" y="14" width="32" height="13" rx="4"></rect>
+                    <text id="graph-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
+                        <tspan x="6.5" y="23">graph</tspan>
+                    </text>
+                </g>
+                <path d="M54.5,0.5 L54.5,40" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                <ellipse id="small_icon__node-copy-28" fill="#50C1E3" cx="118.7389" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-27" fill="#50C1E3" cx="118.7389" cy="6" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-26" fill="#50C1E3" cx="118.7389" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-25" fill="#50C1E3" cx="132.7389" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <path d="M132.7389,11.75 C135.908406,11.75 138.477799,9.17563731 138.477799,6 C138.477799,2.82436269 135.908406,0.25 132.7389,0.25 C129.569393,0.25 127,2.82436269 127,6 C127,9.17563731 129.569393,11.75 132.7389,11.75 Z" id="small_icon__node-copy-24" fill="#50C1E3"></path>
+                <ellipse id="small_icon__node-copy-23" fill="#50C1E3" cx="132.7389" cy="34" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-22" fill="#50C1E3" cx="144.7389" cy="12.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <ellipse id="small_icon__node-copy-32" fill="#50C1E3" cx="144.7389" cy="26.9430082" rx="5.73889961" ry="5.75"></ellipse>
+                <path d="M154.5,0.5 L154.5,40" id="Line-Copy" stroke="#CACACA" stroke-linecap="square"></path>
+                <path d="M54.2656946,19.5124969 L45.4445516,19.5124969" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+            </g>
+        </g>
+        <g id="targeted_node" transform="translate(7.000000, 30.000000)">
+            <ellipse id="small_icon__node-copy-7" fill="#F6A623" cx="5.73889961" cy="9.75" rx="5.73889961" ry="5.75"></ellipse>
+            <text id="targeted" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="15">targeted</tspan>
+            </text>
+        </g>
+        <g id="selected_unselected_nodes" transform="translate(645.000000, 20.000000)">
+            <ellipse id="small_icon__node-copy-3" fill="#50C1E3" cx="5.73889961" cy="9.75" rx="5.73889961" ry="5.75"></ellipse>
+            <text id="unselected" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="15">unselected</tspan>
+            </text>
+            <ellipse id="small_icon__node-copy-5" fill="#BD8DE8" cx="5.73889961" cy="31.75" rx="5.73889961" ry="5.75"></ellipse>
+            <text id="selected" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="37">selected</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
