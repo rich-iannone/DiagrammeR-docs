@@ -26,7 +26,7 @@
 <meta name="author" content="Richard Iannone">
 
 
-<meta name="date" content="2017-03-26">
+<meta name="date" content="2017-03-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -333,24 +333,112 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 11</span> Functions: Graph Metadata</h1>
 <div id="set_graph_name" class="section level2">
 <h2><span class="header-section-number">11.1</span> <code>set_graph_name()</code></h2>
+<h4>
+<em>Set graph name</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Set a name for a graph object of class <code>dgr_graph</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>name</code></strong> the name to set for the graph.</p>
 </div>
 <div id="set_graph_time" class="section level2">
 <h2><span class="header-section-number">11.2</span> <code>set_graph_time()</code></h2>
+<h4>
+<em>Set graph date-time and timezone</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Set the time and timezone for a graph object of class <code>dgr_graph</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>time</code></strong> the date-time to set for the graph.</p>
+<p><strong><code>tz</code></strong> the timezone to set for the graph.</p>
 </div>
 <div id="set_global_graph_attrs" class="section level2">
 <h2><span class="header-section-number">11.3</span> <code>set_global_graph_attrs()</code></h2>
+<h4>
+<em>Set global graph attributes</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Set global attributes of a specific type (either <code>graph_attrs</code>, <code>node_attrs</code>, or <code>edge_attrs</code> for a graph object of class <code>dgr_graph</code>).</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>attr</code></strong> the name of the attribute to set for the <code>type</code> of global attribute specified.</p>
+<p><strong><code>value</code></strong> the value to be set for the chosen attribute specified in the <code>attr_for_type</code> argument.</p>
+<p><strong><code>attr_type</code></strong> the specific type of global graph attribute to set. The type is specified with <code>graph</code>, <code>node</code>, or <code>edge</code>.</p>
 </div>
 <div id="add_global_graph_attrs" class="section level2">
 <h2><span class="header-section-number">11.4</span> <code>add_global_graph_attrs()</code></h2>
+<h4>
+<em>Add one or more global graph attributes</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Add global attributes of a specific type (either <code>graph_attrs</code>, <code>node_attrs</code>, or <code>edge_attrs</code> for a graph object of class <code>dgr_graph</code>).</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>attr</code></strong> the name of the attribute to set for the <code>type</code> of global attribute specified.</p>
+<p><strong><code>value</code></strong> the value to be set for the chosen attribute specified in the <code>attr_for_type</code> argument.</p>
+<p><strong><code>attr_type</code></strong> the specific type of global graph attribute to set. The type is specified with <code>graph</code>, <code>node</code>, or <code>edge</code>.</p>
 </div>
 <div id="get_global_graph_attrs" class="section level2">
 <h2><span class="header-section-number">11.5</span> <code>get_global_graph_attrs()</code></h2>
+<h4>
+<em>Get global graph attributes</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Get the presently set global attributes for a graph object of class <code>dgr_graph</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
 </div>
 <div id="delete_global_graph_attrs" class="section level2">
 <h2><span class="header-section-number">11.6</span> <code>delete_global_graph_attrs()</code></h2>
+<h4>
+<em>Delete one of the global graph attributes stored within a graph object</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Delete one of the global attributes stored within a graph object of class <code>dgr_graph</code>).</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>attr</code></strong> the name of the attribute to delete for the <code>type</code> of global attribute specified.</p>
+<p><strong><code>attr_type</code></strong> the specific type of global graph attribute to delete. The type is specified with <code>graph</code>, <code>node</code>, or <code>edge</code>.</p>
 </div>
 <div id="clear_global_graph_attrs" class="section level2">
 <h2><span class="header-section-number">11.7</span> <code>clear_global_graph_attrs()</code></h2>
+<h4>
+<em>Clear any global graph attributes that are set</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Clear any currently set global graph attributes for a graph object of class <code>dgr_graph</code>).</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
 
 </div>
 </div>
