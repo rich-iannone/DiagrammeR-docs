@@ -26,7 +26,7 @@
 <meta name="author" content="Richard Iannone">
 
 
-<meta name="date" content="2017-03-25">
+<meta name="date" content="2017-03-26">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -333,27 +333,140 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 10</span> Functions: Caching Data</h1>
 <div id="set_cache" class="section level2">
 <h2><span class="header-section-number">10.1</span> <code>set_cache()</code></h2>
+<h4>
+<em>Cache a vector in the graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Place any in the cache of a graph object of class <code>dgr_graph</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>name</code></strong> an optional name for the cached vector.</p>
+<p><strong><code>to_cache</code></strong> any vector or data frame.</p>
+<p><strong><code>col</code></strong> if a data frame is provided in <code>to_cache</code> then a column name from that data frame must provided here.</p>
 </div>
 <div id="get_cache" class="section level2">
 <h2><span class="header-section-number">10.2</span> <code>get_cache()</code></h2>
+<h4>
+<em>Get a cached vector from a graph object</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Get the vector cached in a graph object of class <code>dgr_graph</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>name</code></strong> the name of the object to extract from the cache. If none supplied, the most recent object added to the cache will be returned.</p>
 </div>
 <div id="cache_node_attrs" class="section level2">
 <h2><span class="header-section-number">10.3</span> <code>cache_node_attrs()</code></h2>
+<h4>
+<em>Cache node attributes in the graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code>, get node attribute properties for one or more nodes and cache those values in the graph for later retrieval using <code>get_cache</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>node_attr</code></strong> the node attribute from which to obtain values.</p>
+<p><strong><code>name</code></strong> an optional name for the cached vector.</p>
+<p><strong><code>mode</code></strong> a option to recast the returned vector of node attribute value as <code>numeric</code> or <code>character</code>.</p>
+<p><strong><code>nodes</code></strong> an optional vector of node IDs for filtering the list of nodes present in the graph.</p>
 </div>
 <div id="cache_edge_attrs" class="section level2">
 <h2><span class="header-section-number">10.4</span> <code>cache_edge_attrs()</code></h2>
+<h4>
+<em>Cache edge attributes in the graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code>, get edge attribute properties for one or more edges and cache those values in the graph for later retrieval using <code>get_cache</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>edge_attr</code></strong> the edge attribute from which to obtain values.</p>
+<p><strong><code>name</code></strong> an optional name for the cached vector.</p>
+<p><strong><code>mode</code></strong> a option to recast the returned vector of edge attribute value as <code>numeric</code> or <code>character</code>.</p>
+<p><strong><code>from</code></strong> an optional vector of node IDs from which the edge is outgoing for filtering the list of edges present in the graph.</p>
+<p><strong><code>to</code></strong> an optional vector of node IDs to which the edge is incoming for filtering the list of edges present in the graph.</p>
 </div>
 <div id="cache_node_attrs_ws" class="section level2">
 <h2><span class="header-section-number">10.5</span> <code>cache_node_attrs_ws()</code></h2>
+<h4>
+<em>Cache node attributes (based on a selection of nodes) in the graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code>, get node attribute properties for nodes available in a selection and cache those values in the graph for later retrieval using <code>get_cache</code>.</p>
+<p>Selections of nodes can be performed using the following <code>select_...</code> functions: <code>select_nodes()</code>, <code>select_last_nodes_created()</code>, <code>select_nodes_by_degree()</code>, <code>select_nodes_by_id()</code>, or <code>select_nodes_in_neighborhood()</code>. Selections of nodes can also be performed using the following traversal functions: (<code>trav_...</code>): <code>trav_out()</code>, <code>trav_in()</code>, <code>trav_both()</code>, <code>trav_in_node()</code>, <code>trav_out_node()</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>node_attr</code></strong> the node attribute from which to obtain values.</p>
+<p><strong><code>name</code></strong> an optional name for the cached vector.</p>
+<p><strong><code>mode</code></strong> a option to recast the returned vector of node attribute value as <code>numeric</code> or <code>character</code>.</p>
 </div>
 <div id="cache_edge_attrs_ws" class="section level2">
 <h2><span class="header-section-number">10.6</span> <code>cache_edge_attrs_ws()</code></h2>
+<h4>
+<em>Cache edge attributes (based on a selection of edges) in the graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code>, get edge attribute properties for edges available in a selection and cache those values in the graph for later retrieval using <code>get_cache</code>.</p>
+<p>Selections of edges can be performed using the following <code>select_...</code> functions: <code>select_edges()</code>, <code>select_last_edge()</code>, or <code>select_edges_by_node_id()</code>. Selections of edges can also be performed using the following traversal functions: <code>trav_out_edge()</code>, <code>trav_in_edge()</code>, or <code>trav_both_edge()</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>edge_attr</code></strong> the edge attribute from which to obtain values.</p>
+<p><strong><code>name</code></strong> an optional name for the cached vector.</p>
+<p><strong><code>mode</code></strong> a option to recast the returned vector of edge attribute value as <code>numeric</code> or <code>character</code>.</p>
 </div>
 <div id="cache_node_count_ws" class="section level2">
 <h2><span class="header-section-number">10.7</span> <code>cache_node_count_ws()</code></h2>
+<h4>
+<em>Cache a count of nodes (available in a selection) in the graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code>, get a count of nodes available in a selection and cache that value in the graph for later retrieval using <code>get_cache</code>.</p>
+<p>Selections of nodes can be performed using the following <code>select_...</code> functions: <code>select_nodes()</code>, <code>select_last_nodes_created()</code>, <code>select_nodes_by_degree()</code>, <code>select_nodes_by_id()</code>, or <code>select_nodes_in_neighborhood()</code>. Selections of nodes can also be performed using the following traversal functions: (<code>trav_...</code>): <code>trav_out()</code>, <code>trav_in()</code>, <code>trav_both()</code>, <code>trav_in_node()</code>, <code>trav_out_node()</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>name</code></strong> an optional name for the cached vector.</p>
 </div>
 <div id="cache_edge_count_ws" class="section level2">
 <h2><span class="header-section-number">10.8</span> <code>cache_edge_count_ws()</code></h2>
+<h4>
+<em>Cache a count of edges (available in a selection) in the graph</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>From a graph object of class <code>dgr_graph</code>, get a count of edges available in a selection and cache that value in the graph for later retrieval using <code>get_cache</code>.</p>
+<p>Selections of edges can be performed using the following <code>select_...</code> functions: <code>select_edges()</code>, <code>select_last_edge()</code>, or <code>select_edges_by_node_id()</code>. Selections of edges can also be performed using the following traversal functions: <code>trav_out_edge()</code>, <code>trav_in_edge()</code>, or <code>trav_both_edge()</code>.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p><strong><code>name</code></strong> an optional name for the cached vector.</p>
 
 </div>
 </div>
