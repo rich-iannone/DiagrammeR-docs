@@ -4,25 +4,148 @@
 
 ## `set_cache()`
 
+<h4><em>Cache a vector in the graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Place any in the cache of a graph object of class `dgr_graph`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`name`** an optional name for the cached vector.
+
+**`to_cache`** any vector or data frame.
+
+**`col`** if a data frame is provided in `to_cache` then a column name from that data frame must provided here.
 
 ## `get_cache()`
 
+<h4><em>Get a cached vector from a graph object</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Get the vector cached in a graph object of class `dgr_graph`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class
+`dgr_graph`.
+
+**`name`** the name of the object to extract from the cache. If none supplied, the most recent object added to the cache will be returned.
 
 ## `cache_node_attrs()`
 
+<h4><em>Cache node attributes in the graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph`, get node attribute properties for one or more nodes and cache those values in the graph for later retrieval using `get_cache`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class
+`dgr_graph`.
+
+**`node_attr`** the node attribute from which to obtain values.
+
+**`name`** an optional name for the cached vector.
+
+**`mode`** a option to recast the returned vector of node attribute value as `numeric` or `character`.
+
+**`nodes`** an optional vector of node IDs for filtering the list of nodes present in the graph.
 
 ## `cache_edge_attrs()`
 
+<h4><em>Cache edge attributes in the graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph`, get edge attribute properties for one or more edges and cache those values in the graph for later retrieval using `get_cache`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`edge_attr`** the edge attribute from which to obtain values.
+
+**`name`** an optional name for the cached vector.
+
+**`mode`** a option to recast the returned vector of edge attribute value as `numeric` or `character`.
+
+**`from`** an optional vector of node IDs from which the edge is outgoing for filtering the list of edges present in the graph.
+
+**`to`** an optional vector of node IDs to which the edge is incoming for filtering the list of edges present in the graph.
 
 ## `cache_node_attrs_ws()`
 
+<h4><em>Cache node attributes (based on a selection of nodes) in the graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph`, get node attribute properties for nodes available in a selection and cache those values in the graph for later retrieval using `get_cache`.
+
+Selections of nodes can be performed using the following `select_...` functions: `select_nodes()`, `select_last_nodes_created()`, `select_nodes_by_degree()`, `select_nodes_by_id()`, or `select_nodes_in_neighborhood()`. Selections of nodes can also be performed using the following traversal functions: (`trav_...`): `trav_out()`, `trav_in()`, `trav_both()`, `trav_in_node()`, `trav_out_node()`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`node_attr`** the node attribute from which to obtain values.
+
+**`name`** an optional name for the cached vector.
+
+**`mode`** a option to recast the returned vector of node attribute value as `numeric` or `character`.
 
 ## `cache_edge_attrs_ws()`
 
+<h4><em>Cache edge attributes (based on a selection of edges) in the graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph`, get edge attribute properties for edges available in a selection and cache those values in the graph for later retrieval using `get_cache`.
+
+Selections of edges can be performed using the following `select_...` functions: `select_edges()`, `select_last_edge()`, or `select_edges_by_node_id()`. Selections of edges can also be performed using the following traversal functions: `trav_out_edge()`, `trav_in_edge()`, or `trav_both_edge()`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`edge_attr`** the edge attribute from which to obtain values.
+
+**`name`** an optional name for the cached vector.
+
+**`mode`** a option to recast the returned vector of edge attribute value as `numeric` or `character`.
 
 ## `cache_node_count_ws()`
 
+<h4><em>Cache a count of nodes (available in a selection) in the graph</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph`, get a count of nodes available in a selection and cache that value in the graph for later retrieval using `get_cache`.
+
+Selections of nodes can be performed using the following `select_...` functions: `select_nodes()`, `select_last_nodes_created()`, `select_nodes_by_degree()`, `select_nodes_by_id()`, or `select_nodes_in_neighborhood()`. Selections of nodes can also be performed using the following traversal functions: (`trav_...`): `trav_out()`, `trav_in()`, `trav_both()`, `trav_in_node()`, `trav_out_node()`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`name`** an optional name for the cached vector.
 
 ## `cache_edge_count_ws()`
 
+<h4><em>Cache a count of edges (available in a selection) in the graph</em></h4>
 
+<h5>DESCRIPTION</h5>
+
+From a graph object of class `dgr_graph`, get a count of edges available in a selection and cache that value in the graph for later retrieval using `get_cache`.
+
+Selections of edges can be performed using the following `select_...` functions: `select_edges()`, `select_last_edge()`, or `select_edges_by_node_id()`. Selections of edges can also be performed using the following traversal functions: `trav_out_edge()`, `trav_in_edge()`, or `trav_both_edge()`.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object of class `dgr_graph`.
+
+**`name`** an optional name for the cached vector.
