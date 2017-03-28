@@ -4,6 +4,8 @@
 
 ## `trav_out()`
 
+<img src="diagrams/traversals/trav_out.svg">
+
 <h4><em>Traverse from one or more selected nodes onto adjacent, outward nodes</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -21,6 +23,8 @@ From a graph object of class `dgr_graph` move along outward edges from one or mo
 **`agg`** if a node attribute is provided to `copy_attrs_from`, then an aggregation function is required since there may be cases where multiple edge attribute values will be passed onto the traversed node(s). To pass only a single value, the following aggregation functions can be used: `sum`, `min`, `max`, `mean`, or `median`.
 
 ## `trav_in()`
+
+<img src="diagrams/traversals/trav_in.svg">
 
 <h4><em>Traverse from one or more selected nodes onto adjacent, inward nodes</em></h4>
 
@@ -40,6 +44,8 @@ From a graph object of class `dgr_graph` move along inward edges from one or mor
 
 ## `trav_both()`
 
+<img src="diagrams/traversals/trav_both.svg">
+
 <h4><em>Traverse from one or more selected nodes onto neighboring nodes</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -58,6 +64,8 @@ From a graph object of class `dgr_graph` move from one or more nodes present in 
 
 ## `trav_out_edge()`
 
+<img src="diagrams/traversals/trav_out_edge.svg">
+
 <h4><em>Traverse from one or more selected nodes onto adjacent, outward edges</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -74,6 +82,8 @@ From a graph object of class `dgr_graph` move to outgoing edges from a selection
 
 ## `trav_in_edge()`
 
+<img src="diagrams/traversals/trav_in_edge.svg">
+
 <h4><em>Traverse from one or more selected nodes onto adjacent, inward edges</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -89,6 +99,8 @@ From a graph object of class `dgr_graph` move to incoming edges from a selection
 **`copy_attrs_from`** providing a node attribute name will copy those node attribute values to the traversed edges. If the edge attribute already exists, the values will be merged to the traversed edges; otherwise, a new edge attribute will be created.
 
 ## `trav_both_edge()`
+
+<img src="diagrams/traversals/trav_both_edge.svg">
 
 <h4><em>Traverse from one or more selected nodes onto adjacent edges</em></h4>
 
@@ -108,6 +120,8 @@ From a graph object of class `dgr_graph` move to adjacent edges from a selection
 
 ## `trav_out_node()`
 
+<img src="diagrams/traversals/trav_out_node.svg">
+
 <h4><em>Traverse from one or more selected edges onto adjacent, outward nodes</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -126,6 +140,8 @@ From a graph object of class `dgr_graph` with an active selection of edges move 
 
 ## `trav_in_node()`
 
+<img src="diagrams/traversals/trav_in_node.svg">
+
 <h4><em>Traverse from one or more selected edges onto adjacent, inward nodes</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -143,6 +159,8 @@ From a graph object of class `dgr_graph` move along inward edges from one or mor
 **`agg`** if an edge attribute is provided to `copy_attrs_from`, then an aggregation function is required since there may be cases where multiple edge attribute values will be passed onto the traversed node(s). To pass only a single value, the following aggregation functions can be used: `sum`, `min`, `max`, `mean`, or `median`.
 
 ## `trav_reverse_edge()`
+
+<img src="diagrams/traversals/trav_reverse_edge.svg">
 
 <h4><em>Select any reverse edges from a selection of edges</em></h4>
 
