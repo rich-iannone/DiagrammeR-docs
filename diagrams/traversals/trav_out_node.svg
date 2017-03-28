@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="772px" height="80px" viewBox="0 0 772 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>trav_out_node</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="-6" y="2" width="784" height="76"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="784" height="76" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <linearGradient x1="14.998694%" y1="13.8375292%" x2="87.3959626%" y2="88.282251%" id="linearGradient-3">
+            <stop stop-color="#DBFAF0" offset="0%"></stop>
+            <stop stop-color="#E8EBF9" offset="97.322136%"></stop>
+            <stop stop-color="#E8EAF9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Graph-Functions---traversals" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <use id="Rectangle" stroke="#979797" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+        <g id="selected_unselected_nodes" transform="translate(645.000000, 19.000000)">
+            <ellipse id="small_icon__node-copy-3" fill="#50C1E3" cx="5.73889961" cy="9.75" rx="5.73889961" ry="5.75"></ellipse>
+            <text id="unselected" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="15">unselected</tspan>
+            </text>
+            <ellipse id="small_icon__node-copy-5" fill="#BD8DE8" cx="5.73889961" cy="31.75" rx="5.73889961" ry="5.75"></ellipse>
+            <text id="selected" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="37">selected</tspan>
+            </text>
+        </g>
+        <g id="selected_unselected_edges" transform="translate(7.000000, 32.000000)">
+            <text id="starting-edge" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="15">starting edge</tspan>
+            </text>
+            <path d="M0,13.0381803 L11.2369576,6" id="small_icon_edge-copy-31" stroke="#BD8DE8" stroke-width="2" stroke-linecap="square"></path>
+        </g>
+        <g id="trav_out_node" transform="translate(203.000000, 18.000000)">
+            <g id="small_icon__trav_out_node" transform="translate(0.000000, 5.000000)">
+                <circle id="small_icon__node-copy-25" fill="#50C1E3" cx="114.70073" cy="19.5" r="9"></circle>
+                <polygon id="Triangle-67-Copy-5" stroke="#BD8DE8" stroke-linecap="square" fill="#FFFFFF" points="98.8561242 23.9942522 98.8561242 21.0607257 75.5839551 21.0607257 75.5839551 17.9807393 98.8561242 17.9807394 98.8561242 15.0057478 107.844629 19.5"></polygon>
+                <path d="M68.7326255,28.5 C73.6935925,28.5 77.715251,24.4705627 77.715251,19.5 C77.715251,14.5294373 73.6935925,10.5 68.7326255,10.5 C63.7716584,10.5 59.75,14.5294373 59.75,19.5 C59.75,24.4705627 63.7716584,28.5 68.7326255,28.5 Z" id="small_icon__node-copy-41" fill="#50C1E3"></path>
+                <g id="graph-object" transform="translate(0.750000, 0.000000)">
+                    <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
+                    <rect id="graph-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="4" y="14" width="32" height="13" rx="4"></rect>
+                    <text id="graph-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
+                        <tspan x="6.5" y="23">graph</tspan>
+                    </text>
+                </g>
+                <path d="M55.25,0.5 L55.25,40" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                <path d="M128.25,0.5 L128.25,40" id="Line-Copy" stroke="#CACACA" stroke-linecap="square"></path>
+                <path d="M55.0156946,19.5124969 L46.1945516,19.5124969" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+            </g>
+            <g id="small_icon__trav_out_node-copy" transform="translate(239.000000, 5.000000)">
+                <circle id="small_icon__node-copy-25" fill="#50C1E3" cx="114.70073" cy="19.5" r="9"></circle>
+                <path d="M68.7326255,28.5 C73.6935925,28.5 77.715251,24.4705627 77.715251,19.5 C77.715251,14.5294373 73.6935925,10.5 68.7326255,10.5 C63.7716584,10.5 59.75,14.5294373 59.75,19.5 C59.75,24.4705627 63.7716584,28.5 68.7326255,28.5 Z" id="small_icon__node-copy-41" fill="#BD8DE8"></path>
+                <path d="M104.019224,19 L78,19" id="Line-Copy-15" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+                <polygon id="Triangle-67-Copy-4" stroke="#50E3C2" stroke-linecap="square" fill="#50E3C2" points="107 19 101 22 101 16"></polygon>
+                <g id="graph-object" transform="translate(0.750000, 0.000000)">
+                    <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
+                    <rect id="graph-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="4" y="14" width="32" height="13" rx="4"></rect>
+                    <text id="graph-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
+                        <tspan x="6.5" y="23">graph</tspan>
+                    </text>
+                </g>
+                <path d="M55.25,0.5 L55.25,40" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+                <path d="M128.25,0.5 L128.25,40" id="Line-Copy" stroke="#CACACA" stroke-linecap="square"></path>
+                <path d="M55.0156946,19.5124969 L46.1945516,19.5124969" id="Line" stroke="#CACACA" stroke-linecap="square"></path>
+            </g>
+            <g id="invert_selection" transform="translate(142.000000, 20.000000)" stroke="#666666">
+                <g id="Wireframe-Line-01">
+                    <g>
+                        <polyline id="arrowhead" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="76 2 84 10 76 18"></polyline>
+                        <path d="M83,10 L0,10" id="Line" stroke-width="2"></path>
+                    </g>
+                </g>
+            </g>
+            <g id="Arrow-05" transform="translate(144.000000, 0.000000)">
+                <path d="M8.59259259,22.2264151 C13.2282049,22.2264151 16.9861111,18.4757439 16.9861111,13.8490566 C16.9861111,9.22236927 13.2282049,5.47169811 8.59259259,5.47169811 C3.95698032,5.47169811 0.199074074,9.22236927 0.199074074,13.8490566 C0.199074074,18.4757439 3.95698032,22.2264151 8.59259259,22.2264151 Z" id="Oval-158" stroke="#BD8DE8" stroke-width="2" fill-opacity="0.2" fill="#BD8DE7"></path>
+                <path d="M59.8611111,22.4528302 C64.4967234,22.4528302 68.2546296,18.702159 68.2546296,14.0754717 C68.2546296,9.44878436 64.4967234,5.69811321 59.8611111,5.69811321 C55.2254988,5.69811321 51.4675926,9.44878436 51.4675926,14.0754717 C51.4675926,18.702159 55.2254988,22.4528302 59.8611111,22.4528302 Z" id="Oval-158-Copy" stroke="#50C1E3" stroke-width="2" fill-opacity="0.204030797" fill="#50C1E3"></path>
+                <g id="Group-3" transform="translate(17.000000, 11.000000)">
+                    <path d="M0,3.25 L27,3.25" id="Stroke-05" stroke="#50C1E3" stroke-width="2"></path>
+                    <polyline id="Arrow-head-05" fill="#50C1E3" points="23.2222222 6.04998779 25.5125718 3.17498779 23.2222222 0.299987793 36 3.17498779 23.2222222 6.04998779"></polyline>
+                </g>
+                <path d="M15.8535683,4.06231638 C16.8311585,2.67026247 17.7521478,0.51320661 23.1450247,0.51320661 C28.5379017,0.51320661 31.0852404,7.23352122 31.0387381,11.8245956" id="Line" stroke="#979797" stroke-linecap="square"></path>
+                <polygon id="Triangle-1" stroke="#979797" fill="#979797" transform="translate(16.549683, 3.822567) rotate(103.000000) translate(-16.549683, -3.822567) " points="16.5496833 2.59873065 18.1376462 5.04640297 14.9617203 5.04640297"></polygon>
+            </g>
+            <text id="2" font-family="HelveticaNeue, Helvetica Neue" font-size="12" font-weight="normal" letter-spacing="-0.364583313" fill="#4A4A4A">
+                <tspan x="149.346292" y="18">2</tspan>
+            </text>
+            <text id="1" font-family="HelveticaNeue, Helvetica Neue" font-size="10" font-weight="normal" letter-spacing="-0.364583313" fill="#4A4A4A">
+                <tspan x="171.902292" y="25">1</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
