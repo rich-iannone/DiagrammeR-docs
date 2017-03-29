@@ -4,6 +4,8 @@
 
 ## `node_info()`
 
+<img src="diagrams/inspection/node_info.svg">
+
 <h4><em>Get detailed information on nodes</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -15,6 +17,8 @@ Obtain a data frame with detailed information on nodes and their interrelationsh
 **`graph`** a graph object of class `dgr_graph`.
 
 ## `edge_info()`
+
+<img src="diagrams/inspection/edge_info.svg">
 
 <h4><em>Get detailed information on edges</em></h4>
 
@@ -28,6 +32,8 @@ Obtain a data frame with detailed information on edges and their interrelationsh
 
 ## `graph_info()`
 
+<img src="diagrams/inspection/graph_info.svg">
+
 <h4><em>Get metrics for a graph</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -39,6 +45,8 @@ Get a data frame with metrics for a graph.
 **`graph`** a graph object of class `dgr_graph`.
 
 ## `get_node_ids()`
+
+<img src="diagrams/inspection/get_node_ids.svg">
 
 <h4><em>Get a vector of node ID values</em></h4>
 
@@ -54,6 +62,8 @@ Obtain a vector of node ID values from a graph object or a node data frame. An o
 
 ## `get_edge_ids()`
 
+<img src="diagrams/inspection/get_edge_ids.svg">
+
 <h4><em>Get a vector of edge ID values</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -67,6 +77,8 @@ Obtain a vector of edge ID values from a graph object. An optional filter by edg
 **`conditions`** an option to use filtering conditions for the retrieval of edges.
 
 ## `get_edges()`
+
+<img src="diagrams/inspection/get_edges.svg">
 
 <h4><em>Get node IDs associated with edges</em></h4>
 
