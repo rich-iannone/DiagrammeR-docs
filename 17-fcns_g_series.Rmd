@@ -4,36 +4,137 @@
 
 ## `create_series()`
 
+<h4><em>Create a graph series object</em></h4>
 
+<h5>DESCRIPTION</h5>
+
+Create a graph series object for the storage of multiple graphs across a sequential or temporal one-dimensional array.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object to add to the new graph series object.
+
+**`series_name`** an optional name to ascribe to the series.
+
+**`series_type`** either a `sequential` type (the default) or a `temporal` type (which requires date-time strings and time zone codes to be supplied).
+
+**`series_scripts`** a vector of **R** scripts or paths to **R** scripts.
 
 ## `add_to_series()`
 
+<h4><em>Add graph object to a graph series object</em></h4>
 
+<h5>DESCRIPTION</h5>
+
+Add a graph object to an extant graph series object for storage of multiple graphs across a sequential or temporal one-dimensional array.
+
+<h5>PARAMETERS</h5>
+
+**`graph`** a graph object to add to the graph series object.
+
+**`graph_series`** a graph series object to which the graph object will be added.
 
 ## `remove_from_series()`
 
+<h4><em>Remove a graph from a graph series</em></h4>
 
+<h5>DESCRIPTION</h5>
+
+Remove a single graph object from an set of graph objects contained within a graph series object.
+
+<h5>PARAMETERS</h5>
+
+**`graph_series`** a graph series object from which the graph object will be removed.
+
+**`index`** the index of the graph object to be removed from the graph series object.
 
 ## `subset_series()`
 
+<h4><em>Subset a graph series object</em></h4>
 
+<h5>DESCRIPTION</h5>
+
+Subsetting a graph series by the graphs' index positions in the graph series or through selection via graphs' date-time attributes.
+
+<h5>PARAMETERS</h5>
+
+**`graph_series`** a graph series object of type `dgr_graph_1D`.
+
+**`by`** either `number`, which allows for subsetting of the graph series by graph indices, or `time` which for graph series objects of type `temporal` allows for a subsetting of graphs by a date-time or time range.
+
+**`values`** where the subsetting of the graph series by to occur via graph indices (where `by = number`), provide a vector of those indices; when subsetting by time (where `by = time`), a range of times can be provided as a vector.
+
+**`tz`** the time zone (`tz`) corresponding to dates or date-time string provided in `values` (if `by = "date"`).
 
 ## `get_graph_from_series()`
 
+<h4><em>Get a graph available in a series</em></h4>
 
+<h5>DESCRIPTION</h5>
+
+Using a graph series object of type `dgr_graph_1D`, get a graph object.
+
+<h5>PARAMETERS</h5>
+
+**`graph_series`** a graph series object of type `dgr_graph_1D`.
+
+**`graph_no`** the index of the graph in the graph series.
 
 ## `trigger_script()`
 
+<h4><em>Trigger a script embedded in a graph series object</em></h4>
 
+<h5>DESCRIPTION</h5>
+
+Run an **R** script located inside or referenced from the graph series object in order to migrate the state of one or more contained graphs.
+
+<h5>PARAMETERS</h5>
+
+**`graph_series`** a graph series object of type `dgr_graph_1D`.
+
+**`script`** the index of the script character string or path reference held in in the graph series.
 
 ## `series_info()`
 
+<h4><em>Get information on a graph series</em></h4>
 
+<h5>DESCRIPTION</h5>
+
+Obtain a data frame with information on the graphs within a graph series.
+
+<h5>PARAMETERS</h5>
+
+**`graph_series`** a graph series object of type `dgr_graph_1D`.
 
 ## `graph_count()`
 
+<h4><em>Count graphs in a graph series object</em></h4>
 
+<h5>DESCRIPTION</h5>
+
+Counts the total number of graphs in a graph series object.
+
+<h5>PARAMETERS</h5>
+
+**`graph_series`** a graph series object of type `dgr_graph_1D`
 
 ## `render_graph_from_series()`
 
+<h4><em>Render a graph available in a series</em></h4>
+
+<h5>DESCRIPTION</h5>
+
+Using a graph series object of type `dgr_graph_1D`, either render graph in the Viewer or output in various formats.
+
+<h5>PARAMETERS</h5>
+
+**`graph_series`** a graph series object of type `dgr_graph_1D`.
+
+**`graph_no`** the index of the graph in the graph series.
+
+**`output`** a string specifying the output type; `graph` (the default) renders the graph using the `grViz` function, `DOT` outputs DOT code for the graph, and `SVG` provides SVG code for the rendered graph.
+
+**`width`** an optional parameter for specifying the width of the resulting graphic in pixels.
+
+**`height`** an optional parameter for specifying the height of the resulting graphic in pixels.
 
