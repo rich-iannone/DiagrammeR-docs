@@ -26,7 +26,7 @@
 <meta name="author" content="Richard Iannone">
 
 
-<meta name="date" content="2017-03-28">
+<meta name="date" content="2017-03-29">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -333,30 +333,143 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 12</span> Functions: Graph Series</h1>
 <div id="create_series" class="section level2">
 <h2><span class="header-section-number">12.1</span> <code>create_series()</code></h2>
+<h4>
+<em>Create a graph series object</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Create a graph series object for the storage of multiple graphs across a sequential or temporal one-dimensional array.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object to add to the new graph series object.</p>
+<p><strong><code>series_name</code></strong> an optional name to ascribe to the series.</p>
+<p><strong><code>series_type</code></strong> either a <code>sequential</code> type (the default) or a <code>temporal</code> type (which requires date-time strings and time zone codes to be supplied).</p>
+<p><strong><code>series_scripts</code></strong> a vector of <strong>R</strong> scripts or paths to <strong>R</strong> scripts.</p>
 </div>
 <div id="add_to_series" class="section level2">
 <h2><span class="header-section-number">12.2</span> <code>add_to_series()</code></h2>
+<h4>
+<em>Add graph object to a graph series object</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Add a graph object to an extant graph series object for storage of multiple graphs across a sequential or temporal one-dimensional array.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph</code></strong> a graph object to add to the graph series object.</p>
+<p><strong><code>graph_series</code></strong> a graph series object to which the graph object will be added.</p>
 </div>
 <div id="remove_from_series" class="section level2">
 <h2><span class="header-section-number">12.3</span> <code>remove_from_series()</code></h2>
+<h4>
+<em>Remove a graph from a graph series</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Remove a single graph object from an set of graph objects contained within a graph series object.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph_series</code></strong> a graph series object from which the graph object will be removed.</p>
+<p><strong><code>index</code></strong> the index of the graph object to be removed from the graph series object.</p>
 </div>
 <div id="subset_series" class="section level2">
 <h2><span class="header-section-number">12.4</span> <code>subset_series()</code></h2>
+<h4>
+<em>Subset a graph series object</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Subsetting a graph series by the graphs’ index positions in the graph series or through selection via graphs’ date-time attributes.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph_series</code></strong> a graph series object of type <code>dgr_graph_1D</code>.</p>
+<p><strong><code>by</code></strong> either <code>number</code>, which allows for subsetting of the graph series by graph indices, or <code>time</code> which for graph series objects of type <code>temporal</code> allows for a subsetting of graphs by a date-time or time range.</p>
+<p><strong><code>values</code></strong> where the subsetting of the graph series by to occur via graph indices (where <code>by = number</code>), provide a vector of those indices; when subsetting by time (where <code>by = time</code>), a range of times can be provided as a vector.</p>
+<p><strong><code>tz</code></strong> the time zone (<code>tz</code>) corresponding to dates or date-time string provided in <code>values</code> (if <code>by = &quot;date&quot;</code>).</p>
 </div>
 <div id="get_graph_from_series" class="section level2">
 <h2><span class="header-section-number">12.5</span> <code>get_graph_from_series()</code></h2>
+<h4>
+<em>Get a graph available in a series</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Using a graph series object of type <code>dgr_graph_1D</code>, get a graph object.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph_series</code></strong> a graph series object of type <code>dgr_graph_1D</code>.</p>
+<p><strong><code>graph_no</code></strong> the index of the graph in the graph series.</p>
 </div>
 <div id="trigger_script" class="section level2">
 <h2><span class="header-section-number">12.6</span> <code>trigger_script()</code></h2>
+<h4>
+<em>Trigger a script embedded in a graph series object</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Run an <strong>R</strong> script located inside or referenced from the graph series object in order to migrate the state of one or more contained graphs.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph_series</code></strong> a graph series object of type <code>dgr_graph_1D</code>.</p>
+<p><strong><code>script</code></strong> the index of the script character string or path reference held in in the graph series.</p>
 </div>
 <div id="series_info" class="section level2">
 <h2><span class="header-section-number">12.7</span> <code>series_info()</code></h2>
+<h4>
+<em>Get information on a graph series</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Obtain a data frame with information on the graphs within a graph series.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph_series</code></strong> a graph series object of type <code>dgr_graph_1D</code>.</p>
 </div>
 <div id="graph_count" class="section level2">
 <h2><span class="header-section-number">12.8</span> <code>graph_count()</code></h2>
+<h4>
+<em>Count graphs in a graph series object</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Counts the total number of graphs in a graph series object.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph_series</code></strong> a graph series object of type <code>dgr_graph_1D</code></p>
 </div>
 <div id="render_graph_from_series" class="section level2">
 <h2><span class="header-section-number">12.9</span> <code>render_graph_from_series()</code></h2>
+<h4>
+<em>Render a graph available in a series</em>
+</h4>
+<h5>
+DESCRIPTION
+</h5>
+<p>Using a graph series object of type <code>dgr_graph_1D</code>, either render graph in the Viewer or output in various formats.</p>
+<h5>
+PARAMETERS
+</h5>
+<p><strong><code>graph_series</code></strong> a graph series object of type <code>dgr_graph_1D</code>.</p>
+<p><strong><code>graph_no</code></strong> the index of the graph in the graph series.</p>
+<p><strong><code>output</code></strong> a string specifying the output type; <code>graph</code> (the default) renders the graph using the <code>grViz</code> function, <code>DOT</code> outputs DOT code for the graph, and <code>SVG</code> provides SVG code for the rendered graph.</p>
+<p><strong><code>width</code></strong> an optional parameter for specifying the width of the resulting graphic in pixels.</p>
+<p><strong><code>height</code></strong> an optional parameter for specifying the height of the resulting graphic in pixels.</p>
 
 </div>
 </div>
