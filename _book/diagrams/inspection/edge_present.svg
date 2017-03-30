@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="772px" height="80px" viewBox="0 0 772 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>edge_present</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="-6" y="2" width="784" height="76"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="784" height="76" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <linearGradient x1="14.998694%" y1="13.8375292%" x2="87.3959626%" y2="88.282251%" id="linearGradient-3">
+            <stop stop-color="#DBFAF0" offset="0%"></stop>
+            <stop stop-color="#E8EBF9" offset="97.322136%"></stop>
+            <stop stop-color="#E8EAF9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Graph-Functions---inspection" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <use id="Rectangle-Copy-5" stroke="#979797" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+        <g id="graph-object" transform="translate(240.000000, 20.000000)">
+            <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
+            <rect id="graph-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="4" y="14" width="32" height="13" rx="4"></rect>
+            <text id="graph-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
+                <tspan x="6.5" y="23">graph</tspan>
+            </text>
+        </g>
+        <g id="invert_selection" transform="translate(337.000000, 30.000000)" stroke="#666666">
+            <g id="Wireframe-Line-01">
+                <g>
+                    <polyline id="arrowhead" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="97 2 105 10 97 18"></polyline>
+                    <path d="M104,10 L0,10" id="Line" stroke-width="2"></path>
+                </g>
+            </g>
+        </g>
+        <g id="Group-2-Copy-13" transform="translate(289.000000, 21.000000)" fill-rule="nonzero">
+            <g id="Mind-Map_bfbfbf" transform="translate(3.000000, 1.000000)" fill-opacity="0.43543365" fill="#288872">
+                <path d="M3.52193711,2.42694149 C2.75295774,3.09197539 3.45247935,2.52431499 2.33832146,3.4204527 C1.60961794,3.97738092 2.58889996,3.11368094 0.506947269,4.82035012 C1.06505879,5.6736885 2.02917124,6.24 3.12,6.24 C3.79270705,6.24 4.41292826,6.02024696 4.92375,5.655 L8.97,9.7175 C8.23630444,10.6142759 7.8,11.7551346 7.8,13 C7.8,14.0290358 8.11062096,14.9867 8.62875,15.795 L5.21625,18.4925 C4.66155498,17.9881068 3.92482932,17.68 3.12,17.68 C1.40303082,17.68 0,19.0830307 0,20.8 C0,22.5169693 1.40303082,23.92 3.12,23.92 C4.83696918,23.92 6.24,22.5169693 6.24,20.8 C6.24,20.2556099 6.09737908,19.7515557 5.85,19.305 L9.27875,16.6075 C10.2246544,17.5824662 11.538502,18.2 13,18.2 C13.6909687,18.2 14.3462114,18.0721642 14.95,17.82625 L16.315,20.41 C15.5690392,20.9812746 15.08,21.8726451 15.08,22.88 C15.08,24.5969693 16.4830307,26 18.2,26 C19.9169693,26 21.32,24.5969693 21.32,22.88 C21.32,21.1630307 19.9169693,19.76 18.2,19.76 C17.8601831,19.76 17.5317792,19.8210272 17.225,19.9225 L15.86,17.33875 C16.8419592,16.6903558 17.5910826,15.7187763 17.95625,14.57625 L19.76,14.95 C19.758272,14.9924096 19.76,15.0371827 19.76,15.08 C19.76,16.7969693 21.1630307,18.2 22.88,18.2 C24.5969693,18.2 26,16.7969693 26,15.08 C26,13.3630307 24.5969693,11.96 22.88,11.96 C21.5618681,11.96 20.4265454,12.7814549 19.97125,13.9425 L18.1675,13.5525 C18.1864114,13.3726148 18.2,13.1848007 18.2,13 C18.2,10.9540257 17.0000022,9.18421192 15.275,8.33625 L16.07125,6.19125 C16.253615,6.2247172 16.4482911,6.24 16.64,6.24 C18.3569693,6.24 19.76,4.83696918 19.76,3.12 C19.76,2.98530338 19.7498567,2.85714459 19.7304694,2.73490878 C18.8993426,1.91517615 18.1467778,0.827472285 16.882533,0.0881684535 C16.7988235,0.0813609298 16.7253967,0 16.64,0 C14.9230307,0 13.52,1.40303082 13.52,3.12 C13.52,4.27208148 14.1618802,5.27713524 15.09625,5.8175 L14.3,7.97875 C13.8821452,7.87003204 13.4513444,7.8 13,7.8 C11.7544393,7.8 10.6141563,8.23609436 9.7175,8.97 L5.655,4.92375 C6.02024696,4.41292826 6.24,3.79270705 6.24,3.12 C6.24,2.2006259 5.83772157,1.37126452 5.20037155,0.799122713 C4.12649694,1.69902178 4.25648907,1.90618919 3.52193711,2.42694149 Z M3.62509876,1.85506056 C4.00377209,1.85506056 2.44703008,2.76850242 4.15739057,1.31384976 C4.78209664,1.67134489 5.2,2.34376186 5.2,3.12 C5.2,4.27491147 4.27491147,5.2 3.12,5.2 C2.22004891,5.2 1.45964909,4.63827504 1.16777439,3.84379896 C2.48085456,2.77923461 1.54509876,3.91617118 1.54509876,3.6612108 C2.282995,3.17568145 2.63824248,2.83906265 3.62509876,1.85506056 Z M16.64,1.04 C17.7949117,1.04 18.72,1.96508853 18.72,3.12 C18.72,4.27491147 17.7949117,5.2 16.64,5.2 C15.4850883,5.2 14.56,4.27491147 14.56,3.12 C14.56,1.96508853 15.4850883,1.04 16.64,1.04 Z M13,8.84 C15.3048901,8.84 17.16,10.6976438 17.16,13 C17.16,15.3052385 15.3052385,17.16 13,17.16 C10.6959143,17.16 8.84,15.3050992 8.84,13 C8.84,11.8817535 9.27929808,10.8703202 9.99375,10.12375 C10.0372483,10.0918591 10.0756091,10.0534983 10.1075,10.01 C10.8554191,9.28602168 11.8727939,8.84 13,8.84 Z M22.88,13 C24.0349117,13 24.96,13.9250883 24.96,15.08 C24.96,16.2349117 24.0349117,17.16 22.88,17.16 C21.7250883,17.16 20.8,16.2349117 20.8,15.08 C20.8,13.9250883 21.7250883,13 22.88,13 Z M3.12,18.72 C4.27491147,18.72 5.2,19.6450883 5.2,20.8 C5.2,21.9549117 4.27491147,22.88 3.12,22.88 C1.96508853,22.88 1.04,21.9549117 1.04,20.8 C1.04,19.6450883 1.96508853,18.72 3.12,18.72 Z M18.2,20.8 C19.3549117,20.8 20.28,21.7250883 20.28,22.88 C20.28,24.0349117 19.3549117,24.96 18.2,24.96 C17.0450883,24.96 16.12,24.0349117 16.12,22.88 C16.12,22.0910555 16.5507446,21.4128106 17.1925,21.06 C17.2090078,21.05539 17.2252777,21.0499667 17.24125,21.04375 C17.2477011,21.0404038 17.2510088,21.0307802 17.2575,21.0275 C17.2685193,21.0224636 17.2793593,21.0170436 17.29,21.01125 C17.5645886,20.8784425 17.8726522,20.8 18.2,20.8 Z" id="Shape"></path>
+            </g>
+            <g id="Search_bfbfbf" fill="#BFBFBF">
+                <path d="M14.627907,0 C6.55932902,0 0,6.58350345 0,14.6818182 C0,22.7801329 6.55932902,29.3636364 14.627907,29.3636364 C17.8198066,29.3636364 20.771911,28.3305969 23.1787791,26.5838068 L34.4992733,37.9190341 L36.9193314,35.4900568 L25.7332849,24.2357955 C27.9311761,21.66653 29.255814,18.3274976 29.255814,14.6818182 C29.255814,6.58350345 22.6964849,0 14.627907,0 Z M14.627907,1.72727273 C21.7664254,1.72727273 27.5348837,7.51699073 27.5348837,14.6818182 C27.5348837,21.8466456 21.7664254,27.6363636 14.627907,27.6363636 C7.48938856,27.6363636 1.72093023,21.8466456 1.72093023,14.6818182 C1.72093023,7.51699073 7.48938856,1.72727273 14.627907,1.72727273 Z" id="Shape"></path>
+            </g>
+        </g>
+        <g id="predecessors-copy-5" transform="translate(7.000000, 6.000000)">
+            <text id="the-ID-provided" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="0" y="30">the ID provided</tspan>
+            </text>
+            <text id="True-if:" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="0" y="13">True if:</tspan>
+            </text>
+            <text id="the-graph" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="0" y="64">the graph</tspan>
+            </text>
+            <path d="M81.0137502,45.25 L92.4,38" id="Line-Copy-29" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(87.000000, 42.000000) rotate(-180.000000) translate(-87.000000, -42.000000) "></path>
+            <text id="matches-a" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="0" y="47">matches a</tspan>
+            </text>
+            <text id="in" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="99" y="47">in</tspan>
+            </text>
+        </g>
+        <g id="Group-5-Copy-9" transform="translate(457.000000, 19.000000)">
+            <text id="ID-Copy-7" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
+                <tspan x="16" y="35">logical</tspan>
+            </text>
+            <g id="Group-5-Copy-2" transform="translate(18.000000, 14.000000)" font-size="7.5" font-family="Menlo-Regular, Menlo" font-weight="normal">
+                <text id="ID-Copy-2">
+                    <tspan x="0" y="7" fill="#666666">TRUE </tspan>
+                    <tspan x="22.5769043" y="7" font-family="Helvetica" fill="#ADADAD">or</tspan>
+                    <tspan x="29.2456055" y="7" fill="#666666"> FALSE</tspan>
+                </text>
+            </g>
+            <text id="VECTOR-Copy-2" transform="translate(6.000000, 20.500000) rotate(-90.000000) translate(-6.000000, -20.500000) " font-family="HelveticaNeue-Light, Helvetica Neue" font-size="10" font-weight="300" fill="#ADADAD">
+                <tspan x="-13.27" y="24.5">VECTOR</tspan>
+            </text>
+            <path d="M74.834954,12 L15.6448608,12" id="Line-Copy-2" stroke="#CACACA" stroke-linecap="square"></path>
+            <path d="M75.0517606,25 L15.8617606,25" id="Line-Copy-12" stroke="#CACACA" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>
