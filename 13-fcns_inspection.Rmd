@@ -98,6 +98,8 @@ Obtain a vector, data frame, or list of node IDs from a graph object or an edge 
 
 ## `get_predecessors()`
 
+<img src="diagrams/inspection/get_predecessors.svg">
+
 <h4><em>Get node IDs for predecessor nodes to the specified node</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -111,6 +113,8 @@ Provides a vector of node IDs for all nodes that have a connection to the given 
 **`node`** a node ID for the selected node.
 
 ## `get_successors()`
+
+<img src="diagrams/inspection/get_successors.svg">
 
 <h4><em>Get node IDs for successor nodes to the specified node</em></h4>
 
@@ -178,6 +182,8 @@ From a graph object of class `dgr_graph`, get a count of edges in the graph and 
 
 ## `node_present()`
 
+<img src="diagrams/inspection/node_present.svg">
+
 <h4><em>Determine whether a specified node is present</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -191,6 +197,8 @@ From a graph object of class `dgr_graph`, determine whether a specified node is 
 **`node`** a value that may or may not match a node ID in the graph.
 
 ## `edge_present()`
+
+<img src="diagrams/inspection/edge_present.svg">
 
 <h4><em>Determine whether a specified edge is present</em></h4>
 
@@ -208,6 +216,8 @@ From a graph object of class `dgr_graph`, determine whether a directed edge (def
 
 ## `is_graph_empty()`
 
+<img src="diagrams/inspection/is_graph_empty.svg">
+
 <h4><em>Is the graph empty?</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -220,6 +230,8 @@ Provides a logical value on whether the graph is empty (i.e., contains no nodes)
 
 ## `is_graph_directed()`
 
+<img src="diagrams/inspection/is_graph_directed.svg">
+
 <h4><em>Is the graph a directed graph?</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -231,6 +243,8 @@ Determines whether a graph is set to be directed or not and returns a logical va
 **`graph`** a graph object of class `dgr_graph`.
 
 ## `is_graph_connected()`
+
+<img src="diagrams/inspection/is_graph_connected.svg">
 
 <h4><em>Is the graph a connected graph?</em></h4>
 
