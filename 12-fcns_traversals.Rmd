@@ -126,7 +126,7 @@ From a graph object of class `dgr_graph` move to adjacent edges from a selection
 
 <h5>DESCRIPTION</h5>
 
-From a graph object of class `dgr_graph` with an active selection of edges move opposite to the edge direction to connected nodes, replacing the current edge selection with the selection with those nodes traversed to. An optional filter by node attribute can limit the set of nodes traversed to.
+From a graph object of class `dgr_graph` with an active selection of edges move opposite to the edge direction to connected nodes, replacing the current edge selection with those nodes traversed to. An optional filter by node attribute can limit the set of nodes traversed to.
 
 <h5>PARAMETERS</h5>
 
@@ -146,7 +146,7 @@ From a graph object of class `dgr_graph` with an active selection of edges move 
 
 <h5>DESCRIPTION</h5>
 
-From a graph object of class `dgr_graph` move along inward edges from one or more nodes present in a selection to other connected nodes, replacing the current nodes in the selection with those nodes traversed to. An optional filter by node attribute can limit the set of nodes traversed to.
+From a graph object of class `dgr_graph` with an active selection of edges move with the edge direction to connected nodes, replacing the current edges in the selection with those nodes traversed to. An optional filter by node attribute can limit the set of nodes traversed to.
 
 <h5>PARAMETERS</h5>
 
@@ -172,5 +172,5 @@ From an active selection of edges in a graph object of class `dgr_graph`, select
 
 **`graph`** a graph object of class `dgr_graph`.
 
-**`add_to_selection`** an option to either add the reverse edges to the active selection of edges or switch the active entirely to those reverse edges (`FALSE`, the default case).
+**`add_to_selection`** an option to either add the reverse edges to the active selection of edges or switch the active selection entirely to those reverse edges (`FALSE`, the default case).
 

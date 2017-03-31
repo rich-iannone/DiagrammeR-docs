@@ -20,7 +20,7 @@ Select nodes from a graph object of class `dgr_graph`.
 
 **`set_op`** the set operation to perform upon consecutive selections of graph nodes. This can either be as a `union` (the default), as an intersection of selections with `intersect`, or, as a `difference` on the previous selection, if it exists.
 
-**`nodes`** an optional vector of node IDs for filtering list of nodes present in the graph.
+**`nodes`** an optional vector of node IDs for filtering the list of nodes present in the graph.
 
 ## `select_edges()`
 
@@ -124,7 +124,7 @@ Using a graph object of class `dgr_graph`, create a selection of nodes that have
 
 **`graph`** a graph object of class `dgr_graph`.
 
-**`expressions`** one or more expressions for filtering of nodes by degree values. Use a combination of a degree type (`deg` for total degree, `indeg` for indegree, and `outdeg` for outdegree) with a comparison operator and values for comparison (e.g., use \code{"deg >= 2"} to select nodes with a degree greater than or equal to 2).
+**`expressions`** one or more expressions for filtering of nodes by degree values. Use a combination of a degree type (`deg` for total degree, `indeg` for in-degree, and `outdeg` for out-degree) with a comparison operator and values for comparison (e.g., use \code{"deg >= 2"} to select nodes with a degree greater than or equal to 2).
 
 **`set_op`** the set operation to perform upon consecutive selections of graph nodes. This can either be as a `union` (the default), as an intersection of selections with `intersect`, or, as a `difference` on the previous selection, if it exists.
 
@@ -136,13 +136,15 @@ Using a graph object of class `dgr_graph`, create a selection of nodes that have
 
 <h5>DESCRIPTION</h5>
 
-Select edges in a graph object of class `dgr_graph` using edge ID values. **`graph`** a graph object of class `dgr_graph`.
+Select edges in a graph object of class `dgr_graph` using edge ID values.
 
 <h5>PARAMETERS</h5>
 
+**`graph`** a graph object of class `dgr_graph`.
+
 **`edges`** a vector of edge IDs for the selection of edges present in the graph.
 
-**`set_op`** the set operation to perform upon consecutive selections of graph edges This can either be as a `union` (the default), as an intersection of selections with `intersect`, or, as a `difference` on the previous selection, if it exists.
+**`set_op`** the set operation to perform upon consecutive selections of graph edges. This can either be as a `union` (the default), as an intersection of selections with `intersect`, or, as a `difference` on the previous selection, if it exists.
 
 ## `select_edges_by_node_id()`
 
