@@ -40,21 +40,21 @@
             </g>
         </g>
         <g id="predecessors-copy-5" transform="translate(7.000000, 6.000000)">
-            <text id="the-ID-provided" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="30">the ID provided</tspan>
+            <text id="THE-ID-PROVIDED" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="30">THE ID PROVIDED</tspan>
             </text>
-            <text id="True-if:" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="13">True if:</tspan>
+            <text id="TRUE-IF:" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="13">TRUE IF:</tspan>
             </text>
-            <text id="the-graph" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="64">the graph</tspan>
+            <text id="THE-GRAPH" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="64">THE GRAPH</tspan>
             </text>
-            <path d="M81.0137502,45.25 L92.4,38" id="Line-Copy-29" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(87.000000, 42.000000) rotate(-180.000000) translate(-87.000000, -42.000000) "></path>
-            <text id="matches-a" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="47">matches a</tspan>
+            <path d="M85.0137502,45.25 L96.4,38" id="Line-Copy-29" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(91.000000, 42.000000) rotate(-180.000000) translate(-91.000000, -42.000000) "></path>
+            <text id="MATCHES-A" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="47">MATCHES A</tspan>
             </text>
-            <text id="in" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="99" y="47">in</tspan>
+            <text id="IN" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="103" y="47">IN</tspan>
             </text>
         </g>
         <g id="Group-5-Copy-9" transform="translate(457.000000, 19.000000)">
