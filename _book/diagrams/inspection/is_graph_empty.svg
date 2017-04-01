@@ -40,21 +40,21 @@
             </g>
         </g>
         <g id="predecessors-copy-2" transform="translate(7.000000, 6.000000)">
-            <text id="there-aren’t" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="30">there aren’t</tspan>
+            <text id="THERE-AREN’T" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="30">THERE AREN’T</tspan>
             </text>
-            <text id="True-if:" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="13">True if:</tspan>
+            <text id="TRUE-IF:" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="13">TRUE IF:</tspan>
             </text>
-            <text id="graph" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="64">graph</tspan>
+            <text id="GRAPH" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="64">GRAPH</tspan>
             </text>
-            <ellipse id="right_node-copy" fill="#50C1E3" transform="translate(37.136456, 42.193938) scale(-1, -1) rotate(180.000000) translate(-37.136456, -42.193938) " cx="37.1364561" cy="42.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
-            <text id="any" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="47">any</tspan>
+            <ellipse id="right_node-copy" fill="#50C1E3" transform="translate(39.136456, 42.193938) scale(-1, -1) rotate(180.000000) translate(-39.136456, -42.193938) " cx="39.1364561" cy="42.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
+            <text id="ANY" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="47">ANY</tspan>
             </text>
-            <text id="in-the" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="47" y="47">in the</tspan>
+            <text id="IN-THE" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="51" y="47">IN THE</tspan>
             </text>
         </g>
         <g id="Group-5-Copy-10" transform="translate(457.000000, 19.000000)">

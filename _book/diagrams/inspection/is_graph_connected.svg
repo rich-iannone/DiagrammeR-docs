@@ -40,31 +40,28 @@
             </g>
         </g>
         <g id="predecessors-copy" transform="translate(7.000000, 6.000000)">
-            <ellipse id="left_node-copy-3" fill="#50C1E3" transform="translate(46.136456, 25.193938) scale(-1, -1) translate(-46.136456, -25.193938) " cx="46.1364561" cy="25.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
-            <ellipse id="left_node-copy-4" fill="#50C1E3" transform="translate(54.136456, 59.193938) scale(-1, -1) translate(-54.136456, -59.193938) " cx="54.1364561" cy="59.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
-            <text id="EACH" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+            <ellipse id="left_node-copy-3" fill="#50C1E3" transform="translate(48.136456, 25.193938) scale(-1, -1) translate(-48.136456, -25.193938) " cx="48.1364561" cy="25.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
+            <ellipse id="left_node-copy-4" fill="#50C1E3" transform="translate(57.136456, 59.193938) scale(-1, -1) translate(-57.136456, -59.193938) " cx="57.1364561" cy="59.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
+            <text id="EACH" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
                 <tspan x="0" y="30">EACH</tspan>
             </text>
-            <text id="True-if:" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="13">True if:</tspan>
+            <text id="TRUE-IF:" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="13">TRUE IF:</tspan>
             </text>
-            <text id="other" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="64">other</tspan>
+            <text id="OTHER" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="64">OTHER</tspan>
             </text>
-            <path d="M28.6137502,42.25 L59.0137502,42.25" id="Line-Copy-15" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(43.813750, 42.250000) rotate(-180.000000) translate(-43.813750, -42.250000) "></path>
-            <ellipse id="right_node" fill="#50C1E3" transform="translate(52.136456, 42.193938) scale(-1, -1) rotate(180.000000) translate(-52.136456, -42.193938) " cx="52.1364561" cy="42.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
-            <ellipse id="right_node-copy" fill="#50C1E3" transform="translate(35.136456, 42.193938) scale(-1, -1) rotate(180.000000) translate(-35.136456, -42.193938) " cx="35.1364561" cy="42.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
-            <path d="M28.6137502,42.25 L59.0137502,42.25" id="Line-Copy-16" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(43.813750, 42.250000) rotate(-180.000000) translate(-43.813750, -42.250000) "></path>
-            <ellipse id="right_node-copy-3" fill="#50C1E3" transform="translate(52.136456, 42.193938) scale(-1, -1) rotate(180.000000) translate(-52.136456, -42.193938) " cx="52.1364561" cy="42.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
-            <ellipse id="right_node-copy-2" fill="#50C1E3" transform="translate(35.136456, 42.193938) scale(-1, -1) rotate(180.000000) translate(-35.136456, -42.193938) " cx="35.1364561" cy="42.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
-            <text id="via" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="47">via</tspan>
+            <path d="M29.6137502,42.25 L60.0137502,42.25" id="Line-Copy-15" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(44.813750, 42.250000) rotate(-180.000000) translate(-44.813750, -42.250000) "></path>
+            <ellipse id="right_node" fill="#50C1E3" transform="translate(53.136456, 42.193938) scale(-1, -1) rotate(180.000000) translate(-53.136456, -42.193938) " cx="53.1364561" cy="42.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
+            <ellipse id="right_node-copy" fill="#50C1E3" transform="translate(36.136456, 42.193938) scale(-1, -1) rotate(180.000000) translate(-36.136456, -42.193938) " cx="36.1364561" cy="42.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
+            <text id="VIA" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="47">VIA</tspan>
             </text>
-            <text id="to-every" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="67" y="47">to every</tspan>
+            <text id="TO-EVERY" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="69" y="47">TO EVERY</tspan>
             </text>
-            <text id="has-a-path" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="56" y="30">has a path</tspan>
+            <text id="HAS-A-PATH" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="59" y="30">HAS A PATH</tspan>
             </text>
         </g>
         <g id="Group-5-Copy-12" transform="translate(457.000000, 19.000000)">

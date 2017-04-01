@@ -39,28 +39,28 @@
                 <path d="M14.627907,0 C6.55932902,0 0,6.58350345 0,14.6818182 C0,22.7801329 6.55932902,29.3636364 14.627907,29.3636364 C17.8198066,29.3636364 20.771911,28.3305969 23.1787791,26.5838068 L34.4992733,37.9190341 L36.9193314,35.4900568 L25.7332849,24.2357955 C27.9311761,21.66653 29.255814,18.3274976 29.255814,14.6818182 C29.255814,6.58350345 22.6964849,0 14.627907,0 Z M14.627907,1.72727273 C21.7664254,1.72727273 27.5348837,7.51699073 27.5348837,14.6818182 C27.5348837,21.8466456 21.7664254,27.6363636 14.627907,27.6363636 C7.48938856,27.6363636 1.72093023,21.8466456 1.72093023,14.6818182 C1.72093023,7.51699073 7.48938856,1.72727273 14.627907,1.72727273 Z" id="Shape"></path>
             </g>
         </g>
-        <text id="the-copy" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-            <tspan x="77" y="28">the</tspan>
+        <text id="THE" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+            <tspan x="77" y="33">THE</tspan>
         </text>
-        <ellipse id="left_node-copy" fill="#50C1E3" transform="translate(113.136456, 23.193938) scale(-1, -1) translate(-113.136456, -23.193938) " cx="113.136456" cy="23.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
-        <ellipse id="left_node-copy-2" fill="#50C1E3" transform="translate(123.136456, 23.193938) scale(-1, -1) translate(-123.136456, -23.193938) " cx="123.136456" cy="23.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
-        <ellipse id="left_node-copy-3" fill="#50C1E3" transform="translate(133.136456, 23.193938) scale(-1, -1) translate(-133.136456, -23.193938) " cx="133.136456" cy="23.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
-        <text id="are-the-successors" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-            <tspan x="5" y="54">are the successors</tspan>
+        <ellipse id="left_node-copy" fill="#50C1E3" transform="translate(115.136456, 28.193938) scale(-1, -1) translate(-115.136456, -28.193938) " cx="115.136456" cy="28.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
+        <ellipse id="left_node-copy-2" fill="#50C1E3" transform="translate(125.136456, 28.193938) scale(-1, -1) translate(-125.136456, -28.193938) " cx="125.136456" cy="28.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
+        <ellipse id="left_node-copy-3" fill="#50C1E3" transform="translate(135.136456, 28.193938) scale(-1, -1) translate(-135.136456, -28.193938) " cx="135.136456" cy="28.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
+        <text id="ARE-THE-SUCCESSORS" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+            <tspan x="5" y="59">ARE THE SUCCESSORS</tspan>
         </text>
-        <text id="with" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-            <tspan x="5" y="28">with</tspan>
+        <text id="WITH" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+            <tspan x="5" y="33">WITH</tspan>
         </text>
-        <path d="M62,29.9742461 L58.4341662,23.8346348" id="Line-Copy-27" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(60.217083, 26.904440) scale(-1, 1) rotate(-180.000000) translate(-60.217083, -26.904440) "></path>
-        <path d="M56,29.0046349 L56,17.8346348" id="Line-Copy-17" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(56.000000, 23.419635) scale(-1, 1) rotate(-180.000000) translate(-56.000000, -23.419635) "></path>
-        <path d="M53.5658338,29.9742461 L50,23.8346348" id="Line-Copy-15" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(51.782917, 26.904440) rotate(-180.000000) translate(-51.782917, -26.904440) "></path>
-        <ellipse id="right_node" fill="#50C1E3" transform="translate(48.136456, 20.098602) scale(-1, -1) rotate(180.000000) translate(-48.136456, -20.098602) " cx="48.1364561" cy="20.0986019" rx="4.13645605" ry="4.19393849"></ellipse>
-        <ellipse id="center_node" fill="#50C1E3" transform="translate(56.114478, 12.825875) scale(-1, -1) rotate(180.000000) translate(-56.114478, -12.825875) " cx="56.114478" cy="12.8258746" rx="4.13645605" ry="4.19393849"></ellipse>
-        <ellipse id="left_node" fill="#50C1E3" transform="translate(64.092500, 20.098602) scale(-1, -1) rotate(180.000000) translate(-64.092500, -20.098602) " cx="64.0925" cy="20.0986019" rx="4.13645605" ry="4.19393849"></ellipse>
-        <ellipse id="top_node" fill="#F6A623" transform="translate(55.863544, 33.806062) scale(-1, -1) rotate(180.000000) translate(-55.863544, -33.806062) " cx="55.8635439" cy="33.8060615" rx="4.13645605" ry="4.19393849"></ellipse>
-        <polygon id="Triangle-67-Copy" stroke="#50E3C2" stroke-linecap="square" fill="#50E3C2" transform="translate(62.518254, 23.018254) rotate(33.000000) translate(-62.518254, -23.018254) " points="62.518254 22.2821541 61.7821541 23.7543538 63.2543538 23.7543538"></polygon>
-        <polygon id="Triangle-67-Copy-2" stroke="#50E3C2" stroke-linecap="square" fill="#50E3C2" transform="translate(49.505531, 23.005531) scale(-1, 1) rotate(-330.000000) translate(-49.505531, -23.005531) " points="49.5055311 22.2694312 48.7694312 23.7416309 50.2416309 23.7416309"></polygon>
-        <polygon id="Triangle-67-Copy-3" stroke="#50E3C2" stroke-linecap="square" fill="#50E3C2" transform="translate(55.986100, 16.263900) scale(-1, 1) translate(-55.986100, -16.263900) " points="55.9860999 15.5278003 55.25 17 56.7221997 17"></polygon>
+        <path d="M64,34.9742461 L60.4341662,28.8346348" id="Line-Copy-27" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(62.217083, 31.904440) scale(-1, 1) rotate(-180.000000) translate(-62.217083, -31.904440) "></path>
+        <path d="M58,34.0046349 L58,22.8346348" id="Line-Copy-17" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(58.000000, 28.419635) scale(-1, 1) rotate(-180.000000) translate(-58.000000, -28.419635) "></path>
+        <path d="M55.5658338,34.9742461 L52,28.8346348" id="Line-Copy-15" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(53.782917, 31.904440) rotate(-180.000000) translate(-53.782917, -31.904440) "></path>
+        <ellipse id="right_node" fill="#50C1E3" transform="translate(50.136456, 25.098602) scale(-1, -1) rotate(180.000000) translate(-50.136456, -25.098602) " cx="50.1364561" cy="25.0986019" rx="4.13645605" ry="4.19393849"></ellipse>
+        <ellipse id="center_node" fill="#50C1E3" transform="translate(58.114478, 17.825875) scale(-1, -1) rotate(180.000000) translate(-58.114478, -17.825875) " cx="58.114478" cy="17.8258746" rx="4.13645605" ry="4.19393849"></ellipse>
+        <ellipse id="left_node" fill="#50C1E3" transform="translate(66.092500, 25.098602) scale(-1, -1) rotate(180.000000) translate(-66.092500, -25.098602) " cx="66.0925" cy="25.0986019" rx="4.13645605" ry="4.19393849"></ellipse>
+        <ellipse id="top_node" fill="#F6A623" transform="translate(57.863544, 38.806062) scale(-1, -1) rotate(180.000000) translate(-57.863544, -38.806062) " cx="57.8635439" cy="38.8060615" rx="4.13645605" ry="4.19393849"></ellipse>
+        <polygon id="Triangle-67-Copy" stroke="#50E3C2" stroke-linecap="square" fill="#50E3C2" transform="translate(64.518254, 28.018254) rotate(33.000000) translate(-64.518254, -28.018254) " points="64.518254 27.2821541 63.7821541 28.7543538 65.2543538 28.7543538"></polygon>
+        <polygon id="Triangle-67-Copy-2" stroke="#50E3C2" stroke-linecap="square" fill="#50E3C2" transform="translate(51.505531, 28.005531) scale(-1, 1) rotate(-330.000000) translate(-51.505531, -28.005531) " points="51.5055311 27.2694312 50.7694312 28.7416309 52.2416309 28.7416309"></polygon>
+        <polygon id="Triangle-67-Copy-3" stroke="#50E3C2" stroke-linecap="square" fill="#50E3C2" transform="translate(57.986100, 21.263900) scale(-1, 1) translate(-57.986100, -21.263900) " points="57.9860999 20.5278003 57.25 22 58.7221997 22"></polygon>
         <g id="Group-5-Copy-5" transform="translate(457.000000, 20.000000)">
             <text id="ID-Copy-7" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="7.5" font-weight="300" fill="#9B9B9B">
                 <tspan x="20.85875" y="35">node ID</tspan>

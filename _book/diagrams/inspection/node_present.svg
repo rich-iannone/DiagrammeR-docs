@@ -40,21 +40,21 @@
             </g>
         </g>
         <g id="predecessors-copy-4" transform="translate(7.000000, 6.000000)">
-            <text id="the-ID-provided" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="30">the ID provided</tspan>
+            <text id="THE-ID-PROVIDED" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="30">THE ID PROVIDED</tspan>
             </text>
-            <text id="True-if:" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="13">True if:</tspan>
+            <text id="TRUE-IF:" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="13">TRUE IF:</tspan>
             </text>
-            <text id="the-graph" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="64">the graph</tspan>
+            <text id="THE-GRAPH" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="64">THE GRAPH</tspan>
             </text>
-            <ellipse id="right_node-copy" fill="#50C1E3" transform="translate(85.136456, 42.193938) scale(-1, -1) rotate(180.000000) translate(-85.136456, -42.193938) " cx="85.1364561" cy="42.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
-            <text id="matches-a" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="0" y="47">matches a</tspan>
+            <ellipse id="right_node-copy" fill="#50C1E3" transform="translate(90.135000, 42.192462) scale(-1, -1) rotate(180.000000) translate(-90.135000, -42.192462) " cx="90.1350002" cy="42.1924624" rx="4.13500023" ry="4.19246243"></ellipse>
+            <text id="MATCHES-A" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="47">MATCHES A</tspan>
             </text>
-            <text id="in" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="95" y="47">in</tspan>
+            <text id="IN" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="100" y="47">IN</tspan>
             </text>
         </g>
         <g id="Group-5-Copy-8" transform="translate(457.000000, 19.000000)">
