@@ -154,6 +154,8 @@ From a graph, obtain an edge data frame with all current edge attributes.
 
 ## `node_count()`
 
+<img src="diagrams/inspection/node_count.svg">
+
 <h4><em>Get count of all nodes or certain types of nodes</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -167,6 +169,8 @@ From a graph object of class `dgr_graph`, get a count of nodes in the graph and 
 **`type`** either a logical value, where `TRUE` provides a named vector of node count by type and `FALSE` (the default) provides a total count, or, a character vector of `type` values to filter the node count.
 
 ## `edge_count()`
+
+<img src="diagrams/inspection/edge_count.svg">
 
 <h4><em>Get count of all edges or edges with distinct relationship types</em></h4>
 
@@ -270,6 +274,8 @@ Provides a logical value on whether the graph is property graph (i.e., all nodes
 
 ## `get_degree_in()`
 
+<img src="diagrams/inspection/get_degree_in.svg">
+
 <h4><em>Get indegree values for all nodes</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -284,6 +290,8 @@ Get the indegree values for all nodes in a graph.
 
 ## `get_degree_out()`
 
+<img src="diagrams/inspection/get_degree_out.svg">
+
 <h4><em>Get outdegree values for all nodes</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -297,6 +305,8 @@ Get the outdegree values for all nodes in a graph.
 **`normalized`** set as `FALSE` (the default), the the outdegree will be provided for each of the nodes (as a count of edges outgoing from each node). When set as `TRUE`, then the result for each node will be divided by the total number of nodes in the graph minus 1.
 
 ## `get_degree_total()`
+
+<img src="diagrams/inspection/get_degree_total.svg">
 
 <h4><em>Get total degree values for all nodes</em></h4>
 
@@ -633,6 +643,8 @@ Determine which nodes in a graph belong to different strongly connected componen
 **`graph`** a graph object of class `dgr_graph`.
 
 ## `get_articulation_points()`
+
+<img src="diagrams/inspection/get_articulation_points.svg">
 
 <h4><em>Get articulation points</em></h4>
 
