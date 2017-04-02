@@ -132,7 +132,7 @@ Combine two graphs in order to make a new graph.
 
 **`x`** a `DiagrammeR` graph object to which another graph will be unioned. This graph should be considered the graph from which global graph attributes will be inherited in the resulting graph.
 
-**`y`** a `DiagrammeR` graph object that is to be unioned with the graph suppled as `x`.
+**`y`** a `DiagrammeR` graph object that is to be unioned with the graph supplied as `x`.
 
 ## `import_graph()`
 
