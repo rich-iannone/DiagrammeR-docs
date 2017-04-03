@@ -16,6 +16,20 @@
     </defs>
     <g id="Graph-Functions---inspection" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <use id="Rectangle" stroke="#979797" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+        <g id="small_icon__get_nbrs-copy-10" transform="translate(7.000000, 17.000000)">
+            <path d="M1.5,3.5 L1.5,43" id="Line-Copy-9" stroke="#CACACA" stroke-linecap="square"></path>
+            <text id="GET-BASIC-INFO-FOR" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="6" y="13">GE</tspan>
+                <tspan x="25.18" y="13" letter-spacing="-0.416666657">T BASIC INFO FOR</tspan>
+            </text>
+            <text id="THE-GRAPH-AS-A" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="6" y="28">THE GRAPH AS A</tspan>
+            </text>
+            <text id="SINGLE-DF-ROW" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="6" y="43">SINGLE DF ROW</tspan>
+            </text>
+            <path d="M147,4 L147,43.5" id="Line-Copy-31" stroke="#CACACA" stroke-linecap="square"></path>
+        </g>
         <g id="graph_info" transform="translate(240.000000, 19.000000)">
             <g id="graph-object" transform="translate(0.000000, 1.000000)">
                 <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
