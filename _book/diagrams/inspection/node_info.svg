@@ -16,6 +16,46 @@
     </defs>
     <g id="Graph-Functions---inspection" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <use id="Rectangle" stroke="#979797" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+        <g id="small_icon__get_nbrs-copy-8" transform="translate(7.000000, 18.000000)">
+            <path d="M22.8795792,35.2690905 L37.0000004,21" id="small_icon_edge-copy-47" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M11,27.9999998 L24.0000004,21" id="small_icon_edge-copy-46" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M51,20.9999998 L64.0000004,14" id="small_icon_edge-copy-45" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M10,20.9999998 L23.0000004,14" id="small_icon_edge-copy-44" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(16.738900, 17.693008) scale(-1, 1) translate(-16.738900, -17.693008) "></path>
+            <path d="M51,27.9999998 L64.0000004,21" id="small_icon_edge-copy-43" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(57.738900, 24.693008) scale(-1, 1) translate(-57.738900, -24.693008) "></path>
+            <path d="M25.5,20.9999998 L30.9777993,20.9999998" id="small_icon_edge-copy-39" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(28.238900, 21.193008) scale(-1, 1) translate(-28.238900, -21.193008) "></path>
+            <path d="M42.5,20.9999998 L47.9777993,20.9999998" id="small_icon_edge-copy-51" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(45.238900, 21.193008) scale(-1, 1) translate(-45.238900, -21.193008) "></path>
+            <path d="M37.8795792,21.0190905 L52.0000004,6.75000001" id="small_icon_edge-copy-35" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M22.8795792,21.0190905 L37.0000004,6.75000001" id="small_icon_edge-copy-33" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(30.238900, 13.943008) scale(-1, 1) translate(-30.238900, -13.943008) "></path>
+            <path d="M36.8795792,35.0190905 L51.0000004,20.75" id="small_icon_edge-copy-31" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(44.238900, 27.943008) scale(-1, 1) translate(-44.238900, -27.943008) "></path>
+            <ellipse id="small_icon__node-copy-52" fill="#50C1E3" cx="10.7388996" cy="13.9430082" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-51" fill="#50C1E3" cx="10.7388996" cy="27.9430082" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-50" fill="#50C1E3" cx="23.7388996" cy="20.9430082" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-49" fill="#50C1E3" cx="23.7388996" cy="7" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-48" fill="#50C1E3" cx="23.7388996" cy="35" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-47" fill="#50C1E3" cx="37.7388996" cy="20.9430082" rx="5.73889961" ry="5.75"></ellipse>
+            <path d="M1.5,1.5 L1.5,41" id="Line-Copy-9" stroke="#CACACA" stroke-linecap="square"></path>
+            <ellipse id="small_icon__node-copy-38" fill="#50C1E3" cx="51.7388996" cy="20.9430082" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-37" fill="#50C1E3" cx="51.7388996" cy="7" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-36" fill="#50C1E3" cx="51.7388996" cy="35" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-35" fill="#50C1E3" cx="63.7388996" cy="13.9430082" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-34" fill="#50C1E3" cx="63.7388996" cy="27.9430082" rx="5.73889961" ry="5.75"></ellipse>
+            <g id="Group-6" transform="translate(87.000000, 30.000000)" fill="#50C1E3">
+                <ellipse id="small_icon__node-copy-39" cx="4.13500023" cy="4.33600654" rx="4.13500023" ry="4.1429983"></ellipse>
+                <ellipse id="small_icon__node-copy-40" cx="16.1350002" cy="4.33600654" rx="4.13500023" ry="4.1429983"></ellipse>
+                <ellipse id="small_icon__node-copy-41" cx="28.1350002" cy="4.33600654" rx="4.13500023" ry="4.1429983"></ellipse>
+                <ellipse id="small_icon__node-copy-42" cx="40.1350002" cy="4.33600654" rx="4.13500023" ry="4.1429983"></ellipse>
+                <ellipse id="small_icon__node-copy-43" cx="52.1350002" cy="4.33600654" rx="4.13500023" ry="4.1429983"></ellipse>
+            </g>
+            <path d="M73.4777992,2 L73.4777992,41.5" id="Line-Copy-8" stroke="#CACACA" stroke-linecap="square"></path>
+            <text id="GET-BASIC" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="80.6703333" y="13">GE</tspan>
+                <tspan x="99.8503333" y="13" letter-spacing="-0.416666657">T BASIC</tspan>
+            </text>
+            <text id="INFO-FOR" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="83.216" y="27">INFO FOR</tspan>
+            </text>
+            <path d="M158,2 L158,41.5" id="Line-Copy-31" stroke="#CACACA" stroke-linecap="square"></path>
+        </g>
         <g id="node_info" transform="translate(240.000000, 19.000000)">
             <g id="invert_selection" transform="translate(97.000000, 11.000000)" stroke="#666666">
                 <g id="Wireframe-Line-01">

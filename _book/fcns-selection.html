@@ -26,7 +26,7 @@
 <meta name="author" content="Richard Iannone">
 
 
-<meta name="date" content="2017-04-01">
+<meta name="date" content="2017-04-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -224,7 +224,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.37" data-path="fcns-inspection.html"><a href="fcns-inspection.html#get_cmty_edge_btwns"><i class="fa fa-check"></i><b>8.37</b> <code>get_cmty_edge_btwns()</code></a></li>
 <li class="chapter" data-level="8.38" data-path="fcns-inspection.html"><a href="fcns-inspection.html#get_nbrs"><i class="fa fa-check"></i><b>8.38</b> <code>get_nbrs()</code></a></li>
 <li class="chapter" data-level="8.39" data-path="fcns-inspection.html"><a href="fcns-inspection.html#get_non_nbrs"><i class="fa fa-check"></i><b>8.39</b> <code>get_non_nbrs()</code></a></li>
-<li class="chapter" data-level="8.40" data-path="fcns-inspection.html"><a href="fcns-inspection.html#get_common_neighbors"><i class="fa fa-check"></i><b>8.40</b> <code>get_common_neighbors()</code></a></li>
+<li class="chapter" data-level="8.40" data-path="fcns-inspection.html"><a href="fcns-inspection.html#get_common_nbrs"><i class="fa fa-check"></i><b>8.40</b> <code>get_common_nbrs()</code></a></li>
 <li class="chapter" data-level="8.41" data-path="fcns-inspection.html"><a href="fcns-inspection.html#get_similar_nbrs"><i class="fa fa-check"></i><b>8.41</b> <code>get_similar_nbrs()</code></a></li>
 <li class="chapter" data-level="8.42" data-path="fcns-inspection.html"><a href="fcns-inspection.html#get_paths"><i class="fa fa-check"></i><b>8.42</b> <code>get_paths()</code></a></li>
 <li class="chapter" data-level="8.43" data-path="fcns-inspection.html"><a href="fcns-inspection.html#get_w_connected_cmpts"><i class="fa fa-check"></i><b>8.43</b> <code>get_w_connected_cmpts()</code></a></li>
@@ -347,7 +347,7 @@ PARAMETERS
 <p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
 <p><strong><code>conditions</code></strong> an option to use filtering conditions for the retrieval of nodes.</p>
 <p><strong><code>set_op</code></strong> the set operation to perform upon consecutive selections of graph nodes. This can either be as a <code>union</code> (the default), as an intersection of selections with <code>intersect</code>, or, as a <code>difference</code> on the previous selection, if it exists.</p>
-<p><strong><code>nodes</code></strong> an optional vector of node IDs for filtering list of nodes present in the graph.</p>
+<p><strong><code>nodes</code></strong> an optional vector of node IDs for filtering the list of nodes present in the graph.</p>
 </div>
 <div id="select_edges" class="section level2">
 <h2><span class="header-section-number">6.2</span> <code>select_edges()</code></h2>
@@ -447,7 +447,7 @@ DESCRIPTION
 PARAMETERS
 </h5>
 <p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
-<p><strong><code>expressions</code></strong> one or more expressions for filtering of nodes by degree values. Use a combination of a degree type (<code>deg</code> for total degree, <code>indeg</code> for indegree, and <code>outdeg</code> for outdegree) with a comparison operator and values for comparison (e.g., use  to select nodes with a degree greater than or equal to 2).</p>
+<p><strong><code>expressions</code></strong> one or more expressions for filtering of nodes by degree values. Use a combination of a degree type (<code>deg</code> for total degree, <code>indeg</code> for in-degree, and <code>outdeg</code> for out-degree) with a comparison operator and values for comparison (e.g., use  to select nodes with a degree greater than or equal to 2).</p>
 <p><strong><code>set_op</code></strong> the set operation to perform upon consecutive selections of graph nodes. This can either be as a <code>union</code> (the default), as an intersection of selections with <code>intersect</code>, or, as a <code>difference</code> on the previous selection, if it exists.</p>
 </div>
 <div id="select_edges_by_edge_id" class="section level2">
@@ -459,12 +459,13 @@ PARAMETERS
 <h5>
 DESCRIPTION
 </h5>
-<p>Select edges in a graph object of class <code>dgr_graph</code> using edge ID values. <strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
+<p>Select edges in a graph object of class <code>dgr_graph</code> using edge ID values.</p>
 <h5>
 PARAMETERS
 </h5>
+<p><strong><code>graph</code></strong> a graph object of class <code>dgr_graph</code>.</p>
 <p><strong><code>edges</code></strong> a vector of edge IDs for the selection of edges present in the graph.</p>
-<p><strong><code>set_op</code></strong> the set operation to perform upon consecutive selections of graph edges This can either be as a <code>union</code> (the default), as an intersection of selections with <code>intersect</code>, or, as a <code>difference</code> on the previous selection, if it exists.</p>
+<p><strong><code>set_op</code></strong> the set operation to perform upon consecutive selections of graph edges. This can either be as a <code>union</code> (the default), as an intersection of selections with <code>intersect</code>, or, as a <code>difference</code> on the previous selection, if it exists.</p>
 </div>
 <div id="select_edges_by_node_id" class="section level2">
 <h2><span class="header-section-number">6.9</span> <code>select_edges_by_node_id()</code></h2>
