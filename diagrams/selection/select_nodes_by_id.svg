@@ -122,18 +122,18 @@
         </g>
         <g id="targeted_node" transform="translate(7.000000, 30.000000)">
             <ellipse id="small_icon__node-copy-6" fill="#F6A623" cx="5.73889961" cy="9.75" rx="5.73889961" ry="5.75"></ellipse>
-            <text id="targeted" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="19" y="15">targeted</tspan>
+            <text id="TARGETED" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="15">TARGETED</tspan>
             </text>
         </g>
         <g id="selected_unselected_nodes" transform="translate(645.000000, 20.000000)">
             <ellipse id="small_icon__node-copy-3" fill="#50C1E3" cx="5.73889961" cy="9.75" rx="5.73889961" ry="5.75"></ellipse>
-            <text id="unselected" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="19" y="15">unselected</tspan>
+            <text id="UNSELECTED" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="15">UNSELECTED</tspan>
             </text>
             <ellipse id="small_icon__node-copy-5" fill="#BD8DE8" cx="5.73889961" cy="31.75" rx="5.73889961" ry="5.75"></ellipse>
-            <text id="selected" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="19" y="37">selected</tspan>
+            <text id="SELECTED" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="37">SELECTED</tspan>
             </text>
         </g>
     </g>
