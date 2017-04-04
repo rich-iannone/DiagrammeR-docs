@@ -17,18 +17,18 @@
     <g id="Graph-Functions---traversals" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <use id="Rectangle" stroke="#979797" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
         <g id="selected_unselected_edges" transform="translate(645.000000, 21.000000)">
-            <text id="unselected" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="19" y="15">unselected</tspan>
+            <text id="UNSELECTED" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="15">UNSELECTED</tspan>
             </text>
-            <text id="selected" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="19" y="37">selected</tspan>
+            <text id="SELECTED" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="37">SELECTED</tspan>
             </text>
             <path d="M0,13.0381803 L11.2369576,6" id="small_icon_edge-copy-10" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
             <path d="M0,35.0381803 L11.2369576,28" id="small_icon_edge-copy-31" stroke="#BD8DE8" stroke-width="2" stroke-linecap="square"></path>
         </g>
         <g id="selected_unselected_edges" transform="translate(7.000000, 33.000000)">
-            <text id="starting-edge" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
-                <tspan x="19" y="15">starting edge</tspan>
+            <text id="STARTING-EDGE" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" letter-spacing="-0.416666657" fill="#9B9B9B">
+                <tspan x="19" y="15">STARTING EDGE</tspan>
             </text>
             <path d="M0,13.0381803 L11.2369576,6" id="small_icon_edge-copy-31" stroke="#BD8DE8" stroke-width="2" stroke-linecap="square"></path>
         </g>

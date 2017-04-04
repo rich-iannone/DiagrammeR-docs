@@ -63,7 +63,7 @@
             <path d="M37.8795792,20.0190905 L52.0000004,5.75000001" id="small_icon_edge-copy-35" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
             <path d="M22.8795792,20.0190905 L37.0000004,5.75000001" id="small_icon_edge-copy-33" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(30.238900, 12.943008) scale(-1, 1) translate(-30.238900, -12.943008) "></path>
             <path d="M36.8795792,34.0190905 L51.0000004,19.75" id="small_icon_edge-copy-31" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(44.238900, 26.943008) scale(-1, 1) translate(-44.238900, -26.943008) "></path>
-            <ellipse id="small_icon__node-copy-52" stroke="#D0011B" fill="#BD8DE8" cx="10.7388996" cy="12.9430082" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-52" stroke="#BD8DE7" fill="#FFFFFF" cx="10.7388996" cy="12.9430082" rx="5.73889961" ry="5.75"></ellipse>
             <ellipse id="small_icon__node-copy-51" stroke="#D0011B" fill="#8660A7" cx="10.7388996" cy="26.9430082" rx="5.73889961" ry="5.75"></ellipse>
             <ellipse id="small_icon__node-copy-50" stroke="#D0011B" fill="#8660A7" cx="23.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
             <path d="M23.7388996,11.75 C26.9084064,11.75 29.4777992,9.17563731 29.4777992,6 C29.4777992,2.82436269 26.9084064,0.25 23.7388996,0.25 C20.5693929,0.25 18,2.82436269 18,6 C18,9.17563731 20.5693929,11.75 23.7388996,11.75 Z" id="small_icon__node-copy-49" stroke="#28408B" fill="#50C1E3"></path>
@@ -76,6 +76,7 @@
             <ellipse id="small_icon__node-copy-35" stroke="#D0011B" fill="#50C1E3" cx="63.7388996" cy="12.9430082" rx="5.73889961" ry="5.75"></ellipse>
             <ellipse id="small_icon__node-copy-34" stroke="#D0011B" fill="#50C1E3" cx="63.7388996" cy="26.9430082" rx="5.73889961" ry="5.75"></ellipse>
             <path d="M73.4777992,1 L73.4777992,40.5" id="Line-Copy-8" stroke="#CACACA" stroke-linecap="square"></path>
+            <path d="M209,1 L209,40.5" id="Line-Copy-38" stroke="#CACACA" stroke-linecap="square"></path>
         </g>
         <g id="Group-2-Copy-40" transform="translate(289.000000, 21.000000)" fill-rule="nonzero">
             <g id="Mind-Map_bfbfbf" transform="translate(3.000000, 1.000000)" fill-opacity="0.43543365" fill="#288872">
@@ -85,5 +86,21 @@
                 <path d="M14.627907,0 C6.55932902,0 0,6.58350345 0,14.6818182 C0,22.7801329 6.55932902,29.3636364 14.627907,29.3636364 C17.8198066,29.3636364 20.771911,28.3305969 23.1787791,26.5838068 L34.4992733,37.9190341 L36.9193314,35.4900568 L25.7332849,24.2357955 C27.9311761,21.66653 29.255814,18.3274976 29.255814,14.6818182 C29.255814,6.58350345 22.6964849,0 14.627907,0 Z M14.627907,1.72727273 C21.7664254,1.72727273 27.5348837,7.51699073 27.5348837,14.6818182 C27.5348837,21.8466456 21.7664254,27.6363636 14.627907,27.6363636 C7.48938856,27.6363636 1.72093023,21.8466456 1.72093023,14.6818182 C1.72093023,7.51699073 7.48938856,1.72727273 14.627907,1.72727273 Z" id="Shape"></path>
             </g>
         </g>
+        <ellipse id="small_icon__node-copy-64" stroke="#D0011B" fill="#8660A7" cx="120.135" cy="27.1429983" rx="4.13500023" ry="4.1429983"></ellipse>
+        <ellipse id="small_icon__node-copy-65" stroke="#D0011B" fill="#8660A7" cx="132.135" cy="27.1429983" rx="4.13500023" ry="4.1429983"></ellipse>
+        <ellipse id="small_icon__node-copy-66" stroke="#D0011B" fill="#8660A7" cx="144.135" cy="27.1429983" rx="4.13500023" ry="4.1429983"></ellipse>
+        <ellipse id="small_icon__node-copy-61" stroke="#BD8DE7" fill="#FFFFFF" cx="90.1350002" cy="55.1429983" rx="4.13500023" ry="4.1429983"></ellipse>
+        <text id="THE-Copy-3" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+            <tspan x="84" y="32">THE </tspan>
+        </text>
+        <text id="HAVE-A" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+            <tspan x="154" y="32">HAVE A</tspan>
+        </text>
+        <text id="COMMON-ATTR-TO" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+            <tspan x="84" y="46">COMMON ATTR TO</tspan>
+        </text>
+        <text id="AND-ARE-NBRS" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+            <tspan x="100" y="60">AND ARE NBRS</tspan>
+        </text>
     </g>
 </svg>
