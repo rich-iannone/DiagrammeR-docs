@@ -530,9 +530,9 @@ Through the use of multi-level optimization of a modularity score, obtain the gr
 
 **`graph`** a graph object of class `dgr_graph`.
 
-## `get_cmty_l_eigenvector()`
+## `get_cmty_l_eigenvec()`
 
-<img src="diagrams/inspection/get_cmty_l_eigenvector.svg">
+<img src="diagrams/inspection/get_cmty_l_eigenvec.svg">
 
 <h4><em>Get community membership by leading eigenvector</em></h4>
 
