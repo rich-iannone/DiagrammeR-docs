@@ -370,7 +370,7 @@ Get the graph diameter, which is the maximum eccentricity.
 
 ## `get_constraint()`
 
-<img src="diagrams/inspection/get_constraint">
+<img src="diagrams/inspection/get_constraint.svg">
 
 <h4><em>Get constraint scores for one or more graph nodes</em></h4>
 
