@@ -68,7 +68,7 @@
             <ellipse id="small_icon__node-copy-50" fill="#8660A7" cx="23.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
             <ellipse id="small_icon__node-copy-49" fill="#8660A7" cx="23.7388996" cy="6" rx="5.73889961" ry="5.75"></ellipse>
             <ellipse id="small_icon__node-copy-48" fill="#8660A7" cx="23.7388996" cy="34" rx="5.73889961" ry="5.75"></ellipse>
-            <ellipse id="small_icon__node-copy-47" fill="#BD8DE8" cx="37.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-47" stroke="#BD8DE7" fill="#FFFFFF" cx="37.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
             <path d="M1.5,0.5 L1.5,40" id="Line-Copy-9" stroke="#CACACA" stroke-linecap="square"></path>
             <ellipse id="small_icon__node-copy-38" fill="#8660A7" cx="51.7388996" cy="19.9430082" rx="5.73889961" ry="5.75"></ellipse>
             <ellipse id="small_icon__node-copy-37" fill="#8660A7" cx="51.7388996" cy="6" rx="5.73889961" ry="5.75"></ellipse>
@@ -85,5 +85,20 @@
                 <path d="M14.627907,0 C6.55932902,0 0,6.58350345 0,14.6818182 C0,22.7801329 6.55932902,29.3636364 14.627907,29.3636364 C17.8198066,29.3636364 20.771911,28.3305969 23.1787791,26.5838068 L34.4992733,37.9190341 L36.9193314,35.4900568 L25.7332849,24.2357955 C27.9311761,21.66653 29.255814,18.3274976 29.255814,14.6818182 C29.255814,6.58350345 22.6964849,0 14.627907,0 Z M14.627907,1.72727273 C21.7664254,1.72727273 27.5348837,7.51699073 27.5348837,14.6818182 C27.5348837,21.8466456 21.7664254,27.6363636 14.627907,27.6363636 C7.48938856,27.6363636 1.72093023,21.8466456 1.72093023,14.6818182 C1.72093023,7.51699073 7.48938856,1.72727273 14.627907,1.72727273 Z" id="Shape"></path>
             </g>
         </g>
+        <ellipse id="small_icon__node-copy-39" fill="#8660A7" cx="119.135" cy="27.3360065" rx="4.13500023" ry="4.1429983"></ellipse>
+        <ellipse id="small_icon__node-copy-40" fill="#8660A7" cx="131.135" cy="27.3360065" rx="4.13500023" ry="4.1429983"></ellipse>
+        <ellipse id="small_icon__node-copy-41" fill="#8660A7" cx="143.135" cy="27.3360065" rx="4.13500023" ry="4.1429983"></ellipse>
+        <ellipse id="small_icon__node-copy-42" fill="#8660A7" cx="155.135" cy="27.3360065" rx="4.13500023" ry="4.1429983"></ellipse>
+        <ellipse id="small_icon__node-copy-44" stroke="#BD8DE7" fill="#FFFFFF" cx="112.135" cy="55.1429983" rx="4.13500023" ry="4.1429983"></ellipse>
+        <text id="THE" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+            <tspan x="84" y="32">THE </tspan>
+        </text>
+        <text id="ARE-NBRS" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+            <tspan x="84" y="46">ARE NBRS</tspan>
+        </text>
+        <text id="OF" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+            <tspan x="84" y="60">OF</tspan>
+        </text>
+        <path d="M165,21 L165,60.5" id="Line-Copy-31" stroke="#CACACA" stroke-linecap="square"></path>
     </g>
 </svg>
