@@ -80,20 +80,6 @@ Using a graph series object of type `dgr_graph_1D`, get a graph object.
 
 **`graph_no`** the index of the graph in the graph series.
 
-## `trigger_script()`
-
-<h4><em>Trigger a script embedded in a graph series object</em></h4>
-
-<h5>DESCRIPTION</h5>
-
-Run an **R** script located inside or referenced from the graph series object in order to migrate the state of one or more contained graphs.
-
-<h5>PARAMETERS</h5>
-
-**`graph_series`** a graph series object of type `dgr_graph_1D`.
-
-**`script`** the index of the script character string or path reference held in in the graph series.
-
 ## `series_info()`
 
 <h4><em>Get information on a graph series</em></h4>
