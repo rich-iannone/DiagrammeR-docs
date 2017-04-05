@@ -644,6 +644,8 @@ With a graph a single node serving as the starting point, get those nodes in a p
 
 ## `get_paths()`
 
+<img src="diagrams/inspection/get_paths.svg">
+
 <h4><em>Get paths from a specified node in a directed graph</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -666,6 +668,8 @@ Obtain a list of all possible paths from a given node within a directed graph.
 
 ## `get_w_connected_cmpts()`
 
+<img src="diagrams/inspection/get_W_connected_cmpts.svg">
+
 <h4><em>Get all nodes associated with connected components</em></h4>
 
 <h5>DESCRIPTION</h5>
@@ -677,6 +681,8 @@ Determine which nodes in a graph belong to different weakly connected components
 **`graph`** a graph object of class `dgr_graph`.
 
 ## `get_s_connected_cmpts()`
+
+<img src="diagrams/inspection/get_s_connected_cmpts.svg">
 
 <h4><em>Get nodes within strongly connected components</em></h4>
 
