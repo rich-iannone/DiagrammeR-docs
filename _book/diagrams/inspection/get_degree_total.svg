@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="773px" height="80px" viewBox="0 0 773 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
     <title>get_degree_total</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <rect id="path-1" x="-6" y="2" width="784" height="76"></rect>
-        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="784" height="76" fill="white">
-            <use xlink:href="#path-1"></use>
-        </mask>
-        <linearGradient x1="14.998694%" y1="13.8375292%" x2="87.3959626%" y2="88.282251%" id="linearGradient-3">
+        <linearGradient x1="14.998694%" y1="13.8375292%" x2="87.3959626%" y2="88.282251%" id="linearGradient-1">
             <stop stop-color="#DBFAF0" offset="0%"></stop>
             <stop stop-color="#E8EBF9" offset="97.322136%"></stop>
             <stop stop-color="#E8EAF9" offset="100%"></stop>
         </linearGradient>
     </defs>
     <g id="Graph-Functions---inspection" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <use id="Rectangle-Copy-14" stroke="#979797" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+        <rect id="Rectangle-Copy-14" stroke="#979797" x="-5.5" y="2.5" width="783" height="75"></rect>
         <g id="graph-object" transform="translate(240.000000, 20.000000)">
-            <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
+            <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-1)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
             <rect id="graph-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="4" y="14" width="32" height="13" rx="4"></rect>
             <text id="graph-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
                 <tspan x="6.5" y="23">graph</tspan>
@@ -66,6 +62,32 @@
                     <polygon id="Arrow-head-10" fill="#C4C4C4" points="18.9774508 3 15.731 0 18.4855063 0 21.731 3 18.4855063 6 15.731 6"></polygon>
                 </g>
             </g>
+        </g>
+        <g id="total_degree" transform="translate(7.000000, 15.000000)">
+            <ellipse id="left_node-copy-3" fill="#50C1E3" transform="translate(82.136456, 25.193938) scale(-1, -1) translate(-82.136456, -25.193938) " cx="82.1364561" cy="25.1939385" rx="4.13645605" ry="4.19393849"></ellipse>
+            <text id="FOR-EACH" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="30">FOR EACH</tspan>
+            </text>
+            <text id="WHICH-IS-A" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="93.2729121" y="30">WHICH IS A </tspan>
+            </text>
+            <text id="GET-THE-TOTAL-DEGREE" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" fill="#9B9B9B">
+                <tspan x="0" y="13">GET THE TOTAL DEGREE</tspan>
+            </text>
+            <text id="COUNT-OF" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.400000006" fill="#9B9B9B">
+                <tspan x="0" y="47">COUNT O</tspan>
+                <tspan x="60.732" y="47">F</tspan>
+            </text>
+            <text id="AND" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.300000012" fill="#9B9B9B">
+                <tspan x="108" y="47">AN</tspan>
+                <tspan x="126.58" y="47">D</tspan>
+            </text>
+            <path d="M166.000001,41.9944373 L152.999999,41.9944373" id="Line" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+            <ellipse id="small_icon__node-copy-31" fill="#50C1E3" cx="147.7389" cy="41.75" rx="5.73889961" ry="5.75"></ellipse>
+            <polygon id="Triangle" stroke="#50E3C2" fill="#50E3C2" points="169 42 163 45 163 39"></polygon>
+            <path d="M89.0000006,41.9944373 L75.9999988,41.9944373" id="Line-Copy-18" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+            <ellipse id="small_icon__node-copy-87" fill="#50C1E3" cx="96.7388996" cy="41.75" rx="5.73889961" ry="5.75"></ellipse>
+            <polygon id="Triangle-Copy" stroke="#50E3C2" fill="#50E3C2" points="92 42 86 45 86 39"></polygon>
         </g>
     </g>
 </svg>
