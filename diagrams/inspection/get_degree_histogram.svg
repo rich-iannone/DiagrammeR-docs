@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="772px" height="80px" viewBox="0 0 772 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
     <title>get_degree_histogram</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <rect id="path-1" x="-6" y="2" width="784" height="76"></rect>
-        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="784" height="76" fill="white">
-            <use xlink:href="#path-1"></use>
-        </mask>
-        <linearGradient x1="14.998694%" y1="13.8375292%" x2="87.3959626%" y2="88.282251%" id="linearGradient-3">
+        <linearGradient x1="14.998694%" y1="13.8375292%" x2="87.3959626%" y2="88.282251%" id="linearGradient-1">
             <stop stop-color="#DBFAF0" offset="0%"></stop>
             <stop stop-color="#E8EBF9" offset="97.322136%"></stop>
             <stop stop-color="#E8EAF9" offset="100%"></stop>
         </linearGradient>
     </defs>
     <g id="Graph-Functions---inspection" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <use id="Rectangle-Copy-10" stroke="#979797" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+        <rect id="Rectangle-Copy-10" stroke="#979797" x="-5.5" y="2.5" width="783" height="75"></rect>
         <g id="graph-object" transform="translate(240.000000, 20.000000)">
-            <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-3)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
+            <ellipse id="graph-shape" stroke="#C2C6D5" stroke-width="1" fill="url(#linearGradient-1)" fill-rule="evenodd" cx="20" cy="20" rx="20" ry="20"></ellipse>
             <rect id="graph-text-box" fill-opacity="0.528023098" fill="#FFFFFF" fill-rule="evenodd" x="4" y="14" width="32" height="13" rx="4"></rect>
             <text id="graph-text" font-family="Helvetica-Light, Helvetica" font-size="10" font-weight="300" fill="#9B9B9B">
                 <tspan x="6.5" y="23">graph</tspan>
@@ -65,6 +61,106 @@
                     <polygon id="Arrow-head-10" fill="#C4C4C4" points="18.9774508 3 15.731 0 18.4855063 0 21.731 3 18.4855063 6 15.731 6"></polygon>
                 </g>
             </g>
+        </g>
+        <g id="counts_of_node_degrees" transform="translate(5.000000, 10.000000)">
+            <path d="M16.4952244,48.5418398 L21.4797293,43.5573349" id="small_icon_edge-copy-13" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M42.5,39.9999998 L47.9777993,39.9999998" id="small_icon_edge-copy-25" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(45.238900, 40.193008) scale(-1, 1) translate(-45.238900, -40.193008) "></path>
+            <path d="M27.5,39.9999998 L32.9777993,39.9999998" id="small_icon_edge-copy-26" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(30.238900, 40.193008) scale(-1, 1) translate(-30.238900, -40.193008) "></path>
+            <path d="M24.8795792,40.0190905 L39.0000004,25.75" id="small_icon_edge-copy-14" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M18.218435,40.0190905 L24.59822,33.5721348" id="small_icon_edge-copy-16" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(21.408328, 36.795613) scale(-1, 1) translate(-21.408328, -36.795613) "></path>
+            <path d="M53.218435,40.0190905 L59.59822,33.5721348" id="small_icon_edge-copy-17" stroke="#50E3C2" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M23.8795792,54.0190905 L38.0000004,39.75" id="small_icon_edge-copy-18" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(31.238900, 46.943008) scale(-1, 1) translate(-31.238900, -46.943008) "></path>
+            <path d="M37.8795792,54.0190905 L52.0000004,39.75" id="small_icon_edge-copy-19" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(45.238900, 46.943008) scale(-1, 1) translate(-45.238900, -46.943008) "></path>
+            <ellipse id="small_icon__node-copy-15" fill="#9B9B9B" cx="14.7388996" cy="30" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-14" fill="#9B9B9B" cx="14.7388996" cy="50" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-31" fill="#9B9B9B" cx="24.7388996" cy="39.9430082" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-28" fill="#9B9B9B" cx="38.7388996" cy="39.9430082" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-27" fill="#9B9B9B" cx="38.7388996" cy="26" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-26" fill="#9B9B9B" cx="38.7388996" cy="54" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-23" fill="#9B9B9B" cx="52.7388996" cy="54" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-22" fill="#9B9B9B" cx="62.7388996" cy="30" rx="5.73889961" ry="5.75"></ellipse>
+            <text id="ID-Copy-7" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="22.6538996" y="42.5">5</tspan>
+            </text>
+            <text id="ID-Copy-8" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="36.6538996" y="42.5">3</tspan>
+            </text>
+            <text id="ID-Copy-10" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="60.6538996" y="32.5">1</tspan>
+            </text>
+            <text id="ID-Copy-13" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="36.6538996" y="28.5">1</tspan>
+            </text>
+            <text id="ID-Copy-15" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="12.6538996" y="32.5">1</tspan>
+            </text>
+            <text id="ID-Copy-25" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="50.6538996" y="56.5">1</tspan>
+            </text>
+            <path d="M51.8795792,54.0190905 L66.0000004,39.75" id="small_icon_edge-copy-21" stroke="#50E3C2" stroke-width="2" stroke-linecap="square" transform="translate(59.238900, 46.943008) scale(-1, 1) translate(-59.238900, -46.943008) "></path>
+            <ellipse id="small_icon__node-copy-60" fill="#9B9B9B" cx="66.7388996" cy="54" rx="5.73889961" ry="5.75"></ellipse>
+            <text id="ID-Copy-28" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="64.6538996" y="56.5">1</tspan>
+            </text>
+            <text id="ID-Copy-24" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="36.6538996" y="56.5">1</tspan>
+            </text>
+            <ellipse id="small_icon__node-copy-32" fill="#9B9B9B" cx="89.7388996" cy="39.9430082" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-30" fill="#9B9B9B" cx="89.7388996" cy="26" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-29" fill="#9B9B9B" cx="89.7388996" cy="54" rx="5.73889961" ry="5.75"></ellipse>
+            <text id="ID-Copy-17" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="87.6538996" y="42.5">1</tspan>
+            </text>
+            <text id="ID-Copy-16" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="87.6538996" y="28.5">0</tspan>
+            </text>
+            <text id="ID-Copy-26" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="87.6538996" y="56.5">2</tspan>
+            </text>
+            <ellipse id="small_icon__node-copy-59" fill="#9B9B9B" cx="138.7389" cy="39.9430082" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-55" fill="#9B9B9B" cx="138.7389" cy="26" rx="5.73889961" ry="5.75"></ellipse>
+            <ellipse id="small_icon__node-copy-33" fill="#9B9B9B" cx="138.7389" cy="54" rx="5.73889961" ry="5.75"></ellipse>
+            <text id="ID-Copy-19" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="136.6539" y="42.5">4</tspan>
+            </text>
+            <text id="ID-Copy-18" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="136.6539" y="28.5">3</tspan>
+            </text>
+            <text id="ID-Copy-27" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="136.6539" y="56.5">5</tspan>
+            </text>
+            <text id="ID-Copy-22" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="12.6538996" y="52.5">1</tspan>
+            </text>
+            <path d="M3.5,20.5 L3.5,60" id="Line-Copy-9" stroke="#CACACA" stroke-linecap="square"></path>
+            <path d="M75.4777992,21 L75.4777992,60.5" id="Line-Copy-8" stroke="#CACACA" stroke-linecap="square"></path>
+            <path d="M189,21 L189,60.5" id="Line-Copy-38" stroke="#CACACA" stroke-linecap="square"></path>
+            <text id="COUNTS-OF-NODE-DEGRE" font-family="HelveticaNeue, Helvetica Neue" font-size="14" font-weight="normal" letter-spacing="-0.0500000007" fill="#9B9B9B">
+                <tspan x="0" y="13">COUNTS OF NODE DEGREES</tspan>
+                <tspan x="191.288" y="13">:</tspan>
+            </text>
+            <text id="0" font-family="Menlo-Regular, Menlo" font-size="9" font-weight="normal" fill="#9B9B9B">
+                <tspan x="100" y="29">0</tspan>
+            </text>
+            <text id="7" font-family="Menlo-Regular, Menlo" font-size="9" font-weight="normal" fill="#9B9B9B">
+                <tspan x="100" y="43">7</tspan>
+            </text>
+            <text id="0" font-family="Menlo-Regular, Menlo" font-size="9" font-weight="normal" fill="#9B9B9B">
+                <tspan x="100" y="57">0</tspan>
+            </text>
+            <text id="2" font-family="Menlo-Regular, Menlo" font-size="9" font-weight="normal" fill="#9B9B9B">
+                <tspan x="149" y="29">2</tspan>
+            </text>
+            <text id="0" font-family="Menlo-Regular, Menlo" font-size="9" font-weight="normal" fill="#9B9B9B">
+                <tspan x="149" y="43">0</tspan>
+            </text>
+            <text id="1" font-family="Menlo-Regular, Menlo" font-size="9" font-weight="normal" fill="#9B9B9B">
+                <tspan x="149" y="57">1</tspan>
+            </text>
+            <ellipse id="small_icon__node-copy-25" fill="#9B9B9B" cx="52.7388996" cy="39.9430082" rx="5.73889961" ry="5.75"></ellipse>
+            <text id="ID-Copy-9" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="7.5" font-weight="bold" fill="#FFFFFF">
+                <tspan x="50.6538996" y="42.5">3</tspan>
+            </text>
         </g>
     </g>
 </svg>
