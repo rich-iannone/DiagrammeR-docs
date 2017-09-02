@@ -26,17 +26,26 @@ Let's get to making a graph. The `create_graph()` function creates a graph objec
 graph_e <- create_graph()
 ```
 
-This really is an empty graph (no nodes) and we can quickly verify this by using the `node_count()` function.
+Any graph object prints out some information about the state of graph in the console. 
+
+```{r}
+graph_e
+```
+
+
+This really is an empty graph (i.e., it contains no nodes). In case you'd like to verify the node count in a graph, use the `node_count()` function.
 
 ```{r node_count_empty_graph}
 node_count(graph_e)
 ```
 
-You can add individual nodes to a graph by using the `add_node()` function. Let's add two nodes in the most minimal fashion:
+You can add individual nodes to a graph by using the `add_node()` function. Let's add two nodes to the graph and then get the console to print the basic graph info.
 
 ```{r add_2_nodes_to_graph}
 graph_1n <- add_node(graph = graph_e)
 graph_2n <- add_node(graph = graph_1n)
+
+graph_2n
 ```
 
 This creates 2 nodes with ID values `1` and `2` (ID values are set for you as auto-incrementing integers). There are a few functions that can be used to check that these additions did occur. We can get a count of nodes as before with the `node_count()` function:
@@ -48,7 +57,7 @@ c(node_count(graph = graph_e),
   node_count(graph = graph_2n))
 ```
 
-Alternatively, we can use the `get_node_ids()` function to return a vector of node ID values:
+Alternatively, we can use the `get_node_ids()` function to return a vector of node ID values. Let's use that function on the most recent graph created, `graph_2n`.
 
 ```{r get_node_ids_1_graph}
 # Get the node ID values for `graph_2n`; note that
@@ -86,7 +95,7 @@ graph_2n_piped <-
 node_count(graph_2n_piped)
 ```
 
-The benefits are pretty obvious over the *nested* approach that avoids creating intermediate graph objects.
+The benefits are pretty obvious over the *nested* approach. We can avoid creating intermediate graph objects and we can get better readability (left-to-right function calls rather than inside to outside). Here is the nested version of the previous.
 
 ```{r create_graph_2n_nested_funs}
 # Create the equivalent `graph_2n` object
@@ -100,7 +109,7 @@ graph_2n_nested_fcns <-
 node_count(graph_2n_nested_fcns)
 ```
 
-With the `%>%`, the sequence of operations is more easily readable (left to right), plus, only one name to create! The less names the better. Moreover, and not shown above, the situtation for the nested approach gets more confusing as we add arguments and their values (of which, there can be many).
+With the `%>%` operator, the sequence of operations is indeed more easily readable and the less names to think of for assignment the better. Moreover, and not shown above, the situtation for the nested approach gets more confusing as we add function arguments and their values (of which, there can be many).
 
 ### Adding Edges
 
@@ -225,8 +234,8 @@ The `from` and `to` arguments specify which nodes for the edge are outgoing and 
 edf <- 
   create_edge_df(
     from = c(1, 1),
-    to   = c(2, 3),
-    rel = c("X", "Y"))
+      to = c(2, 3),
+     rel = c("X", "Y"))
 ```
 
 ```{r create_edf_rel_kable, echo=FALSE}
@@ -247,6 +256,8 @@ graph_ndf_edf <-
   create_graph(
     nodes_df = ndf,
     edges_df = edf)
+
+graph_ndf_edf
 ```
 
 What exactly happened? These data frames (`ndf` and `edf`) were placed within the graph object when it was created. They essentially became internal `ndf` and `edf` objects. We can inspect the graph's internal *ndf* and *edf* at any time using the `get_node_df()` and `get_edge_df()` functions:
@@ -316,16 +327,37 @@ graph_colors <-
 render_graph(graph = graph_colors)
 ```
 
-Note that whenever we use the default values for `type` or `label` in each `add_node()` call, we don't get values for the `type` attribute and the `label` attribute is assigned the node ID value. In the ideal case, values for `type` and `label` are supplied. Something to keep in mind is that including `label` values that are unique or distinct across all nodes in the graph will make it possible to specify node selections and perform useful actions on specific nodes. Let's create the `graph` object once more with `type` and `label` node attributes included.
+Once these *ndf*s and *edf*s were added to a graph object during its creation, the graph now has internal *ndf* and *edf* object. These can be extensively inspected and manipulated. There are in essence the fundamental components of the graph object.
+
+## The Internal NDF/EDF
+
+A graph can have either of these three combinations of internal *ndf* and *edf* states:
+
+- empty *ndf* and empty *edf*
+- non-empty *ndf* and empty *edf*
+- non-empty *ndf* and non-empty *edf*
+
+Essentially, a graph cannot have any edges without nodes.
+
+Note that whenever we don't provide values for `type` or `label` in each `add_node()` call (i.e., we use the default values), we see that:
+
+- there is no value assigned to the `type` node attribute (it is `NA`)
+- the `label` attribute is automatically assigned the node ID value (as text).
+
+Whenever possible, it's good practice to supply values for `type` and `label`. Something to keep in mind is that if we elect to provide `label` values for each node in the graph, we should ensure that the labels are uniqueacross all nodes in the graph. In doing so, it will be possible to specify node selections and perform useful actions on specific nodes. Let's create the `graph` object once more with `type` and `label` node attributes included.
 
 ```{r create_graph_add_nodes_labels_types}
 graph_node_type_label <- 
   create_graph() %>% 
-  add_node(type = "number", label = "one") %>%
-  add_node(type = "number", label = "two")
-```
+  add_node(
+    type = "number",
+    label = "one") %>%
+  add_node(
+    type = "number",
+    label = "two")
 
-## The Internal NDF/EDF
+graph_node_type_label
+```
 
 We can view the graph's internal node data frame with the `get_node_df()` function so we can see that these attributes have been included alongside the graph's nodes.
 
@@ -367,8 +399,9 @@ To view the graph's edges after the transformation, use `get_edges()` as before 
 graph_edge_w_ids <- 
   graph_node_type_label %>%
   add_edge(
-    from = "one", to = "two",
-    rel = "to_number",
+    from = "one",
+      to = "two",
+     rel = "to_number",
     use_labels = TRUE)
 
 # Display the graph's edges (as a string-based
@@ -470,14 +503,14 @@ These values can be added later. All `type` and `label` values for nodes can be 
 graph_f <-
   graph_e %>%
   set_node_attrs(
-    node_attr = "label",
+    node_attr = label,
     values = c("one", "two", "three",
                "four", "five", "six")) %>%
   set_node_attrs(
-    node_attr = "type",
-    value = "a") %>%
+    node_attr = type,
+    values = "a") %>%
   set_edge_attrs(
-    edge_attr = "rel",
+    edge_attr = rel,
     values = "to_number")
 ```
 
@@ -499,13 +532,17 @@ Alternatively, we can use the `get_node_attrs()` and  `get_edge_attrs()` functio
 # attribute; this returns a named vector (where
 # the names are the node ID values)
 type_node_attr_values <-
-  get_node_attrs(x = graph_f, node_attr = "type")
+  get_node_attrs(
+    graph = graph_f,
+    node_attr = type)
 
 # Get a vector of values for the `rel` edge
 # attribute; this also returns a named vector
 # (where the names are the edge definitions)
 rel_edge_attr_values <-
-  get_edge_attrs(x = graph_f, edge_attr = "rel")
+  get_edge_attrs(
+    graph = graph_f,
+    edge_attr = rel)
 
 # Place these node and edge attribute vectors in
 # a list and display it
