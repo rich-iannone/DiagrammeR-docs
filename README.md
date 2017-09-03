@@ -2,7 +2,7 @@
 
 A book that aims to show the reader everything there is to know about the R DiagrammeR package.
 
-While the book is not finished, here's what is in the book now (in somewhat acceptable form):
+While this isn't yet finished, here's what is in the book now:
 
 - How to create a graph.
 - Introduction to graph attributes.
